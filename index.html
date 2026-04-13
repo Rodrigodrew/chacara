@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chácara da Família</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4f0;color:#1a1a18;padding:1.5rem;min-height:100vh}
+.app{max-width:720px;margin:0 auto}
+.header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.5rem;gap:1rem;flex-wrap:wrap}
+.header-text h1{font-size:20px;font-weight:500;color:#1a1a18}
+.header-text p{font-size:13px;color:#888780;margin-top:2px}
+.header-actions{display:flex;gap:6px;flex-shrink:0}
+.tabs{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:8px 14px;border-radius:8px;border:0.5px solid #d3d1c7;background:#fff;color:#5f5e5a;font-size:13px;cursor:pointer;transition:all .15s}
+.tab.active{background:#f1efe8;color:#1a1a18;border-color:#b4b2a9;font-weight:500}
+.tab:hover:not(.active){background:#f1efe8}
+.panel{display:none}.panel.active{display:block}
+.card{background:#fff;border:0.5px solid #d3d1c7;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem}
+.card-title{font-size:14px;font-weight:500;color:#1a1a18;margin-bottom:1rem}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1rem}
+.metric{background:#f1efe8;border-radius:8px;padding:.75rem 1rem}
+.metric-label{font-size:12px;color:#888780;margin-bottom:4px}
+.metric-value{font-size:20px;font-weight:500;color:#1a1a18}
+.list-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:0.5px solid #d3d1c7}
+.list-item:last-child{border-bottom:none}
+.badge{font-size:11px;padding:2px 8px;border-radius:8px;font-weight:500}
+.badge-success{background:#eaf3de;color:#3b6d11}
+.badge-warning{background:#faeeda;color:#854f0b}
+.badge-info{background:#e6f1fb;color:#185fa5}
+.badge-danger{background:#fcebeb;color:#a32d2d}
+.input-row{display:flex;gap:8px;margin-bottom:.75rem;align-items:center;flex-wrap:wrap}
+.input-row label{font-size:13px;color:#5f5e5a;min-width:90px}
+.input-row input,.input-row select{flex:1;min-width:120px;padding:7px 10px;border:0.5px solid #b4b2a9;border-radius:8px;background:#fff;color:#1a1a18;font-size:13px;font-family:inherit}
+.input-row input:focus,.input-row select:focus{outline:none;border-color:#5f5e5a}
+.btn{padding:7px 14px;border-radius:8px;border:0.5px solid #b4b2a9;background:transparent;color:#1a1a18;font-size:13px;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn:hover{background:#f1efe8}
+.btn-primary{background:#e6f1fb;color:#185fa5;border-color:#b5d4f4}
+.btn-primary:hover{background:#b5d4f4}
+.btn-sm{padding:5px 10px;font-size:12px}
+.btn-success{background:#eaf3de;color:#3b6d11;border-color:#c0dd97}
+.btn-success:hover{background:#c0dd97}
+.check-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:0.5px solid #d3d1c7}
+.check-item:last-child{border-bottom:none}
+.check-item input[type=checkbox]{width:16px;height:16px;cursor:pointer;accent-color:#1D9E75}
+.check-item span{font-size:13px;color:#1a1a18}
+.check-item span.done{text-decoration:line-through;color:#b4b2a9}
+.section-label{font-size:11px;font-weight:500;color:#b4b2a9;text-transform:uppercase;letter-spacing:.05em;margin:1rem 0 .5rem}
+.event-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.progress-bar{height:6px;border-radius:3px;background:#f1efe8;margin-top:6px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px;background:#1D9E75;transition:width .3s}
+.toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#1a1a18;color:#f5f4f0;font-size:13px;padding:8px 18px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999;white-space:nowrap}
+.toast.show{opacity:1}
+.delete-btn{background:none;border:none;cursor:pointer;color:#b4b2a9;font-size:14px;padding:2px 6px;border-radius:4px;line-height:1;flex-shrink:0}
+.delete-btn:hover{color:#a32d2d;background:#fcebeb}
+@media(max-width:500px){.metrics{grid-template-columns:1fr 1fr}.header{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="header-text">
+      <h1>Chácara da família</h1>
+      <p>Gestão completa da propriedade</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-sm btn-success" onclick="exportData()">Exportar backup</button>
+      <button class="btn btn-sm" onclick="document.getElementById('import-input').click()">Importar</button>
+      <input type="file" id="import-input" accept=".json" style="display:none" onchange="importData(event)">
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('financas')">Finanças</button>
+    <button class="tab" onclick="showTab('manutencao')">Manutenção</button>
+    <button class="tab" onclick="showTab('horta')">Horta & jardim</button>
+    <button class="tab" onclick="showTab('agenda')">Agenda</button>
+    <button class="tab" onclick="showTab('obra')">Obra</button>
+  </div>
+
+  <!-- FINANÇAS -->
+  <div id="panel-financas" class="panel active">
+    <div class="metrics">
+      <div class="metric"><div class="metric-label">Orçamento mensal</div><div class="metric-value" id="orcamento-disp">Não definido</div></div>
+      <div class="metric"><div class="metric-label">Gastos este mês</div><div class="metric-value" id="gastos-mes">R$ 0</div></div>
+      <div class="metric"><div class="metric-label">Saldo</div><div class="metric-value" id="saldo-fin">—</div></div>
+      <div class="metric"><div class="metric-label">Total registrado</div><div class="metric-value" id="total-fin">R$ 0</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Novo gasto</div>
+      <div class="input-row"><label>Descrição</label><input type="text" id="fin-desc" placeholder="Ex: IPTU, energia, muda..."></div>
+      <div class="input-row"><label>Valor (R$)</label><input type="number" id="fin-valor" placeholder="0,00" min="0" step="0.01"></div>
+      <div class="input-row">
+        <label>Categoria</label>
+        <select id="fin-cat">
+          <option>Infraestrutura</option><option>Energia/água</option><option>Horta</option>
+          <option>Manutenção</option><option>Lazer</option><option>Obra</option><option>Outros</option>
+        </select>
+      </div>
+      <div class="input-row"><label>Orçamento/mês</label><input type="number" id="fin-orcamento" placeholder="Ex: 2000"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="addGasto()">Registrar gasto</button>
+        <button class="btn" onclick="setOrcamento()">Definir orçamento</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Histórico</div>
+      <div id="fin-lista"><div style="font-size:13px;color:#888780">Nenhum gasto registrado ainda.</div></div>
+    </div>
+  </div>
+
+  <!-- MANUTENÇÃO -->
+  <div id="panel-manutencao" class="panel">
+    <div class="card">
+      <div class="card-title">Nova tarefa</div>
+      <div class="input-row"><label>Tarefa</label><input type="text" id="man-desc" placeholder="Ex: Verificar caixa d'água"></div>
+      <div class="input-row">
+        <label>Prioridade</label>
+        <select id="man-prio"><option>Alta</option><option selected>Média</option><option>Baixa</option></select>
+      </div>
+      <div class="input-row">
+        <label>Área</label>
+        <select id="man-area">
+          <option>Casa principal</option><option>Edícula / escritório</option><option>Horta</option>
+          <option>Jardim</option><option>Área de lazer</option><option>Estrutura geral</option>
+        </select>
+      </div>
+      <div class="input-row"><label>Data prevista</label><input type="date" id="man-data"></div>
+      <button class="btn btn-primary" onclick="addTarefa()">Adicionar tarefa</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Tarefas</div>
+      <div><div class="section-label">Alta prioridade</div><div id="man-alta"></div></div>
+      <div style="margin-top:.5rem"><div class="section-label">Média prioridade</div><div id="man-media"></div></div>
+      <div style="margin-top:.5rem"><div class="section-label">Baixa prioridade</div><div id="man-baixa"></div></div>
+      <div id="man-done-section"></div>
+      <div id="man-vazio" style="font-size:13px;color:#888780">Nenhuma tarefa ainda.</div>
+    </div>
+  </div>
+
+  <!-- HORTA -->
+  <div id="panel-horta" class="panel">
+    <div class="card">
+      <div class="card-title">Adicionar planta / canteiro</div>
+      <div class="input-row"><label>Nome</label><input type="text" id="h-nome" placeholder="Ex: Tomate cereja"></div>
+      <div class="input-row">
+        <label>Tipo</label>
+        <select id="h-tipo"><option>Hortaliça</option><option>Fruta</option><option>Erva</option><option>Flor</option><option>Árvore</option><option>Outro</option></select>
+      </div>
+      <div class="input-row"><label>Data de plantio</label><input type="date" id="h-data"></div>
+      <div class="input-row">
+        <label>Rega</label>
+        <select id="h-rega"><option>Diária</option><option>A cada 2 dias</option><option>2x por semana</option><option>Semanal</option></select>
+      </div>
+      <div class="input-row"><label>Observações</label><input type="text" id="h-obs" placeholder="Solo, adubação, etc."></div>
+      <button class="btn btn-primary" onclick="addPlanta()">Adicionar</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Canteiros e plantas</div>
+      <div id="horta-lista"><div style="font-size:13px;color:#888780">Nenhuma planta registrada.</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Registro de atividades</div>
+      <div class="input-row"><label>Atividade</label><input type="text" id="h-ativ" placeholder="Ex: Adubo, poda, rega extra..."></div>
+      <button class="btn" onclick="addAtivHorta()" style="margin-top:4px">Registrar</button>
+      <div id="horta-ativ" style="margin-top:1rem;font-size:13px;color:#888780">Nenhuma atividade ainda.</div>
+    </div>
+  </div>
+
+  <!-- AGENDA -->
+  <div id="panel-agenda" class="panel">
+    <div class="card">
+      <div class="card-title">Novo evento</div>
+      <div class="input-row"><label>Evento</label><input type="text" id="ag-nome" placeholder="Ex: Churrasco em família"></div>
+      <div class="input-row"><label>Data</label><input type="date" id="ag-data"></div>
+      <div class="input-row">
+        <label>Tipo</label>
+        <select id="ag-tipo"><option>Lazer família</option><option>Visita amigos</option><option>Reunião negócios</option><option>Manutenção programada</option><option>Outro</option></select>
+      </div>
+      <div class="input-row"><label>Convidados</label><input type="text" id="ag-conv" placeholder="Nomes ou quantidade"></div>
+      <div class="input-row"><label>Observações</label><input type="text" id="ag-obs" placeholder="O que preparar, trazer..."></div>
+      <button class="btn btn-primary" onclick="addEvento()">Agendar</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Próximos eventos</div>
+      <div id="ag-lista"><div style="font-size:13px;color:#888780">Nenhum evento agendado.</div></div>
+    </div>
+  </div>
+
+  <!-- OBRA -->
+  <div id="panel-obra" class="panel">
+    <div class="card">
+      <div class="card-title">Progresso da obra</div>
+      <div id="obra-etapas">
+        <div class="check-item"><input type="checkbox" id="o1" onchange="saveObra()"><label for="o1" style="font-size:13px;cursor:pointer">Terraplanagem e fundação</label></div>
+        <div class="check-item"><input type="checkbox" id="o2" onchange="saveObra()"><label for="o2" style="font-size:13px;cursor:pointer">Alvenaria — casa principal</label></div>
+        <div class="check-item"><input type="checkbox" id="o3" onchange="saveObra()"><label for="o3" style="font-size:13px;cursor:pointer">Cobertura / telhado</label></div>
+        <div class="check-item"><input type="checkbox" id="o4" onchange="saveObra()"><label for="o4" style="font-size:13px;cursor:pointer">Instalações elétricas</label></div>
+        <div class="check-item"><input type="checkbox" id="o5" onchange="saveObra()"><label for="o5" style="font-size:13px;cursor:pointer">Instalações hidráulicas</label></div>
+        <div class="check-item"><input type="checkbox" id="o6" onchange="saveObra()"><label for="o6" style="font-size:13px;cursor:pointer">Alvenaria — edícula / escritório</label></div>
+        <div class="check-item"><input type="checkbox" id="o7" onchange="saveObra()"><label for="o7" style="font-size:13px;cursor:pointer">Acabamento interno</label></div>
+        <div class="check-item"><input type="checkbox" id="o8" onchange="saveObra()"><label for="o8" style="font-size:13px;cursor:pointer">Área de lazer e paisagismo</label></div>
+        <div class="check-item"><input type="checkbox" id="o9" onchange="saveObra()"><label for="o9" style="font-size:13px;cursor:pointer">Horta e jardim</label></div>
+        <div class="check-item"><input type="checkbox" id="o10" onchange="saveObra()"><label for="o10" style="font-size:13px;cursor:pointer">Finalização e entrega</label></div>
+      </div>
+      <div style="margin-top:1rem">
+        <div style="display:flex;justify-content:space-between;font-size:13px;color:#5f5e5a"><span>Progresso geral</span><span id="obra-pct">0%</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="obra-bar" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Anotações da obra</div>
+      <div class="input-row"><label>Nota</label><input type="text" id="obra-nota-input" placeholder="Ex: Aprovado projeto elétrico em 10/04"></div>
+      <button class="btn" onclick="addNotaObra()" style="margin-top:4px">Adicionar nota</button>
+      <div id="obra-notas" style="margin-top:1rem;font-size:13px;color:#888780">Nenhuma nota ainda.</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var STORE='chacara_v1';
+var state={gastos:[],tarefas:[],plantas:[],atividades:[],eventos:[],notasObra:[],orcamento:0,obra:[]};
+
+function load(){
+  try{var s=localStorage.getItem(STORE);if(s)state=Object.assign(state,JSON.parse(s));}catch(e){}
+}
+function save(){
+  try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){}
+}
+function toast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},2000);
+}
+
+function exportData(){
+  var blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='chacara_backup_'+today()+'.json';
+  a.click();
+  toast('Backup exportado!');
+}
+function importData(e){
+  var file=e.target.files[0];if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    try{
+      var imported=JSON.parse(ev.target.result);
+      state=Object.assign(state,imported);
+      save();renderAll();
+      toast('Dados importados com sucesso!');
+    }catch(err){alert('Arquivo inválido.');}
+  };
+  reader.readAsText(file);
+  e.target.value='';
+}
+
+function showTab(id){
+  var ids=['financas','manutencao','horta','agenda','obra'];
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',ids[i]===id);});
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+function fmt(v){return'R$ '+Math.round(v).toLocaleString('pt-BR');}
+function today(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()<9?'0':'')+(d.getMonth()+1)+'-'+(d.getDate()<10?'0':'')+d.getDate();}
+function fmtDate(s){if(!s)return'—';var p=s.split('-');return p[2]+'/'+p[1]+'/'+p[0];}
+
+// FINANÇAS
+function setOrcamento(){
+  var v=parseFloat(document.getElementById('fin-orcamento').value);
+  if(isNaN(v)||v<=0){alert('Informe um valor válido.');return;}
+  state.orcamento=v;save();updateFinancas();
+  document.getElementById('fin-orcamento').value='';
+  toast('Orçamento definido!');
+}
+function addGasto(){
+  var desc=document.getElementById('fin-desc').value.trim();
+  var val=parseFloat(document.getElementById('fin-valor').value);
+  var cat=document.getElementById('fin-cat').value;
+  if(!desc||isNaN(val)||val<=0){alert('Preencha descrição e valor.');return;}
+  state.gastos.push({id:'g'+Date.now(),desc:desc,val:val,cat:cat,data:today()});
+  save();
+  document.getElementById('fin-desc').value='';
+  document.getElementById('fin-valor').value='';
+  updateFinancas();toast('Gasto registrado!');
+}
+function deleteGasto(id){
+  state.gastos=state.gastos.filter(function(g){return g.id!==id;});
+  save();updateFinancas();
+}
+function updateFinancas(){
+  var now=today().substring(0,7);
+  var mesMes=state.gastos.filter(function(g){return g.data.substring(0,7)===now;});
+  var totalMes=mesMes.reduce(function(a,b){return a+b.val;},0);
+  var totalAll=state.gastos.reduce(function(a,b){return a+b.val;},0);
+  document.getElementById('orcamento-disp').textContent=state.orcamento?fmt(state.orcamento):'Não definido';
+  document.getElementById('gastos-mes').textContent=fmt(totalMes);
+  document.getElementById('saldo-fin').textContent=state.orcamento?fmt(state.orcamento-totalMes):'—';
+  document.getElementById('total-fin').textContent=fmt(totalAll);
+  var ul=document.getElementById('fin-lista');
+  if(!state.gastos.length){ul.innerHTML='<div style="font-size:13px;color:#888780">Nenhum gasto registrado ainda.</div>';return;}
+  var html='';
+  state.gastos.slice().reverse().forEach(function(g){
+    html+='<div class="list-item"><div style="flex:1"><div style="font-size:13px">'+g.desc+'</div><div style="font-size:11px;color:#888780">'+g.cat+' · '+fmtDate(g.data)+'</div></div><div style="font-size:14px;font-weight:500;margin-right:8px">'+fmt(g.val)+'</div><button class="delete-btn" onclick="deleteGasto(\''+g.id+'\')" title="Remover">✕</button></div>';
+  });
+  ul.innerHTML=html;
+}
+
+// MANUTENÇÃO
+function prioBadge(p){
+  if(p==='Alta')return'<span class="badge badge-danger">Alta</span>';
+  if(p==='Média')return'<span class="badge badge-warning">Média</span>';
+  return'<span class="badge badge-info">Baixa</span>';
+}
+function addTarefa(){
+  var desc=document.getElementById('man-desc').value.trim();
+  if(!desc){alert('Descreva a tarefa.');return;}
+  state.tarefas.push({id:'t'+Date.now(),desc:desc,prio:document.getElementById('man-prio').value,area:document.getElementById('man-area').value,data:document.getElementById('man-data').value,done:false});
+  save();
+  document.getElementById('man-desc').value='';
+  document.getElementById('man-data').value='';
+  updateTarefas();toast('Tarefa adicionada!');
+}
+function toggleTarefa(id){
+  state.tarefas.forEach(function(t){if(t.id===id)t.done=!t.done;});
+  save();updateTarefas();
+}
+function deleteTarefa(id){
+  state.tarefas=state.tarefas.filter(function(t){return t.id!==id;});
+  save();updateTarefas();
+}
+function updateTarefas(){
+  var pending=state.tarefas.filter(function(t){return!t.done;});
+  var done=state.tarefas.filter(function(t){return t.done;});
+  document.getElementById('man-vazio').style.display=state.tarefas.length?'none':'block';
+  ['alta','media','baixa'].forEach(function(p){document.getElementById('man-'+p).innerHTML='';});
+  var pmap={'Alta':'alta','Média':'media','Baixa':'baixa'};
+  pending.forEach(function(t){
+    var d=document.getElementById('man-'+pmap[t.prio]);
+    var div=document.createElement('div');div.className='check-item';
+    div.innerHTML='<input type="checkbox" onchange="toggleTarefa(\''+t.id+'\')" style="width:16px;height:16px;cursor:pointer;accent-color:#1D9E75"><div style="flex:1"><div style="font-size:13px">'+t.desc+'</div><div style="font-size:11px;color:#888780">'+t.area+(t.data?' · '+fmtDate(t.data):'')+'</div></div>'+prioBadge(t.prio)+'<button class="delete-btn" onclick="deleteTarefa(\''+t.id+'\')" title="Remover">✕</button>';
+    d.appendChild(div);
+  });
+  var ds=document.getElementById('man-done-section');
+  if(done.length){
+    var h='<div class="section-label" style="margin-top:1rem">Concluídas</div>';
+    done.forEach(function(t){h+='<div class="check-item"><input type="checkbox" checked onchange="toggleTarefa(\''+t.id+'\')" style="width:16px;height:16px;cursor:pointer;accent-color:#1D9E75"><span class="done" style="flex:1">'+t.desc+'</span><button class="delete-btn" onclick="deleteTarefa(\''+t.id+'\')" title="Remover">✕</button></div>';});
+    ds.innerHTML=h;
+  } else {ds.innerHTML='';}
+}
+
+// HORTA
+function addPlanta(){
+  var nome=document.getElementById('h-nome').value.trim();
+  if(!nome){alert('Informe o nome da planta.');return;}
+  state.plantas.push({id:'p'+Date.now(),nome:nome,tipo:document.getElementById('h-tipo').value,data:document.getElementById('h-data').value,rega:document.getElementById('h-rega').value,obs:document.getElementById('h-obs').value.trim()});
+  save();
+  document.getElementById('h-nome').value='';document.getElementById('h-obs').value='';document.getElementById('h-data').value='';
+  updateHorta();toast('Planta adicionada!');
+}
+function deletePlanta(id){
+  state.plantas=state.plantas.filter(function(p){return p.id!==id;});
+  save();updateHorta();
+}
+function updateHorta(){
+  var el=document.getElementById('horta-lista');
+  if(!state.plantas.length){el.innerHTML='<div style="font-size:13px;color:#888780">Nenhuma planta registrada.</div>';return;}
+  var html='';
+  state.plantas.forEach(function(p){
+    html+='<div class="list-item"><div style="flex:1"><div style="font-size:13px;font-weight:500">'+p.nome+'</div><div style="font-size:11px;color:#888780">'+p.tipo+' · Rega: '+p.rega+(p.data?' · Plantado: '+fmtDate(p.data):'')+'</div>'+(p.obs?'<div style="font-size:11px;color:#888780">'+p.obs+'</div>':'')+'</div><button class="delete-btn" onclick="deletePlanta(\''+p.id+'\')" title="Remover">✕</button></div>';
+  });
+  el.innerHTML=html;
+}
+function addAtivHorta(){
+  var v=document.getElementById('h-ativ').value.trim();if(!v)return;
+  state.atividades.push({id:'a'+Date.now(),texto:v,data:today()});
+  save();document.getElementById('h-ativ').value='';
+  renderAtiv();toast('Atividade registrada!');
+}
+function deleteAtiv(id){
+  state.atividades=state.atividades.filter(function(a){return a.id!==id;});
+  save();renderAtiv();
+}
+function renderAtiv(){
+  var el=document.getElementById('horta-ativ');
+  if(!state.atividades.length){el.innerHTML='<div style="font-size:13px;color:#888780">Nenhuma atividade ainda.</div>';return;}
+  var html='';
+  state.atividades.slice().reverse().forEach(function(a){
+    html+='<div class="list-item"><span style="font-size:13px;flex:1">'+a.texto+'</span><span style="font-size:11px;color:#888780;margin-right:6px">'+fmtDate(a.data)+'</span><button class="delete-btn" onclick="deleteAtiv(\''+a.id+'\')" title="Remover">✕</button></div>';
+  });
+  el.innerHTML=html;
+}
+
+// AGENDA
+var evColors={'Lazer família':'#1D9E75','Visita amigos':'#378ADD','Reunião negócios':'#534AB7','Manutenção programada':'#BA7517','Outro':'#888780'};
+function addEvento(){
+  var nome=document.getElementById('ag-nome').value.trim();
+  var data=document.getElementById('ag-data').value;
+  if(!nome||!data){alert('Informe nome e data.');return;}
+  state.eventos.push({id:'e'+Date.now(),nome:nome,data:data,tipo:document.getElementById('ag-tipo').value,conv:document.getElementById('ag-conv').value.trim(),obs:document.getElementById('ag-obs').value.trim()});
+  state.eventos.sort(function(a,b){return a.data.localeCompare(b.data);});
+  save();
+  document.getElementById('ag-nome').value='';document.getElementById('ag-data').value='';
+  document.getElementById('ag-conv').value='';document.getElementById('ag-obs').value='';
+  updateAgenda();toast('Evento agendado!');
+}
+function deleteEvento(id){
+  state.eventos=state.eventos.filter(function(e){return e.id!==id;});
+  save();updateAgenda();
+}
+function updateAgenda(){
+  var el=document.getElementById('ag-lista');
+  if(!state.eventos.length){el.innerHTML='<div style="font-size:13px;color:#888780">Nenhum evento agendado.</div>';return;}
+  var html='';
+  state.eventos.forEach(function(e){
+    var c=evColors[e.tipo]||'#888780';
+    html+='<div class="list-item"><div class="event-dot" style="background:'+c+'"></div><div style="flex:1"><div style="font-size:13px;font-weight:500">'+e.nome+'</div><div style="font-size:11px;color:#888780">'+e.tipo+' · '+fmtDate(e.data)+(e.conv?' · '+e.conv:'')+'</div>'+(e.obs?'<div style="font-size:11px;color:#888780">'+e.obs+'</div>':'')+'</div><button class="delete-btn" onclick="deleteEvento(\''+e.id+'\')" title="Remover">✕</button></div>';
+  });
+  el.innerHTML=html;
+}
+
+// OBRA
+function saveObra(){
+  var checked=[];
+  for(var i=1;i<=10;i++){if(document.getElementById('o'+i).checked)checked.push(i);}
+  state.obra=checked;save();updateObraBar();
+}
+function updateObraBar(){
+  var done=state.obra?state.obra.length:0;
+  var pct=Math.round(done/10*100);
+  document.getElementById('obra-pct').textContent=pct+'%';
+  document.getElementById('obra-bar').style.width=pct+'%';
+}
+function addNotaObra(){
+  var v=document.getElementById('obra-nota-input').value.trim();if(!v)return;
+  state.notasObra.push({id:'n'+Date.now(),texto:v,data:today()});
+  save();document.getElementById('obra-nota-input').value='';
+  renderNotasObra();toast('Nota adicionada!');
+}
+function deleteNotaObra(id){
+  state.notasObra=state.notasObra.filter(function(n){return n.id!==id;});
+  save();renderNotasObra();
+}
+function renderNotasObra(){
+  var el=document.getElementById('obra-notas');
+  if(!state.notasObra.length){el.innerHTML='<div style="font-size:13px;color:#888780">Nenhuma nota ainda.</div>';return;}
+  var html='';
+  state.notasObra.slice().reverse().forEach(function(n){
+    html+='<div class="list-item"><span style="font-size:13px;flex:1">'+n.texto+'</span><span style="font-size:11px;color:#888780;margin-right:6px">'+fmtDate(n.data)+'</span><button class="delete-btn" onclick="deleteNotaObra(\''+n.id+'\')" title="Remover">✕</button></div>';
+  });
+  el.innerHTML=html;
+}
+
+function renderAll(){
+  updateFinancas();updateTarefas();updateHorta();renderAtiv();updateAgenda();
+  if(state.obra){state.obra.forEach(function(i){var el=document.getElementById('o'+i);if(el)el.checked=true;});}
+  updateObraBar();renderNotasObra();
+}
+
+load();renderAll();
+</script>
+</body>
+</html>
