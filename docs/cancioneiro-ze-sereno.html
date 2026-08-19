@@ -66,6 +66,10 @@ ul.indice a:hover{background:var(--surface)}
 .ficha .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre);margin-bottom:8px}
 .ficha .neg{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed var(--rule);color:var(--ink-2)}
 .ficha .neg b{color:var(--ink)}
+.ficha.img{font-family:var(--serif);font-size:16.5px;line-height:1.55}
+.ficha.img .lbl{font-family:var(--mono);color:var(--hue)}
+.base{border:1px solid var(--rule);border-left:3px solid var(--hue);background:var(--surface);padding:15px 17px;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.62;overflow-x:auto}
+.base .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);margin-bottom:8px}
 
 .letra{columns:2;column-gap:52px;max-width:900px}
 .estrofe{break-inside:avoid;margin-bottom:22px}
@@ -103,7 +107,7 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
     <span>Letras <b>10 completas</b></span>
     <span>Forma <b>Redondilha maior</b></span>
     <span>Autoria <b>Humana e original</b></span>
-    <span>Rende <b>~40 min de set</b></span>
+    <span>Cenas de capa <b>10 prompts</b></span>
   </div>
 </header>
 
@@ -122,35 +126,44 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
     <p>Letra escrita por você é o que sustenta o registro autoral na ABRAMUS ou UBC — obra inteiramente gerada por máquina fica em terreno instável no direito brasileiro. Guarde o arquivo com a data e mantenha os rascunhos: em disputa, o histórico de criação é a prova. Nos metadados, você entra como compositor e produtor fonográfico; Zé Sereno é o artista principal.</p>
   </div>
 
-  <h2 style="font-size:20px;margin:44px 0 16px">O repertório</h2>
+
+  <h2 style="font-size:20px;margin:48px 0 14px">As imagens, no ChatGPT</h2>
+  <p class="measure">O gerador do ChatGPT não tem semente fixa, então a consistência vem de outro lugar: <strong>gere todas as capas na mesma conversa</strong> e comece cada pedido pelo bloco-base abaixo. A partir da segunda imagem, acrescente "mesmo personagem, mesma paleta e mesmo estilo da anterior" — ele mantém a linha visual dentro do mesmo fio.</p>
+
+  <div class="base">
+    <span class="lbl">Bloco-base — cole antes de cada cena</span>
+    Fotografia em filme 35mm com grão visível, luz natural, paleta de ocre, verde-seco e marrom terroso, profundidade de campo rasa, formato paisagem 16:9, sem nenhum texto e sem marca d'água. Personagem recorrente, quando aparecer: Zé Sereno, homem brasileiro de uns setenta anos, magro, pele marcada de sol, bigode grisalho, chapéu de palha surrado e camisa xadrez desbotada de mangas dobradas.
+  </div>
+
+  <ul class="plain measure">
+    <li><strong>Comece pelo retrato do personagem.</strong> Antes das dez cenas, gere uma imagem só dele, de frente, luz boa. Guarde esse arquivo — dá para reenviá-lo em conversas novas e pedir "use este homem na cena a seguir".</li>
+    <li><strong>Peça sempre 16:9.</strong> A capa do YouTube é horizontal; imagem quadrada obriga corte e sempre corta a parte errada.</li>
+    <li><strong>Nada de texto na imagem.</strong> Título entra depois, na edição — assim você reaproveita a mesma arte em vários formatos.</li>
+    <li><strong>Para a miniatura,</strong> peça a mesma cena com enquadramento mais fechado e cor mais quente. Capa de vídeo é vista com o tamanho de um selo: cena aberta demais vira borrão.</li>
+    <li><strong>Uma cena aguenta várias capas.</strong> Peça a mesma locação em outra hora do dia ou em outra estação e você tem a série inteira sem trocar de mundo.</li>
+  </ul>
+
+  <h2 style="font-size:20px;margin:48px 0 16px">O repertório</h2>
   <ul class="indice">
-<li><a href="#c01"><span class="i-n">01</span><span class="i-t">Sereno da Madrugada</span><span class="i-u">faixa de assinatura do canal</span></a></li>
-<li><a href="#c02"><span class="i-n">02</span><span class="i-t">Estrada Boiadeira</span><span class="i-u">toada de boiadeiro</span></a></li>
-<li><a href="#c03"><span class="i-n">03</span><span class="i-t">Café Coado no Pano</span><span class="i-u">carro-chefe dos vídeos de café da manhã</span></a></li>
-<li><a href="#c04"><span class="i-n">04</span><span class="i-t">Viola de Dez Cordas</span><span class="i-u">ode ao instrumento</span></a></li>
-<li><a href="#c05"><span class="i-n">05</span><span class="i-t">Cerração no Cafezal</span><span class="i-u">vídeos de neblina e trabalho na roça</span></a></li>
-<li><a href="#c06"><span class="i-n">06</span><span class="i-t">Terreiro de Catira</span><span class="i-u">faixa animada</span></a></li>
-<li><a href="#c07"><span class="i-n">07</span><span class="i-t">Carta pro Meu Pai</span><span class="i-u">faixa emocional do repertório</span></a></li>
-<li><a href="#c08"><span class="i-n">08</span><span class="i-t">Chuva na Telha de Barro</span><span class="i-u">vídeos de chuva e de dormir</span></a></li>
-<li><a href="#c09"><span class="i-n">09</span><span class="i-t">Juriti Sem Par</span><span class="i-u">moda de dor de cotovelo</span></a></li>
-<li><a href="#c10"><span class="i-n">10</span><span class="i-t">Última Ponteada</span><span class="i-u">encerramento de set</span></a></li>  </ul>
+<li><a href="#c01"><span class="i-n">01</span><span class="i-t">Sereno da Madrugada</span><span class="i-u">faixa de assinatura do canal</span></a></li><li><a href="#c02"><span class="i-n">02</span><span class="i-t">Estrada Boiadeira</span><span class="i-u">toada de boiadeiro</span></a></li><li><a href="#c03"><span class="i-n">03</span><span class="i-t">Café Coado no Pano</span><span class="i-u">carro-chefe dos vídeos de café da manhã</span></a></li><li><a href="#c04"><span class="i-n">04</span><span class="i-t">Viola de Dez Cordas</span><span class="i-u">ode ao instrumento</span></a></li><li><a href="#c05"><span class="i-n">05</span><span class="i-t">Cerração no Cafezal</span><span class="i-u">vídeos de neblina e trabalho na roça</span></a></li><li><a href="#c06"><span class="i-n">06</span><span class="i-t">Terreiro de Catira</span><span class="i-u">faixa animada</span></a></li><li><a href="#c07"><span class="i-n">07</span><span class="i-t">Carta pro Meu Pai</span><span class="i-u">faixa emocional do repertório</span></a></li><li><a href="#c08"><span class="i-n">08</span><span class="i-t">Chuva na Telha de Barro</span><span class="i-u">vídeos de chuva e de dormir</span></a></li><li><a href="#c09"><span class="i-n">09</span><span class="i-t">Juriti Sem Par</span><span class="i-u">moda de dor de cotovelo</span></a></li><li><a href="#c10"><span class="i-n">10</span><span class="i-t">Última Ponteada</span><span class="i-u">encerramento de set</span></a></li></ul>
 </section>
 
 <section id="letras">
-  <div class="sec-head"><span class="sec-mark">AS DEZ MODAS</span><h2>Letras completas</h2></div>
+<div class="sec-head"><span class="sec-mark">AS DEZ MODAS</span><h2>Letra, som e cena</h2></div>
 
 <article class="cancao" id="c01">
   <header class="cab">
     <span class="numero">01</span>
-    <div>
-      <h3>Sereno da Madrugada</h3>
-      <p class="uso">faixa de assinatura do canal · toada lenta · vídeos de amanhecer</p>
-    </div>
+    <div><h3>Sereno da Madrugada</h3><p class="uso">faixa de assinatura do canal · toada lenta · vídeos de amanhecer</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola, viola caipira de dez cordas ponteada, dupla sertaneja em harmonia de terça, violão de nylon, contrabaixo acústico, 66 bpm, gravação de estúdio dos anos 1970, reverb de salão, sotaque caipira
     <span class="neg"><b>Exclude Styles:</b> sertanejo universitario, pop production, drums, electric guitar, autotune, synth</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Um terreiro de fazenda brasileira quinze minutos antes do amanhecer. O céu ainda está azul-escuro na parte de cima e alaranjado na linha do horizonte. Um homem de costas, de chapéu de palha, calçando a bota sentado num banco de madeira na varanda. Um galo no poleiro ao fundo, orvalho brilhando no capim, uma lamparina acesa pendurada no batente. Luz fria da madrugada contrastando com o amarelo quente da lamparina.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -175,19 +188,19 @@ Filho do meu próprio chão</div></div>
 <div class="estrofe"><span class="marca">[Outro]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c02">
   <header class="cab">
     <span class="numero">02</span>
-    <div>
-      <h3>Estrada Boiadeira</h3>
-      <p class="uso">toada de boiadeiro · vídeos de estrada e viagem</p>
-    </div>
+    <div><h3>Estrada Boiadeira</h3><p class="uso">toada de boiadeiro · vídeos de estrada e viagem</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     toada sertaneja, voz masculina grave e sentida, viola caipira dedilhada, berrante ao longe, acordeon distante, contrabaixo acústico, 62 bpm, melancólico, sem bateria
     <span class="neg"><b>Exclude Styles:</b> modern country, pop, drums, electric bass, choir, orchestra</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Uma boiada descendo uma estrada de terra vermelha no fim da tarde, vista de trás e um pouco de lado. Muita poeira suspensa atravessada pela luz baixa do sol, que deixa tudo dourado e esfumaçado. Um vaqueiro a cavalo em silhueta na lateral, chapéu de couro, berrante pendurado no ombro. Morros secos ao fundo, cerca de arame farpado acompanhando a estrada.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro - aboio]</span><div class="versos">Êêêê... ôôô... boi...</div></div>
@@ -211,19 +224,19 @@ Sem endereço e sem amor</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c03">
   <header class="cab">
     <span class="numero">03</span>
-    <div>
-      <h3>Café Coado no Pano</h3>
-      <p class="uso">carro-chefe dos vídeos de café da manhã</p>
-    </div>
+    <div><h3>Café Coado no Pano</h3><p class="uso">carro-chefe dos vídeos de café da manhã</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola, viola caipira ponteada, violão de nylon, dupla em harmonia de terça, 72 bpm, sereno e nostálgico, gravação intimista de varanda, reverb natural
     <span class="neg"><b>Exclude Styles:</b> drums, synth, modern production, orchestral strings</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Uma cozinha de sítio brasileiro logo cedo. Fogão de lenha aceso com uma chaleira de ágata soltando vapor, fumaça subindo até o telhado de telha vã. As mãos enrugadas de uma senhora coando café num coador de pano sobre uma leiteira esmaltada. Sobre a mesa de madeira gasta: broa de milho, um pedaço de queijo, manteiga numa vasilha. Um facho de luz entrando por uma janelinha e cortando a fumaça.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -247,19 +260,19 @@ Só o de casa tem guardado</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c04">
   <header class="cab">
     <span class="numero">04</span>
-    <div>
-      <h3>Viola de Dez Cordas</h3>
-      <p class="uso">ode ao instrumento · abertura de playlists instrumentais</p>
-    </div>
+    <div><h3>Viola de Dez Cordas</h3><p class="uso">ode ao instrumento · abertura de playlists instrumentais</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola, viola caipira de dez cordas em afinação cebolão, ponteado cristalino, violão de aço de apoio, voz masculina, 70 bpm, gravado ao vivo em varanda de madeira
     <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, modern mastering</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Uma viola caipira de dez cordas encostada numa cadeira de palha, numa varanda de madeira, vista bem de perto. A madeira do tampo está gasta pelo uso, as cordas brilham na luz que entra de lado. Ao fundo, desfocado, o quintal de uma casa de roça no fim da tarde. Um chapéu de palha pendurado num prego na parede. Nenhuma pessoa na imagem.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -283,19 +296,19 @@ Cedro, corda e poeira</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c05">
   <header class="cab">
     <span class="numero">05</span>
-    <div>
-      <h3>Cerração no Cafezal</h3>
-      <p class="uso">vídeos de neblina e trabalho na roça</p>
-    </div>
+    <div><h3>Cerração no Cafezal</h3><p class="uso">vídeos de neblina e trabalho na roça</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola instrumental com voz ao fundo, viola caipira, violão, 74 bpm, contemplativo, ar de manhã fria, reverb natural amplo
     <span class="neg"><b>Exclude Styles:</b> vocals upfront, drums, synth, modern production</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Um cafezal ao amanhecer completamente tomado pela cerração. As fileiras de pés de café somem na neblina depois de alguns metros. O carreador de terra vermelha entra na imagem e desaparece no branco. Um homem magro de chapéu, pequeno no quadro, aparece só como silhueta cinzenta entre as fileiras, carregando um balaio. Luz difusa, sem sombras marcadas, quase monocromática em verde acinzentado.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -319,19 +332,19 @@ Que o corpo pede o chapéu</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c06">
   <header class="cab">
     <span class="numero">06</span>
-    <div>
-      <h3>Terreiro de Catira</h3>
-      <p class="uso">faixa animada · quebra o ritmo no meio do set</p>
-    </div>
+    <div><h3>Terreiro de Catira</h3><p class="uso">faixa animada · quebra o ritmo no meio do set</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     cateretê, catira, viola caipira rasqueada, palmas e batidas de pé marcando o compasso, duas vozes em terça, 118 bpm, festivo, gravação ao vivo em terreiro com plateia
     <span class="neg"><b>Exclude Styles:</b> studio polish, drum kit, electric instruments, pop vocals</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Uma festa de catira à noite num terreiro de terra batida. Uma fogueira alta joga luz laranja nas pessoas, homens de bota batendo o pé e palmas no meio da roda, poeira levantada brilhando na luz do fogo. Um sanfoneiro e um violeiro tocando de pé na lateral. Uma moça de vestido rodado girando no centro, com o vestido em movimento. Escuridão total ao redor da roda de luz.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro - palmas e viola]</span></div>
@@ -356,19 +369,19 @@ Catireiro não tem casa</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c07">
   <header class="cab">
     <span class="numero">07</span>
-    <div>
-      <h3>Carta pro Meu Pai</h3>
-      <p class="uso">faixa emocional do repertório · êxodo rural</p>
-    </div>
+    <div><h3>Carta pro Meu Pai</h3><p class="uso">faixa emocional do repertório · êxodo rural</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     toada sertaneja, voz masculina sentida e próxima do microfone, viola caipira dedilhada, violão, contrabaixo acústico, 58 bpm, muito melancólico, gravação intimista
     <span class="neg"><b>Exclude Styles:</b> drums, orchestra, choir, modern country, crescendo</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Um quarto simples de pensão numa cidade grande, à noite. Uma folha de papel escrita à mão e uma caneta sobre uma mesinha, sob a luz de um abajur fraco. Uma viola caipira encostada no canto, coberta de pó. Pela janela sem cortina, prédios cinzentos e luzes frias da cidade. O contraste é o assunto: o amarelo quente da luminária contra o azul frio da janela. Nenhum rosto visível.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -393,19 +406,19 @@ E acende uma vela na igreja</div></div>
 <div class="estrofe"><span class="marca">[Outro]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c08">
   <header class="cab">
     <span class="numero">08</span>
-    <div>
-      <h3>Chuva na Telha de Barro</h3>
-      <p class="uso">vídeos de chuva e de dormir · combina com ambiência de chuva</p>
-    </div>
+    <div><h3>Chuva na Telha de Barro</h3><p class="uso">vídeos de chuva e de dormir · combina com ambiência de chuva</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola lenta, viola caipira ponteada, violão de nylon, voz suave, 60 bpm, sereno, gravação com reverb natural, sem percussão
     <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, loud mastering</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Vista de dentro de uma varanda de casa de roça durante uma chuva forte de fim de tarde. A água escorre em fios do telhado de telha de barro e forma uma cortina na frente do quintal já verde. Um cachorro vira-lata dormindo enrolado no chão de cimento queimado, uma cadeira de balanço vazia e uma xícara de café esquecida no parapeito. Luz cinza-esverdeada da chuva, ar úmido.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -429,19 +442,19 @@ Pra não agradecer só</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c09">
   <header class="cab">
     <span class="numero">09</span>
-    <div>
-      <h3>Juriti Sem Par</h3>
-      <p class="uso">moda de dor de cotovelo · a mais tradicional do repertório</p>
-    </div>
+    <div><h3>Juriti Sem Par</h3><p class="uso">moda de dor de cotovelo · a mais tradicional do repertório</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola, dupla sertaneja em harmonia de terça, viola caipira, violão de nylon, 64 bpm, sofrido, gravação dos anos 1960 em fita analógica, leve saturação
     <span class="neg"><b>Exclude Styles:</b> modern production, drums, synth, autotune, wide stereo</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Uma juriti solitária pousada num galho seco de árvore do cerrado, no fim da tarde. Perto dela, no mesmo galho, um ninho vazio e desmanchado. O fundo é o cerrado desfocado em tons de ocre e verde-oliva, com o sol já baixo criando um contraluz que recorta a silhueta da ave. Imagem silenciosa e melancólica, com muito espaço vazio ao redor do pássaro.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -465,19 +478,19 @@ Numa noite de luar</div></div>
 <div class="estrofe"><span class="marca">[Chorus]</span></div>
   </div>
 </article>
-
 <article class="cancao" id="c10">
   <header class="cab">
     <span class="numero">10</span>
-    <div>
-      <h3>Última Ponteada</h3>
-      <p class="uso">encerramento de set · fecha o círculo com a faixa 01</p>
-    </div>
+    <div><h3>Última Ponteada</h3><p class="uso">encerramento de set · fecha o círculo com a faixa 01</p></div>
   </header>
   <div class="ficha">
-    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    <span class="lbl">Suno — campo Style of Music</span>
     moda de viola, voz masculina envelhecida, viola caipira ponteada, violão, 56 bpm, despedida, gravação intimista com reverb de igreja
     <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, epic build</span>
+  </div>
+  <div class="ficha img">
+    <span class="lbl">ChatGPT — cena da capa (cole depois do bloco-base)</span>
+    Um violeiro muito velho sentado numa cadeira de balanço na varanda, no finzinho da tarde, com a viola no colo e as mãos paradas sobre as cordas. Ele olha para longe, para uma porteira de madeira aberta no fim do pasto. O sol está quase se pondo atrás dos morros e a luz entra rasante e alaranjada. Chapéu de palha caído sobre o peito. Clima de despedida serena, sem tristeza exagerada.
   </div>
   <div class="letra">
 <div class="estrofe"><span class="marca">[Intro]</span></div>
@@ -508,6 +521,7 @@ Foi sereno quem me molhou</div></div>
   <ul class="plain measure">
     <li><strong>Ordem do set:</strong> abra com <em>Sereno da Madrugada</em>, ponha <em>Terreiro de Catira</em> por volta da faixa 6 para quebrar o ritmo, e feche com <em>Última Ponteada</em> — ela responde à primeira, e quem ouve inteiro percebe.</li>
     <li><strong>Nomeie os arquivos</strong> como <code>01-Sereno da Madrugada.mp3</code>: o script de montagem usa o número para ordenar e o resto vira o nome na tracklist.</li>
+    <li><strong>Uma capa por vídeo, não por música.</strong> As dez cenas servem para as capas dos vídeos e para os Shorts — escolha a mais forte de cada set. As outras viram arte de faixa no streaming.</li>
     <li><strong>Não lance as dez de uma vez</strong> no streaming. Uma por semana, cada uma com pitch no Spotify for Artists.</li>
     <li><strong>Guarde as três melhores</strong> para distribuir primeiro — <em>Carta pro Meu Pai</em> e <em>Café Coado no Pano</em> são as de maior apelo emocional, e é por elas que o público costuma procurar o artista fora do YouTube.</li>
   </ul>
