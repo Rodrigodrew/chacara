@@ -70,28 +70,41 @@ for i in "${!TRACKS[@]}"; do
 done
 echo ">> tracklist.txt gerado  (duracao total ~$((acc/60)) min)"
 
-# --- 3. emenda com crossfade ----------------------------------------------
-cur="$TMP/cur.wav"
-ffmpeg -v error -y -i "${TRACKS[0]}" -ar 44100 -ac 2 "$cur"
-for ((i=1; i<${#TRACKS[@]}; i++)); do
-  ffmpeg -v error -y -i "$cur" -i "${TRACKS[$i]}" \
-    -filter_complex "[0:a][1:a]acrossfade=d=$XF:c1=tri:c2=tri[a]" \
-    -map "[a]" -ar 44100 -ac 2 "$TMP/next.wav"
-  mv "$TMP/next.wav" "$cur"
-  printf '\r>> emendando faixa %d/%d' "$((i+1))" "${#TRACKS[@]}"
+# --- 3. emenda + ambiencia + normalizacao, tudo numa passada -------------
+#   Monta o grafo de filtros: cada faixa e' padronizada em 44.1k estereo,
+#   emendada em cadeia com acrossfade, e o resultado recebe (opcional) a
+#   ambiencia em loop e a normalizacao. Uma unica chamada de ffmpeg, em vez
+#   de reescrever o WAV inteiro a cada faixa.
+INPUTS=(); GRAPH=""; N=${#TRACKS[@]}
+for f in "${TRACKS[@]}"; do INPUTS+=(-i "$f"); done
+for ((i=0; i<N; i++)); do
+  GRAPH+="[$i:a]aformat=sample_rates=44100:channel_layouts=stereo[s$i];"
 done
-echo ""
-
-# --- 4. ambiencia + normalizacao ------------------------------------------
-if [ -n "$AMB" ]; then
-  echo ">> mixando ambiencia em ${AMB_DB}dB"
-  ffmpeg -v error -y -i "$cur" -stream_loop -1 -i "$AMB" \
-    -filter_complex "[1:a]volume=${AMB_DB}dB[amb];[0:a][amb]amix=inputs=2:duration=first:normalize=0[mix];[mix]loudnorm=I=${LUFS}:TP=-1.5:LRA=11[out]" \
-    -map "[out]" -ar 44100 -ac 2 "$TMP/set.wav"
+if [ "$N" -eq 1 ]; then
+  LAST="[s0]"
 else
-  ffmpeg -v error -y -i "$cur" -af "loudnorm=I=${LUFS}:TP=-1.5:LRA=11" -ar 44100 -ac 2 "$TMP/set.wav"
+  PREV="[s0]"
+  for ((i=1; i<N; i++)); do
+    GRAPH+="${PREV}[s$i]acrossfade=d=$XF:c1=tri:c2=tri[x$i];"
+    PREV="[x$i]"
+  done
+  LAST="$PREV"
 fi
-echo ">> audio normalizado em ${LUFS} LUFS"
+
+if [ -n "$AMB" ]; then
+  echo ">> emendando $N faixas + ambiencia em ${AMB_DB}dB"
+  INPUTS+=(-stream_loop -1 -i "$AMB")
+  GRAPH+="[${N}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=${AMB_DB}dB[amb];"
+  GRAPH+="${LAST}[amb]amix=inputs=2:duration=first:normalize=0[mix];"
+  GRAPH+="[mix]loudnorm=I=${LUFS}:TP=-1.5:LRA=11[out]"
+else
+  echo ">> emendando $N faixas"
+  GRAPH+="${LAST}loudnorm=I=${LUFS}:TP=-1.5:LRA=11[out]"
+fi
+
+ffmpeg -v error -y "${INPUTS[@]}" -filter_complex "$GRAPH" \
+  -map "[out]" -ar 44100 -ac 2 "$TMP/set.wav"
+echo ">> audio pronto e normalizado em ${LUFS} LUFS"
 
 # --- 5. render -------------------------------------------------------------
 echo ">> renderizando video (isso demora)"
