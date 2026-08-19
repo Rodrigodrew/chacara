@@ -1,0 +1,569 @@
+<title>Viola &amp; Taverna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F2EFE9; --surface-2:#E9E5DC;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DBD6CD;
+  --hue:#D31A56;      /* acento estrutural da série */
+  --ocre:#9A6212;     /* Canal A — sertanejo */
+  --sea:#136A66;      /* Canal B — histórico */
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --ocre:#DFA43F; --sea:#4FBCB1;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --ocre:#DFA43F; --sea:#4FBCB1;
+}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 120px}
+.measure{max-width:68ch}
+p{margin:0 0 1em}
+a{color:var(--hue);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--hue) 35%,transparent)}
+a:hover{border-bottom-color:var(--hue)}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px;border-radius:2px}
+strong{font-weight:600}
+
+.hero{padding:80px 0 48px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(42px,8.5vw,96px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 22px}
+h1 .amp{color:var(--hue)}
+.dek{font-size:clamp(19px,2.2vw,23px);color:var(--ink-2);max-width:60ch;margin-bottom:30px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:68px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:14px;margin-bottom:32px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(25px,3.8vw,38px);line-height:1.03;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:19px;margin:40px 0 12px;text-wrap:balance}
+h4{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:30px 0 10px}
+.lede{font-size:21px;line-height:1.5;max-width:62ch;margin-bottom:26px}
+
+/* canais */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:30px 0}
+.ch{background:var(--paper);padding:24px 22px}
+.ch-tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.ch.a .ch-tag{color:var(--ocre)} .ch.b .ch-tag{color:var(--sea)}
+.ch h3{margin:0 0 10px;font-size:20px}
+.ch p{font-size:16px}
+.ch p:last-child{margin-bottom:0}
+.ch ul{font-size:16px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:30px 0}
+.stat{background:var(--paper);padding:18px 16px}
+.stat .n{font-family:var(--display);font-size:26px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:8px;line-height:1.4}
+
+.tw{overflow-x:auto;margin:26px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:2px;border:1px solid}
+.pill.ess{color:var(--hue);border-color:color-mix(in srgb,var(--hue) 45%,transparent)}
+.pill.opt{color:var(--ink-2);border-color:var(--rule)}
+.pill.a{color:var(--ocre);border-color:color-mix(in srgb,var(--ocre) 45%,transparent)}
+.pill.b{color:var(--sea);border-color:color-mix(in srgb,var(--sea) 45%,transparent)}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:17px 19px;margin:26px 0;font-size:16.5px;line-height:1.55}
+.note.warn{border-left-color:var(--ocre)}
+.note.good{border-left-color:var(--sea)}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn .tag{color:var(--ocre)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+ul,ol{margin:0 0 1.1em;padding-left:1.3em}
+li{margin-bottom:.45em}
+li::marker{color:var(--hue)}
+ul.plain{list-style:none;padding-left:0}
+ul.plain li{padding-left:22px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+ol.steps{counter-reset:s;list-style:none;padding-left:0}
+ol.steps>li{counter-increment:s;padding-left:42px;position:relative;margin-bottom:16px}
+ol.steps>li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:2px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--hue);letter-spacing:.06em}
+
+pre{background:var(--surface);border:1px solid var(--rule);padding:15px 17px;overflow-x:auto;margin:18px 0;font-family:var(--mono);font-size:13px;line-height:1.62;color:var(--ink)}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+pre code{background:none;padding:0;font-size:inherit}
+.cmt{color:var(--ink-2)}
+
+.prompt{border:1px solid var(--rule);background:var(--surface);padding:15px 17px;margin:16px 0;font-family:var(--mono);font-size:13.5px;line-height:1.62;overflow-x:auto}
+.prompt .lbl{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.prompt.a .lbl{color:var(--ocre)} .prompt.b .lbl{color:var(--sea)}
+.prompt .neg{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed var(--rule);color:var(--ink-2)}
+.prompt .neg b{color:var(--ink);font-weight:600}
+
+footer{margin-top:76px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+
+@media(max-width:720px){
+  body{font-size:17px}
+  .duo{grid-template-columns:1fr}
+  .hero{padding:52px 0 36px}
+}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Manual de operação · Canais de música com IA · Propulse</div>
+  <h1>Viola <span class="amp">&amp;</span> Taverna</h1>
+  <p class="dek">Dois canais, uma fábrica: o passo a passo completo para sair do zero até os primeiros trinta vídeos — ferramentas, prompts, perfis, montagem e publicação.</p>
+  <div class="meta">
+    <span>Canal A <b>Sertanejo raiz &amp; viola</b></span>
+    <span>Canal B <b>Cenário histórico</b></span>
+    <span>Custo mensal <b>~R$ 200–400</b></span>
+    <span>Meta <b>30 vídeos em 90 dias</b></span>
+  </div>
+</header>
+
+<section id="tese">
+  <div class="sec-head"><span class="sec-mark">00</span><h2>Por que esses dois juntos</h2></div>
+  <p class="lede measure">A escolha está certa, e o motivo é que os dois canais têm funções diferentes. Um é a escola, o outro é a fábrica. Rodar só o de RPM alto atrasa seu aprendizado; rodar só o barato não paga a conta.</p>
+
+  <div class="duo">
+    <div class="ch a">
+      <div class="ch-tag">Canal A · o laboratório</div>
+      <h3>Sertanejo raiz, viola, fazenda</h3>
+      <p>Concorrência baixa, produção rápida, público brasileiro. O RPM é fraco — é o preço de aprender barato.</p>
+      <ul class="plain">
+        <li>Você domina o idioma, a estética e o repertório: erra menos e julga melhor o que ficou genérico.</li>
+        <li>Ciclo curto de feedback: dá para publicar todo dia e ler o resultado em uma semana.</li>
+        <li>Monetização real fora do AdSense: viola toca em rádio de interior, festa, restaurante de beira de estrada — <strong>é o nicho com melhor potencial de ECAD</strong> dos dois.</li>
+        <li>Serve de vitrine para os artistas da Propulse: é música que seus clientes reconhecem.</li>
+      </ul>
+    </div>
+    <div class="ch b">
+      <div class="ch-tag">Canal B · a fábrica</div>
+      <h3>Cenário histórico &amp; ambiência</h3>
+      <p>Público EUA e Europa, sessões longuíssimas, RPM alto. É onde a receita aparece.</p>
+      <ul class="plain">
+        <li>A audiência não busca "música medieval": busca <strong>um lugar para ficar</strong> enquanto lê, estuda, joga RPG ou dorme.</li>
+        <li>Consumo de 2 a 3 horas por sessão — o melhor tempo de exibição que existe em música.</li>
+        <li>Barreira de entrada real: exige camada de ambiência e loop visual, e é justamente por isso que a concorrência é menor.</li>
+        <li>Cauda longa: um vídeo bom continua rendendo por anos, porque a busca é perene.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note good">
+    <span class="tag">Decisão de escopo — comece por uma sala só</span>
+    <p>Taverna medieval, saloon e café parisiense são três mundos distintos. Abrir os três de uma vez confunde o algoritmo e você. <strong>Comece pela taverna medieval</strong> — é a maior audiência dos três, movida por leitura, estudo, RPG e sono. Trate saloon e café parisiense como <em>séries</em> dentro do mesmo canal, lançadas só depois do vídeo 20, sob um guarda-chuva narrativo: uma hospedaria fora do tempo, com salas diferentes. Um canal, três cenários, uma marca.</p>
+  </div>
+</section>
+
+<section id="arsenal">
+  <div class="sec-head"><span class="sec-mark">01</span><h2>O arsenal</h2></div>
+  <p class="lede measure">Cinco ferramentas resolvem 90% do trabalho. O resto é conforto. Comece pelo essencial e só adicione quando o gargalo aparecer.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Função</th><th>Ferramenta</th><th>Custo aprox.</th><th>Nota</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill ess">Essencial</span> Música</td><td><strong>Suno</strong> — plano pago</td><td class="num">US$ 10–30/mês</td><td>O plano gratuito <strong>não</strong> dá direito comercial. Isso não é detalhe: é a base legal de tudo.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Imagem</td><td><strong>Midjourney</strong> ou <strong>Flux</strong> (via Freepik/Fal)</td><td class="num">US$ 10/mês</td><td>MJ tem mais alma para cenário; Flux é mais barato e obedece melhor a texto literal.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Edição do personagem</td><td><strong>Nano Banana</strong> (Gemini) ou MJ com referência</td><td class="num">incluso</td><td>Serve para manter o mesmo rosto/cenário entre capas. Consistência é o que faz parecer marca.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Montagem</td><td><strong>ffmpeg</strong> + o script deste manual</td><td class="num">grátis</td><td>DaVinci Resolve só se você quiser mexer na mão.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Ambiência</td><td><strong>Freesound</strong> (filtro CC0) e <strong>Pixabay</strong></td><td class="num">grátis</td><td>Fogueira, chuva, murmurinho, cigarra, galo, vento. Confira a licença de cada arquivo.</td></tr>
+        <tr><td><span class="pill b">Canal B</span> Loop animado</td><td><strong>Kling</strong>, <strong>Hailuo</strong> ou <strong>Runway</strong></td><td class="num">US$ 10–30/mês</td><td>Anima a capa em 5–10s de vídeo. Faz muita diferença na retenção do nicho histórico.</td></tr>
+        <tr><td><span class="pill opt">Opcional</span> Parallax barato</td><td><strong>Immersity AI</strong></td><td class="num">US$ 0–10/mês</td><td>Dá profundidade 2.5D a uma imagem estática. Substitui o gerador de vídeo no começo.</td></tr>
+        <tr><td><span class="pill opt">Opcional</span> Efeitos sonoros sob medida</td><td><strong>ElevenLabs SFX</strong></td><td class="num">US$ 5/mês</td><td>Quando você não acha o som exato (taberna cheia, carroça, brasa estalando).</td></tr>
+        <tr><td><span class="pill opt">Opcional</span> Pesquisa de título</td><td><strong>vidIQ</strong> ou <strong>TubeBuddy</strong></td><td class="num">grátis / US$ 10</td><td>Use só para validar demanda de busca, não para copiar título.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Distribuição</td><td><strong>DistroKid</strong> (ou pela Propulse)</td><td class="num">US$ 23/ano</td><td>Leia a Parte 09 antes de marcar qualquer coisa no Content ID.</td></tr>
+        <tr><td><span class="pill ess">Essencial</span> Direitos</td><td><strong>ABRAMUS</strong> ou <strong>UBC</strong></td><td class="num">grátis</td><td>Cadastro como autor, intérprete e produtor fonográfico.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">~R$ 200</div><div class="l">Mínimo viável por mês (Suno + imagem)</div></div>
+    <div class="stat"><div class="n">~R$ 400</div><div class="l">Com gerador de vídeo para o Canal B</div></div>
+    <div class="stat"><div class="n">2–3 h</div><div class="l">De trabalho por vídeo, do prompt ao upload</div></div>
+    <div class="stat"><div class="n">3–4×</div><div class="l">De música gerada para cada faixa aprovada</div></div>
+  </div>
+</section>
+
+<section id="identidade">
+  <div class="sec-head"><span class="sec-mark">02</span><h2>Identidade dos dois canais</h2></div>
+  <p class="lede measure">Canal genérico vende só AdSense. Canal com persona vende AdSense, streaming, ECAD, sync e curso. A persona não precisa ser elaborada — precisa ser <em>consistente</em>.</p>
+
+  <div class="duo">
+    <div class="ch a">
+      <div class="ch-tag">Canal A</div>
+      <h3>Nome e persona</h3>
+      <p><strong>Opções de nome:</strong> Viola de Poeira · Rancho da Viola · Sertão de Cordas · Viola do Zé Sereno · Cordas do Cerrado</p>
+      <p><strong>Persona sugerida:</strong> um violeiro de setenta e poucos anos, filho de tropeiro, nascido no interior de Goiás, que aprendeu ponteado com o pai e gravou em rádio AM nos anos 70. Nome curto e de época: <em>Zé Sereno</em>, <em>Tião das Cordas</em>, <em>Juvenal Rosa</em>.</p>
+      <p><strong>Visual:</strong> chapéu de palha, viola de dez cordas, varanda de madeira, luz de fim de tarde, poeira no ar. Sempre a mesma pessoa, sempre a mesma paleta de ocre e verde seco.</p>
+      <p><strong>Bio do canal:</strong> "Modas de viola, toadas e catira para quem acorda cedo e sente falta da roça. Música nova, com alma antiga."</p>
+    </div>
+    <div class="ch b">
+      <div class="ch-tag">Canal B</div>
+      <h3>Nome e persona</h3>
+      <p><strong>Opções de nome:</strong> The Amber Lantern · Hearth &amp; Lute · The Wayfarer's Rest · Candle &amp; Cask · The Long Hearth</p>
+      <p><strong>Conceito guarda-chuva:</strong> uma hospedaria que existe em todos os séculos ao mesmo tempo. Cada série é uma sala — <em>The Tavern</em> (medieval), <em>The Saloon</em> (velho oeste), <em>The Café</em> (Paris, 1930). Isso permite os três cenários sem diluir o canal.</p>
+      <p><strong>Persona musical (para o Spotify):</strong> um nome de artista coeso, não o nome do canal. <em>Alaric Vane</em>, <em>The Hearthfire Consort</em>, <em>Corvin Hale</em>.</p>
+      <p><strong>Visual:</strong> luz de vela e lareira, madeira escura, caneca de estanho, janela com chuva. Nada de rostos em close — o espectador precisa se colocar dentro da cena.</p>
+      <p><strong>Bio do canal:</strong> "Music and ambience for reading, studying, writing and long nights. Pull up a chair by the fire."</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="tag">Antes de fechar o nome</span>
+    <p>Confira em três lugares: se o <code>@handle</code> está livre no YouTube, se o nome já existe como artista no Spotify e se o domínio ou o perfil de Instagram está disponível. Nome tomado no Spotify significa perfil misturado com o de outro artista — dor de cabeça permanente.</p>
+  </div>
+</section>
+
+<section id="perfis">
+  <div class="sec-head"><span class="sec-mark">03</span><h2>Abrir os perfis, passo a passo</h2></div>
+  <p class="lede measure">Faça isso uma vez, com calma, para os dois canais. Errar aqui custa meses depois — principalmente na verificação, que é o que libera vídeo longo.</p>
+
+  <h3>No YouTube</h3>
+  <ol class="steps">
+    <li><strong>Crie uma Conta de Marca, não um canal na sua conta pessoal.</strong> No YouTube, <em>Configurações → Adicionar ou gerenciar seus canais → Criar um canal</em>. A Conta de Marca permite ter vários canais sob o mesmo login, delegar acesso a um editor depois e vender ou transferir o canal sem entregar sua conta pessoal. Um canal separado para cada nicho — nunca os dois no mesmo.</li>
+    <li><strong>Ative a verificação de dois fatores</strong> e cadastre e-mail e telefone de recuperação. Canal monetizado é ativo financeiro; conta invadida é prejuízo direto.</li>
+    <li><strong>Verifique a conta por telefone</strong> em <em>youtube.com/verify</em>. Isso é obrigatório para publicar vídeos com mais de 15 minutos — sem essa etapa, nada do seu formato funciona.</li>
+    <li><strong>Preencha a identidade completa:</strong> avatar (a persona), banner 2560×1440 com a área segura central, <code>@handle</code>, descrição com as palavras que as pessoas de fato buscam, links, e-mail de contato comercial, país e idioma. No Canal B, tudo em inglês.</li>
+    <li><strong>Configure os padrões de upload</strong> em <em>Configurações → Upload padrão</em>: categoria Música, idioma, "não é conteúdo para crianças", licença padrão, e um bloco de descrição já pronto. Isso economiza cinco minutos por vídeo, todo dia.</li>
+    <li><strong>Crie as seções da página inicial</strong> assim que tiver dez vídeos: uma playlist por série (Manhã na Fazenda, Modas de Viola / The Tavern, The Saloon). Playlist bem montada é o que faz o espectador emendar um vídeo no outro.</li>
+    <li><strong>Monetização:</strong> o programa de parcerias abre com 1.000 inscritos e 4.000 horas públicas de exibição em 12 meses. Configure o AdSense assim que for elegível e ative os anúncios em pausa e no meio do vídeo — em vídeo de uma hora, o intervalo entre anúncios é a alavanca de receita mais direta que existe.</li>
+  </ol>
+
+  <h3>Nas redes e no streaming</h3>
+  <ol class="steps">
+    <li><strong>Instagram e TikTok com o mesmo handle</strong>, mesmo que fiquem parados no começo. Reserve o nome antes de precisar dele.</li>
+    <li><strong>Distribua a primeira faixa</strong> pela DistroKid usando exatamente o nome artístico da persona. Atenção ao metadado: a persona é o <em>artista principal</em>, você entra como <em>produtor</em> e, quando escrever a letra, como <em>compositor</em>.</li>
+    <li><strong>Reivindique o perfil no Spotify for Artists</strong> assim que a faixa entrar no ar — é justamente o passo que o Will nunca deu. Sem isso não existe pitch, não existe Release Radar e não existe playlist algorítmica.</li>
+    <li><strong>Cadastre-se na ABRAMUS ou UBC</strong> como autor, intérprete e produtor fonográfico. Comece pelo Canal A: viola tocando em rádio de interior e em estabelecimento comercial é execução pública que hoje ninguém recolhe.</li>
+    <li><strong>Abra uma lista própria</strong> — newsletter ou grupo — desde o primeiro vídeo. É a única audiência que nenhuma plataforma pode desligar.</li>
+  </ol>
+
+  <div class="note warn">
+    <span class="tag">A questão da autoria — resolva na origem</span>
+    <p>Escreva a letra você mesmo em pelo menos metade do catálogo. Além de melhorar muito o resultado musical, é o que sustenta o registro autoral: obra inteiramente gerada por máquina fica em terreno instável no direito brasileiro, enquanto letra humana, arranjo, seleção e produção são seus de forma defensável. No Canal B, que é majoritariamente instrumental, apoie-se no <strong>direito conexo de produtor fonográfico</strong> — esse não depende de autoria criativa.</p>
+  </div>
+</section>
+
+<section id="musica">
+  <div class="sec-head"><span class="sec-mark">04</span><h2>Prompts de música</h2></div>
+  <p class="lede measure">A diferença entre som de banco de imagem e som que prende está em quatro coisas: instrumentação específica, época da gravação, andamento e caráter do registro. Gênero sozinho produz genérico.</p>
+
+  <h3>Como operar o Suno</h3>
+  <ul class="plain measure">
+    <li>Use sempre o <strong>modo Custom</strong>. O campo de descrição solta demais a mão do modelo.</li>
+    <li><strong>Style of Music</strong> recebe o prompt de estilo; <strong>Exclude Styles</strong> é onde você mata o genérico — é o campo que quase ninguém usa e que mais muda o resultado.</li>
+    <li>Marque <strong>Instrumental</strong> quando não quiser voz, ou escreva a letra com marcações <code>[Intro]</code>, <code>[Verse]</code>, <code>[Chorus]</code>, <code>[Solo de viola]</code>, <code>[Outro]</code>.</li>
+    <li>Achou uma faixa boa? Salve como <strong>Persona</strong> e gere as próximas a partir dela. É o que mantém a mesma voz e o mesmo timbre no catálogo inteiro — sem isso o perfil de artista não se sustenta.</li>
+    <li><strong>Extend</strong> alonga uma faixa curta; <strong>Cover</strong> reinterpreta uma faixa que você já gostou com outra roupagem. Ambos servem para produzir variação sem perder a identidade.</li>
+    <li>Baixe em <strong>WAV</strong> quando o plano permitir. Você vai normalizar e mixar depois; MP3 já comprimido perde na segunda geração.</li>
+    <li><strong>Gere de três a quatro para cada uma que você vai usar.</strong> Corte sem dó: intro fraca nos primeiros oito segundos, artefato de voz, final abrupto, andamento que quebra o clima do set.</li>
+  </ul>
+
+  <h4>Canal A · Sertanejo raiz, viola, fazenda</h4>
+
+  <div class="prompt a">
+    <span class="lbl">01 · Moda de viola clássica (dupla)</span>
+    moda de viola, viola caipira de dez cordas ponteada, dupla sertaneja cantando em harmonia de terça, violão de nylon, contrabaixo acústico, andamento lento 68 bpm, gravação de estúdio dos anos 1970, reverb curto de salão, voz na frente da mistura, sotaque caipira do interior
+    <span class="neg"><b>Exclude:</b> sertanejo universitario, pop production, drums, electric guitar, autotune, synth, reggaeton</span>
+  </div>
+
+  <div class="prompt a">
+    <span class="lbl">02 · Toada de boiadeiro</span>
+    toada sertaneja, voz masculina grave e sentida, viola caipira dedilhada, acordeon distante, contrabaixo acústico, 60 bpm, melancolico, tema de boiada e estrada de terra, gravacao intimista, sem bateria
+    <span class="neg"><b>Exclude:</b> modern country, pop, drums, electric bass, choir, orchestra</span>
+  </div>
+
+  <div class="prompt a">
+    <span class="lbl">03 · Viola instrumental ao amanhecer</span>
+    viola caipira instrumental, ponteado limpo e cristalino, afinacao cebolao, violao de aco de apoio, 72 bpm, sereno e contemplativo, gravado ao vivo em varanda de madeira, ar de manha cedo, reverb natural amplo
+    <span class="neg"><b>Exclude:</b> vocals, drums, synth, orchestral strings, modern production</span>
+  </div>
+
+  <div class="prompt a">
+    <span class="lbl">04 · Cateretê / catira animada</span>
+    cateretê, catira, viola caipira rasqueada, palmas e batidas de pe marcando o compasso, duas vozes em terça, 118 bpm, festivo, festa de peao em terreiro de terra batida, gravacao ao vivo com plateia ao fundo
+    <span class="neg"><b>Exclude:</b> studio polish, drum kit, electric instruments, pop vocals</span>
+  </div>
+
+  <div class="prompt a">
+    <span class="lbl">05 · Rasqueado / guarânia de fronteira</span>
+    guarania, rasqueado, acordeon melancolico, viola caipira, violao, contrabaixo acustico, compasso 3/4, 84 bpm, saudoso, influencia paraguaia, gravacao dos anos 1960, fita analogica
+    <span class="neg"><b>Exclude:</b> modern mastering, drums, synth pads, english vocals</span>
+  </div>
+
+  <div class="prompt a">
+    <span class="lbl">06 · Rádio AM, 1974 (lo-fi proposital)</span>
+    moda de viola em gravacao de radio AM dos anos 1970, dupla caipira, viola e violao, chiado de fita, banda estreita, leve saturacao, mono, agudos abafados, como quem escuta numa cozinha de sitio
+    <span class="neg"><b>Exclude:</b> hi-fi, wide stereo, modern loudness, clean digital sound</span>
+  </div>
+
+  <h4>Letra — o modelo que sustenta o registro autoral</h4>
+<pre><code>[Intro]
+(viola ponteada, quatro compassos)
+
+[Verso 1]
+Quando o sol raia atrás do curral
+E o orvalho ainda pesa no chão
+Eu ponteio essa viola de aço
+Pra acordar quem dorme no sertão
+
+[Refrão]
+Ai, minha viola de dez cordas
+Companheira de estrada e de dor
+Tudo que eu não soube dizer
+Eu deixei no som do bordão
+
+[Solo de viola]
+
+[Verso 2] ...</code></pre>
+  <p class="measure">Duas estrofes e um refrão bastam. A letra é sua, escrita por você — é isso que dá lastro ao cadastro na associação e o que faz a música parar de soar como catálogo de máquina.</p>
+
+  <h4>Canal B · Taverna, saloon e café</h4>
+
+  <div class="prompt b">
+    <span class="lbl">01 · Taverna acolhedora (carro-chefe)</span>
+    medieval tavern folk, lute, wooden flute, fiddle, hurdy-gurdy, bodhran hand drum, dorian mode, warm and cozy, 96 bpm, played live in a stone hall, faint crowd murmur, candlelit, loopable
+    <span class="neg"><b>Exclude:</b> orchestra, epic trailer music, choir, synth, modern drums, cinematic percussion</span>
+  </div>
+
+  <div class="prompt b">
+    <span class="lbl">02 · Lareira ao fim da noite (para dormir)</span>
+    slow medieval lullaby, solo lute and soft recorder, no percussion, 56 bpm, very quiet, intimate, sleepy, wooden room reverb, gentle and repetitive, instrumental
+    <span class="neg"><b>Exclude:</b> vocals, drums, brass, orchestra, crescendo, dramatic dynamics</span>
+  </div>
+
+  <div class="prompt b">
+    <span class="lbl">03 · Canção de taverna com coro</span>
+    rowdy medieval drinking song, male group vocals in unison, tankards on wooden tables, fiddle and accordion, 128 bpm, celtic, cheerful, recorded live in a crowded inn
+    <span class="neg"><b>Exclude:</b> modern pop, studio polish, electric instruments, autotune</span>
+  </div>
+
+  <div class="prompt b">
+    <span class="lbl">04 · Balada do bardo</span>
+    melancholic bard ballad, solo male baritone with lute, aeolian mode, 64 bpm, storytelling, echo of a large empty hall, candle smoke, sparse arrangement
+    <span class="neg"><b>Exclude:</b> orchestra, drums, choir, epic build, modern production</span>
+  </div>
+
+  <div class="prompt b">
+    <span class="lbl">05 · Saloon do velho oeste</span>
+    old west saloon, slightly out of tune upright honky-tonk piano, ragtime feel, banjo and harmonica, 104 bpm, dusty wooden floor reverb, 1880s frontier town, instrumental
+    <span class="neg"><b>Exclude:</b> modern country, drums, electric guitar, orchestra, clean tuning</span>
+  </div>
+
+  <div class="prompt b">
+    <span class="lbl">06 · Café parisiense, 1935</span>
+    1930s parisian cafe, musette accordion, gypsy jazz manouche guitar, upright bass, clarinet, waltz in 3/4, 92 bpm, vinyl crackle, warm mono recording, rain on the window
+    <span class="neg"><b>Exclude:</b> modern jazz, drums, synth, english vocals, digital reverb</span>
+  </div>
+
+  <div class="note good">
+    <span class="tag">Regra de ouro dos dois canais</span>
+    <p>Um vídeo de uma hora precisa de <strong>15 a 18 faixas aprovadas</strong>. Gere de 45 a 60 e descarte o resto. O trabalho não é gerar — é <em>escolher</em>. Ordene o set por energia, com a faixa mais cativante em primeiro lugar: os trinta segundos iniciais decidem a retenção do vídeo inteiro.</p>
+  </div>
+</section>
+
+<section id="imagem">
+  <div class="sec-head"><span class="sec-mark">05</span><h2>Prompts de imagem e de vídeo</h2></div>
+  <p class="lede measure">A capa não vende o gênero, vende a cena. O espectador precisa olhar e pensar "eu quero estar aí" antes de ler o título.</p>
+
+  <h4>Capas · Canal A</h4>
+  <div class="prompt a">
+    <span class="lbl">Amanhecer na varanda</span>
+    an old brazilian farmer sitting on a wooden farmhouse porch at sunrise, straw hat, holding a ten-string caipira guitar, warm golden light, mist over the pasture behind, distant cattle, dry ochre and sage color palette, 35mm film photography, shallow depth of field, grain --ar 16:9 --style raw
+  </div>
+  <div class="prompt a">
+    <span class="lbl">Fim de tarde no curral</span>
+    dusty countryside corral at golden hour, wooden fence, silhouette of a man with a hat leaning against the gate holding a viola, long shadows, warm dust in the air, brazilian cerrado landscape, 35mm film, muted ochre palette --ar 16:9 --style raw
+  </div>
+  <div class="prompt a">
+    <span class="lbl">Cozinha de sítio, rádio antigo</span>
+    rustic brazilian farmhouse kitchen at dawn, wood stove with a kettle, old AM radio on a shelf, enamel coffee pot, warm light through a small window, nostalgic, 35mm film photography, soft grain --ar 16:9 --style raw
+  </div>
+
+  <h4>Capas · Canal B</h4>
+  <div class="prompt b">
+    <span class="lbl">Taverna à luz de vela</span>
+    cozy medieval tavern interior at night, roaring stone fireplace, heavy oak table with a pewter tankard and a lute leaning against a bench, candlelight, rain on a leaded glass window, warm amber light, painterly, atmospheric, no people --ar 16:9 --style raw
+  </div>
+  <div class="prompt b">
+    <span class="lbl">Saloon empoeirado</span>
+    old west saloon interior at dusk, upright piano against the wall, swinging doors, dust in a shaft of low sunlight, whiskey glass on a wooden table, worn floorboards, warm sepia palette, painterly, no people --ar 16:9 --style raw
+  </div>
+  <div class="prompt b">
+    <span class="lbl">Café parisiense na chuva</span>
+    small parisian cafe interior in 1935, marble table by a rain-streaked window, accordion resting on a chair, brass lamp, wet cobblestone street outside, warm interior light against cold blue rain, painterly, cinematic, no people --ar 16:9 --style raw
+  </div>
+
+  <div class="note">
+    <span class="tag">Consistência entre capas</span>
+    <p>Fixe a mesma paleta e o mesmo ângulo em todo o canal. No Midjourney, reaproveite a mesma <em>seed</em> e use referência de personagem para manter o mesmo violeiro; no Nano Banana, edite a imagem aprovada em vez de gerar do zero ("mesma cena, agora ao entardecer"). No Canal B, nunca coloque rostos em primeiro plano — a cena precisa ser um lugar onde o espectador se coloca, não o retrato de outra pessoa.</p>
+  </div>
+
+  <h4>Loop animado — o prompt de vídeo</h4>
+  <p class="measure">Gere a imagem primeiro, depois anime <strong>a mesma imagem</strong> (image-to-video) em 5 a 10 segundos. Movimento mínimo é o que faz o loop ser invisível.</p>
+  <div class="prompt b">
+    <span class="lbl">Kling / Hailuo / Runway — image to video</span>
+    subtle ambient motion only: firelight flickering on the walls, thin steam rising from the tankard, dust motes drifting through the light, rain running down the window, candle flame swaying slightly. static camera, no camera movement, no people, no new objects, seamless loop
+  </div>
+  <div class="prompt a">
+    <span class="lbl">Versão Canal A</span>
+    subtle ambient motion only: morning mist drifting slowly over the pasture, tall grass swaying in a light breeze, dust in the golden light, curtain moving gently. static camera, no camera movement, no new objects, seamless loop
+  </div>
+  <p class="measure">Sem gerador de vídeo, resolva com um leve <em>zoom</em> lento na imagem estática ou com profundidade 2.5D no Immersity — e, para o loop ficar perfeito, gere 8 segundos e monte ida e volta: <code>ffmpeg -i loop.mp4 -filter_complex "[0]reverse[r];[0][r]concat=n=2" pingpong.mp4</code>.</p>
+</section>
+
+<section id="ambiencia">
+  <div class="sec-head"><span class="sec-mark">06</span><h2>A camada de ambiência</h2></div>
+  <p class="lede measure">É o diferencial do Canal B e o que a maioria dos concorrentes não faz. Música sozinha compete com milhões de vídeos; música dentro de um lugar compete com quase ninguém.</p>
+  <div class="measure">
+    <p>Baixe de dois a três sons contínuos, sem eventos marcantes, e mixe por baixo do set inteiro em torno de <strong>−26 dB</strong> — presente, nunca disputando com a música. O script da próxima parte faz isso com um parâmetro.</p>
+    <ul class="plain">
+      <li><strong>Taverna:</strong> lareira estalando + chuva na janela + murmurinho distante de conversa.</li>
+      <li><strong>Saloon:</strong> vento seco + rangido de madeira + tilintar ocasional de copos.</li>
+      <li><strong>Café parisiense:</strong> chuva na calçada + xícaras + conversa abafada em francês.</li>
+      <li><strong>Fazenda:</strong> galo ao longe, grilo, vento no capim, cigarra no fim de tarde.</li>
+    </ul>
+    <p>Prefira arquivos longos (5 minutos ou mais) e sem picos: o loop precisa ser imperceptível. No Freesound, filtre por licença <strong>CC0</strong> e guarde o link de cada arquivo numa planilha — se algum dia aparecer uma reivindicação, você precisa provar a origem.</p>
+  </div>
+</section>
+
+<section id="montagem">
+  <div class="sec-head"><span class="sec-mark">07</span><h2>Montagem — um comando só</h2></div>
+  <p class="lede measure">O script <code>montar-playlist.sh</code> faz o processo inteiro: ordena as faixas, emenda com crossfade, mixa a ambiência, normaliza em −14 LUFS, renderiza em 1080p e cospe a tracklist com os tempos pronta para a descrição.</p>
+
+<pre><code><span class="cmt"># Canal A — capa estática, sem ambiência</span>
+./montar-playlist.sh -d faixas -i capa.png -o viola-amanhecer.mp4
+
+<span class="cmt"># Canal B — vídeo em loop + lareira mixada por baixo</span>
+./montar-playlist.sh -d faixas -v loop.mp4 -a lareira.wav -b -26 -x 4 -o tavern-night.mp4</code></pre>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Opção</th><th>O que faz</th><th>Padrão</th></tr></thead>
+      <tbody>
+        <tr><td class="num">-d</td><td>Pasta com as faixas, ordenadas pelo nome do arquivo</td><td class="num">faixas</td></tr>
+        <tr><td class="num">-i</td><td>Imagem de capa para fundo estático</td><td class="num">—</td></tr>
+        <tr><td class="num">-v</td><td>Vídeo curto que roda em loop pelo set inteiro</td><td class="num">—</td></tr>
+        <tr><td class="num">-a</td><td>Arquivo de ambiência mixado por baixo</td><td class="num">—</td></tr>
+        <tr><td class="num">-b</td><td>Volume da ambiência em dB</td><td class="num">-26</td></tr>
+        <tr><td class="num">-x</td><td>Crossfade entre faixas, em segundos</td><td class="num">3</td></tr>
+        <tr><td class="num">-o</td><td>Arquivo de saída</td><td class="num">video.mp4</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">Nomeie os arquivos como <code>01-Amanhecer na Fazenda.mp3</code>: o número define a ordem e o resto vira o nome na tracklist automaticamente. O script foi testado — três faixas de 12 segundos com crossfade de 3 saem em exatos 30 segundos, com os tempos batendo na tracklist.</p>
+
+  <div class="note good">
+    <span class="tag">Padrões de render</span>
+    <p>1080p resolve; 1440p só se a arte for muito detalhada. Áudio em AAC 320k. Ative <code>+faststart</code> (o script já faz) para o upload processar mais rápido. Um vídeo de uma hora com capa estática fica em torno de 250 MB; com loop animado, de 1 a 2 GB.</p>
+  </div>
+</section>
+
+<section id="empacotamento">
+  <div class="sec-head"><span class="sec-mark">08</span><h2>Título, capa e descrição</h2></div>
+  <p class="lede measure">É aqui que o jogo é ganho ou perdido. A fórmula: <code>[cenário concreto] + [momento] + [para quê serve] + [duração]</code>.</p>
+
+  <div class="duo">
+    <div class="ch a">
+      <div class="ch-tag">Canal A · títulos em português</div>
+      <ul class="plain">
+        <li>Viola Caipira ao Amanhecer na Fazenda — Modas para Tomar Café · 1 Hora</li>
+        <li>Modas de Viola Antigas para Ouvir na Roça — Só as Raiz · 2 Horas</li>
+        <li>Fim de Tarde no Curral — Viola e Sanfona para Descansar</li>
+        <li>Toadas de Boiadeiro para Estrada de Terra — Viola de Verdade</li>
+        <li>Catira e Cateretê — Festa de Peão no Terreiro · Seleção Raiz</li>
+        <li>Viola Instrumental para Dormir — Sereno da Noite no Sítio</li>
+      </ul>
+    </div>
+    <div class="ch b">
+      <div class="ch-tag">Canal B · títulos em inglês</div>
+      <ul class="plain">
+        <li>Medieval Tavern Ambience — Fireplace, Lute &amp; Rain · 3 Hours</li>
+        <li>The Bard Plays While You Read — Cozy Fantasy Music for Reading</li>
+        <li>Sleeping at the Old Inn — Soft Medieval Music &amp; Crackling Fire</li>
+        <li>Tavern Music for D&amp;D Sessions — Warm, Loopable, No Ads Break</li>
+        <li>Old West Saloon at Dusk — Honky-Tonk Piano &amp; Desert Wind</li>
+        <li>Paris Café in the Rain, 1935 — Accordion &amp; Gypsy Jazz</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="measure">
+    <p><strong>As palavras que puxam busca</strong> no Canal B: <em>ambience</em>, <em>for reading</em>, <em>for studying</em>, <em>for sleeping</em>, <em>D&amp;D background music</em>, <em>cozy</em>, <em>1 hour / 3 hours</em>. No Canal A: <em>raiz</em>, <em>antigas</em>, <em>para tomar café</em>, <em>para dormir</em>, <em>as melhores</em>, <em>seleção</em>. Escreva para quem digita, não para quem já conhece o gênero.</p>
+    <p><strong>Capa:</strong> uma cena, luz quente, no máximo três palavras em cima da imagem — ou nenhuma. Mesma composição e mesma paleta em todo o canal: o reconhecimento na barra lateral vale mais do que a criatividade em cada peça.</p>
+    <p><strong>Descrição:</strong> primeira linha vende a cena, segunda leva ao Spotify, depois a tracklist com os tempos que o script gerou. Nunca deixe vazia — é onde o vídeo é indexado. Fixe um comentário com o link do Spotify e um motivo para clicar.</p>
+  </div>
+</section>
+
+<section id="contentid">
+  <div class="sec-head"><span class="sec-mark">09</span><h2>A armadilha do Content ID</h2></div>
+  <div class="note warn">
+    <span class="tag">Leia antes de distribuir</span>
+    <p>Se você distribuir as mesmas faixas com o Content ID ativado <strong>e</strong> usá-las nos seus próprios vídeos, o sistema vai reivindicar os seus vídeos — a monetização vai para a distribuidora e, no meio do caminho, você perde receita e tempo em disputa. É provavelmente uma das coisas que mais atrapalham quem opera nesse modelo sem saber.</p>
+    <p>Duas saídas: <strong>(a)</strong> não ative o Content ID nas faixas que vão para os vídeos de playlist, ou <strong>(b)</strong> ative e cadastre imediatamente o seu canal na lista branca da distribuidora, para que as reivindicações não caiam sobre ele. Faça isso <em>antes</em> do primeiro lançamento, não depois de tomar o primeiro claim.</p>
+  </div>
+  <p class="measure">Ainda no mesmo tema: espace os lançamentos no streaming. Uma faixa por semana, cada uma com pitch feito no Spotify for Artists. Subir um álbum de 24 faixas de uma vez desperdiça o pitch, concentra todo o sinal num único dia e ainda parece spam para os filtros — foi exatamente o erro que apareceu na consultoria com o Will.</p>
+</section>
+
+<section id="calendario">
+  <div class="sec-head"><span class="sec-mark">10</span><h2>Os primeiros 90 dias</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Período</th><th>Canal A</th><th>Canal B</th><th>Marco</th></tr></thead>
+      <tbody>
+        <tr><td class="num">Semana 1</td><td>Abrir canal, verificar telefone, definir persona e paleta</td><td>Mesmo processo, tudo em inglês</td><td>Dois canais no ar, verificados</td></tr>
+        <tr><td class="num">Semana 2</td><td>Gerar 60 faixas, aprovar 30, montar 2 vídeos</td><td>Gerar 45, aprovar 18, montar 1 vídeo com ambiência</td><td>Primeiros 3 vídeos publicados</td></tr>
+        <tr><td class="num">Semanas 3–6</td><td>1 vídeo por dia, horário fixo</td><td>3 vídeos por semana</td><td>~35 vídeos · primeiras leituras de CTR</td></tr>
+        <tr><td class="num">Semanas 7–8</td><td>Replicar o formato dos 3 melhores</td><td>Replicar e testar 3 horas de duração</td><td>Padrão identificado</td></tr>
+        <tr><td class="num">Semanas 9–12</td><td>Distribuir as melhores faixas · ABRAMUS</td><td>Testar a série do saloon · Shorts</td><td>Elegibilidade de monetização à vista</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Como decidir o que fazer no vídeo 30</h3>
+  <ul class="plain measure">
+    <li><strong>Julgue o canal em 20 a 30 vídeos</strong>, nunca em cinco. Se nada passar de mil views nesse volume, o problema é o nicho ou a embalagem — não a paciência.</li>
+    <li><strong>Quando um vídeo acertar, replique na hora:</strong> três variações na semana seguinte, mesma estrutura de título, cenário diferente. É a regra mais importante do modelo inteiro — o algoritmo validou um padrão, e a sua obrigação é alimentar aquele padrão.</li>
+    <li><strong>CTR baixo com retenção alta</strong> = problema de capa e título. Troque a capa dos vídeos antigos; funciona retroativamente.</li>
+    <li><strong>CTR alto com retenção baixa</strong> = a promessa da capa não bate com a música. Ajuste o set, não a arte.</li>
+    <li><strong>Tempo médio de exibição</strong> é a métrica que decide tudo em vídeo longo. Acompanhe o gráfico dos primeiros 60 segundos: se ele desaba ali, a primeira faixa está errada.</li>
+  </ul>
+</section>
+
+<section id="conformidade">
+  <div class="sec-head"><span class="sec-mark">11</span><h2>Conformidade — a lista curta</h2></div>
+  <ul class="plain measure">
+    <li>Plano <strong>pago</strong> no gerador de música. É o que garante o uso comercial.</li>
+    <li>Arte própria em toda capa. Nada de imagem de banco sem licença, nada de rosto de pessoa real.</li>
+    <li>Ambiência com licença verificada e guardada em planilha.</li>
+    <li>Metadados honestos na distribuidora: quem produziu, quem interpretou, uso de IA declarado.</li>
+    <li><strong>Jamais</strong> comprar plays ou inscritos. Uma única compra derruba o catálogo inteiro — e, se um dia você levar esse modelo para dentro de um selo, derruba o de todo mundo junto.</li>
+    <li>Variação real entre vídeos. Repetição mecânica é o que aciona revisão de monetização por conteúdo produzido em massa.</li>
+    <li>Cuidado com título de música tradicional de domínio público: mesmo com gravação nova, o nome atrai reivindicação automática indevida. Prefira títulos originais.</li>
+  </ul>
+
+  <div class="note">
+    <span class="tag">O que fazer amanhã de manhã</span>
+    <p>Assine o Suno no plano pago e gere <strong>doze faixas</strong> com os prompts 01, 02 e 03 do Canal A. Não abra canal, não desenhe logo, não escolha nome. Só escute as doze e veja quantas você aprovaria de verdade. Essa taxa de aproveitamento é o número que vai definir o seu ritmo nos próximos noventa dias — e é a única coisa que não dá para descobrir lendo.</p>
+  </div>
+</section>
+
+<footer>
+  Propulse · manual de operação · agosto de 2026 · companheiro do documento "Bossa &amp; Algoritmo"
+</footer>
+
+</div>
