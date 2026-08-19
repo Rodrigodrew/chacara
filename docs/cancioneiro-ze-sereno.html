@@ -1,0 +1,520 @@
+<title>Cancioneiro de Zé Sereno</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F2EFE9; --surface-2:#E9E5DC;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DBD6CD;
+  --hue:#D31A56; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em}
+a{color:var(--hue);text-decoration:none}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px;border-radius:2px}
+strong,b{font-weight:600}
+
+.hero{padding:78px 0 44px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ocre);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(38px,7.6vw,86px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .de{color:var(--ocre)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:58ch;margin-bottom:28px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:60px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:28px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--ocre)}
+h2{font-family:var(--display);font-size:clamp(24px,3.6vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0}
+
+/* índice */
+ul.indice{list-style:none;padding:0;margin:0;border:1px solid var(--rule);background:var(--paper)}
+ul.indice li{margin:0;border-bottom:1px solid var(--rule)}
+ul.indice li:last-child{border-bottom:0}
+ul.indice a{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:baseline;padding:11px 16px;color:var(--ink);border:0}
+ul.indice a:hover{background:var(--surface)}
+.i-n{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ocre)}
+.i-t{font-weight:600}
+.i-u{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+
+/* canções */
+.cancao{border-top:3px solid var(--ink);padding:34px 0 10px;margin-top:44px}
+.cab{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;margin-bottom:20px}
+.numero{font-family:var(--display);font-size:38px;line-height:.85;color:var(--ocre);font-variant-numeric:tabular-nums}
+.cab h3{font-family:var(--display);font-size:clamp(22px,3.2vw,30px);margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
+.uso{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);margin:0}
+
+.ficha{border:1px solid var(--rule);background:var(--surface);padding:14px 16px;margin-bottom:26px;font-family:var(--mono);font-size:13px;line-height:1.6;overflow-x:auto}
+.ficha .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre);margin-bottom:8px}
+.ficha .neg{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed var(--rule);color:var(--ink-2)}
+.ficha .neg b{color:var(--ink)}
+
+.letra{columns:2;column-gap:52px;max-width:900px}
+.estrofe{break-inside:avoid;margin-bottom:22px}
+.marca{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);margin-bottom:5px}
+.versos{white-space:pre-line;font-size:18.5px;line-height:1.52}
+
+.note{border-left:3px solid var(--ocre);background:var(--surface);padding:16px 18px;margin:26px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ocre);display:block;margin-bottom:6px}
+.note p:last-child{margin-bottom:0}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+ul.plain{list-style:none;padding-left:0}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.5em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--ocre)}
+
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+
+@media(max-width:820px){ .letra{columns:1} }
+@media(max-width:640px){
+  body{font-size:17px}
+  .hero{padding:50px 0 34px}
+  .cab{grid-template-columns:1fr;gap:6px}
+  .numero{font-size:24px}
+  ul.indice a{grid-template-columns:34px 1fr;gap:10px}
+  .i-u{grid-column:2;text-align:left}
+}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Canal A · Sertanejo raiz, viola e fazenda · Propulse</div>
+  <h1>Cancioneiro <span class="de">de</span> Zé Sereno</h1>
+  <p class="dek">Dez letras originais para o repertório do violeiro — cada uma com o prompt de estilo pronto para colar no Suno.</p>
+  <div class="meta">
+    <span>Letras <b>10 completas</b></span>
+    <span>Forma <b>Redondilha maior</b></span>
+    <span>Autoria <b>Humana e original</b></span>
+    <span>Rende <b>~40 min de set</b></span>
+  </div>
+</header>
+
+<section id="como">
+  <div class="sec-head"><span class="sec-mark">ANTES DE GERAR</span><h2>Como usar</h2></div>
+  <ul class="plain measure">
+    <li><strong>Letra em português, marcações em inglês.</strong> O Suno interpreta <code>[Verse]</code>, <code>[Chorus]</code> e <code>[Guitar Solo]</code> com mais confiabilidade do que os equivalentes em português — mas canta a letra em português sem problema.</li>
+    <li><strong>Uma faixa boa vira Persona.</strong> Assim que uma delas sair com a voz certa, salve como Persona e gere as outras nove a partir dela. É isso que faz o catálogo inteiro soar como o mesmo cantor — sem isso, não existe artista, existe pasta de arquivos.</li>
+    <li><strong>O campo Exclude é metade do resultado.</strong> Cada ficha abaixo já vem com o dela preenchido.</li>
+    <li><strong>Gere três a quatro versões de cada.</strong> Aprove uma. As descartadas às vezes viram a base de outra moda com <em>Cover</em>.</li>
+    <li><strong>As dez rendem cerca de 40 minutos.</strong> Para fechar uma hora de vídeo, complemente com quatro ou cinco instrumentais usando o prompt 03 do manual.</li>
+  </ul>
+
+  <div class="note">
+    <span class="tag">O que essas letras resolvem além da música</span>
+    <p>Letra escrita por você é o que sustenta o registro autoral na ABRAMUS ou UBC — obra inteiramente gerada por máquina fica em terreno instável no direito brasileiro. Guarde o arquivo com a data e mantenha os rascunhos: em disputa, o histórico de criação é a prova. Nos metadados, você entra como compositor e produtor fonográfico; Zé Sereno é o artista principal.</p>
+  </div>
+
+  <h2 style="font-size:20px;margin:44px 0 16px">O repertório</h2>
+  <ul class="indice">
+<li><a href="#c01"><span class="i-n">01</span><span class="i-t">Sereno da Madrugada</span><span class="i-u">faixa de assinatura do canal</span></a></li>
+<li><a href="#c02"><span class="i-n">02</span><span class="i-t">Estrada Boiadeira</span><span class="i-u">toada de boiadeiro</span></a></li>
+<li><a href="#c03"><span class="i-n">03</span><span class="i-t">Café Coado no Pano</span><span class="i-u">carro-chefe dos vídeos de café da manhã</span></a></li>
+<li><a href="#c04"><span class="i-n">04</span><span class="i-t">Viola de Dez Cordas</span><span class="i-u">ode ao instrumento</span></a></li>
+<li><a href="#c05"><span class="i-n">05</span><span class="i-t">Cerração no Cafezal</span><span class="i-u">vídeos de neblina e trabalho na roça</span></a></li>
+<li><a href="#c06"><span class="i-n">06</span><span class="i-t">Terreiro de Catira</span><span class="i-u">faixa animada</span></a></li>
+<li><a href="#c07"><span class="i-n">07</span><span class="i-t">Carta pro Meu Pai</span><span class="i-u">faixa emocional do repertório</span></a></li>
+<li><a href="#c08"><span class="i-n">08</span><span class="i-t">Chuva na Telha de Barro</span><span class="i-u">vídeos de chuva e de dormir</span></a></li>
+<li><a href="#c09"><span class="i-n">09</span><span class="i-t">Juriti Sem Par</span><span class="i-u">moda de dor de cotovelo</span></a></li>
+<li><a href="#c10"><span class="i-n">10</span><span class="i-t">Última Ponteada</span><span class="i-u">encerramento de set</span></a></li>  </ul>
+</section>
+
+<section id="letras">
+  <div class="sec-head"><span class="sec-mark">AS DEZ MODAS</span><h2>Letras completas</h2></div>
+
+<article class="cancao" id="c01">
+  <header class="cab">
+    <span class="numero">01</span>
+    <div>
+      <h3>Sereno da Madrugada</h3>
+      <p class="uso">faixa de assinatura do canal · toada lenta · vídeos de amanhecer</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola, viola caipira de dez cordas ponteada, dupla sertaneja em harmonia de terça, violão de nylon, contrabaixo acústico, 66 bpm, gravação de estúdio dos anos 1970, reverb de salão, sotaque caipira
+    <span class="neg"><b>Exclude Styles:</b> sertanejo universitario, pop production, drums, electric guitar, autotune, synth</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Inda é noite no terreiro
+Quando eu calço a minha bota
+Canta o galo no poleiro
+Anunciando a labuta</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Ponho o café no bornal
+Chamo o cachorro pra estrada
+Vida dura, mas leal
+Como o cheiro da invernada</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Sereno da madrugada
+Molha o chapéu e a estrada
+Quem só levanta de dia
+Não sabe o preço da lida</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Quando o sol rompe o espinheiro
+Já tô com a roça na mão
+Sou Zé Sereno, violeiro
+Filho do meu próprio chão</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+<div class="estrofe"><span class="marca">[Outro]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c02">
+  <header class="cab">
+    <span class="numero">02</span>
+    <div>
+      <h3>Estrada Boiadeira</h3>
+      <p class="uso">toada de boiadeiro · vídeos de estrada e viagem</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    toada sertaneja, voz masculina grave e sentida, viola caipira dedilhada, berrante ao longe, acordeon distante, contrabaixo acústico, 62 bpm, melancólico, sem bateria
+    <span class="neg"><b>Exclude Styles:</b> modern country, pop, drums, electric bass, choir, orchestra</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro - aboio]</span><div class="versos">Êêêê... ôôô... boi...</div></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Poeira na estrada seca
+Berrante rompe o sertão
+Boiada desce a ladeira
+No compasso do coração</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Doze léguas de cansaço
+Sol rachando meu chapéu
+Meu cavalo sabe o passo
+Meu destino sabe o céu</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Ô boi, ô boi, vai andando
+Que o caminho é comprido
+Boiadeiro não faz raiz
+Deixa o coração perdido</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Quando eu chegar no destino
+Vendo a boiada e o suor
+Pego a estrada outra vez
+Sem endereço e sem amor</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c03">
+  <header class="cab">
+    <span class="numero">03</span>
+    <div>
+      <h3>Café Coado no Pano</h3>
+      <p class="uso">carro-chefe dos vídeos de café da manhã</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola, viola caipira ponteada, violão de nylon, dupla em harmonia de terça, 72 bpm, sereno e nostálgico, gravação intimista de varanda, reverb natural
+    <span class="neg"><b>Exclude Styles:</b> drums, synth, modern production, orchestral strings</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Fogão de lenha aceso
+Fumaça subindo o telhado
+Minha mãe de pé descalço
+Coando o café no pano</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Broa de milho e queijo
+Manteiga na frigideira
+Não tem no mundo riqueza
+Que valha essa mesa inteira</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Café coado no pano
+Adoçado com rapadura
+Quem provou não esquece mais
+O gosto que a roça apura</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Hoje eu moro na cidade
+Bebo café de mercado
+Mas o gosto da saudade
+Só o de casa tem guardado</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c04">
+  <header class="cab">
+    <span class="numero">04</span>
+    <div>
+      <h3>Viola de Dez Cordas</h3>
+      <p class="uso">ode ao instrumento · abertura de playlists instrumentais</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola, viola caipira de dez cordas em afinação cebolão, ponteado cristalino, violão de aço de apoio, voz masculina, 70 bpm, gravado ao vivo em varanda de madeira
+    <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, modern mastering</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Minha viola de dez cordas
+Cebolão em ré maior
+Foi meu pai quem me ensinou
+Ponteado e dissabor</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Ela chora quando eu choro
+Ela ri quando eu rio
+Nas noites de mês de agosto
+Ela esquenta o meu frio</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Viola, minha viola
+Companheira de estrada
+Quando eu morrer me enterrem
+Com ela do lado, afinada</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Não troco por instrumento
+Que vem de terra estrangeira
+Essa é feita de pinho
+Cedro, corda e poeira</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c05">
+  <header class="cab">
+    <span class="numero">05</span>
+    <div>
+      <h3>Cerração no Cafezal</h3>
+      <p class="uso">vídeos de neblina e trabalho na roça</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola instrumental com voz ao fundo, viola caipira, violão, 74 bpm, contemplativo, ar de manhã fria, reverb natural amplo
+    <span class="neg"><b>Exclude Styles:</b> vocals upfront, drums, synth, modern production</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Cerração cobre o cafezal
+Como um lençol de algodão
+Não se enxerga o carreador
+Só se escuta meu bordão</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Mão calejada no galho
+Balaio cheio de grão
+Cada saca é um pedaço
+Da vida do meu irmão</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Cerração, cerração
+Vai subindo devagar
+Quando o sol romper a serra
+Meu café vai enfim secar</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Não tem relógio na roça
+Quem marca a hora é o céu
+E o dia acaba na hora
+Que o corpo pede o chapéu</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c06">
+  <header class="cab">
+    <span class="numero">06</span>
+    <div>
+      <h3>Terreiro de Catira</h3>
+      <p class="uso">faixa animada · quebra o ritmo no meio do set</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    cateretê, catira, viola caipira rasqueada, palmas e batidas de pé marcando o compasso, duas vozes em terça, 118 bpm, festivo, gravação ao vivo em terreiro com plateia
+    <span class="neg"><b>Exclude Styles:</b> studio polish, drum kit, electric instruments, pop vocals</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro - palmas e viola]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Bate o pé, bate a mão
+No terreiro de terra batida
+Vem chegando o povo todo
+Pra dançar a noite comprida</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Catira, catira, catira
+Palma, pé e viola
+Quem não sabe dançar aprende
+Que o cansaço a gente enrola</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Sanfoneiro puxa o fole
+Violeiro rasga o rasqueado
+Moça de vestido rodado
+Faz o santo virar de lado</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Amanheceu e ninguém foi
+A fogueira virou brasa
+Só descansa quem quiser
+Catireiro não tem casa</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c07">
+  <header class="cab">
+    <span class="numero">07</span>
+    <div>
+      <h3>Carta pro Meu Pai</h3>
+      <p class="uso">faixa emocional do repertório · êxodo rural</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    toada sertaneja, voz masculina sentida e próxima do microfone, viola caipira dedilhada, violão, contrabaixo acústico, 58 bpm, muito melancólico, gravação intimista
+    <span class="neg"><b>Exclude Styles:</b> drums, orchestra, choir, modern country, crescendo</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Escrevo essa carta, pai
+Com a mão que o senhor criou
+Aqui na cidade grande
+Ninguém sabe quem eu sou</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Trabalho de sol a sol
+Num prédio que não é meu
+Aqui não tem passarinho
+Aqui ninguém vê o céu</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Guarda a minha viola, pai
+Pendurada lá no esteio
+De saudade eu não morro
+Mas confesso que eu receio</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Diz pra mãe que eu tô bem
+Mesmo que eu não esteja
+Beija a testa do meu cão
+E acende uma vela na igreja</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+<div class="estrofe"><span class="marca">[Outro]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c08">
+  <header class="cab">
+    <span class="numero">08</span>
+    <div>
+      <h3>Chuva na Telha de Barro</h3>
+      <p class="uso">vídeos de chuva e de dormir · combina com ambiência de chuva</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola lenta, viola caipira ponteada, violão de nylon, voz suave, 60 bpm, sereno, gravação com reverb natural, sem percussão
+    <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, loud mastering</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Fazia oito meses
+Que essa terra não bebia
+Gado magro no pasto
+Riacho que não corria</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Aí veio uma nuvem preta
+Rasgou o céu de repente
+E choveu, e choveu tanto
+Que chorou até a gente</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Chuva na telha de barro
+É a moda mais bonita
+Toca a noite inteira e não cansa
+Quem tem roça acredita</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">No outro dia o verde
+Brotou onde era só pó
+E eu ponteei a viola
+Pra não agradecer só</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c09">
+  <header class="cab">
+    <span class="numero">09</span>
+    <div>
+      <h3>Juriti Sem Par</h3>
+      <p class="uso">moda de dor de cotovelo · a mais tradicional do repertório</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola, dupla sertaneja em harmonia de terça, viola caipira, violão de nylon, 64 bpm, sofrido, gravação dos anos 1960 em fita analógica, leve saturação
+    <span class="neg"><b>Exclude Styles:</b> modern production, drums, synth, autotune, wide stereo</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">A juriti que perde o par
+Não canta mais no cerrado
+Fica quieta no galho seco
+Olhando o ninho abandonado</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Assim fiquei quando ela
+Pegou a estrada e sumiu
+Levou meu nome na boca
+E o resto de mim que existiu</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Sou juriti sem par
+Sou viola sem bordão
+Sou o carro sem boiada
+Sou o resto de um refrão</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Se um dia ela voltar
+E o meu nome perguntar
+Diz que o Zé morreu de febre
+Numa noite de luar</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+  </div>
+</article>
+
+<article class="cancao" id="c10">
+  <header class="cab">
+    <span class="numero">10</span>
+    <div>
+      <h3>Última Ponteada</h3>
+      <p class="uso">encerramento de set · fecha o círculo com a faixa 01</p>
+    </div>
+  </header>
+  <div class="ficha">
+    <span class="lbl">Estilo — cole no campo Style of Music</span>
+    moda de viola, voz masculina envelhecida, viola caipira ponteada, violão, 56 bpm, despedida, gravação intimista com reverb de igreja
+    <span class="neg"><b>Exclude Styles:</b> drums, synth, orchestra, epic build</span>
+  </div>
+  <div class="letra">
+<div class="estrofe"><span class="marca">[Intro]</span></div>
+<div class="estrofe"><span class="marca">[Verse 1]</span><div class="versos">Já tô com a idade cheia
+E a mão já tá tremendo
+Mas enquanto tiver corda
+Essa viola tá gemendo</div></div>
+<div class="estrofe"><span class="marca">[Verse 2]</span><div class="versos">Vi meu pai morrer cantando
+Numa cama de capim
+Pediu a moda do carreiro
+E foi embora assim</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span><div class="versos">Quando chegar minha hora
+Não quero choro nem vela
+Quero a viola afinada
+E a porteira aberta pra ela</div></div>
+<div class="estrofe"><span class="marca">[Guitar Solo]</span></div>
+<div class="estrofe"><span class="marca">[Verse 3]</span><div class="versos">Enterra eu virado pro leste
+De chapéu, do jeito que eu sou
+Que na última madrugada
+Foi sereno quem me molhou</div></div>
+<div class="estrofe"><span class="marca">[Chorus]</span></div>
+<div class="estrofe"><span class="marca">[Outro]</span></div>
+  </div>
+</article></section>
+
+<section id="proximo">
+  <div class="sec-head"><span class="sec-mark">DEPOIS</span><h2>Como virar vídeo</h2></div>
+  <ul class="plain measure">
+    <li><strong>Ordem do set:</strong> abra com <em>Sereno da Madrugada</em>, ponha <em>Terreiro de Catira</em> por volta da faixa 6 para quebrar o ritmo, e feche com <em>Última Ponteada</em> — ela responde à primeira, e quem ouve inteiro percebe.</li>
+    <li><strong>Nomeie os arquivos</strong> como <code>01-Sereno da Madrugada.mp3</code>: o script de montagem usa o número para ordenar e o resto vira o nome na tracklist.</li>
+    <li><strong>Não lance as dez de uma vez</strong> no streaming. Uma por semana, cada uma com pitch no Spotify for Artists.</li>
+    <li><strong>Guarde as três melhores</strong> para distribuir primeiro — <em>Carta pro Meu Pai</em> e <em>Café Coado no Pano</em> são as de maior apelo emocional, e é por elas que o público costuma procurar o artista fora do YouTube.</li>
+  </ul>
+</section>
+
+<footer>
+  Propulse · cancioneiro do Canal A · agosto de 2026 · companheiro do manual "Viola &amp; Taverna"
+</footer>
+
+</div>
