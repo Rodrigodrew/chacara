@@ -1,0 +1,557 @@
+<title>Bossa &amp; Algoritmo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8;
+  --surface:#F2EFE9;
+  --surface-2:#E9E5DC;
+  --ink:#14151A;
+  --ink-2:#54525E;
+  --rule:#DBD6CD;
+  --hue:#D31A56;
+  --sea:#136A66;
+  --amber:#9C6410;
+  --shadow:0 1px 0 rgba(20,21,26,.06);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317;
+    --surface:#1A1C22;
+    --surface-2:#22242B;
+    --ink:#EDEBE7;
+    --ink-2:#9B99A4;
+    --rule:#2E3038;
+    --hue:#FF4D7D;
+    --sea:#4FBCB1;
+    --amber:#DEA24A;
+    --shadow:0 1px 0 rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317;
+  --surface:#1A1C22;
+  --surface-2:#22242B;
+  --ink:#EDEBE7;
+  --ink-2:#9B99A4;
+  --rule:#2E3038;
+  --hue:#FF4D7D;
+  --sea:#4FBCB1;
+  --amber:#DEA24A;
+  --shadow:0 1px 0 rgba(0,0,0,.4);
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:18px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 120px}
+.measure{max-width:68ch}
+p{margin:0 0 1em}
+a{color:var(--hue);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--hue) 35%,transparent)}
+a:hover{border-bottom-color:var(--hue)}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px;border-radius:2px}
+strong{font-weight:600}
+em{font-style:italic}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 56px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:22px}
+h1{
+  font-family:var(--display);
+  font-size:clamp(44px,9vw,104px);
+  line-height:.92;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+  text-wrap:balance;
+  margin:0 0 24px;
+}
+h1 .amp{color:var(--hue)}
+.dek{font-size:clamp(19px,2.2vw,23px);color:var(--ink-2);max-width:60ch;margin-bottom:34px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+/* ---------- sections ---------- */
+section{padding-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:14px;margin-bottom:34px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(26px,4vw,40px);line-height:1.02;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:19px;letter-spacing:-.005em;margin:44px 0 12px;text-wrap:balance}
+h4{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin:32px 0 10px}
+.lede{font-size:21px;line-height:1.5;color:var(--ink);max-width:62ch;margin-bottom:28px}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:32px 0}
+.stat{background:var(--paper);padding:20px 18px}
+.stat .n{font-family:var(--display);font-size:30px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:8px;line-height:1.4}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;margin:28px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:620px;background:var(--paper)}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.dot.hi{background:var(--sea)}.dot.mid{background:var(--amber)}.dot.lo{background:var(--hue)}
+
+/* ---------- callouts ---------- */
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:18px 20px;margin:28px 0;font-size:16.5px;line-height:1.55}
+.note.warn{border-left-color:var(--amber)}
+.note.good{border-left-color:var(--sea)}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:7px}
+.note.warn .tag{color:var(--amber)}
+.note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+/* ---------- opportunity cards ---------- */
+.opps{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:32px}
+.opp{background:var(--paper);padding:26px 24px;display:grid;grid-template-columns:64px 1fr;gap:20px}
+.opp .no{font-family:var(--display);font-size:34px;line-height:.9;color:var(--hue);font-variant-numeric:tabular-nums}
+.opp h3{margin:0 0 8px;font-size:20px}
+.opp p{font-size:16.5px;margin-bottom:.7em}
+.opp p:last-child{margin-bottom:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tag-chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);border-radius:2px}
+.tag-chip.now{border-color:color-mix(in srgb,var(--sea) 45%,transparent);color:var(--sea)}
+.tag-chip.mid{border-color:color-mix(in srgb,var(--amber) 45%,transparent);color:var(--amber)}
+.tag-chip.big{border-color:color-mix(in srgb,var(--hue) 45%,transparent);color:var(--hue)}
+
+/* ---------- phases ---------- */
+.phase{border-top:1px solid var(--rule);padding:30px 0}
+.phase-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.phase-no{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue)}
+.phase h3{margin:0;font-size:22px}
+.phase .when{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin-left:auto}
+
+/* ---------- lists ---------- */
+ul,ol{margin:0 0 1.1em;padding-left:1.3em}
+li{margin-bottom:.5em}
+li::marker{color:var(--hue)}
+ul.plain{list-style:none;padding-left:0}
+ul.plain li{padding-left:22px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* ---------- code ---------- */
+pre{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;overflow-x:auto;margin:20px 0;font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--ink)}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+pre code{background:none;padding:0;font-size:inherit}
+.cmt{color:var(--ink-2)}
+
+/* ---------- prompt boxes ---------- */
+.prompt{background:var(--surface);border:1px solid var(--rule);padding:16px 18px;margin:18px 0;font-family:var(--mono);font-size:13.5px;line-height:1.6}
+.prompt .lbl{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:8px}
+
+/* ---------- closing checklist ---------- */
+.check{border:1px solid var(--rule);background:var(--surface);padding:26px 24px;margin-top:32px}
+.check ol{counter-reset:c;list-style:none;padding-left:0;margin:0}
+.check li{counter-increment:c;padding-left:38px;position:relative;margin-bottom:14px;font-size:16.5px}
+.check li:last-child{margin-bottom:0}
+.check li::before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:1px;font-family:var(--mono);font-size:12px;font-weight:600;color:var(--hue);letter-spacing:.06em}
+
+footer{margin-top:80px;padding-top:26px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+
+@media(max-width:640px){
+  body{font-size:17px}
+  .hero{padding:56px 0 40px}
+  .opp{grid-template-columns:1fr;gap:8px}
+  .opp .no{font-size:26px}
+  .phase .when{margin-left:0}
+}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Análise pós-consultoria · Propulse × Will R · Ago 2026</div>
+  <h1>Bossa <span class="amp">&amp;</span> Algoritmo</h1>
+  <p class="dek">O que o Will construiu, onde ele está deixando dinheiro na mesa, o que dá para fazer junto — e como replicar a máquina dele de canais de música com IA.</p>
+  <div class="meta">
+    <span>Artista analisado <b>Dom Amorim</b></span>
+    <span>Canais monetizados <b>15</b></span>
+    <span>Receita YouTube <b>~R$61 mil / 8 meses</b></span>
+    <span>Base de alunos <b>350 pagantes</b></span>
+  </div>
+</header>
+
+<section id="leitura">
+  <div class="sec-head"><span class="sec-mark">PARTE I</span><h2>O que ele tem de verdade</h2></div>
+
+  <p class="lede measure">A call começou como "me ensina a entrar em playlist" e terminou em outro lugar: o Will não é um artista pedindo ajuda de distribuição. Ele é um operador de mídia com quinze canais monetizados e uma base de 350 alunos pagantes que fazem a mesma coisa. Isso muda completamente o que vale negociar com ele.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">15</div><div class="l">Canais monetizados no YouTube</div></div>
+    <div class="stat"><div class="n">R$ 61 mil</div><div class="l">Gerados no canal Dom Amorim desde 17/dez</div></div>
+    <div class="stat"><div class="n">R$ 200</div><div class="l">Média por dia, só o canal principal</div></div>
+    <div class="stat"><div class="n">1,1 M</div><div class="l">Views no vídeo campeão (1h de playlist)</div></div>
+    <div class="stat"><div class="n">€ 80</div><div class="l">Média mensal de todo o catálogo no Spotify</div></div>
+    <div class="stat"><div class="n">350</div><div class="l">Alunos pagantes · 800 no grupo</div></div>
+  </div>
+
+  <h3>Os três ativos, em ordem de valor</h3>
+  <div class="measure">
+  <p><strong>1. A audiência de criadores.</strong> 350 alunos pagantes, 800 pessoas no grupo, e pelo menos dois casos que ele citou faturando R$30 mil e R$80 mil por mês com o mesmo modelo. Esse é o ativo mais líquido dele — e o único que interessa de verdade para a Propulse. Um aluno que fatura R$30 mil/mês no AdSense e não sabe operar Spotify é exatamente o seu cliente de R$10 mil.</p>
+  <p><strong>2. A máquina de canais.</strong> Quinze canais de playlist longa, formato replicável, custo marginal quase zero. É a fábrica de tráfego. O que ele descobriu — e que vale copiar — está na Parte III.</p>
+  <p><strong>3. O Dom Amorim.</strong> Uma persona com rosto, nome e estética própria em cima de um catálogo de IA. É o único dos ativos com potencial de virar marca (Spotify, sync, merch, show virtual). Também é o menos desenvolvido: nunca acessaram o Spotify for Artists dele.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">O ponto que muda a negociação</span>
+    <p>O Spotify dele hoje faz €70–80/mês. Mesmo triplicando isso com um trabalho impecável de playlist, o ganho absoluto é de ~€160/mês. <strong>Cobrar percentual de royalties do Dom Amorim é cobrar percentual de quase nada.</strong> O que tem valor real na mesa é o acesso à base de alunos dele. Toda a proposta comercial deveria ser desenhada em cima disso — não em cima de <em>rev share</em> de streaming.</p>
+  </div>
+
+  <h3>O que está quebrado (e é consertável)</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Gargalo</th><th>Impacto hoje</th><th>Esforço para resolver</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Spotify for Artists nunca acessado</strong><br>Sem pitch, sem Release Radar, sem dados</td><td>Zero playlists algorítmicas ativas. Todo lançamento nasce morto.</td><td><span class="dot hi"></span>1 dia — só reivindicar o perfil</td></tr>
+        <tr><td><strong>Lançamento em bloco de 24 faixas</strong></td><td>Pior configuração possível: um pitch só, um dia só de sinal, e cheiro de spam para os filtros do Spotify.</td><td><span class="dot hi"></span>Reprogramar antes do domingo</td></tr>
+        <tr><td><strong>Sem cadastro no ECAD / associação</strong></td><td>Execução pública já acontece (ele recebe comentários de pousada e quiosque) e ninguém recolhe.</td><td><span class="dot mid"></span>2–4 semanas de cadastro</td></tr>
+        <tr><td><strong>Ponte YouTube→Spotify inexistente</strong></td><td>600–1.500 plays/dia vazando de um funil que faz milhões de views.</td><td><span class="dot hi"></span>Cards, descrição, comentário fixo</td></tr>
+        <tr><td><strong>Distribuição em cadeia longa</strong></td><td>Royalty chega esmagado por intermediários (o problema que você já mapeou em 2018).</td><td><span class="dot lo"></span>Depende de contrato — é o seu serviço</td></tr>
+        <tr><td><strong>Sem lista própria do artista</strong></td><td>Ele controla a lista dos alunos, não a dos fãs do Dom Amorim.</td><td><span class="dot mid"></span>Grupo/newsletter em 1 semana</td></tr>
+        <tr><td><strong>Catálogo inteiro sem registro</strong></td><td>Música só no YouTube = qualquer um pode registrar o fonograma antes e reivindicar via Content ID.</td><td><span class="dot mid"></span>Urgente, e ele já percebeu isso</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">Três riscos que precisam entrar na conversa antes do contrato</span>
+    <p><strong>Autoria de obra gerada por IA.</strong> Ele está subindo o metadado como compositor e produtor de faixas feitas no Suno. No Brasil a proteção autoral pressupõe criação intelectual humana — registrar composição 100% gerada por máquina é terreno instável. O caminho defensável é o <strong>direito conexo</strong>: produtor fonográfico e intérprete, que dependem de investimento e execução, não de autoria criativa. E, na composição, garantir contribuição humana real (letra escrita por ele, arranjo, edição, seleção). Vale validar com o jurídico antes de cadastrar 400 obras em associação.</p>
+    <p><strong>Política de conteúdo do YouTube.</strong> Conteúdo produzido em massa e repetitivo entrou na mira da monetização. Quinze canais com a mesma fórmula é exatamente o perfil que atrai revisão — a defesa é catálogo original, capas próprias e curadoria visível.</p>
+    <p><strong>Contaminação de agregadora.</strong> Se você abrir um selo para 350 criadores de música de IA, basta um deles comprar plays para a Believe cortar o CNPJ inteiro. Qualquer selo white-label precisa nascer com política de aceite, verificação e cláusula de repasse de multa.</p>
+  </div>
+</section>
+
+<section id="oportunidades">
+  <div class="sec-head"><span class="sec-mark">PARTE II</span><h2>Seis movimentos com o Will</h2></div>
+
+  <p class="lede measure">Ordenados por velocidade de execução, não por tamanho. Os dois primeiros saem esta semana e custam zero; os últimos dependem do case existir. A sequência importa: o Will disse na cara que não fecha nada sem provar em si mesmo primeiro.</p>
+
+  <div class="opps">
+
+    <div class="opp">
+      <div class="no">01</div>
+      <div>
+        <h3>Troca de aulas — mas com rastreio</h3>
+        <p>Já foi verbalmente combinado: ele grava uma aula para os 1.400 da Propulse, você grava uma para os 350 dele. Custo zero, dois públicos altamente qualificados.</p>
+        <p>O erro seria deixar como "aula de cortesia". Amarre três coisas: <strong>data no cronograma de setembro</strong> (agosto já está fechado), <strong>link e cupom próprios</strong> em cada aula para medir de onde veio cada matrícula, e <strong>direito de usar o trecho como isca</strong> — a aula dele sobre "como fiz R$61 mil com um canal de bossa de IA" é conteúdo de captação, não só de retenção.</p>
+        <div class="tags"><span class="tag-chip now">Esta semana</span><span class="tag-chip">Custo zero</span><span class="tag-chip">Já aceito</span></div>
+      </div>
+    </div>
+
+    <div class="opp">
+      <div class="no">02</div>
+      <div>
+        <h3>O piloto Dom Amorim como case, não como cliente</h3>
+        <p>Ele não tem R$10 mil agora — falou isso claramente, mudou de casa e apertou o caixa. Insistir no ticket cheio mata o negócio inteiro. Mas ele tem o que você precisa: um artista com tráfego real e resultado mensurável em 90 dias.</p>
+        <p>Proponha um <strong>fee simbólico que cubra custo operacional</strong> (curadoria de playlists de usuário, cadastro, produção do pitch) e o resto em contrapartida: aula, depoimento em vídeo com números na tela, e direito de apresentar a oferta para a base dele. O produto do piloto não é o royalty — é o <em>antes e depois</em> printado.</p>
+        <p>Métrica de sucesso a combinar antes: nº de playlists algorítmicas ativas, plays/dia, e razão plays por ouvinte (a meta de 1,8–2,0 que você mostrou na tela).</p>
+        <div class="tags"><span class="tag-chip now">30 dias</span><span class="tag-chip mid">Fee reduzido</span><span class="tag-chip big">Destrava tudo</span></div>
+      </div>
+    </div>
+
+    <div class="opp">
+      <div class="no">03</div>
+      <div>
+        <h3>Produto de entrada: "os direitos que você está deixando na mesa"</h3>
+        <p>Foi o momento em que ele mais reagiu na call — não sabia que existia recolhimento de execução pública, e já recebe comentário de gente ouvindo a música dele em quiosque de praia. Multiplique isso por 350 alunos, alguns faturando dezenas de milhares por mês, todos com catálogo inteiro fora do ECAD.</p>
+        <p>É um produto de ticket baixo, entrega padronizável e altíssimo volume: cadastro em associação, estruturação de metadados, registro de fonograma, orientação sobre titularidade em obra de IA. Vendido para a base dele com divisão de receita, vira <strong>esteira de entrada para o serviço de R$10 mil</strong> — e ninguém no mercado está atendendo esse público específico.</p>
+        <div class="tags"><span class="tag-chip mid">60 dias</span><span class="tag-chip">Produto novo</span><span class="tag-chip big">Maior potencial</span></div>
+      </div>
+    </div>
+
+    <div class="opp">
+      <div class="no">04</div>
+      <div>
+        <h3>Turma em vez de artista avulso</h3>
+        <p>Você já esboçou na call: cinco artistas por R$35 mil em vez de R$50 mil. Formalize como <strong>turma com data de entrada</strong> — onboarding coletivo, calendário de lançamento compartilhado, entrega individual só onde precisa ser individual (pitch, curadoria, metadados).</p>
+        <p>A margem por cabeça cai, mas o custo de aquisição vai a zero e o atendimento vira lote. Com o Will levando 10% e vendendo para quem ele já sabe que tem caixa, o ticket de R$3,5–7 mil fica dentro do que os alunos dele pagam parcelado.</p>
+        <div class="tags"><span class="tag-chip mid">Depois do case</span><span class="tag-chip">CAC zero</span></div>
+      </div>
+    </div>
+
+    <div class="opp">
+      <div class="no">05</div>
+      <div>
+        <h3>Selo white-label dentro da gravadora</h3>
+        <p>O desenho que você propôs: o Will vira um selo sob o guarda-chuva da Propulse, os alunos dele distribuem por lá, ele fica com 5–10% do royalty de cada um. Encurta a hierarquia de intermediários e dá a ele receita recorrente sem trabalho operacional.</p>
+        <p>É o movimento mais estruturante e o mais perigoso. Três travas obrigatórias no contrato: <strong>política de aceite</strong> (nada de catálogo de terceiro sem comprovação de direitos), <strong>auditoria de tráfego</strong> antes de subir, e <strong>cláusula de repasse</strong> de qualquer penalidade aplicada pela agregadora. Um aluno comprando plays derruba a conta de todos.</p>
+        <div class="tags"><span class="tag-chip big">6 meses</span><span class="tag-chip mid">Exige contrato</span><span class="tag-chip">Recorrente</span></div>
+      </div>
+    </div>
+
+    <div class="opp">
+      <div class="no">06</div>
+      <div>
+        <h3>A contrapartida invisível: o método dele</h3>
+        <p>Você entregou conhecimento de distribuição que ele não tinha como comprar pronto. A recíproca justa não é dinheiro — é <strong>acesso ao curso e ao método de canal</strong>. Peça isso explicitamente na próxima conversa.</p>
+        <p>Não é curiosidade: a Propulse vende para 1.400 artistas, e "como faço um canal que sustenta os lançamentos" é a pergunta seguinte de todos eles. Rodar sua própria operação (Parte III) é o que dá autoridade para vender o serviço de R$10 mil para gente que ganha dinheiro exatamente assim.</p>
+        <div class="tags"><span class="tag-chip now">Pedir já</span><span class="tag-chip">Não-financeiro</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Três formatos comerciais para levar ao João</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Formato</th><th>Entrada</th><th>Recorrência</th><th>O que você ganha de verdade</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>A · Serviço cheio</strong><br>Como vocês vendem hoje</td>
+          <td class="num">R$ 10.000</td>
+          <td>—</td>
+          <td>Nada agora: ele não tem caixa. Manter na mesa só como âncora de preço.</td>
+        </tr>
+        <tr>
+          <td><strong>B · Piloto com contrapartida</strong><br><em>Recomendado</em></td>
+          <td class="num">R$ 2–3 mil</td>
+          <td>20–25% do royalty líquido, 24 meses</td>
+          <td>Case com números + aula + depoimento + acesso à base. O rev share é simbólico; o acesso é o pagamento.</td>
+        </tr>
+        <tr>
+          <td><strong>C · Zero entrada</strong></td>
+          <td class="num">R$ 0</td>
+          <td>35–40% do royalty líquido, 24 meses</td>
+          <td>Risco todo seu sobre uma base de €80/mês. Só faz sentido com exclusividade de indicação e compromisso de venda para a turma.</td>
+        </tr>
+        <tr>
+          <td><strong>D · Turma de alunos</strong><br>Fase seguinte</td>
+          <td class="num">R$ 3,5–7 mil / artista</td>
+          <td>10% de comissão para o Will</td>
+          <td>Volume com CAC zero. É aqui que o dinheiro aparece.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note good">
+    <span class="tag">Roteiro da conversa com o João</span>
+    <p>Quatro decisões, nada além: <strong>(1)</strong> a Propulse aceita trocar serviço por acesso a audiência em vez de fee? <strong>(2)</strong> qual o piso operacional de um atendimento — abaixo de quanto dá prejuízo? <strong>(3)</strong> o contrato de selo comporta terceiros sem estourar o risco com a agregadora? <strong>(4)</strong> quem opera o produto de ECAD se ele escalar para 300 pessoas?</p>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">O que não prometer</span>
+    <p>Você já segurou bem isso na call ("não vou prometer dobrar"). Mantenha: nada de garantia de playlist editorial, nada de projeção de faturamento, e deixe registrado por escrito que catálogo majoritariamente gerado por IA tem risco de tratamento diferenciado pelas plataformas — a rotulagem de faixas de IA e os filtros anti-spam já são realidade e tendem a apertar.</p>
+  </div>
+</section>
+
+<section id="playbook">
+  <div class="sec-head"><span class="sec-mark">PARTE III</span><h2>Como replicar a máquina</h2></div>
+
+  <p class="lede measure">O modelo do Will em uma frase: <strong>canais de música funcional que publicam playlists longas de faixas geradas por IA, monetizadas por AdSense, com o streaming como cauda.</strong> Não é um negócio de música — é um negócio de embalagem. A música é insumo barato; o que escasseia é título, capa e nicho.</p>
+
+  <h3>A economia, antes de qualquer coisa</h3>
+  <div class="measure">
+    <p>Um vídeo de uma hora custa, na prática, uma assinatura de gerador, uma capa e cerca de duas horas de trabalho. O que decide o resultado é para quem o vídeo é entregue: música ambiente com público dos EUA e da Europa paga múltiplas vezes mais por mil views do que a mesma música com público brasileiro. O Will chegou a ~R$200/dia num único canal — e o vídeo campeão fez 1,1 milhão de views enquanto os recentes fazem 300.</p>
+    <p><strong>Isso é a característica central do modelo, não um defeito:</strong> a receita vem de poucos vídeos que acertam, não da média. É um jogo de bilhetes — por isso ele tem quinze canais, não um.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">A regra que ele descobriu na prática</span>
+    <p>"Quando você acerta um vídeo, o YouTube só entrega aquele vídeo." Ele falou isso como reclamação; é o insight mais valioso da call. A leitura correta é: <strong>quando um vídeo acerta, faça variações dele</strong> — mesma fórmula de título, mesmo clima, cenário diferente — em vez de partir para outro tema. Você não está alimentando o canal, está alimentando um padrão que o algoritmo já validou.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 01</span><h3>Escolher o nicho</h3><span class="when">Semana 1</span></div>
+    <div class="measure">
+      <p>Quatro critérios, nessa ordem: escuta passiva longa (retenção sem exigir atenção), público de país com RPM alto, baixa exigência visual, e demanda perene ou sazonal previsível. O truque do Will no canal de clássico foi outro e vale copiar: <strong>ele pegou uma experiência real que as pessoas já amam — os concertos Candlelight — e transformou em cenário de escuta.</strong> É o mesmo movimento do "Copacabana 1985" na bossa.</p>
+    </div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Nicho</th><th>Concorrência</th><th>Público / RPM</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td>Bossa nova &amp; jazz de bar</td><td><span class="dot mid"></span>Média</td><td>EUA, Japão, Europa · alto</td><td>Onde o Dom Amorim já provou. Cabe muita variação de cenário.</td></tr>
+          <tr><td>Clássico / candlelight</td><td><span class="dot mid"></span>Média</td><td>Global · alto</td><td>Experiência real como âncora. Estética barata e nobre.</td></tr>
+          <tr><td>Lo-fi / estudo</td><td><span class="dot lo"></span>Saturada</td><td>Global · médio</td><td>Só entra com identidade visual muito forte.</td></tr>
+          <tr><td>Sazonal (Natal, Halloween)</td><td><span class="dot hi"></span>Baixa fora de época</td><td>EUA · muito alto</td><td>RPM dispara em dezembro. Publique em setembro.</td></tr>
+          <tr><td>Gospel / louvor instrumental</td><td><span class="dot mid"></span>Média</td><td>BR + EUA · médio-alto</td><td>Audiência fiel e sessões longuíssimas.</td></tr>
+          <tr><td>Sertanejo raiz, viola, fazenda</td><td><span class="dot hi"></span>Baixa</td><td>BR · baixo</td><td>Volume enorme, RPM fraco. Bom para testar fórmula.</td></tr>
+          <tr><td>Cenário histórico (taverna medieval, saloon, café parisiense)</td><td><span class="dot hi"></span>Baixa</td><td>EUA/EU · alto</td><td>Melhor relação esforço/retorno hoje. Cenário vende sozinho.</td></tr>
+          <tr><td>Sono / ambiente / chuva</td><td><span class="dot lo"></span>Saturada</td><td>Global · baixo</td><td>Sessões longas, mas CPM baixo e muita cópia.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="measure">Escolha <strong>dois</strong>: um com concorrência baixa para aprender, um com RPM alto para escalar. Nunca comece por lo-fi.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 02</span><h3>Construir a persona</h3><span class="when">Semana 1</span></div>
+    <div class="measure">
+      <p>O próprio Will falou por que quer focar no Dom Amorim: "esse aqui tem um artista, tem uma imagem". Um canal genérico só vende AdSense. Uma persona vende AdSense, streaming, sync, merch e curso.</p>
+      <ul class="plain">
+        <li><strong>Nome e biografia</strong> curta e plausível, com origem geográfica e época — é o que dá título aos vídeos depois.</li>
+        <li><strong>Rosto consistente:</strong> fixe a mesma semente / referência de personagem no gerador de imagem e reutilize em toda capa. Consistência visual é o que faz parecer artista e não pasta de arquivos.</li>
+        <li><strong>Voz consistente:</strong> use o recurso de <em>persona</em> / voz de referência do Suno para que todas as faixas soem do mesmo cantor. Sem isso, o catálogo não sustenta um perfil de artista no Spotify.</li>
+        <li><strong>Transparência:</strong> deixe claro nos créditos e nos metadados que a produção usa IA. Esconder é o que gera queda de canal e desconfiança de curador.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 03</span><h3>Produzir o catálogo</h3><span class="when">Semanas 1–2</span></div>
+    <div class="measure">
+      <p>A diferença entre o canal do Will e os milhares que não pegam está no que ele ensina aos alunos: <em>fazer música que não fique genérica</em>. Prompt curto de gênero produz som de banco de imagem. O que funciona é descrever época, instrumentação, timbre de voz, andamento e — principalmente — <strong>o caráter da gravação</strong>.</p>
+    </div>
+
+    <div class="prompt">
+      <span class="lbl">Estilo — bossa nova de bar, 1965</span>
+      bossa nova, Rio de Janeiro 1965, nylon-string guitar close-miked, brushed drums, warm upright bass, soft male baritone almost whispering, 76 bpm, analog tape saturation, subtle room reverb, slightly detuned piano in the background, intimate late-night club recording
+    </div>
+    <div class="prompt">
+      <span class="lbl">Exclusões — o que mata o genérico</span>
+      exclude: modern pop production, autotune, EDM drums, brass stabs, loud mastering, synthetic strings, English vocals
+    </div>
+
+    <div class="measure">
+      <ul class="plain">
+        <li><strong>Escreva a letra você mesmo.</strong> Além de melhorar o resultado, é o que dá lastro humano para o registro autoral discutido na Parte I.</li>
+        <li><strong>Gere cinco para usar uma.</strong> Corte sem dó: intro fraca nos primeiros oito segundos, artefato de voz, final abrupto, andamento que quebra o clima da playlist.</li>
+        <li><strong>Ordene por energia,</strong> não por ordem de criação: a faixa mais cativante primeiro, porque os primeiros trinta segundos decidem a retenção do vídeo inteiro.</li>
+        <li><strong>Normalize tudo</strong> para o mesmo volume antes de montar — variação de loudness entre faixas é o que faz gente fechar a aba.</li>
+      </ul>
+    </div>
+
+    <h4>Montagem do vídeo — pipeline em quatro comandos</h4>
+<pre><code><span class="cmt"># 1. lista das faixas na ordem escolhida</span>
+printf "file '%s'\n" 01.mp3 02.mp3 03.mp3 &gt; lista.txt
+
+<span class="cmt"># 2. concatena o set inteiro</span>
+ffmpeg -f concat -safe 0 -i lista.txt -c:a pcm_s16le set.wav
+
+<span class="cmt"># 3. normaliza para -14 LUFS (padrão de streaming)</span>
+ffmpeg -i set.wav -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 44100 set_norm.wav
+
+<span class="cmt"># 4. renderiza com capa estática em 1080p</span>
+ffmpeg -loop 1 -framerate 2 -i capa.png -i set_norm.wav \
+  -c:v libx264 -preset veryslow -tune stillimage -crf 20 -pix_fmt yuv420p \
+  -vf "scale=1920:1080" -c:a aac -b:a 320k -shortest video.mp4</code></pre>
+
+    <h4>Tracklist com marcações de tempo, gerada sozinha</h4>
+<pre><code>t=0
+for f in 01.mp3 02.mp3 03.mp3; do
+  printf "%02d:%02d:%02d  %s\n" $((t/3600)) $((t%3600/60)) $((t%60)) "${f%.*}"
+  d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+  t=$((t + ${d%.*}))
+done</code></pre>
+    <p class="measure">Cole a saída na descrição. Marcações viram capítulos, capítulos aumentam retenção e retenção é a única métrica que faz o YouTube reentregar um vídeo de uma hora.</p>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 04</span><h3>Embalar — onde o jogo é ganho</h3><span class="when">Contínuo</span></div>
+    <div class="measure">
+      <p>O Will foi direto: "no YouTube o foco é o título". E o título dele que estourou não descreve gênero — descreve uma cena. "Fazer a galera se sentir em Copacabana na época da bossa nova." A fórmula, decomposta:</p>
+      <p><code>[cenário concreto] + [época ou hora do dia] + [função da escuta] + [duração]</code></p>
+      <ul class="plain">
+        <li><em>Copacabana 1985 — Bossa Nova para uma Manhã de Domingo com Vista para o Mar · 1 Hora</em></li>
+        <li><em>Café em Paris, 1957 — Jazz Suave para Trabalhar em Dia de Chuva</em></li>
+        <li><em>Taverna Medieval — Música de Lareira para Ler e Dormir · 3 Horas</em></li>
+      </ul>
+      <p><strong>Idioma segue o RPM.</strong> Se o alvo é público dos EUA e da Europa, título e descrição em inglês, mesmo com música brasileira — bossa nova é consumida majoritariamente fora do Brasil.</p>
+      <p><strong>Capa:</strong> uma cena com luz quente, um ponto humano (silhueta, mão no violão, mesa com taça), sem texto ou com duas ou três palavras no máximo. Mesma paleta e mesma composição em todo o canal — o reconhecimento na barra lateral vale mais que a criatividade em cada capa.</p>
+      <p><strong>Descrição:</strong> primeira linha vende a cena, segunda leva ao Spotify, depois a tracklist com tempos. Nunca deixe a descrição vazia — é onde o vídeo é indexado.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 05</span><h3>Cadência e portfólio</h3><span class="when">Semanas 2–12</span></div>
+    <div class="measure">
+      <ul class="plain">
+        <li><strong>Um vídeo longo a cada um ou dois dias</strong> por canal, em horário fixo.</li>
+        <li><strong>Três a cinco canais em nichos diferentes</strong> rodando em paralelo. É o que o Will faz com quinze — e é a razão de ele sobreviver à queda de um deles.</li>
+        <li><strong>Julgue o canal em 20–30 vídeos,</strong> não em cinco. Se nada passar de mil views nesse volume, o problema é o nicho ou a embalagem, não a paciência.</li>
+        <li><strong>Quando um vídeo acertar, replique a fórmula na hora</strong> — três variações na semana seguinte, mesma estrutura de título.</li>
+        <li><strong>Shorts:</strong> pare de fazer <em>lip sync</em>. Ele mesmo constatou que fica ruim com o artista tocando violão. O que funciona em música ambiente é a cena em movimento lento com 15–20 segundos do trecho mais cativante e uma legenda de clima ("bossa nova para quem acorda antes do sol").</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 06</span><h3>A ponte para o streaming</h3><span class="when">A partir do 1º vídeo</span></div>
+    <div class="measure">
+      <p>Aqui está a maior perda do Will e a sua maior contribuição: milhões de views no YouTube gotejando 600 a 1.500 plays/dia no Spotify porque a ponte é <em>as pessoas procurarem sozinhas</em>.</p>
+      <ul class="plain">
+        <li>Card do YouTube apontando para o perfil no Spotify por volta do minuto 3 e outro perto do fim.</li>
+        <li>Link do Spotify na <strong>primeira linha visível</strong> da descrição, antes do "mostrar mais".</li>
+        <li>Comentário fixo com o link e uma frase de motivo ("a versão sem anúncio, para levar na praia").</li>
+        <li>Aba de links do canal e banner apontando para o perfil de artista.</li>
+        <li>Lançamentos <strong>espaçados, uma faixa por semana</strong>, cada um com pitch feito no Spotify for Artists — nunca 24 de uma vez.</li>
+        <li>Grupo de fãs (WhatsApp ou newsletter) para o artista, separado do grupo de alunos: é a única audiência que ninguém pode desligar.</li>
+      </ul>
+    </div>
+    <div class="note good">
+      <span class="tag">Modelo de pitch — 500 caracteres</span>
+      <p>Autoridade, conceito, playlists-alvo, plano de divulgação. Nessa ordem, sempre.</p>
+      <p><em>"Com mais de 4 milhões de views no YouTube em playlists de bossa nova, Dom Amorim lança seu novo single, gravado com violão de nylon e voz intimista, inspirado nas noites de Copacabana dos anos 60. Faixa com perfil para playlists de bossa nova, jazz brasileiro e escuta de café da manhã. A divulgação inclui um vídeo semanal no canal (4 mil views/48h), Shorts diários e ativação de playlists de usuários no primeiro mês."</em></p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="phase-no">FASE 07</span><h3>Monetizar além do AdSense</h3><span class="when">Mês 3 em diante</span></div>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Fonte</th><th>Como ativa</th><th>Ordem de grandeza</th></tr></thead>
+        <tbody>
+          <tr><td>AdSense</td><td>Automático com o canal monetizado</td><td>O grosso hoje — e o mais volátil</td></tr>
+          <tr><td>Streaming (DSPs)</td><td>Distribuição + pitch + playlists</td><td>Pequeno em volume, grande em marca</td></tr>
+          <tr><td>Execução pública (ECAD)</td><td>Associação + cadastro de obra e fonograma</td><td>Hoje literalmente zero — e já está tocando em quiosque</td></tr>
+          <tr><td>Trilha para ambiente comercial</td><td>Venda direta de playlist licenciada a pousadas, cafés, redes</td><td>B2B recorrente, mercado real e mal atendido</td></tr>
+          <tr><td>Sync audiovisual</td><td>Catálogo organizado com metadados e ISRC</td><td>Cauda longa, ticket alto quando cai</td></tr>
+          <tr><td>Curso e mentoria</td><td>O canal como prova viva</td><td>É o que o Will já faz — e onde a margem é maior</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>Stack e custo mensal</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Função</th><th>Ferramenta</th><th>Custo aproximado</th></tr></thead>
+      <tbody>
+        <tr><td>Geração musical</td><td>Suno — <strong>plano pago obrigatório</strong> pelos direitos comerciais</td><td class="num">US$ 10–30 / mês</td></tr>
+        <tr><td>Capas e cenários</td><td>Midjourney, Flux ou equivalente</td><td class="num">US$ 10–30 / mês</td></tr>
+        <tr><td>Montagem e normalização</td><td>ffmpeg</td><td class="num">Grátis</td></tr>
+        <tr><td>Masterização opcional</td><td>LANDR ou plugin de loudness</td><td class="num">US$ 0–25 / mês</td></tr>
+        <tr><td>Distribuição</td><td>DistroKid hoje · Propulse depois</td><td class="num">US$ 23 / ano</td></tr>
+        <tr><td>Direitos</td><td>ABRAMUS ou UBC</td><td class="num">Sem custo de cadastro</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Menos de R$400/mês para operar dois canais. O gargalo é curadoria e disciplina de publicação, não dinheiro.</p>
+
+  <div class="note warn">
+    <span class="tag">Conformidade — a lista curta</span>
+    <p>Plano pago no gerador (é o que garante uso comercial). Capa e arte próprias. Nada de áudio de terceiros. Metadados honestos no DSP — quem produziu, quem interpretou, uso de IA declarado. Nada de compra de plays, jamais, em nenhuma circunstância. E variação real entre vídeos: repetição mecânica é o que aciona revisão de monetização.</p>
+  </div>
+</section>
+
+<section id="acoes">
+  <div class="sec-head"><span class="sec-mark">FECHAMENTO</span><h2>O que fazer nesta semana</h2></div>
+  <div class="check">
+    <ol>
+      <li><strong>Mandar o resumo para o Will no WhatsApp</strong> com os três itens que ele mesmo listou no fim da call — reivindicar o Spotify for Artists do Dom Amorim, fazer o pitch, garimpar playlists de usuário — e acrescentar o que ele não sabia: <em>não solte as 24 faixas de domingo de uma vez.</em> É o conselho mais valioso e o mais urgente, porque tem data.</li>
+      <li><strong>Fechar a data da aula dele</strong> no cronograma de setembro, com cupom rastreável, e pedir na mesma mensagem o acesso ao método de canal como contrapartida.</li>
+      <li><strong>Levar as quatro perguntas ao João</strong> e sair com uma faixa de preço definida para o formato B.</li>
+      <li><strong>Escrever a proposta de uma página</strong> do piloto Dom Amorim: entregas, prazo de 90 dias, métricas combinadas (playlists algorítmicas ativas, plays/dia, plays por ouvinte) e as contrapartidas não-financeiras.</li>
+      <li><strong>Abrir seu canal-laboratório</strong> num nicho de cenário histórico. Trinta vídeos em noventa dias. Não é hobby: é o que transforma "eu entendo de distribuição" em "eu opero o mesmo negócio que você" na frente dos 350 alunos dele.</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  Propulse · análise da consultoria com Will R · agosto de 2026 · documento interno
+</footer>
+
+</div>
