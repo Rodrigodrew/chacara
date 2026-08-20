@@ -1,0 +1,296 @@
+<title>Amber Lantern Sessions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --sea:#0F5F5C; --amber:#8A5710; --hue:#0F5F5C;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111216; --surface:#191B20; --surface-2:#212329;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2C2E36;
+    --sea:#57C3B8; --amber:#DFA43F; --hue:#57C3B8;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111216; --surface:#191B20; --surface-2:#212329;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2C2E36;
+  --sea:#57C3B8; --amber:#DFA43F; --hue:#57C3B8;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .l{color:var(--amber)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:58ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:58px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:26px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--amber)}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+.sub{font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.04em;margin:-14px 0 24px}
+h3{font-family:var(--display);font-size:18px;margin:0}
+
+.bloco{border:1px solid var(--rule);border-left:3px solid var(--sea);background:var(--surface);padding:15px 17px;margin:18px 0;font-family:var(--mono);font-size:13px;line-height:1.75;white-space:pre-line;overflow-x:auto}
+.bloco .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:9px;white-space:normal}
+
+.faixa{border-top:1px solid var(--rule);padding:22px 0}
+.faixa:first-of-type{border-top:2px solid var(--ink)}
+.cab{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:baseline;margin-bottom:12px}
+.numero{font-family:var(--display);font-size:24px;line-height:1;color:var(--amber);font-variant-numeric:tabular-nums}
+.uso{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);margin:5px 0 0}
+.ficha{border:1px solid var(--rule);background:var(--surface);padding:13px 15px;font-family:var(--mono);font-size:13px;line-height:1.6;overflow-x:auto}
+.ficha .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:7px}
+.ficha .neg{display:block;margin-top:9px;padding-top:9px;border-top:1px dashed var(--rule);color:var(--ink-2)}
+.ficha .neg b{color:var(--ink)}
+
+.note{border-left:3px solid var(--amber);background:var(--surface);padding:16px 18px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
+.note p:last-child{margin-bottom:0}
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.55em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--amber)}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+pre{background:var(--surface);border:1px solid var(--rule);padding:14px 16px;overflow-x:auto;margin:18px 0;font-family:var(--mono);font-size:12.5px;line-height:1.65}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .cab{grid-template-columns:1fr;gap:4px} }
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Canal B · The Amber Lantern · vídeos 01 e 02</div>
+  <h1>Amber <span class="l">Lantern</span> Sessions</h1>
+  <p class="dek">Vinte faixas instrumentais de taverna, com o estilo e o campo Exclude prontos para colar — e o truque que faz peça instrumental passar de dois minutos.</p>
+  <div class="meta">
+    <span>Faixas <b>20</b></span>
+    <span>Vídeos <b>2 sets de 10</b></span>
+    <span>Idioma <b>Inglês</b></span>
+    <span>Alvo <b>6 a 8 min por faixa</b></span>
+  </div>
+</header>
+
+<section id="operar">
+  <div class="sec-head"><span class="sec-mark">ANTES DE GERAR</span><h2>O truque da duração</h2></div>
+  <p class="lede measure">Faixa instrumental é onde o Suno mais encurta: sem letra, ele não sabe quando parar e encerra em dois minutos. A saída não é pedir "long" no estilo — é dar estrutura.</p>
+  <p class="measure">Marque <strong>Instrumental</strong> e, mesmo assim, cole um dos blocos abaixo no campo de letra. O modelo lê as marcações de seção e constrói a peça em cima delas. Depois, <strong>Extend</strong> nas aprovadas: duas extensões numa peça de quatro minutos dão oito, e oito minutos por faixa significam sete ou oito faixas para fechar uma hora — não dezoito.</p>
+
+  <div class="bloco"><span class="lbl">Bloco A — Set 1, taverna acesa</span>[Intro - solo instrument, sparse]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]</div>
+
+  <div class="bloco"><span class="lbl">Bloco B — Set 2, taverna adormecida</span>[Intro - almost silence, one note]
+[Theme A - very slow]
+[Theme A - repeated, barely changed]
+[Drift - sustained notes only]
+[Theme A - repeated again]
+[Long Outro - dissolving into silence]</div>
+
+  <div class="note">
+    <span class="tag">O que o Exclude está protegendo</span>
+    <p>Repare que <em>orchestra</em> e <em>epic trailer music</em> aparecem em todas as fichas. É para lá que o modelo puxa sozinho quando ouve "medieval" — e é exatamente o que transforma taverna aconchegante em trilha de batalha. Sem essa exclusão, metade das gerações vem inaproveitável.</p>
+  </div>
+</section>
+
+<section id="set1">
+  <div class="sec-head"><span class="sec-mark">SET 1</span><h2>A taverna acesa</h2></div>
+  <p class="sub">Vídeo 01 · Medieval Tavern Ambience — Fireplace, Lute &amp; Rain | 1 Hour for Reading · use o Bloco A</p>
+
+<article class="faixa" id="f01">
+  <header class="cab"><span class="numero">01</span>
+    <div><h3>The Long Hearth</h3><p class="uso">abre o set e define o clima do canal</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, solo lute with soft wooden flute, dorian mode, 72 bpm, warm and slow, extended and repetitive, played live in a stone hall, faint fire crackle, loopable
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f02">
+  <header class="cab"><span class="numero">02</span>
+    <div><h3>Ale and Old Friends</h3><p class="uso">primeiro respiro rítmico</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, fiddle leading with lute accompaniment, bodhran hand drum, 96 bpm, cheerful but unhurried, extended arrangement with long instrumental solo, faint crowd murmur
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f03">
+  <header class="cab"><span class="numero">03</span>
+    <div><h3>Rain on the Shutters</h3><p class="uso">melancolia, casa com a chuva da ambiência</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval ambient folk, wooden flute and lute, aeolian mode, 64 bpm, melancholic and sparse, very long sustained notes, rainy night, extended outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f04">
+  <header class="cab"><span class="numero">04</span>
+    <div><h3>The Innkeeper&#x27;s Waltz</h3><p class="uso">compasso ternário para variar o balanço</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval waltz in 3/4, hurdy-gurdy and lute, 88 bpm, gentle swaying rhythm, warm, extended with two full instrumental sections
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f05">
+  <header class="cab"><span class="numero">05</span>
+    <div><h3>Candle in the Window</h3><p class="uso">o ponto mais íntimo do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>solo lute, no other instruments, 56 bpm, very quiet and intimate, lullaby feel, extremely slow and repetitive, long fade
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build, percussion</span></div>
+</article>
+<article class="faixa" id="f06">
+  <header class="cab"><span class="numero">06</span>
+    <div><h3>Boots by the Fire</h3><p class="uso">segundo respiro rítmico, no meio do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, bodhran and fiddle, mandolin fills, 104 bpm, steady walking rhythm, tavern evening, extended instrumental breaks
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f07">
+  <header class="cab"><span class="numero">07</span>
+    <div><h3>The Old Road Home</h3><p class="uso">melodia de viagem, a mais cantável do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk ballad without vocals, lute and recorder trading the melody, dorian mode, 68 bpm, wistful and travelling, long form
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f08">
+  <header class="cab"><span class="numero">08</span>
+    <div><h3>Wine and Woodsmoke</h3><p class="uso">calor social, sem agitação</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, mandolin and recorder, light percussion, 92 bpm, warm and social, extended arrangement, wooden room reverb
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f09">
+  <header class="cab"><span class="numero">09</span>
+    <div><h3>Last Call at the Amber Lantern</h3><p class="uso">começa a fechar a noite</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and low fiddle drone, 60 bpm, closing time, tired and warm, slowly winding down, very long outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="f10">
+  <header class="cab"><span class="numero">10</span>
+    <div><h3>Embers</h3><p class="uso">encerra em quase silêncio</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>ambient medieval drone, single sustained lute and distant flute, 48 bpm, almost silent, no melody, just atmosphere, extremely long and static
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, crescendo, dramatic build, percussion</span></div>
+</article></section>
+
+<section id="set2">
+  <div class="sec-head"><span class="sec-mark">SET 2</span><h2>A taverna adormecida</h2></div>
+  <p class="sub">Vídeo 02 · The Innkeeper Banks the Fire — Soft Medieval Music for Deep Sleep | 1 Hour · use o Bloco B</p>
+  <div class="note">
+    <span class="tag">A regra deste set</span>
+    <p>Nada pode acordar ninguém. Sem percussão, sem mudança brusca, sem crescendo — por isso o Exclude das dez seguintes é mais duro que o do Set 1. E a ordem das faixas <strong>é a ordem de publicação</strong>: elas foram escritas numa curva descendente de energia, da lareira baixa até o silêncio.</p>
+  </div>
+
+<article class="faixa" id="f11">
+  <header class="cab"><span class="numero">11</span>
+    <div><h3>The Fire Burns Low</h3><p class="uso">abre o set de sono</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>solo lute, extremely soft, 52 bpm, no percussion, intimate and sleepy, repetitive, wooden room reverb, dissolving ending
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f12">
+  <header class="cab"><span class="numero">12</span>
+    <div><h3>Snow Against the Door</h3><p class="uso">frio lá fora, calor lá dentro</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval ambient, wooden flute over a very low sustained drone, 50 bpm, cold and still, minimal movement, long sustained notes
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f13">
+  <header class="cab"><span class="numero">13</span>
+    <div><h3>The Sleeping Hall</h3><p class="uso">o coração do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval lullaby, lute played like a harp, soft plucking, 48 bpm, very slow and circular, almost a loop, deep quiet
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f14">
+  <header class="cab"><span class="numero">14</span>
+    <div><h3>Nightwatch</h3><p class="uso">vigília calma, quase estática</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>ambient medieval drone, single sustained notes on low strings, 46 bpm, no melody, watchful and patient, extremely static
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f15">
+  <header class="cab"><span class="numero">15</span>
+    <div><h3>A Blanket of Furs</h3><p class="uso">a mais quente do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>soft medieval ambient, warm low strings drone with distant flute, 54 bpm, enveloping and heavy, slow breathing pace
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f16">
+  <header class="cab"><span class="numero">16</span>
+    <div><h3>The Last Guest</h3><p class="uso">solidão serena</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>solo lute, very sparse, long silences between phrases, 50 bpm, lonely but calm, natural room reverb
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f17">
+  <header class="cab"><span class="numero">17</span>
+    <div><h3>Moth at the Lantern</h3><p class="uso">movimento mínimo, quase um cintilar</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval ambient, very light lute plucking over a soft drone, 58 bpm, delicate and flickering, tiny gestures, no development
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f18">
+  <header class="cab"><span class="numero">18</span>
+    <div><h3>Beneath the Rafters</h3><p class="uso">o ponto mais profundo e escuro</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>low ambient drone with faint medieval flute, 44 bpm, dark and warm, barely audible movement, very long and static
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f19">
+  <header class="cab"><span class="numero">19</span>
+    <div><h3>Dreams of the Road</h3><p class="uso">volta uma melodia, mas em sonho</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval ambient folk, wooden flute melody floating over a drone, 56 bpm, wistful and distant, as if remembered, slow and unresolved
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article>
+<article class="faixa" id="f20">
+  <header class="cab"><span class="numero">20</span>
+    <div><h3>Until Morning</h3><p class="uso">encerra o set no limiar do silêncio</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>ambient drone, one sustained note slowly changing color, 40 bpm, almost silence, no melody, no rhythm, endless
+    <span class="neg"><b>Exclude Styles:</b> percussion, drums, orchestra, choir, synth, vocals, crescendo, dynamic change, bright tones</span></div>
+</article></section>
+
+<section id="capas">
+  <div class="sec-head"><span class="sec-mark">AS CAPAS</span><h2>Duas cenas, um lugar</h2></div>
+  <p class="measure">É a mesma taverna em dois momentos da noite. Essa continuidade é o que faz o canal parecer um lugar de verdade e não uma pasta de imagens — e é de graça, porque a segunda cena nasce de um pedido de ajuste sobre a primeira, na mesma conversa.</p>
+
+  <div class="bloco"><span class="lbl">Bloco-base — cole antes de cada cena</span>Painterly and atmospheric, warm amber light against deep brown shadow, 35mm photographic depth of field, landscape 16:9, no people, no text, no watermark.</div>
+
+  <div class="bloco"><span class="lbl">Vídeo 01 — a taverna acesa</span>A cozy medieval tavern interior at night, seen from a corner table. A stone fireplace burns strongly on the right, a pewter tankard and an open book rest on a heavy oak table in the foreground, and a lute leans against the bench. Rain streaks the leaded glass window on the left. The fire is the only light source and the corners of the room fall into deep shadow.</div>
+
+  <div class="bloco"><span class="lbl">Vídeo 02 — a taverna adormecida</span>The same medieval tavern interior, hours later and almost dark. The fire has burned down to glowing embers, a single candle gutters on the table beside an empty tankard, and a heavy fur blanket is draped over the bench. Snow builds up on the outside of the leaded glass window. Almost no light, only the red glow of the embers and the small candle flame.</div>
+
+  <p class="measure"><strong>Sem texto na capa.</strong> Aqui vale o oposto do Zé Sereno: o nicho internacional de ambiência usa imagem limpa, e capa poluída destoa da prateleira inteira.</p>
+</section>
+
+<section id="montagem">
+  <div class="sec-head"><span class="sec-mark">MONTAGEM</span><h2>Ambiência e comando</h2></div>
+  <ul class="plain measure">
+    <li><strong>Vídeo 01:</strong> lareira estalando forte + chuva no vidro + murmúrio distante de conversa.</li>
+    <li><strong>Vídeo 02:</strong> brasa estalando fraco + vento lá fora. Sem murmúrio — a taverna dormiu.</li>
+  </ul>
+<pre><code>./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 \
+  -t "The fire is lit and the rain hasn't stopped since noon." \
+  -s "https://open.spotify.com/artist/SEU_ID" -o amber-lantern-01.mp4</code></pre>
+  <p class="measure">No Vídeo 02, baixe a ambiência para <code>-b -30</code> e suba o crossfade para <code>-x 6</code>. Set de dormir não admite emenda perceptível.</p>
+  <p class="measure"><strong>Ordem do Set 1:</strong> a 01 abre e define o clima, a 02 e a 06 entram nos terços para dar respiro rítmico, e a 09 e a 10 fecham a noite. <strong>Set 2:</strong> exatamente de 11 a 20, sem trocar nada.</p>
+</section>
+
+<footer>
+  Propulse · Canal B · agosto de 2026 · companheiro do manual "Viola &amp; Taverna"
+</footer>
+</div>
