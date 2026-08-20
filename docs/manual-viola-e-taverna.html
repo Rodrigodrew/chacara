@@ -448,24 +448,43 @@ Eu deixei no som do bordão
 ./montar-playlist.sh -d faixas -i capa.png -o viola-amanhecer.mp4
 
 <span class="cmt"># Canal B — vídeo em loop + lareira mixada por baixo</span>
-./montar-playlist.sh -d faixas -v loop.mp4 -a lareira.wav -b -26 -x 4 -o tavern-night.mp4</code></pre>
+./montar-playlist.sh -d faixas -v loop.mp4 -a lareira.wav -b -26 -x 4 -o tavern-night.mp4
+
+<span class="cmt"># A semana inteira de uma vez — um vídeo por subpasta</span>
+./montar-playlist.sh -B semana -s "https://open.spotify.com/artist/SEU_ID"</code></pre>
+
+<p class="measure">No modo lote, cada subpasta vira um vídeo. O script descobre sozinho os arquivos pelo nome — deixe <code>capa.png</code> ou <code>loop.mp4</code>, opcionalmente <code>ambiencia.wav</code>, os áudios soltos ou dentro de <code>faixas/</code>, e um <code>info.txt</code> cuja primeira linha vira o gancho da descrição. Sem <code>info.txt</code>, o nome da pasta é usado. Pasta sem capa nem loop é pulada com aviso, sem derrubar o resto da fila.</p>
+
+<pre><code>semana/
+  01-viola-ao-amanhecer/
+    faixas/          <span class="cmt">01-Sereno da Madrugada.mp3 ...</span>
+    capa.png
+    ambiencia.wav    <span class="cmt">opcional</span>
+    info.txt         <span class="cmt">1ª linha = gancho da descrição</span>
+  02-toadas-de-boiadeiro/
+    ...</code></pre>
 
   <div class="tw">
     <table>
       <thead><tr><th>Opção</th><th>O que faz</th><th>Padrão</th></tr></thead>
       <tbody>
-        <tr><td class="num">-d</td><td>Pasta com as faixas, ordenadas pelo nome do arquivo</td><td class="num">faixas</td></tr>
+        <tr><td class="num">-d</td><td>Pasta com as faixas, ordenadas pelo nome do arquivo</td><td class="num">—</td></tr>
         <tr><td class="num">-i</td><td>Imagem de capa para fundo estático</td><td class="num">—</td></tr>
         <tr><td class="num">-v</td><td>Vídeo curto que roda em loop pelo set inteiro</td><td class="num">—</td></tr>
         <tr><td class="num">-a</td><td>Arquivo de ambiência mixado por baixo</td><td class="num">—</td></tr>
         <tr><td class="num">-b</td><td>Volume da ambiência em dB</td><td class="num">-26</td></tr>
         <tr><td class="num">-x</td><td>Crossfade entre faixas, em segundos</td><td class="num">3</td></tr>
+        <tr><td class="num">-l</td><td>Alvo de loudness em LUFS</td><td class="num">-14</td></tr>
         <tr><td class="num">-o</td><td>Arquivo de saída</td><td class="num">video.mp4</td></tr>
+        <tr><td class="num">-B</td><td><strong>Modo lote:</strong> monta um vídeo por subpasta</td><td class="num">—</td></tr>
+        <tr><td class="num">-t</td><td>Gancho da descrição (primeira linha)</td><td class="num">—</td></tr>
+        <tr><td class="num">-s</td><td>Link do perfil no Spotify, entra na descrição</td><td class="num">—</td></tr>
+        <tr><td class="num">-r</td><td>Arquivo com o rodapé fixo da descrição</td><td class="num">padrão embutido</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p class="measure">Nomeie os arquivos como <code>01-Amanhecer na Fazenda.mp3</code>: o número define a ordem e o resto vira o nome na tracklist automaticamente. O script foi testado — três faixas de 12 segundos com crossfade de 3 saem em exatos 30 segundos, com os tempos batendo na tracklist.</p>
+  <p class="measure">Nomeie os arquivos como <code>01-Amanhecer na Fazenda.mp3</code>: o número define a ordem e o resto vira o nome na tracklist automaticamente. Além do vídeo, saem dois arquivos de texto na mesma pasta — <code>tracklist.txt</code> e <code>descricao.txt</code>, esta última já com gancho, link do Spotify, tracklist e rodapé, pronta para colar no YouTube.</p>
 
   <div class="note good">
     <span class="tag">Padrões de render</span>
