@@ -29,7 +29,7 @@
 set -euo pipefail
 
 DIR=""; IMG=""; LOOP=""; AMB=""; AMB_DB="-26"; XF="3"; OUT=""; LUFS="-14"
-LOTE=""; TITULO=""; SPOTIFY=""; RODAPE=""
+LOTE=""; TITULO=""; SPOTIFY=""; RODAPE=""; ALVO=""
 
 usage() {
   cat <<TXT
@@ -44,6 +44,8 @@ uso: $0 -d <pasta> (-i capa.png | -v loop.mp4) [opcoes]
   -x  crossfade entre faixas, em segundos       (padrao: 3)
   -l  alvo de loudness em LUFS                  (padrao: -14)
   -o  arquivo de saida                          (padrao: video.mp4)
+  -D  duracao alvo em minutos: repete o set em ordem embaralhada
+      ate atingir esse tempo, sem faixa repetida em sequencia
 
   -B  modo lote: monta um video por subpasta de <pasta_mae>
   -t  gancho da descricao (1a linha)            (lote: vem do info.txt)
@@ -53,12 +55,13 @@ TXT
   exit 1
 }
 
-while getopts "d:i:v:a:b:x:l:o:B:t:s:r:h" opt; do
+while getopts "d:i:v:a:b:x:l:o:B:t:s:r:D:h" opt; do
   case $opt in
     d) DIR="$OPTARG" ;; i) IMG="$OPTARG" ;; v) LOOP="$OPTARG" ;;
     a) AMB="$OPTARG" ;; b) AMB_DB="$OPTARG" ;; x) XF="$OPTARG" ;;
     l) LUFS="$OPTARG" ;; o) OUT="$OPTARG" ;; B) LOTE="$OPTARG" ;;
     t) TITULO="$OPTARG" ;; s) SPOTIFY="$OPTARG" ;; r) RODAPE="$OPTARG" ;;
+    D) ALVO="$OPTARG" ;;
     *) usage ;;
   esac
 done
@@ -93,6 +96,41 @@ montar_um() {
   local n=${#TRACKS[@]}
   [ "$n" -gt 0 ] || { echo "!! nenhuma faixa em '$dir', pulando"; return 1; }
   echo ">> $n faixas em $(basename "$dir")"
+
+  # --- alonga o set repetindo as faixas ate a duracao alvo -----------------
+  #   Cada passagem usa uma ordem diferente (rotacao, invertida nas impares)
+  #   e nunca deixa a mesma faixa tocar duas vezes seguidas na emenda.
+  if [ -n "$ALVO" ]; then
+    local alvo=$((ALVO*60)) soma=0 passe=0 i idx ultimo=-1
+    local -a DUR=() ORDEM=() NOVO=()
+    for f in "${TRACKS[@]}"; do
+      local d; d=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")
+      DUR+=("${d%.*}")
+    done
+    while [ "$soma" -lt "$alvo" ]; do
+      ORDEM=()
+      for ((i=0; i<n; i++)); do ORDEM+=($(( (i + passe) % n ))); done
+      if [ $((passe % 2)) -eq 1 ]; then
+        local -a INV=(); for ((i=n-1; i>=0; i--)); do INV+=("${ORDEM[$i]}"); done
+        ORDEM=("${INV[@]}")
+      fi
+      # evita repetir a faixa que fechou a passagem anterior
+      if [ "$ultimo" -ge 0 ] && [ "${ORDEM[0]}" -eq "$ultimo" ] && [ "$n" -gt 1 ]; then
+        local tmpi="${ORDEM[0]}"; ORDEM[0]="${ORDEM[1]}"; ORDEM[1]="$tmpi"
+      fi
+      for idx in "${ORDEM[@]}"; do
+        NOVO+=("${TRACKS[$idx]}")
+        soma=$((soma + DUR[idx] - XF))
+        ultimo=$idx
+        [ "$soma" -ge "$alvo" ] && break
+      done
+      passe=$((passe+1))
+      [ "$passe" -gt 60 ] && break
+    done
+    TRACKS=("${NOVO[@]}")
+    n=${#TRACKS[@]}
+    echo ">> set alongado para $n entradas (~$((soma/60)) min, alvo de ${ALVO} min)"
+  fi
 
   # --- tracklist com os tempos, descontando os crossfades ---
   local acc=0 i f base nome dur
