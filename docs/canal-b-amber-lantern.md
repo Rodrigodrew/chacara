@@ -155,3 +155,108 @@ três horas conforme o catálogo acumula. Duas alavancas ajudam:
 - **Extend** nas faixas boas: transforma 3 minutos em 6 ou 8 sem gastar geração nova.
 - **Ambiência contínua** por baixo: com lareira e chuva rodando, a repetição de uma
   faixa ao longo do set fica muito menos perceptível do que no Canal A.
+
+---
+
+# VÍDEO 01 — as dez faixas
+
+Título: `Medieval Tavern Ambience — Fireplace, Lute & Rain | 1 Hour for Reading`
+
+## O truque da duração em faixa instrumental
+
+Marque **Instrumental** e, mesmo assim, cole este bloco no campo de letra. O Suno lê as
+marcações de seção e estende a peça em vez de encerrar em dois minutos. É o mesmo bloco
+para as dez faixas.
+
+```
+[Intro - solo instrument, sparse]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]
+```
+
+Depois disso, **Extend** é a alavanca principal: pegue a faixa boa e estenda a partir do
+último tema. Duas extensões numa peça de 4 minutos dão 8, e oito minutos por faixa
+significam sete ou oito faixas para fechar uma hora, não dezoito.
+
+## Estilos — dez faixas para o primeiro set
+
+Todos começam pelo mesmo alicerce sonoro para o set soar coeso. O que muda é o
+instrumento em destaque, o andamento e a densidade.
+
+```
+01 · The Long Hearth
+medieval tavern folk, solo lute with soft wooden flute, dorian mode, 72 bpm, warm and
+slow, extended and repetitive, played live in a stone hall, faint fire crackle, loopable
+
+02 · Ale and Old Friends
+medieval tavern folk, fiddle leading with lute accompaniment, bodhran hand drum, 96 bpm,
+cheerful but unhurried, extended arrangement with long instrumental solo, crowd murmur
+
+03 · Rain on the Shutters
+medieval ambient folk, wooden flute and lute, aeolian mode, 64 bpm, melancholic and
+sparse, very long sustained notes, rainy night, extended outro
+
+04 · The Innkeeper's Waltz
+medieval waltz in 3/4, hurdy-gurdy and lute, 88 bpm, gentle swaying rhythm, warm,
+extended with two full instrumental sections
+
+05 · Candle in the Window
+solo lute, no other instruments, 56 bpm, very quiet and intimate, lullaby feel,
+extremely slow and repetitive, long fade
+
+06 · Boots by the Fire
+medieval tavern folk, bodhran and fiddle, mandolin fills, 104 bpm, steady walking
+rhythm, tavern evening, extended instrumental breaks
+
+07 · The Old Road Home
+medieval folk ballad without vocals, lute and recorder trading the melody, dorian mode,
+68 bpm, wistful and travelling, long form
+
+08 · Wine and Woodsmoke
+medieval tavern folk, mandolin and recorder, light percussion, 92 bpm, warm and social,
+extended arrangement, wooden room reverb
+
+09 · Last Call at the Amber Lantern
+medieval tavern folk, lute and low fiddle drone, 60 bpm, closing time, tired and warm,
+slowly winding down, very long outro
+
+10 · Embers
+ambient medieval drone, single sustained lute and distant flute, 48 bpm, almost silent,
+no melody, just atmosphere, extremely long and static
+```
+
+**Exclude Styles — o mesmo nas dez:**
+```
+orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums,
+electric instruments, vocals, crescendo, dramatic build
+```
+
+## A camada de ambiência deste vídeo
+
+Baixe três arquivos longos e sem picos, no Freesound com filtro CC0:
+
+- **lareira estalando** — a base, sempre presente
+- **chuva contra vidro** — dá o motivo de a pessoa estar dentro da taverna
+- **murmúrio distante de conversa** — bem baixo, só para não soar vazio
+
+Junte os três num arquivo só e mixe a −26 dB:
+
+```
+./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 \
+  -t "The fire is lit and the rain hasn't stopped since noon." \
+  -s "https://open.spotify.com/artist/SEU_ID" -o amber-lantern-01.mp4
+```
+
+Crossfade de 4 segundos em vez de 3: nesse nicho a emenda precisa ser ainda mais
+invisível que no Canal A.
+
+## Ordem do set
+
+Abra com a **01** (é a que define o clima), ponha a **02** e a **06** nos terços para dar
+respiro rítmico, e feche com **09** e **10** — a última é quase silêncio, que é como se
+despede de quem adormeceu ouvindo.
