@@ -310,8 +310,14 @@ Bloco-base, cole antes de cada cena:
 
 ```
 Painterly and atmospheric, warm amber light against deep brown shadow, 35mm
-photographic depth of field, landscape 16:9, no people, no text, no watermark.
+photographic depth of field, wide landscape orientation, no people, no text,
+no watermark. Compose with the important elements in the middle band of the
+frame and leave empty space at the very top and the very bottom.
 ```
+
+> A folga no topo e na base não é capricho: o ChatGPT entrega 1536×1024, que é 3:2,
+> e a conversão para 1920×1080 corta cerca de 80 pixels de cada lado da altura.
+> Com respiro nas bordas, o corte come só ar.
 
 **Vídeo 01 — a taverna acesa**
 ```
