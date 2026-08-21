@@ -1,0 +1,245 @@
+<title>A Fábrica e a Vitrine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(38px,7.2vw,82px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:58ch;margin-bottom:26px}
+
+section{padding-top:60px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:26px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue)}
+h2{font-family:var(--display);font-size:clamp(24px,3.5vw,35px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+.lede{font-size:21px;line-height:1.5;max-width:62ch;margin-bottom:26px}
+
+/* dias */
+.semana{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:30px 0}
+.dia{background:var(--paper);padding:20px 22px;display:grid;grid-template-columns:130px 1fr;gap:20px}
+.dia .quando{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
+.dia .quando .tipo{display:block;font-weight:400;letter-spacing:.06em;margin-top:5px;font-size:11px}
+.dia.fab .quando{color:var(--ocre)}
+.dia.vit .quando{color:var(--sea)}
+.dia.rev .quando{color:var(--hue)}
+.dia h3{font-family:var(--display);font-size:17px;margin:0 0 8px}
+.dia p{font-size:16.5px;margin-bottom:.6em}
+.dia p:last-child{margin-bottom:0}
+.dia ul{margin:0;padding-left:1.15em;font-size:16.5px}
+.dia li{margin-bottom:.35em}
+.dia li::marker{color:var(--ink-2)}
+.tempo{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.06em}
+
+.tw{overflow-x:auto;margin:26px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:620px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.note.warn{border-left-color:var(--ocre)}
+.note.good{border-left-color:var(--sea)}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn .tag{color:var(--ocre)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.55em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+ul.nunca li::before{background:var(--ocre)}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+
+.marcos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:28px 0}
+.marco{background:var(--paper);padding:18px 18px}
+.marco .n{font-family:var(--display);font-size:24px;line-height:1;color:var(--hue)}
+.marco .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin:8px 0 8px}
+.marco p{font-size:15.5px;margin:0;line-height:1.45}
+
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:700px){ body{font-size:17px} .hero{padding:50px 0 34px} .dia{grid-template-columns:1fr;gap:8px} }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Operação semanal · The Amber Lantern + Zé Sereno</div>
+  <h1>A Fábrica <span class="e">e</span> a Vitrine</h1>
+  <p class="dek">Um dia de fábrica, três de vitrine, meia hora de leitura de números. A rotina que sustenta três publicações por semana sem virar rotina de plantão.</p>
+</header>
+
+<section id="principio">
+  <div class="sec-head"><span class="sec-mark">O PRINCÍPIO</span><h2>Produza em lote, publique picado</h2></div>
+  <p class="lede measure">O erro que mata canal de música é tratar cada vídeo como um projeto: gerar, curar, montar e publicar tudo no mesmo dia, três vezes por semana. Isso não escala e cansa em duas semanas.</p>
+  <p class="measure">A operação certa separa as duas coisas. <strong>Um bloco de produção por semana</strong> gera e monta os três vídeos de uma vez. Os dias de publicação viram cinco minutos de trabalho, porque tudo já está agendado — sobra só responder comentário. E uma vez por semana, meia hora olhando números, com regras decididas de antemão para você não reagir a ruído.</p>
+</section>
+
+<section id="semana">
+  <div class="sec-head"><span class="sec-mark">A SEMANA</span><h2>Como os dias se dividem</h2></div>
+
+  <div class="semana">
+    <div class="dia fab">
+      <div class="quando">Sábado<span class="tipo">Fábrica · 3–4 h</span></div>
+      <div>
+        <h3>Gerar</h3>
+        <p>Gere de setenta a noventa faixas de uma sentada, seguindo as fichas do cancioneiro. Não julgue nada agora — gerar e escolher no mesmo impulso faz você aprovar coisa ruim por cansaço.</p>
+        <p class="tempo">Saída esperada: material bruto para os três vídeos da semana.</p>
+      </div>
+    </div>
+
+    <div class="dia fab">
+      <div class="quando">Domingo<span class="tipo">Fábrica · 2 h</span></div>
+      <div>
+        <h3>Curar e montar</h3>
+        <ul>
+          <li>Ouça tudo e aprove uma em cada três. Corte por intro fraca nos primeiros oito segundos, artefato de voz ou final abrupto.</li>
+          <li>Renomeie com o código da série: <code>A01-Nome.mp3</code>.</li>
+          <li>Gere as capas na mesma conversa do ChatGPT, sempre depois do bloco-base.</li>
+          <li>Monte os três vídeos com o script e confira a duração de cada um.</li>
+          <li>Agende os três no YouTube, com a folha de upload preenchida.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dia vit">
+      <div class="quando">Seg · Qua · Sex<span class="tipo">Vitrine · 10 min</span></div>
+      <div>
+        <h3>Publicar e conversar</h3>
+        <ul>
+          <li>Confirme que o vídeo entrou no ar às 16h e processou em 1080p.</li>
+          <li>Fixe o comentário.</li>
+          <li>Responda todo comentário que chegar, na voz do canal.</li>
+          <li>Confira se os capítulos apareceram na barra de progresso.</li>
+        </ul>
+        <p class="tempo">Nada além disso. Não abra o Analytics.</p>
+      </div>
+    </div>
+
+    <div class="dia rev">
+      <div class="quando">Sexta, à noite<span class="tipo">Revisão · 30 min</span></div>
+      <div>
+        <h3>Ler os números</h3>
+        <p>A única janela da semana em que você olha Analytics. Anote quatro números por vídeo numa planilha e compare com a semana anterior — nunca com a expectativa.</p>
+        <p class="tempo">Se um gatilho da tabela abaixo disparar, você age. Se não, não mexe em nada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="note good">
+    <span class="tag">Onde o Zé Sereno entra</span>
+    <p>O Canal A roda no mesmo sábado, com o material do cancioneiro, e publica <strong>uma vez por semana</strong>. Ele é laboratório: serve para você testar título e capa com ciclo rápido e barato, e para acumular catálogo registrável no ECAD. Não gaste nele mais que uma hora por semana enquanto a Taverna estiver crescendo.</p>
+  </div>
+</section>
+
+<section id="numeros">
+  <div class="sec-head"><span class="sec-mark">OS NÚMEROS</span><h2>O que olhar, e o gatilho de cada um</h2></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Métrica</th><th>Onde</th><th>Referência</th><th>Gatilho de ação</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Retenção aos 60s</strong></td>
+          <td>Analytics → Engajamento</td>
+          <td class="num">acima de 60%</td>
+          <td>Abaixo disso, a primeira faixa está errada como abertura. Troque a faixa de abertura no próximo set.</td>
+        </tr>
+        <tr>
+          <td><strong>CTR</strong></td>
+          <td>Analytics → Alcance</td>
+          <td class="num">2 a 5%</td>
+          <td>Só olhe depois de <strong>mil impressões</strong>. CTR baixo com retenção alta = problema de capa e título, e a troca vale retroativamente.</td>
+        </tr>
+        <tr>
+          <td><strong>Tempo médio de exibição</strong></td>
+          <td>Analytics → Visão geral</td>
+          <td class="num">8 a 20 min</td>
+          <td>É a métrica que decide tudo em vídeo longo. Caindo semana a semana, o problema é o set, não a capa.</td>
+        </tr>
+        <tr>
+          <td><strong>Views nas primeiras 48 h</strong></td>
+          <td>Comparar entre vídeos</td>
+          <td class="num">relativo</td>
+          <td>Um vídeo com o triplo da média do canal é um acerto: replique a fórmula na semana seguinte.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="tag">A regra que mais importa</span>
+    <p>Quando um vídeo acerta, <strong>o YouTube passa a entregar só aquele</strong>. A resposta certa não é comemorar nem partir para outro tema — é fazer três variações dele na semana seguinte, mesma estrutura de título, cenário diferente. Você não está alimentando o canal, está alimentando um padrão que o algoritmo já validou.</p>
+  </div>
+</section>
+
+<section id="marcos">
+  <div class="sec-head"><span class="sec-mark">OS MARCOS</span><h2>Quando cada decisão acontece</h2></div>
+  <div class="marcos">
+    <div class="marco">
+      <div class="n">10</div>
+      <div class="t">Vídeos</div>
+      <p>Primeira leitura de padrão. Quais três renderam mais e o que têm em comum no título e na cena.</p>
+    </div>
+    <div class="marco">
+      <div class="n">20</div>
+      <div class="t">Vídeos</div>
+      <p>Abrir a segunda série do canal — o saloon ou o café parisiense — e criar a playlist dela.</p>
+    </div>
+    <div class="marco">
+      <div class="n">30</div>
+      <div class="t">Vídeos</div>
+      <p>Julgamento do nicho. Se nenhum passou de mil views nesse volume, o problema é o nicho ou a embalagem, não a paciência.</p>
+    </div>
+    <div class="marco">
+      <div class="n">1.000</div>
+      <div class="t">Inscritos + 4.000 h</div>
+      <p>Monetização. Ativar anúncios e reposicionar os do meio para as emendas entre faixas.</p>
+    </div>
+  </div>
+</section>
+
+<section id="nunca">
+  <div class="sec-head"><span class="sec-mark">DISCIPLINA</span><h2>O que não fazer</h2></div>
+  <ul class="plain nunca measure">
+    <li><strong>Não abrir o Analytics fora da sexta.</strong> Views nesse formato chegam por semanas, via busca e sugeridos. Olhar todo dia só produz ansiedade e decisão ruim.</li>
+    <li><strong>Não mexer em título ou capa antes de 72 horas</strong> e de mil impressões. Antes disso não existe dado.</li>
+    <li><strong>Não pular semana.</strong> Cadência quebrada custa mais que vídeo mediano publicado.</li>
+    <li><strong>Não trocar de nicho antes do vídeo 30.</strong> Recomeçar zera o aprendizado do algoritmo sobre o canal.</li>
+    <li><strong>Não comprar plays nem inscritos.</strong> Uma única compra derruba o catálogo inteiro — e, se um dia isso virar selo, derruba o de todo mundo junto.</li>
+    <li><strong>Não deixar o Spotify para depois.</strong> Uma faixa por semana, com pitch no Spotify for Artists, é o que constrói o ativo que ninguém pode desligar.</li>
+  </ul>
+</section>
+
+<footer>
+  Propulse · rotina de operação · agosto de 2026 · companheiro do manual "Viola &amp; Taverna"
+</footer>
+
+</div>
