@@ -8,6 +8,7 @@
   --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
   --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
   --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --s1:#2a78d6; --s2:#e87ba4; --grid:#E4E1DA;
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --display:"Archivo Black","Arial Black",Impact,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -17,12 +18,14 @@
     --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
     --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
     --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+    --s1:#3987e5; --s2:#d55181; --grid:#26272E;
   }
 }
 :root[data-theme="dark"]{
   --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
   --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
   --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  --s1:#3987e5; --s2:#d55181; --grid:#26272E;
 }
 body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px 110px}
@@ -79,6 +82,38 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;heig
 .entrada p{font-size:16px;margin:0 0 .5em}
 .entrada p:last-child{margin-bottom:0}
 .entrada .porque{color:var(--ink-2);font-size:15.5px}
+
+
+/* ---------- grafico ---------- */
+.fig{position:relative;margin:28px 0 20px;border:1px solid var(--rule);background:var(--paper);padding:18px 16px 10px}
+.fig-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
+.legenda-chart{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:8px;font-size:14px;color:var(--ink-2)}
+.lg::before{content:"";display:inline-block;width:14px;height:2px;margin-right:8px;vertical-align:4px}
+.lg1::before{background:var(--s1)} .lg2::before{background:var(--s2)}
+.chart-wrap{overflow-x:auto}
+.chart{width:100%;min-width:560px;height:auto;display:block;overflow:visible}
+.chart .grid{stroke:var(--grid);stroke-width:1}
+.chart .axis{stroke:var(--rule);stroke-width:1.5}
+.chart .limiar{stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:5 4;opacity:.75}
+.chart .limiar-lbl{fill:var(--ink-2);font-family:var(--mono);font-size:11px;letter-spacing:.05em}
+.chart .serie{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chart .serie.s1{stroke:var(--s1)} .chart .serie.s2{stroke:var(--s2)}
+.chart .pts circle{stroke:var(--paper);stroke-width:2}
+.chart .pts.s1 circle{fill:var(--s1)} .chart .pts.s2 circle{fill:var(--s2)}
+.chart .ytick,.chart .xtick{fill:var(--ink-2);font-family:var(--mono);font-size:11px}
+.chart .ytick{text-anchor:end} .chart .xtick{text-anchor:middle}
+.chart .dlabel{font-family:var(--mono);font-size:12px;font-weight:600}
+.chart .dlabel.d1{fill:var(--s1)} .chart .dlabel.d2{fill:var(--s2)}
+.chart .cross{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:3 3;pointer-events:none}
+.tip{position:absolute;pointer-events:none;background:var(--paper);border:1px solid var(--rule);
+     box-shadow:0 2px 10px rgba(0,0,0,.12);padding:9px 11px;font-family:var(--mono);font-size:12px;
+     line-height:1.7;white-space:nowrap;transform:translate(-50%,-115%);z-index:5}
+.tip b{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;color:var(--ink-2);display:block;margin-bottom:4px}
+.tip .k::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px}
+.tip .k1::before{background:var(--s1)} .tip .k2::before{background:var(--s2)}
+.tbl-cap{caption-side:top;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+         text-transform:uppercase;color:var(--ink-2);padding:11px 13px;background:var(--surface);border-bottom:1px solid var(--rule)}
+@media (prefers-reduced-motion:reduce){ .tip,.chart .cross{transition:none} }
 
 code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
 footer{margin-top:68px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
@@ -192,6 +227,107 @@ footer{margin-top:68px;padding-top:24px;border-top:3px solid var(--ink);font-fam
   </div>
 </section>
 
+<section id="curvas">
+  <div class="sec-head"><span class="sec-mark">PROJEÇÃO</span><h2>Quando as 4.000 horas chegam</h2></div>
+  <p class="lede measure">Duas hipóteses sobre quanto cada vídeo rende, com três publicações por semana. Elas existem para serem <strong>comparadas com o real</strong> mês a mês — o valor está na defasagem, não na previsão.</p>
+
+  <figure class="fig">
+    <figcaption class="fig-cap">Horas de exibição acumuladas · Amber Lantern · 13 vídeos por mês</figcaption>
+
+    <div class="legenda-chart">
+      <span class="lg lg1">Conservador — 30 h no 1º mês, 10 h/mês de cauda</span>
+      <span class="lg lg2">Otimista — 60 h no 1º mês, 20 h/mês de cauda</span>
+    </div>
+
+    <div class="chart-wrap">
+      <svg viewBox="0 0 720 320" class="chart" role="img" aria-labelledby="cTit cDesc" id="svgCurvas">
+        <title id="cTit">Horas de exibição acumuladas nos seis primeiros meses</title>
+        <desc id="cDesc">No cenário conservador o canal cruza as 4.000 horas no sexto mês; no otimista, no quarto. Os números exatos estão na tabela abaixo do gráfico.</desc>
+
+        <line x1="56" y1="18" x2="720" y2="18" class="grid"></line>
+        <line x1="56" y1="106" x2="720" y2="106" class="grid"></line>
+        <line x1="56" y1="194" x2="720" y2="194" class="grid"></line>
+        <line x1="56" y1="282" x2="720" y2="282" class="axis"></line>
+
+        <text x="48" y="22" class="ytick">9.000</text>
+        <text x="48" y="110" class="ytick">6.000</text>
+        <text x="48" y="198" class="ytick">3.000</text>
+        <text x="48" y="286" class="ytick">0</text>
+
+        <line x1="56" y1="164.7" x2="622" y2="164.7" class="limiar"></line>
+        <text x="60" y="159" class="limiar-lbl">4.000 h — meta de monetização</text>
+
+        <polyline class="serie s1" points="56.0,270.6 170.4,255.3 284.8,236.2 399.2,213.4 513.6,186.7 628.0,156.2"></polyline>
+        <polyline class="serie s2" points="56.0,259.1 170.4,228.6 284.8,190.5 399.2,144.7 513.6,91.3 628.0,30.3"></polyline>
+
+        <g class="pts s1">
+          <circle cx="56.0" cy="270.6" r="4"></circle><circle cx="170.4" cy="255.3" r="4"></circle>
+          <circle cx="284.8" cy="236.2" r="4"></circle><circle cx="399.2" cy="213.4" r="4"></circle>
+          <circle cx="513.6" cy="186.7" r="4"></circle><circle cx="628.0" cy="156.2" r="5.5"></circle>
+        </g>
+        <g class="pts s2">
+          <circle cx="56.0" cy="259.1" r="4"></circle><circle cx="170.4" cy="228.6" r="4"></circle>
+          <circle cx="284.8" cy="190.5" r="4"></circle><circle cx="399.2" cy="144.7" r="5.5"></circle>
+          <circle cx="513.6" cy="91.3" r="4"></circle><circle cx="628.0" cy="30.3" r="4"></circle>
+        </g>
+
+        <text x="640" y="160" class="dlabel d1">4.290 h</text>
+        <text x="640" y="34" class="dlabel d2">8.580 h</text>
+
+        <text x="56" y="302" class="xtick">mês 1</text>
+        <text x="170.4" y="302" class="xtick">2</text>
+        <text x="284.8" y="302" class="xtick">3</text>
+        <text x="399.2" y="302" class="xtick">4</text>
+        <text x="513.6" y="302" class="xtick">5</text>
+        <text x="628" y="302" class="xtick">6</text>
+
+        <line id="cross" x1="0" y1="18" x2="0" y2="282" class="cross" style="opacity:0"></line>
+        <rect x="0" y="0" width="720" height="320" fill="transparent" id="hitArea"></rect>
+      </svg>
+    </div>
+    <div class="tip" id="tip" hidden></div>
+  </figure>
+
+  <div class="tw">
+    <table>
+      <caption class="tbl-cap">Os mesmos números, mês a mês — e a coluna para preencher com o real</caption>
+      <thead><tr><th>Mês</th><th>Conservador</th><th>Otimista</th><th>Real</th><th>Onde ficou</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="num">390 h</td><td class="num">780 h</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">2</td><td class="num">910 h</td><td class="num">1.820 h</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">3</td><td class="num">1.560 h</td><td class="num">3.120 h</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">4</td><td class="num">2.340 h</td><td class="num win">4.680 h ✓</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">5</td><td class="num">3.250 h</td><td class="num">6.500 h</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">6</td><td class="num win">4.290 h ✓</td><td class="num">8.580 h</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">O gargalo não é este gráfico</span>
+    <p>Horas você acumula bem — sessão de ambiência é longa, e o vídeo 01 fez 5 horas em 6 de vida. O outro requisito é que costuma travar: <strong>1.000 inscritos</strong>. Ninguém se inscreve em música de fundo; a pessoa deixa tocando e vai embora. Em canal de ambiência as 4.000 horas chegam bem antes dos inscritos, então planeje a monetização por <strong>6 a 12 meses</strong>, com os inscritos mandando no prazo.</p>
+  </div>
+
+  <h3>E os R$ 1.000 por mês</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>RPM</th><th>Views por mês necessárias</th><th>Comparação</th></tr></thead>
+      <tbody>
+        <tr><td class="num">US$ 1,00</td><td class="num">185.000</td><td class="vazio">—</td></tr>
+        <tr><td class="num">US$ 2,00</td><td class="num">92.500</td><td>faixa provável para público EUA e Europa</td></tr>
+        <tr><td class="num">US$ 3,00</td><td class="num">61.700</td><td class="vazio">—</td></tr>
+        <tr class="total"><td class="num a">US$ 0,48</td><td class="num a">385.000</td><td class="a">é o que o Toca Viola precisa, com público brasileiro</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Você precisa de cerca de <strong>100 mil views mensais</strong> para os R$ 1.000 — um quarto do esforço do concorrente para o mesmo dinheiro. Foi por isso que valeu abrir o canal em inglês. No ritmo de três vídeos por semana, isso significa <strong>10 a 18 meses</strong> sem nenhum vídeo excepcional, ou 4 a 6 meses com um que estoure.</p>
+
+  <div class="note">
+    <span class="tag">Como usar estas curvas</span>
+    <p>Preencha a coluna <em>Real</em> no fim de cada mês e anote de que lado ficou. Se o real vier abaixo do conservador dois meses seguidos, o problema não é ritmo — é o produto, e a conversa muda para nicho e embalagem. Se vier acima do otimista, o gargalo passa a ser sua capacidade de produção, e vale considerar terceirizar a curadoria.</p>
+  </div>
+</section>
+
 <section id="registro">
   <div class="sec-head"><span class="sec-mark">SEMANAL</span><h2>A tabela para preencher toda sexta</h2></div>
   <p class="measure">Quatro números por vídeo, medidos sempre com <strong>72 horas de vida</strong> — só assim as semanas se comparam. Compare com a semana anterior, nunca com a expectativa.</p>
@@ -231,3 +367,41 @@ footer{margin-top:68px;padding-top:24px;border-top:3px solid var(--ink);font-fam
 </footer>
 
 </div>
+
+<script>
+(function(){
+  var svg=document.getElementById('svgCurvas'), tip=document.getElementById('tip'),
+      cross=document.getElementById('cross'), fig=svg.closest('.fig');
+  if(!svg) return;
+  var xs=[56,170.4,284.8,399.2,513.6,628],
+      consY=[270.6,255.3,236.2,213.4,186.7,156.2], otimY=[259.1,228.6,190.5,144.7,91.3,30.3],
+      cons=[390,910,1560,2340,3250,4290], otim=[780,1820,3120,4680,6500,8580];
+  function fmt(n){ return n.toLocaleString('pt-BR'); }
+  function mostrar(i, clientX){
+    cross.setAttribute('x1',xs[i]); cross.setAttribute('x2',xs[i]); cross.style.opacity='1';
+    tip.hidden=false;
+    tip.innerHTML='<b>Mês '+(i+1)+'</b>'+
+      '<span class="k k1"></span>Conservador '+fmt(cons[i])+' h<br>'+
+      '<span class="k k2"></span>Otimista '+fmt(otim[i])+' h';
+    var rs=svg.getBoundingClientRect(), rf=fig.getBoundingClientRect(), esc=rs.width/720;
+    var yTopo=Math.min(30.3, 156.2);            // ponto mais alto entre as duas series
+    var yPx=(i===5?30.3:Math.min(consY[i],otimY[i]));
+    tip.style.left=((rs.left-rf.left)+xs[i]*esc)+'px';
+    tip.style.top=Math.max(58,(rs.top-rf.top)+yPx*esc-10)+'px';
+  }
+  function esconder(){ cross.style.opacity='0'; tip.hidden=true; }
+  svg.addEventListener('mousemove', function(ev){
+    var r=svg.getBoundingClientRect(), px=(ev.clientX-r.left)/(r.width/720);
+    var i=0, melhor=1e9;
+    for(var k=0;k<xs.length;k++){ var d=Math.abs(xs[k]-px); if(d<melhor){melhor=d;i=k;} }
+    mostrar(i, ev.clientX);
+  });
+  svg.addEventListener('mouseleave', esconder);
+  svg.addEventListener('touchstart', function(ev){
+    var r=svg.getBoundingClientRect(), px=(ev.touches[0].clientX-r.left)/(r.width/720);
+    var i=0, melhor=1e9;
+    for(var k=0;k<xs.length;k++){ var d=Math.abs(xs[k]-px); if(d<melhor){melhor=d;i=k;} }
+    mostrar(i);
+  }, {passive:true});
+})();
+</script>
