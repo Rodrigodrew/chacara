@@ -1,0 +1,233 @@
+<title>Taverna e Roça</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+.hero{padding:74px 0 40px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(38px,7.4vw,84px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 18px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:58ch;margin-bottom:22px}
+.legenda{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.legenda span::before{content:"";display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:2px;vertical-align:0}
+.legenda .b::before{background:var(--sea)}
+.legenda .a::before{background:var(--ocre)}
+
+section{padding-top:58px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:24px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue)}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:34px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:24px}
+
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+th.b{color:var(--sea)} th.a{color:var(--ocre)}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.win{font-weight:600}
+td.b{color:var(--sea)} td.a{color:var(--ocre)}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.note.warn{border-left-color:var(--ocre)}
+.note.good{border-left-color:var(--sea)}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn .tag{color:var(--ocre)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.55em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* log de decisoes */
+.log{border:1px solid var(--rule);margin:24px 0}
+.entrada{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:16px 18px;border-bottom:1px solid var(--rule);background:var(--paper)}
+.entrada:last-child{border-bottom:0}
+.entrada .data{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);line-height:1.5}
+.entrada h4{font-family:var(--display);font-size:16px;margin:0 0 6px}
+.entrada p{font-size:16px;margin:0 0 .5em}
+.entrada p:last-child{margin-bottom:0}
+.entrada .porque{color:var(--ink-2);font-size:15.5px}
+
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+footer{margin-top:68px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 32px} .entrada{grid-template-columns:1fr;gap:6px} }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Acompanhamento · rodada 1 · 21 de agosto de 2026</div>
+  <h1>Taverna <span class="e">e</span> Roça</h1>
+  <p class="dek">Os dois canais lado a lado, o que os primeiros números disseram e o registro das decisões — para você lembrar, no vídeo 30, por que mudou o que mudou.</p>
+  <div class="legenda">
+    <span class="b">The Amber Lantern · Canal B</span>
+    <span class="a">Zé Sereno · Canal A</span>
+  </div>
+</header>
+
+<section id="rodada1">
+  <div class="sec-head"><span class="sec-mark">RODADA 1</span><h2>Os números do primeiro vídeo</h2></div>
+  <p class="measure">Um vídeo tinha seis horas de vida e o outro vinte e quatro, então os totais não se comparam. A coluna que importa é a normalizada por hora.</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Métrica</th><th class="b">Amber Lantern</th><th class="a">Zé Sereno</th><th>Leitura</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tempo de vida na medição</td><td class="num">6 h</td><td class="num">24 h</td><td class="vazio">—</td></tr>
+        <tr><td>Duração do vídeo</td><td class="num">1:07:36</td><td class="num">22:31</td><td>O B está no formato do nicho; o A, não</td></tr>
+        <tr class="total"><td>Impressões por hora</td><td class="num win b">350</td><td class="num a">41</td><td>O YouTube aposta <strong>8,5×</strong> mais no B</td></tr>
+        <tr><td>Views por hora</td><td class="num win b">6,7</td><td class="num a">1,4</td><td>4,8× a favor do B</td></tr>
+        <tr><td>CTR</td><td class="num b">1,4%</td><td class="num win a">1,9%</td><td>A capa com texto do A converte melhor</td></tr>
+        <tr><td>Duração média</td><td class="num win b">7:26</td><td class="num a">3:00</td><td>Em minutos, o B retém 2,5× mais</td></tr>
+        <tr class="total"><td>Horas de exibição por hora de vida</td><td class="num win b">0,83</td><td class="num a">0,07</td><td><strong>12×</strong> — é a moeda do YouTube</td></tr>
+        <tr><td>Espectadores únicos</td><td class="vazio">—</td><td class="num a">8 (para 33 views)</td><td>Conferir se não são views próprias</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note good">
+    <span class="tag">O que já dá para afirmar</span>
+    <p>O mesmo esforço de produção rende <strong>doze vezes mais horas de exibição</strong> no Amber Lantern. A tese que a análise do Toca Viola apontou se confirmou na sua própria operação, na primeira semana: o Canal A é laboratório, o Canal B é o negócio.</p>
+  </div>
+</section>
+
+<section id="cluster">
+  <div class="sec-head"><span class="sec-mark">O ACHADO</span><h2>Onde cada canal foi parar</h2></div>
+  <p class="lede measure">O dado mais valioso da rodada não é nenhum número — é a lista de vídeos que sugerem os seus.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="b">Sugerem o Amber Lantern</th><th class="a">Sugerem o Zé Sereno</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>lofi hip hop radio<br>Baldur's Gate 3 — Character Creation<br>Elden Ring<br>Zelda — Song of Healing<br>Tetris 99 — Main Theme</td>
+          <td>O Melhor do Pagode Anos 90<br>Pagodão SA — Ao Vivo<br>Eduardo Costa — Voz e Violão<br>À Sombra da Forca<br>Lo-D J3 Stereo Cassette Tuner</td>
+        </tr>
+        <tr>
+          <td><strong>Cluster certo.</strong> Estudo, relaxamento, fantasia e RPG — exatamente o público-alvo, identificado logo no primeiro vídeo.</td>
+          <td><strong>Endereço errado.</strong> Pagode, sertanejo popular e até um vídeo de aparelho de som. Nenhum modão, nenhum sertanejo raiz, nada do Toca Viola.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">A causa mais provável: a duração</span>
+    <p>O vídeo do Zé Sereno tem 22 minutos. Todos os concorrentes do nicho publicam entre 1h00 e 1h03, sem exceção — o Toca Viola inclusive. A duração é um dos sinais que o YouTube usa para decidir "que tipo de coisa é isto", e uma coletânea brasileira de 22 minutos se parece muito mais com compilação de pagode do que com modão de viola.</p>
+    <p>Some a isso a miniatura dizendo <em>Café no Sítio</em> enquanto o título fala de viola caipira, e você tem dois sinais competindo pela mesma classificação.</p>
+  </div>
+</section>
+
+<section id="decisoes">
+  <div class="sec-head"><span class="sec-mark">REGISTRO</span><h2>Decisões tomadas</h2></div>
+  <p class="measure">O histórico existe para o vídeo 30, quando você não lembrar mais por que o formato mudou. Acrescente uma entrada a cada decisão, sempre com o motivo.</p>
+
+  <div class="log">
+    <div class="entrada">
+      <div class="data">21 ago<br>Canal A</div>
+      <div>
+        <h4>Remontar o primeiro vídeo em uma hora</h4>
+        <p>Publicar como vídeo novo, não substituir: <code>./montar-playlist.sh -d faixas -i capa.png -x 3 -D 60</code></p>
+        <p class="porque">Porque o vídeo de 22 minutos foi classificado no cluster de pagode, e o antigo já carrega essa classificação. Sai mais barato começar limpo do que reeducar o algoritmo sobre ele.</p>
+      </div>
+    </div>
+    <div class="entrada">
+      <div class="data">21 ago<br>Canal A</div>
+      <div>
+        <h4>Ancorar o título no vocabulário do nicho</h4>
+        <p>"Café no Sítio — 1 Hora de Modão de Viola e Viola Caipira ao Amanhecer"</p>
+        <p class="porque">Porque "modão de viola" e "1 hora" aparecem em todos os vídeos que funcionam nesse mercado. É assim que se diz ao algoritmo onde colocar você.</p>
+      </div>
+    </div>
+    <div class="entrada">
+      <div class="data">21 ago<br>Canal B</div>
+      <div>
+        <h4>Não mexer em nada</h4>
+        <p>Manter título, miniatura e cronograma.</p>
+        <p class="porque">Porque o CTR de 1,4% é aceitável em tráfego 85% sugerido, e o algoritmo já acertou o cluster. Mexer agora estragaria o que está funcionando.</p>
+      </div>
+    </div>
+    <div class="entrada">
+      <div class="data">21 ago<br>Canal B</div>
+      <div>
+        <h4>Testar o cluster de RPG no vídeo 03</h4>
+        <p>Título na linha de <em>Fantasy Tavern Ambience for D&amp;D Nights</em>.</p>
+        <p class="porque">Porque a audiência real veio de Baldur's Gate, Elden Ring e Zelda — vale buscá-la pelo nome que ela mesma usa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="registro">
+  <div class="sec-head"><span class="sec-mark">SEMANAL</span><h2>A tabela para preencher toda sexta</h2></div>
+  <p class="measure">Quatro números por vídeo, medidos sempre com <strong>72 horas de vida</strong> — só assim as semanas se comparam. Compare com a semana anterior, nunca com a expectativa.</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr><th>Semana</th><th>Canal</th><th>Vídeo</th><th>Impressões</th><th>CTR</th><th>Duração média</th><th>Horas de exibição</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">1</td><td class="b">B</td><td>01 · Tavern Ambience</td><td class="num">2.100 <span class="vazio">(6h)</span></td><td class="num">1,4%</td><td class="num">7:26</td><td class="num">5,0</td></tr>
+        <tr><td class="num">1</td><td class="a">A</td><td>01 · Café no Sítio</td><td class="num">979 <span class="vazio">(24h)</span></td><td class="num">1,9%</td><td class="num">3:00</td><td class="num">1,7</td></tr>
+        <tr><td class="num">1</td><td class="b">B</td><td>02 · Innkeeper Banks the Fire</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">1</td><td class="b">B</td><td>03 · a definir</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+        <tr><td class="num">2</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td><td class="vazio">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Os gatilhos, para consulta rápida</h3>
+  <ul class="plain measure">
+    <li><strong>CTR só conta acima de mil impressões</strong> e depois de 72 horas. E CTR em tráfego de sugeridos é naturalmente mais baixo que em busca — 1,4% ali não é o mesmo 1,4% da pesquisa.</li>
+    <li><strong>Retenção aos 60 segundos abaixo de 60%:</strong> a faixa de abertura está errada. Troque no set seguinte.</li>
+    <li><strong>CTR baixo com retenção alta:</strong> problema de capa e título, e a troca vale retroativamente.</li>
+    <li><strong>Um vídeo com o triplo da média do canal:</strong> replique a fórmula em três variações na semana seguinte. É a regra mais importante do modelo.</li>
+    <li><strong>Trinta vídeos sem nenhum passar de mil views:</strong> aí sim o problema é o nicho ou a embalagem — não a paciência.</li>
+  </ul>
+
+  <div class="note">
+    <span class="tag">Um cuidado com a própria audiência</span>
+    <p>O Zé Sereno registrou 33 views com apenas <strong>8 espectadores únicos</strong>. Se boa parte disso for você reabrindo o vídeo para conferir, o número real de audiência é menor do que parece — e, pior, suja a leitura de retenção justamente nos dias em que o algoritmo está decidindo o que fazer com o vídeo. Confira no Studio pelo celular ou numa aba anônima, sem deixar rodando.</p>
+  </div>
+</section>
+
+<footer>
+  Propulse · acompanhamento dos canais · rodada 1 · agosto de 2026
+</footer>
+
+</div>
