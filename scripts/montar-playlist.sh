@@ -29,7 +29,7 @@
 set -euo pipefail
 
 DIR=""; IMG=""; LOOP=""; AMB=""; AMB_DB="-26"; XF="3"; OUT=""; LUFS="-14"
-LOTE=""; TITULO=""; SPOTIFY=""; RODAPE=""; ALVO=""
+LOTE=""; TITULO=""; SPOTIFY=""; RODAPE=""; ALVO=""; PRE="0"
 
 usage() {
   cat <<TXT
@@ -46,6 +46,8 @@ uso: $0 -d <pasta> (-i capa.png | -v loop.mp4) [opcoes]
   -o  arquivo de saida                          (padrao: video.mp4)
   -D  duracao alvo em minutos: repete o set em ordem embaralhada
       ate atingir esse tempo, sem faixa repetida em sequencia
+  -p  segundos de ambiencia sozinha antes da musica comecar
+      (assenta o espectador; exige -a. padrao: 0)
 
   -B  modo lote: monta um video por subpasta de <pasta_mae>
   -t  gancho da descricao (1a linha)            (lote: vem do info.txt)
@@ -55,13 +57,13 @@ TXT
   exit 1
 }
 
-while getopts "d:i:v:a:b:x:l:o:B:t:s:r:D:h" opt; do
+while getopts "d:i:v:a:b:x:l:o:B:t:s:r:D:p:h" opt; do
   case $opt in
     d) DIR="$OPTARG" ;; i) IMG="$OPTARG" ;; v) LOOP="$OPTARG" ;;
     a) AMB="$OPTARG" ;; b) AMB_DB="$OPTARG" ;; x) XF="$OPTARG" ;;
     l) LUFS="$OPTARG" ;; o) OUT="$OPTARG" ;; B) LOTE="$OPTARG" ;;
     t) TITULO="$OPTARG" ;; s) SPOTIFY="$OPTARG" ;; r) RODAPE="$OPTARG" ;;
-    D) ALVO="$OPTARG" ;;
+    D) ALVO="$OPTARG" ;; p) PRE="$OPTARG" ;;
     *) usage ;;
   esac
 done
@@ -133,7 +135,7 @@ montar_um() {
   fi
 
   # --- tracklist com os tempos, descontando os crossfades ---
-  local acc=0 i f base nome dur
+  local acc=$PRE i f base nome dur
   : > "$outdir/tracklist.txt"
   for i in "${!TRACKS[@]}"; do
     f="${TRACKS[$i]}"
@@ -172,11 +174,20 @@ montar_um() {
     LAST="$PREV"
   fi
 
+  if [ -z "$amb" ] && [ "$PRE" != "0" ]; then
+    echo "!! -p exige -a (ambiencia); ignorando o preambulo"; PRE=0
+  fi
   if [ -n "$amb" ]; then
     echo ">> emendando + ambiencia em ${AMB_DB}dB"
     INPUTS+=(-stream_loop -1 -i "$amb")
     GRAPH+="[${n}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume=${AMB_DB}dB[amb];"
-    GRAPH+="${LAST}[amb]amix=inputs=2:duration=first:normalize=0[mix];"
+    if [ "$PRE" -gt 0 ] 2>/dev/null; then
+      echo ">> ${PRE}s de ambiencia sozinha antes da musica"
+      GRAPH+="${LAST}adelay=$((PRE*1000))|$((PRE*1000))[mus];"
+      GRAPH+="[mus][amb]amix=inputs=2:duration=first:normalize=0[mix];"
+    else
+      GRAPH+="${LAST}[amb]amix=inputs=2:duration=first:normalize=0[mix];"
+    fi
     GRAPH+="[mix]loudnorm=I=${LUFS}:TP=-1.5:LRA=11[out]"
   else
     echo ">> emendando as faixas"

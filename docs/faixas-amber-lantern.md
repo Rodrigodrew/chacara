@@ -37,6 +37,29 @@ Concepção e direção: Rodrigo Rocha Drew · agosto de 2026
 [Long Outro - dissolving into silence]
 ```
 
+## Bloco de abertura — só para a primeira faixa de cada set
+
+```
+[Intro - full arrangement from the first bar, warm and immediate]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]
+```
+
+> **Por que a primeira faixa é diferente.** A retenção do vídeo 01 despencou nos
+> primeiros segundos, e a causa provável é o `[Intro - solo instrument, sparse]`.
+> Quem clica num vídeo de ambiência decide em cinco segundos se aquilo serve, e um
+> começo ralo parece "não tem nada aqui". A faixa que abre o set entra cheia; as
+> outras vinte e quatro mantêm a intro esparsa, que é bonita e não custa nada no
+> meio do set.
+>
+> Na montagem, use também **`-p 3`**: três segundos de ambiência sozinha antes da
+> música. Assenta o espectador antes de a primeira nota chegar.
+
 ---
 
 # SET 1 — Vídeo 01
@@ -345,7 +368,7 @@ candle flame.
 **Vídeo 02:** brasa estalando fraco + vento lá fora. Sem murmúrio — a taverna dormiu.
 
 ```
-./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 \
+./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 -p 3 \
   -t "The fire is lit and the rain hasn't stopped since noon." \
   -s "https://open.spotify.com/artist/SEU_ID" -o amber-lantern-01.mp4
 ```

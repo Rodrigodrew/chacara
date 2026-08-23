@@ -105,6 +105,22 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
 [Theme A - repeated again]
 [Long Outro - dissolving into silence]</div>
 
+
+  <div class="bloco"><span class="lbl">Bloco de abertura — só para a PRIMEIRA faixa de cada set</span>[Intro - full arrangement from the first bar, warm and immediate]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]</div>
+
+  <div class="note">
+    <span class="tag">Por que a primeira faixa é diferente</span>
+    <p>A retenção do vídeo 01 despencou nos primeiros segundos, e a causa provável é o <code>[Intro - solo instrument, sparse]</code>. Quem clica num vídeo de ambiência decide em cinco segundos se aquilo serve, e um começo ralo parece "não tem nada aqui". <strong>A faixa que abre o set entra cheia</strong>; as outras vinte e quatro mantêm a intro esparsa, que é bonita e não custa nada no meio do set.</p>
+    <p style="margin-top:.7em">Na montagem, use também <code>-p 3</code>: três segundos de ambiência sozinha antes da música, para assentar o espectador antes de a primeira nota chegar.</p>
+  </div>
+
   <div class="note">
     <span class="tag">O que o Exclude está protegendo</span>
     <p>Repare que <em>orchestra</em> e <em>epic trailer music</em> aparecem em todas as fichas. É para lá que o modelo puxa sozinho quando ouve "medieval" — e é exatamente o que transforma taverna aconchegante em trilha de batalha. Sem essa exclusão, metade das gerações vem inaproveitável.</p>
@@ -495,10 +511,10 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
     <li><strong>Vídeo 01:</strong> lareira estalando forte + chuva no vidro + murmúrio distante de conversa.</li>
     <li><strong>Vídeo 02:</strong> brasa estalando fraco + vento lá fora. Sem murmúrio — a taverna dormiu.</li>
   </ul>
-<pre><code>./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 \
+<pre><code>./montar-playlist.sh -d faixas -i capa.png -a ambiencia.wav -b -26 -x 4 -p 3 \
   -t "The fire is lit and the rain hasn't stopped since noon." \
   -s "https://open.spotify.com/artist/SEU_ID" -o amber-lantern-01.mp4</code></pre>
-  <p class="measure">No Vídeo 02, baixe a ambiência para <code>-b -30</code> e suba o crossfade para <code>-x 6</code>. Set de dormir não admite emenda perceptível.</p>
+  <p class="measure">No Vídeo 02, baixe a ambiência para <code>-b -30</code>, suba o crossfade para <code>-x 6</code> e mantenha o <code>-p 3</code>. Set de dormir não admite emenda perceptível.</p>
   <p class="measure">Com vinte e cinco faixas aprovadas por set você <strong>não precisa</strong> da opção <code>-D</code>. Ela fica de reserva, para o caso de a aprovação render menos do que o esperado.</p>
   <p class="measure"><strong>Ordem do Set 1:</strong> energia em onda, não em linha reta. A01 abre, as animadas (A03, A09, A17, A25) ficam espaçadas a cada cinco ou seis faixas, e A09 e A10 do bloco original fecham a noite. <strong>Set 2:</strong> exatamente de B01 a B25, sem trocar nada.</p>
   <p class="measure"><strong>Custo de crédito:</strong> aprovando uma em cada três gerações, as cinquenta faixas pedem cerca de cento e cinquenta músicas geradas — menos de um terço da cota mensal do Pro. Os dois vídeos cabem com folga no mesmo mês.</p>

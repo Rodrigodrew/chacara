@@ -104,6 +104,22 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
 [Theme A - repeated again]
 [Long Outro - the figure slowly stopping]</div>
 
+
+  <div class="bloco"><span class="lbl">Bloco de abertura — só para a PRIMEIRA faixa de cada set</span>[Intro - full arrangement from the first bar, warm and immediate]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]</div>
+
+  <div class="note">
+    <span class="tag">Por que a primeira faixa é diferente</span>
+    <p>A retenção do vídeo 01 despencou nos primeiros segundos, e a causa provável é o <code>[Intro - solo instrument, sparse]</code>. Quem clica num vídeo de ambiência decide em cinco segundos se aquilo serve, e um começo ralo parece "não tem nada aqui". <strong>A faixa que abre o set entra cheia</strong>; as outras vinte e quatro mantêm a intro esparsa, que é bonita e não custa nada no meio do set.</p>
+    <p style="margin-top:.7em">Na montagem, use também <code>-p 3</code>: três segundos de ambiência sozinha antes da música, para assentar o espectador antes de a primeira nota chegar.</p>
+  </div>
+
   <div class="note">
     <span class="tag">O que o Exclude protege desta vez</span>
     <p>No Set 3, <em>battle music</em> entra na lista. É para lá que o modelo corre assim que ouve "fantasy", e trilha de batalha destrói a escuta de fundo que o vídeo promete. No Set 4, o corte é <em>lead melody upfront</em>: música de estudo não pode ter melodia que chame atenção, ou vira concorrente do trabalho de quem ouve.</p>
@@ -490,12 +506,12 @@ footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-fam
     <li><strong>Vídeo 04:</strong> pena riscando o papel + página virando + chuva leve. <strong>Sem lareira e sem vozes</strong> — é o som de uma sala onde alguém trabalha sozinho.</li>
   </ul>
 <pre><code><span class="cmt"># Vídeo 03</span>
-./montar-playlist.sh -d faixas -i capa3.png -a ambiencia3.wav -b -26 -x 4 \
+./montar-playlist.sh -d faixas -i capa3.png -a ambiencia3.wav -b -26 -x 4 -p 3 \
   -t "The map is on the table and the horses leave at dawn. One more round first." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-03.mp4
 
 <span class="cmt"># Vídeo 04</span>
-./montar-playlist.sh -d faixas -i capa4.png -a ambiencia4.wav -b -28 -x 5 \
+./montar-playlist.sh -d faixas -i capa4.png -a ambiencia4.wav -b -28 -x 5 -p 3 \
   -t "Cold light from the window, one candle, and a page that has to be finished today." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-04.mp4</code></pre>
   <p class="measure">Os títulos, tags e descrições completas dos dois vídeos estão no arquivo em markdown que acompanha este documento — prontos para colar.</p>

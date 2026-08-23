@@ -36,6 +36,29 @@ Cinquenta faixas instrumentais, vinte e cinco por vídeo.
 [Long Outro - the figure slowly stopping]
 ```
 
+## Bloco de abertura — só para a primeira faixa de cada set
+
+```
+[Intro - full arrangement from the first bar, warm and immediate]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]
+```
+
+> **Por que a primeira faixa é diferente.** A retenção do vídeo 01 despencou nos
+> primeiros segundos, e a causa provável é o `[Intro - solo instrument, sparse]`.
+> Quem clica num vídeo de ambiência decide em cinco segundos se aquilo serve, e um
+> começo ralo parece "não tem nada aqui". A faixa que abre o set entra cheia; as
+> outras vinte e quatro mantêm a intro esparsa, que é bonita e não custa nada no
+> meio do set.
+>
+> Na montagem, use também **`-p 3`**: três segundos de ambiência sozinha antes da
+> música. Assenta o espectador antes de a primeira nota chegar.
+
 ---
 
 # SET 3 — Vídeo 03
@@ -351,12 +374,12 @@ vozes. É o som de uma sala onde alguém trabalha em silêncio.
 
 ```
 # Vídeo 03
-./montar-playlist.sh -d faixas -i capa3.png -a ambiencia3.wav -b -26 -x 4 \
+./montar-playlist.sh -d faixas -i capa3.png -a ambiencia3.wav -b -26 -x 4 -p 3 \
   -t "The map is on the table and the horses leave at dawn. One more round first." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-03.mp4
 
 # Vídeo 04
-./montar-playlist.sh -d faixas -i capa4.png -a ambiencia4.wav -b -28 -x 5 \
+./montar-playlist.sh -d faixas -i capa4.png -a ambiencia4.wav -b -28 -x 5 -p 3 \
   -t "Cold light from the window, one candle, and a page that has to be finished today." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-04.mp4
 ```
