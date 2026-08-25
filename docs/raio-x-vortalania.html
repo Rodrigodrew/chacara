@@ -1,0 +1,226 @@
+<title>Raio-X de Vortalania</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+.hero{padding:74px 0 40px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 18px}
+h1 .de{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:60ch;margin-bottom:22px}
+
+section{padding-top:60px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:26px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue)}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,35px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:36px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:24px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0}
+.stat{background:var(--paper);padding:17px 15px}
+.stat .n{font-family:var(--display);font-size:24px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:8px;line-height:1.4}
+.stat .d{font-family:var(--mono);font-size:11px;color:var(--sea);margin-top:4px}
+
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:620px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.destaque td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.note.warn{border-left-color:var(--ocre)}
+.note.good{border-left-color:var(--sea)}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn .tag{color:var(--ocre)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.55em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+.dupla{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0}
+.col{background:var(--paper);padding:20px 18px}
+.col h3{margin:0 0 10px;font-size:17px}
+.col.eles h3{color:var(--ocre)} .col.nos h3{color:var(--sea)}
+.col ul{margin-bottom:0}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+footer{margin-top:68px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:700px){ .dupla{grid-template-columns:1fr} body{font-size:17px} .hero{padding:50px 0 32px} }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Análise de concorrente · Canal B · agosto de 2026</div>
+  <h1>Raio-X <span class="de">de</span> Vortalania</h1>
+  <p class="dek">O mesmo nicho do Amber Lantern, com 12,6 mil inscritos e um vídeo de 1,5 milhão. Ele responde duas perguntas que a gente só tinha estimado — e desmente uma das minhas.</p>
+</header>
+
+<section id="retrato">
+  <div class="sec-head"><span class="sec-mark">01</span><h2>O retrato</h2></div>
+  <div class="stats">
+    <div class="stat"><div class="n">12,6 mil</div><div class="l">Inscritos</div><div class="d">+10,6% no período</div></div>
+    <div class="stat"><div class="n">39</div><div class="l">Vídeos</div></div>
+    <div class="stat"><div class="n">99.467</div><div class="l">Views em 7 dias</div><div class="d">+14,9%</div></div>
+    <div class="stat"><div class="n">109 min</div><div class="l">Duração média</div></div>
+    <div class="stat"><div class="n">~1 / semana</div><div class="l">Frequência</div></div>
+    <div class="stat"><div class="n">US$ 347</div><div class="l">Ganho mensal estimado</div></div>
+  </div>
+  <p class="measure">Música de fantasia medieval para foco, relaxamento e sono. Tem Spotify no perfil, aba de comunidade, playlists e — o detalhe que mais importa — <strong>uma transmissão ao vivo rodando 24 horas por dia</strong>. Os canais que o YouTube considera parecidos dão o tamanho do mercado: Celestial Aeon Project com 278 mil, The Vault of Ambience com 251 mil, Winds of Fantasia com 90 mil. O teto do nicho está em torno de 250 mil inscritos.</p>
+</section>
+
+<section id="dois">
+  <div class="sec-head"><span class="sec-mark">02</span><h2>Dois vídeos sustentam o canal inteiro</h2></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Vídeo</th><th>Views</th><th>Idade</th><th>Views/hora hoje</th></tr></thead>
+      <tbody>
+        <tr class="destaque"><td>The Knight Quiet Forest</td><td class="num">1.500.000</td><td class="num">6 meses</td><td class="num">311</td></tr>
+        <tr class="destaque"><td>The Knight's Quiet Fire</td><td class="num">779.000</td><td class="num">6 meses</td><td class="num">115</td></tr>
+        <tr><td>The Knight's Sacred Path</td><td class="num">123.000</td><td class="num">5 meses</td><td class="num">35</td></tr>
+        <tr><td>The Knight's Quiet Vigil</td><td class="num">119.000</td><td class="num">6 meses</td><td class="num">21</td></tr>
+        <tr><td>Knight's Village Rest <span class="vazio">(recente)</span></td><td class="num">304</td><td class="num">16 horas</td><td class="num">15</td></tr>
+        <tr><td>Wizard's Woodland Tea <span class="vazio">(recente)</span></td><td class="num">656</td><td class="num">7 dias</td><td class="num">2</td></tr>
+        <tr><td>Knight's Distant Castle <span class="vazio">(recente)</span></td><td class="num">2.100</td><td class="num">3 semanas</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="lede measure">Os dois vídeos de seis meses atrás geram, sozinhos, cerca de <strong>307 mil views por mês — 72% de todo o tráfego do canal</strong>. Os seis mais recentes somam 15 mil, ou 3,5%.</p>
+
+  <p class="measure">É a curva mais reveladora que a gente já viu neste projeto. Ele acertou dois vídeos, o algoritmo os distribui há meio ano sem parar, e <strong>ele não consegue repetir o acerto</strong> — os lançamentos novos fazem de 300 a 2.200 views, uma queda de 99%.</p>
+
+  <div class="note good">
+    <span class="tag">O que isso confirma</span>
+    <p>A tese da variância, agora com evidência de fora: neste modelo <strong>a receita não vem do vídeo típico, vem dos poucos que acertam</strong>. Planejar pela média é planejar errado. É por isso que a regra de replicar imediatamente qualquer vídeo que faça o triplo da média importa mais que qualquer otimização de RPM.</p>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">E o alerta que vem junto</span>
+    <p>Ele acertou e <em>não soube repetir</em>. Repare que os vídeos que estouraram começam pelo personagem — <em>The Knight Quiet Forest</em> — e os recentes começam pelo benefício — <em>Find Inner Peace with…</em>, <em>Release Anxiety &amp; Stress…</em>. Ele mudou a fórmula do título depois do sucesso. Não dá para provar que foi isso, mas é a hipótese mais visível, e é exatamente o erro que a nossa regra de replicação existe para evitar.</p>
+  </div>
+</section>
+
+<section id="rpm">
+  <div class="sec-head"><span class="sec-mark">03</span><h2>O RPM real — e a correção da minha projeção</h2></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Views/mês</th><th>Ganho</th><th>RPM</th></tr></thead>
+      <tbody>
+        <tr><td>Toca Viola <span class="vazio">(modão, público BR)</span></td><td class="num">385.000</td><td class="num">US$ 186</td><td class="num">US$ 0,48</td></tr>
+        <tr class="destaque"><td>Gates of Vortalania <span class="vazio">(fantasia, internacional)</span></td><td class="num">426.000</td><td class="num">US$ 347</td><td class="num">US$ 0,81</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">Eu errei para mais</span>
+    <p>Projetei <strong>US$ 2,00 por mil views</strong> para o Amber Lantern, com base em faixas gerais de público americano e europeu. Este concorrente está no <em>mesmo nicho, mesmo idioma, mesma audiência internacional</em> — e faz <strong>US$ 0,81</strong>. Música ambiente tem RPM baixo mesmo quando o público é caro, porque o anunciante paga pouco por quem está com o vídeo em segundo plano.</p>
+  </div>
+
+  <h3>O que isso muda na meta dos R$ 1.000 por mês</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Premissa de RPM</th><th>Views/mês necessárias</th><th>Situação</th></tr></thead>
+      <tbody>
+        <tr><td class="num">US$ 2,00</td><td class="num">92.500</td><td>minha projeção anterior — otimista demais</td></tr>
+        <tr class="destaque"><td class="num">US$ 0,81</td><td class="num">227.500</td><td>o número a usar de agora em diante</td></tr>
+        <tr><td class="num">US$ 0,48</td><td class="num">385.800</td><td>seria o cenário se o canal fosse em português</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">A decisão de abrir o canal em inglês continua certa — <strong>1,7× mais receita pelas mesmas views</strong> —, mas o ganho é menor do que eu disse. A meta de R$ 1.000 mensais exige perto de <strong>230 mil views por mês</strong>, não 92 mil. Isso empurra o prazo realista de 10–18 meses para algo mais próximo de 14–24, sem um vídeo excepcional. Com um que estoure, como os dele, muda tudo.</p>
+</section>
+
+<section id="visual">
+  <div class="sec-head"><span class="sec-mark">04</span><h2>As capas — e a segunda correção</h2></div>
+
+  <p class="lede measure">Todas as miniaturas dele têm texto. E funcionam.</p>
+
+  <p class="measure">Eu te orientei a deixar a capa do Canal B <strong>sem texto nenhum</strong>, argumentando que no nicho internacional de ambiência a imagem limpa é o padrão. O canal com 1,5 milhão de views num único vídeo faz o oposto — mas de um jeito que vale entender, porque não é o texto berrante do modão brasileiro.</p>
+
+  <div class="dupla">
+    <div class="col eles">
+      <h3>O que ele faz</h3>
+      <ul class="plain">
+        <li><strong>Ilustração, não fotografia.</strong> Estilo pintura digital com ar de animação japonesa — acolhedor, colorido, sem o vale da estranheza do fotorrealismo de IA.</li>
+        <li><strong>Texto elegante e integrado:</strong> serifa clara, dourada ou branca, em duas linhas — <em>The Knight / Quiet Forest</em> — mais a assinatura pequena <em>Gates of Vortalania</em>. Parece capa de livro, não miniatura de tutorial.</li>
+        <li><strong>Um personagem recorrente:</strong> o mesmo cavaleiro, sempre descansando — na fogueira, na floresta, no riacho, na vila.</li>
+        <li><strong>Paleta travada:</strong> verde e azul saturados, luz de dia, natureza. Reconhecível em qualquer fileira de sugeridos.</li>
+      </ul>
+    </div>
+    <div class="col nos">
+      <h3>O que fazer no Amber Lantern</h3>
+      <ul class="plain">
+        <li><strong>Passar a usar texto</strong> no mesmo espírito: serifa clara sobre a área escura da cena, duas linhas, com a assinatura do canal em corpo menor. Isso substitui a orientação anterior.</li>
+        <li><strong>Considerar migrar para ilustração.</strong> Nossa direção é pictórica-fotográfica; a dele é ilustrada. Ilustração com personagem fixo é infinitamente replicável e envelhece melhor.</li>
+        <li><strong>Avaliar um personagem.</strong> A taverna é um lugar sem gente, por escolha — o espectador se coloca dentro dela. Funciona, mas não gera reconhecimento como um rosto recorrente gera. Vale testar um estalajadeiro em três capas e comparar CTR.</li>
+        <li><strong>Manter a paleta âmbar</strong>, que já é nossa e é diferente da dele. Não copie a cor; copie a disciplina.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="live">
+  <div class="sec-head"><span class="sec-mark">05</span><h2>A transmissão que nunca acaba</h2></div>
+  <p class="measure">Ele mantém uma live 24 horas por dia — <em>Release Anxiety &amp; Stress | Relaxing Medieval Fantasy Music for Deep Sleep &amp; Inner Peace</em> — com duas pessoas assistindo no momento do print. Parece pouco, e é: mas ela roda o dia inteiro, todo dia.</p>
+  <p class="measure">Duas pessoas assistindo continuamente somam <strong>48 horas de exibição por dia</strong>, ou 1.440 por mês. Compare com o seu vídeo 01, que fez 7,4 horas em dois dias. A live é uma máquina lenta e barata de tempo de exibição — e ainda ocupa o topo da página do canal, com o selo vermelho de AO VIVO, que chama atenção na busca.</p>
+  <div class="note">
+    <span class="tag">Vale copiar, mas não agora</span>
+    <p>Uma live 24/7 se monta com o mesmo material que você já tem: um set longo em loop e uma imagem parada, transmitidos por software de streaming. O custo é uma máquina ligada ou um serviço de restream. <strong>Deixe para depois do vídeo 10</strong> — antes disso o esforço é melhor gasto em publicar com constância. Mas guarde: é o caminho mais barato para as 4.000 horas.</p>
+  </div>
+</section>
+
+<section id="licoes">
+  <div class="sec-head"><span class="sec-mark">06</span><h2>O que levar deste canal</h2></div>
+  <ul class="plain measure">
+    <li><strong>Duração:</strong> os que estouraram têm 1h09 a 1h15. O de 2h29 fez 844 views. Mais longo não ajuda — a sua uma hora está certa.</li>
+    <li><strong>Frequência:</strong> ele publica uma vez por semana e mesmo assim cresce, porque a cauda dos acertos carrega. Sua cadência de três por semana é mais agressiva; mantenha enquanto o catálogo é pequeno.</li>
+    <li><strong>Fórmula de título:</strong> os campeões dele são <code>[Personagem + Cena] | Medieval Fantasy Music for [uso]</code>. Vale testar essa ordem num dos próximos vídeos, com a taverna no lugar do cavaleiro.</li>
+    <li><strong>Spotify no perfil:</strong> ele faz a ponte. Confirma que a estratégia de catálogo é padrão no nicho, não invenção nossa.</li>
+    <li><strong>O teto:</strong> 250 a 280 mil inscritos nos canais grandes do nicho. É um mercado real, com espaço, e nenhum gigante esmagando os outros.</li>
+  </ul>
+  <div class="note good">
+    <span class="tag">A conclusão que importa</span>
+    <p>Este canal prova que <strong>o nicho funciona</strong> — 1,5 milhão de views num vídeo de música medieval de uma hora não é sorte de mercado, é demanda real. E prova que <strong>o jogo é acertar, não produzir</strong>: 39 vídeos, dois carregam tudo. Sua obrigação nos próximos dois meses não é publicar bonito; é publicar variações suficientes para que um acerte — e, quando acertar, reconhecer e repetir na hora.</p>
+  </div>
+</section>
+
+<footer>
+  Propulse · análise de concorrente · Canal B · agosto de 2026
+</footer>
+
+</div>
