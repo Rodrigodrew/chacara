@@ -4,11 +4,14 @@ Roteiros, thumbnails e guias de gravação — Agosto 2026
 
 **Objetivo:** Atingir 4.000 horas de watch time para monetização.
 
-Este material está dividido em três arquivos:
+Este material está dividido em quatro arquivos:
 
-- [`diagnostico-e-cronograma.md`](./diagnostico-e-cronograma.md) — diagnóstico do canal, regras de estrutura dos roteiros, cronograma de publicação e checklist pré-gravação.
+- [`revisao-desempenho-agosto-2026.md`](./revisao-desempenho-agosto-2026.md) — **leia primeiro.** Revisão da estratégia com base nos dados reais das primeiras publicações (1 vídeo + 2 lives), com cadência, ordem de temas e projeção atualizadas.
+- [`diagnostico-e-cronograma.md`](./diagnostico-e-cronograma.md) — diagnóstico original do canal, regras de estrutura dos roteiros, cronograma de publicação e checklist pré-gravação.
 - [`roteiros-videos.md`](./roteiros-videos.md) — os 6 roteiros completos de vídeos editados (SEO, thumbnails, descrições e roteiro bloco a bloco).
 - [`roteiro-lives.md`](./roteiro-lives.md) — o plano das 8 lives (estratégia geral, roteiros completos e notas operacionais).
+
+> A ordem de publicação e a cadência recomendadas nos dois arquivos acima (diagnóstico e roteiro de lives) foram o ponto de partida do planejamento — a ordem e o ritmo **efetivos** estão na revisão de desempenho, que reflete o que os dados reais mostraram até agora.
 
 ## Números Atuais (Agosto 2026)
 
