@@ -2,6 +2,10 @@
 
 Ver regras gerais de estrutura, cronograma de publicação e checklist de gravação em [`diagnostico-e-cronograma.md`](./diagnostico-e-cronograma.md).
 
+> **Atualizado em 27/08/2026:** os alvos de duração abaixo foram revisados pra baixo (8-12 min) com base nos dados reais das primeiras publicações — ver [`diagnostico-e-cronograma.md#14`](./diagnostico-e-cronograma.md#14-atualização-27082026--regra-específica-para-vídeo-editado-com-base-em-dados-reais) e [`revisao-desempenho-agosto-2026.md`](./revisao-desempenho-agosto-2026.md). Além da duração, lembre de falar o CTA de inscrição/próxima live por volta da metade do vídeo, não só no fechamento — a tela final não converte.
+>
+> O **Vídeo 1 (Selo Musical) já foi publicado** com o roteiro original (13:23, CTA só no fechamento). Os roteiros abaixo mantêm os blocos e falas originais como referência de conteúdo — ao gravar, corte/condense pra caber no novo alvo de duração e adiante o CTA, em vez de reescrever a lógica de gancho/promessa/blocos.
+
 ---
 
 ## Vídeo 1 — Como Criar Seu Selo Musical do Zero em 2026
@@ -12,7 +16,7 @@ Ver regras gerais de estrutura, cronograma de publicação e checklist de grava�
 - **Volume de busca estimado:** Alto — vídeo antigo (live de 1h38) tem 1.9K views, indicando demanda recorrente.
 - **Concorrência:** Média. Poucos vídeos brasileiros atualizados com processo completo.
 - **Potencial de watch time:** ALTO — tutorial passo a passo prende atenção porque o viewer precisa de cada etapa.
-- **Duração ideal:** 18-22 minutos
+- **Duração ideal:** 8-12 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 - **CPM esperado:** Acima da média (público empreendedor/negócios musicais)
 
 **Tags SEO:** como criar selo musical, abrir selo musical, selo musical independente, gravadora independente, como montar uma gravadora, selo musical 2026, criar gravadora, negócio musical
@@ -99,7 +103,7 @@ Se você é músico, produtor ou quer empreender no mercado musical, esse guia �
 - **Volume de busca:** Muito alto — tema perene com picos quando artistas grandes mudam de gravadora.
 - **Concorrência:** Alta em inglês, média-baixa em português com dados atualizados.
 - **Potencial de watch time:** MUITO ALTO — formato comparativo com "revelação" de números mantém curiosidade.
-- **Duração ideal:** 15-18 minutos
+- **Duração ideal:** 8-12 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 - **CPM esperado:** Alto (público em momento de decisão de carreira)
 
 **Tags SEO:** gravadora ou independente, vale a pena entrar numa gravadora, artista independente 2026, gravadora vale a pena, música independente, como ser artista independente, contrato gravadora
@@ -162,7 +166,7 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 - **Volume de busca:** Médio-alto. Público subatendido no YouTube BR.
 - **Concorrência:** Baixa em português com esse formato específico.
 - **Potencial de watch time:** MUITO ALTO — formato de plano em fases cria necessidade de assistir até o final.
-- **Duração ideal:** 18-22 minutos
+- **Duração ideal:** 8-12 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 - **CPM esperado:** Alto (público profissional/empreendedor)
 
 **Tags SEO:** produtor musical iniciante, como ser produtor musical, ganhar dinheiro como produtor, produtor musical 2026, carreira produtor musical, beatmaker, produção musical
@@ -223,7 +227,7 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 - **Volume de busca:** Alto — termos frequentemente confundidos, busca constante de iniciantes.
 - **Concorrência:** Baixa em português com explicação clara e atualizada.
 - **Potencial de watch time:** ALTO — tema que gera curiosidade contínua e é fácil de linkar para outros vídeos.
-- **Duração ideal:** 12-15 minutos
+- **Duração ideal:** 8-10 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 - **CPM esperado:** Médio-alto
 
 **Tags SEO:** diferença gravadora selo distribuidora, o que é selo musical, o que é distribuidora, gravadora ou distribuidora, selo vs gravadora, distribuidora digital, como distribuir música
@@ -281,7 +285,7 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 - **Volume de busca:** Muito alto — formato "quanto ganha" é um dos mais buscados no YouTube.
 - **Concorrência:** Alta, mas poucos com dados atualizados para 2026 e mercado BR.
 - **Potencial de watch time:** ALTO — revelação de números prende atenção natural.
-- **Duração ideal:** 14-17 minutos
+- **Duração ideal:** 8-12 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 - **CPM esperado:** Muito alto (público em decisão de carreira)
 
 **Tags SEO:** quanto ganha produtor musical, salário produtor musical, produtor musical 2026, ganhar dinheiro com música, carreira na música, beatmaker quanto ganha
@@ -331,7 +335,7 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 - **Volume de busca:** Alto — "melhor distribuidora" é uma das buscas mais frequentes no nicho.
 - **Concorrência:** Média, mas poucos abordam pelo ângulo do ERRO.
 - **Potencial de watch time:** ALTO — formato "erro" cria urgência de assistir.
-- **Duração ideal:** 12-15 minutos
+- **Duração ideal:** 8-10 minutos (revisado em 27/08 — ver nota no topo do arquivo)
 
 **Tags SEO:** melhor distribuidora musical, distribuidora spotify, erro distribuidora, como escolher distribuidora, distribuidora de música 2026, distrokid, tunecore, onerpm, cdbaby
 

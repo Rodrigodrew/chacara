@@ -52,6 +52,7 @@ Com teto de duração curto (13-20 min) e o mesmo ~26% de retenção, um vídeo 
 
 - Vídeo editado deixa de ser tratado como "motor de watch time" e passa a ser **motor de descoberta + funil pra live** (que é onde o watch time de verdade acontece).
 - Isso permite simplificar a produção (menos tempo de edição por vídeo) sem perder o valor do vídeo, liberando tempo pra investir nas táticas de crescimento de audiência da seção 4.1.
+- **Duração-alvo revisada para 8-12 minutos** (era 12-22 min dependendo do vídeo, nos roteiros originais). Diferente da live, alongar um vídeo editado tem custo de produção que escala com a duração — e como a % de retenção não responde ao roteiro (ver 4.1), esse custo extra não compra mais watch time proporcional. Um vídeo mais curto também entrega a resposta mais rápido pra quem chega via busca e aumenta a taxa de conclusão. Aplicado nos alvos de duração de todos os roteiros em [`roteiros-videos.md`](./roteiros-videos.md).
 
 ### 4.4 Alavanca #4: consertar o CTA (a tela final não funciona)
 

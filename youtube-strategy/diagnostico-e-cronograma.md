@@ -31,6 +31,17 @@ Cada roteiro segue estas regras de retenção:
 4. **Conteúdo em blocos:** Dividir em 3-5 blocos com micro-ganchos entre eles ("mas antes de ir pro passo 3, tem um erro aqui que quase todo mundo comete...").
 5. **Payoff final + CTA:** Entregar a promessa e direcionar para o próximo vídeo ou live.
 
+### 1.4 Atualização (27/08/2026) — regra específica para vídeo editado, com base em dados reais
+
+As primeiras publicações reais (1 vídeo + 2 lives) mostraram a mesma % de retenção (~26%) independente de formato ou duração — sinal de que é comportamento padrão de audiência do YouTube, não uma falha pontual de roteiro. Análise completa em [`revisao-desempenho-agosto-2026.md`](./revisao-desempenho-agosto-2026.md).
+
+Isso muda duas regras — **só para vídeo editado, não para live** (live aproveita duração longa sem custo extra de produção; vídeo editado, sim):
+
+- **Duração ideal revisada: 8-12 minutos** (era 12-22 min dependendo do vídeo). Como a % de retenção não responde ao roteiro, alongar o vídeo só aumenta custo de edição sem aumentar retenção proporcionalmente. Um vídeo mais curto entrega a resposta mais rápido pra quem chega via busca (44,7% do tráfego do canal) e aumenta a taxa de conclusão.
+- **CTA também no meio do conteúdo (~40-50%), não só no fechamento.** A tela final tem 0% de clique nas peças publicadas até agora — quase ninguém chega lá. O convite pra se inscrever/assistir a live precisa ser falado antes da metade do vídeo.
+
+As regras 1-5 acima continuam valendo; a mudança é de **duração-alvo** e **quando repetir o CTA**, não da lógica de gancho/promessa/blocos.
+
 ## 2. Cronograma de Publicação Recomendado
 
 A ordem de publicação foi pensada para maximizar watch time e criar um efeito de rede entre os vídeos (cada um linka para os seguintes).
