@@ -296,34 +296,43 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 
 > Crie uma thumbnail para YouTube 1280x720px. Fundo verde escuro (dinheiro). Espaço à esquerda para foto de pessoa com expressão de surpresa (vou inserir). À direita, textos em camadas: "PRODUTOR MUSICAL" em branco, abaixo "QUANTO GANHA?" em amarelo neon gigante, e notas de dinheiro caindo como efeito de fundo. Na parte inferior, barra preta com texto "A VERDADE" em vermelho. Estilo provocativo, alto contraste.
 
-### Roteiro Completo
+### Roteiro Completo — versão ajustada (27/08/2026)
 
-**BLOCO 1 — GANCHO (0:00 - 2:00)**
+> Duração-alvo real: **~9:30** (dentro do novo alvo de 8-12 min). Mudanças em relação à versão original: blocos condensados (falas mais diretas, menos repetição), e um **CTA verbal no meio do vídeo (~4:40, perto de 50%)** além do CTA de fechamento — porque a tela final não converte (0% de CTR nos dados reais). A lógica de gancho/promessa/blocos continua a mesma, só o ritmo mudou.
+
+**BLOCO 1 — GANCHO + PROMESSA (0:00 - 1:00)**
 
 - [0:00-0:10] GANCHO: "Tem produtor musical ganhando R$ 500 por mês. E tem produtor ganhando R$ 50.000. Mesma profissão, mesmo mercado. A diferença entre eles? Eu vou te mostrar agora."
-- [0:10-0:40] "Essa é a pergunta que mais recebo nos meus DMs: 'Rodrigo, dá pra viver de produção musical?' E a resposta é sim. Mas não do jeito que a maioria imagina."
-- [0:40-1:20] "Nesse vídeo eu vou abrir os números reais — quanto cada tipo de serviço paga, quais as fontes de receita de um produtor, e o caminho mais rápido pra sair do zero."
-- [1:20-2:00] PROMESSA: "No final, eu monto a conta completa de um produtor que fatura R$ 10.000/mês e mostro de onde vem cada centavo. Cola até o final."
+- [0:10-0:30] "Essa é a pergunta que mais recebo nos meus DMs: 'Rodrigo, dá pra viver de produção musical?' Resposta: sim. Mas não do jeito que a maioria imagina."
+- [0:30-1:00] PROMESSA: "Vou abrir as 6 fontes de receita que um produtor pode ter, e no final monto a conta real de quem fatura R$ 10.000 por mês — de onde vem cada centavo. Cola até o final."
 
-**BLOCO 2 — FONTES DE RECEITA (2:00 - 8:00)**
+**BLOCO 2 — AS 6 FONTES DE RECEITA (1:00 - 4:40)**
 
-- [2:00-2:30] "Um produtor musical pode ganhar dinheiro de pelo menos 6 formas diferentes. E a maioria só conhece 2."
-- [2:30-3:30] FONTE 1 — PRODUÇÃO POR ENCOMENDA: "O mais óbvio. Um artista te contrata pra produzir, mixar ou masterizar uma faixa. Valores: R$ 500-5.000 por faixa dependendo do nível e do gênero. Produtores de sertanejo universitário e funk cobram mais por volume; produtores de pop e MPB cobram mais por projeto."
-- [3:30-4:30] FONTE 2 — BEATS (BEATMAKING): "Vender beats online. Plataformas como BeatStars permitem que você venda licenças de uso. Uma licença básica vai de R$ 100-300, uma licença exclusiva de R$ 1.000-10.000. Produtores de trap e hip-hop dominam esse mercado, mas tem espaço pra pop e eletrônico."
-- [4:30-5:30] FONTE 3 — ROYALTIES: "Se você co-produziu uma música, você recebe royalties toda vez que ela é tocada. Isso inclui streaming, rádio, TV e sync. Um produtor creditado em uma faixa com 1 milhão de plays recebe entre R$ 200-900 dependendo do split negociado."
-- [5:30-6:30] FONTE 4 — SYNC E LICENCIAMENTO: "Produzir música pra publicidade, filmes, séries, games. Esse é o mercado mais lucrativo e mais subestimado. Uma sincronização pra propaganda de TV pode pagar R$ 5.000-50.000 por uma única faixa. O caminho é montar um catálogo em libraries como Epidemic Sound, Artlist, ou diretamente com produtoras."
-- [6:30-7:30] FONTE 5 — EDUCAÇÃO: "Dar aulas, workshops, mentorias ou criar cursos online sobre produção. Um curso na Hotmart ou Kiwify sobre mixagem pode gerar receita passiva de R$ 2.000-10.000/mês se bem posicionado."
-- [7:30-8:00] FONTE 6 — SERVIÇOS COMPLEMENTARES: "Direção artística, consultoria de som pra marcas, sonoplastia pra podcasts. Nichos que pagam bem e poucos produtores exploram."
+- [1:00-1:20] "Um produtor pode ganhar dinheiro de pelo menos 6 formas diferentes. A maioria só conhece 2."
+- [1:20-2:00] FONTE 1 — PRODUÇÃO POR ENCOMENDA: "R$ 500 a R$ 5.000 por faixa, dependendo do nível e do gênero. Sertanejo e funk cobram mais por volume; pop e MPB cobram mais por projeto."
+- [2:00-2:40] FONTE 2 — BEATS (BEATMAKING): "Vender beats no BeatStars. Licença básica R$ 100-300, licença exclusiva R$ 1.000-10.000. Trap e hip-hop dominam, mas tem espaço pra pop e eletrônico."
+- [2:40-3:15] FONTE 3 — ROYALTIES: "Co-produziu uma música? Recebe toda vez que ela toca — streaming, rádio, TV, sync. Numa faixa com 1 milhão de plays, isso é R$ 200-900, dependendo do split."
+- [3:15-3:50] FONTE 4 — SYNC E LICENCIAMENTO: "O mais lucrativo e mais subestimado. Uma sincronização pra propaganda de TV paga R$ 5.000-50.000 por uma única faixa. Caminho: montar catálogo em libraries como Epidemic Sound e Artlist."
+- [3:50-4:20] FONTE 5 — EDUCAÇÃO: "Aulas, mentorias, curso na Hotmart ou Kiwify sobre mixagem. Bem posicionado, gera R$ 2.000-10.000/mês de receita passiva."
+- [4:20-4:40] FONTE 6 — SERVIÇOS COMPLEMENTARES: "Direção artística, consultoria de som pra marca, sonoplastia pra podcast. Nichos que pagam bem e quase ninguém explora."
 
-**BLOCO 3 — A CONTA REAL (8:00 - 14:00)**
+**CTA NO MEIO (4:40 - 5:10)**
 
-- [8:00-8:30] "Agora vamos montar o cenário real de um produtor que fatura R$ 10.000 por mês."
-- [8:30-9:30] Tela com breakdown: "3 projetos de produção/mix/master por mês a R$ 2.000 = R$ 6.000. Venda de 10 beats por mês a R$ 150 = R$ 1.500. Royalties recorrentes do catálogo = R$ 1.000. 1 aluno de mentoria individual = R$ 1.500. Total: R$ 10.000."
-- [9:30-10:30] "Isso é realista? Sim, mas não no mês 1. Esse é o perfil de um produtor que já tem 6-12 meses de posicionamento ativo. No começo, os números são menores. E tá tudo bem. O importante é construir as múltiplas fontes de receita."
-- [10:30-11:30] "E o topo do mercado? Produtores reconhecidos no Brasil cobram R$ 10.000-30.000 por faixa. Produtores de jingles e trilha cobram R$ 20.000-100.000 por projeto. Não é pra todo mundo, mas mostra que o teto é alto pra quem se especializa."
-- [11:30-12:30] "Os fatores que mais influenciam quanto você ganha: seu gênero de atuação (funk e sertanejo pagam mais por volume, pop e MPB pagam mais por projeto), sua presença online (quem posta conteúdo atrai mais que quem não posta), e sua rede de contatos (indicação é o canal nº1 de clientes pra produtores)."
-- [12:30-13:30] Erros que diminuem seu faturamento: "Cobrar por hora em vez de por projeto. Não ter portfólio online. Aceitar todo tipo de trabalho sem filtro. Não pedir adiantamento. E o pior de todos: não se posicionar como especialista."
-- [13:30-14:00] CTA: "Se você é produtor e quer montar seu plano de ação, assiste o vídeo do plano de 90 dias que eu linkei aqui. E se inscreve, porque toda semana tem conteúdo pra quem quer viver de música de verdade."
+- [4:40-5:10] "Antes de fechar a conta — se você quer entender como estruturar isso de verdade, eu faço live toda semana aqui no canal ensinando esse tipo de estratégia ao vivo. Se inscreve e ativa o sino agora, porque o próximo passo desse vídeo eu uso de exemplo lá."
+
+**BLOCO 3 — A CONTA REAL (5:10 - 8:15)**
+
+- [5:10-5:30] "Agora vamos montar o cenário real de um produtor que fatura R$ 10.000 por mês."
+- [5:30-6:10] Tela com breakdown: "3 projetos de produção/mix/master a R$ 2.000 = R$ 6.000. 10 beats a R$ 150 = R$ 1.500. Royalties recorrentes = R$ 1.000. 1 mentoria individual = R$ 1.500. Total: R$ 10.000."
+- [6:10-6:40] "Isso é realista? Sim, mas não no mês 1 — é o perfil de quem já tem 6-12 meses de posicionamento ativo. No começo os números são menores, e tá tudo bem."
+- [6:40-7:10] "No topo do mercado, produtores reconhecidos cobram R$ 10.000-30.000 por faixa. Jingle e trilha, R$ 20.000-100.000 por projeto. Não é pra todo mundo, mas mostra o teto de quem se especializa."
+- [7:10-7:40] "O que mais influencia quanto você ganha: gênero de atuação, presença online (quem posta atrai mais que quem não posta), e rede de contatos — indicação é o canal nº1 de cliente pra produtor."
+- [7:40-8:15] Erros que diminuem seu faturamento: "Cobrar por hora em vez de por projeto. Não ter portfólio online. Aceitar qualquer trabalho sem filtro. Não pedir adiantamento. E o pior: não se posicionar como especialista."
+
+**PAYOFF + CTA FINAL (8:15 - 9:30)**
+
+- [8:15-8:45] "Recapitulando: 6 fontes de receita, uma conta real de R$ 10.000/mês, e os erros que travam quem não sai do lugar. O caminho existe — falta é método."
+- [8:45-9:30] CTA: "Se você é produtor e quer o plano de ação passo a passo, assiste o vídeo do Plano de 90 Dias que eu deixei linkado aqui. E não esquece de se inscrever, porque toda semana tem conteúdo novo pra quem quer viver de música de verdade."
 
 ---
 
