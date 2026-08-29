@@ -119,42 +119,44 @@ Se você é músico, produtor ou quer empreender no mercado musical, esse guia �
 
 Gravadora ou independente? Em 2026, essa decisão pode significar a diferença entre ganhar R$ 500 ou R$ 5.000 com a mesma música. Nesse vídeo eu pego os números reais e faço a conta completa: quanto cada caminho paga, o que cada um exige, e quando faz sentido escolher um ou outro.
 
-### Roteiro Completo
+### Roteiro Completo — versão ajustada (27/08/2026)
 
-**BLOCO 1 — GANCHO (0:00 - 2:00)**
+> Duração-alvo real: **~9:30** (dentro do novo alvo de 8-12 min). Blocos condensados + **CTA verbal no meio (~4:00, 42% do vídeo)** além do CTA de fechamento.
 
-- [0:00-0:10] GANCHO: "Um artista com 1 milhão de plays no Spotify ganha R$ 4.500 sendo independente. Com uma gravadora tradicional? R$ 900. Mesma música, mesmo número de plays. E eu vou te provar com números agora."
-- [0:10-0:40] "Eu trabalho com artistas independentes há anos e já vi os dois lados — artistas que saíram de gravadoras pra ficar independentes e artistas que eram independentes e assinaram. E a conclusão que eu cheguei não é a que você espera."
-- [0:40-1:10] "Porque a resposta certa NÃO é simplesmente ser independente. Tem situações em que a gravadora é a melhor escolha. E se você não entender quando cada uma faz sentido, pode estar perdendo dinheiro ou oportunidade."
-- [1:10-2:00] PROMESSA: "Nesse vídeo eu vou fazer a conta real dos dois cenários — com números, splits e custos incluídos. E no final eu vou te dar os 3 critérios pra você decidir qual é o caminho certo PRA VOCÊ. Cola até o final."
+**BLOCO 1 — GANCHO + PROMESSA (0:00 - 1:00)**
 
-**BLOCO 2 — CENÁRIO GRAVADORA (2:00 - 7:00)**
+- [0:00-0:10] GANCHO: "Um artista com 1 milhão de plays ganha R$ 4.500 sendo independente. Numa gravadora tradicional? R$ 900. Mesma música, mesmo número de plays. Vou provar com números agora."
+- [0:10-0:35] "Já vi os dois lados — artista que saiu de gravadora pra ficar independente, e independente que assinou. A conclusão não é a que você espera: a resposta certa não é 'sempre seja independente'."
+- [0:35-1:00] PROMESSA: "Vou fazer a conta real dos dois cenários — números, splits e custos — e no final te dou os 3 critérios pra decidir o caminho certo pra você. Cola até o final."
 
-- [2:00-2:30] "Vamos começar pela gravadora. E eu vou ser justo aqui — não vou demonizar gravadora. Vou mostrar os números como eles são."
-- [2:30-3:30] Tela com tabela: "Em um contrato tradicional de gravadora, o split mais comum é 80/20 ou até 85/15 a favor da gravadora. Sim, a gravadora fica com 80%. Por quê? Porque ela investe em produção, marketing, distribuição, e assume o risco financeiro."
-- [3:30-4:30] "Então vamos fazer a conta: 1 milhão de plays no Spotify paga aproximadamente R$ 4.500 bruto. Com split de 80/20, o artista recebe R$ 900. Parece pouco? É pouco. Mas a gravadora investiu R$ 20.000-50.000 nesse lançamento entre produção, clipe e mídia."
-- [4:30-5:30] "O que a gravadora entrega: estúdio, produção, mixagem, masterização, registro, distribuição, playlisting, assessoria de imprensa, gestão de redes sociais (às vezes), e conexões na indústria. É uma máquina completa. O artista só precisa criar e performar."
-- [5:30-6:30] "Mas tem o outro lado: você perde controle criativo (parcial ou total), seus fonogramas ficam com a gravadora por 5-10 anos (ou pra sempre), e se o contrato for ruim, você pode ficar preso sem poder lançar nada por conta."
-- [6:30-7:00] MICRO-GANCHO: "Agora vamos ver o cenário independente — e aqui tem custos que ninguém fala."
+**BLOCO 2 — CENÁRIO GRAVADORA (1:00 - 4:00)**
 
-**BLOCO 3 — CENÁRIO INDEPENDENTE (7:00 - 12:00)**
+- [1:00-1:40] "Vou ser justo: não vou demonizar gravadora, só mostrar os números como eles são. Split comum: 80/20 ou 85/15 a favor da gravadora — ela banca produção, marketing, distribuição e assume o risco."
+- [1:40-2:20] "A conta: 1 milhão de plays paga uns R$ 4.500 brutos. Com 80/20, o artista recebe R$ 900. Pouco? É. Mas a gravadora investiu R$ 20-50 mil nesse lançamento entre produção, clipe e mídia."
+- [2:20-3:00] "O que ela entrega: estúdio, produção, mix, master, registro, distribuição, playlisting, assessoria, às vezes redes sociais e conexões de indústria. Uma máquina completa — você só cria e performa."
+- [3:00-3:40] "O outro lado: você perde controle criativo, os fonogramas ficam com a gravadora por 5-10 anos (ou pra sempre), e contrato ruim te deixa preso sem poder lançar nada por conta."
+- [3:40-4:00] MICRO-GANCHO: "Agora o cenário independente — e aqui tem custo que ninguém fala."
 
-- [7:00-7:30] "Ser independente soa libertador. E é. Mas liberdade tem preço — literalmente."
-- [7:30-8:30] Tela com tabela: "Como independente, o split é 100% seu (menos a taxa da distribuidora, que varia de 0% a 15%). Com 1 milhão de plays, você recebe entre R$ 3.800 e R$ 4.500. Quatro a cinco vezes mais que na gravadora."
-- [8:30-9:30] "Mas agora bota os custos: produção musical (R$ 1.000-5.000), mixagem e master (R$ 500-2.000), capa (R$ 200-800), clipe (R$ 2.000-20.000), distribuição (R$ 0-600/ano), marketing e tráfego pago (R$ 500-5.000 por lançamento). No cenário lean, um lançamento custa de R$ 2.000 a R$ 5.000. No cenário produzido, R$ 10.000-30.000."
-- [9:30-10:30] "E tem o custo invisível: seu TEMPO. Você vai ser o artista, o marketeiro, o designer, o social media, o financeiro. E isso é viável no começo, mas não escala. Em algum momento, ou você monta equipe ou você para de crescer."
-- [10:30-11:30] "A grande vantagem: tudo é seu. Os fonogramas, as decisões criativas, a velocidade de lançamento, os dados. Você pode lançar amanhã se quiser. Na gravadora, tem fila, tem aprovação, tem timeline que não é sua."
-- [11:30-12:00] MICRO-GANCHO: "Então, com esses números na mesa, qual é o melhor? A resposta depende de 3 critérios que eu vou te dar agora."
+**CTA NO MEIO (4:00 - 4:30)**
 
-**BLOCO 4 — OS 3 CRITÉRIOS + CTA (12:00 - 17:00)**
+- [4:00-4:30] "Antes de seguir — esse tipo de decisão de carreira é exatamente o que eu destrincho ao vivo, toda semana, nas lives daqui do canal. Se inscreve e ativa o sino, porque o próximo critério eu já uso de exemplo real."
 
-- [12:00-12:30] "A decisão gravadora vs independente não é sobre orgulho ou ideologia. É sobre onde você está na sua carreira."
-- [12:30-13:30] CRITÉRIO 1 — CAPITAL: "Você tem dinheiro pra investir? Se não tem nenhum capital e nenhuma equipe, uma gravadora (ou selo pequeno) que investe em você pode ser o caminho. Você troca receita futura por estrutura presente. Se você tem algum capital (nem precisa ser muito — R$ 2.000-5.000 por lançamento), ser independente faz mais sentido financeiramente."
-- [13:30-14:30] CRITÉRIO 2 — HABILIDADES: "Você sabe (ou está disposto a aprender) marketing, distribuição e estratégia? Se a resposta é não e você quer só focar na arte, gravadora. Se sim, independente com ajuda de uma mentoria ou selo de serviços é o melhor caminho."
-- [14:30-15:30] CRITÉRIO 3 — FASE DA CARREIRA: "Se você está no zero absoluto, sem nenhum público, uma gravadora provavelmente não vai te aceitar com um bom contrato. E mesmo que aceite, você vai assinar os piores termos. Melhor começar independente, construir uma base, e quando a gravadora vier, você negocia de igual pra igual."
-- [15:30-16:00] "E existe um terceiro caminho que pouca gente fala: selos de serviço. É como uma gravadora, mas você mantém seus direitos e paga por serviços específicos. A Propulse funciona assim — o artista mantém tudo, e a gente entrega estratégia, distribuição e mentoria."
-- [16:00-16:30] Resumo visual na tela com os 3 cenários lado a lado.
-- [16:30-17:00] CTA: "Se você quer entender como montar sua estratégia de lançamento sendo independente, assiste esse vídeo aqui onde eu mostro o passo a passo pra bater 100 mil plays. Se inscreve, ativa o sino, e nos vemos na próxima."
+**BLOCO 3 — CENÁRIO INDEPENDENTE (4:30 - 7:00)**
+
+- [4:30-5:00] "Ser independente soa libertador. E é. Mas liberdade tem preço — literalmente."
+- [5:00-5:40] "O split é 100% seu (menos taxa de distribuidora, 0-15%). Com 1 milhão de plays, você recebe R$ 3.800-4.500. De quatro a cinco vezes mais que na gravadora."
+- [5:40-6:20] "Mas os custos: produção R$ 1-5 mil, mix e master R$ 500-2 mil, capa R$ 200-800, clipe R$ 2-20 mil, distribuição R$ 0-600/ano, tráfego R$ 500-5 mil. Lean: R$ 2-5 mil por lançamento. Produzido: R$ 10-30 mil."
+- [6:20-6:45] "E tem o custo invisível: seu tempo. Você é artista, marketeiro, designer, financeiro — viável no começo, mas não escala sozinho pra sempre."
+- [6:45-7:00] "A vantagem: tudo é seu — fonogramas, decisões, velocidade, dados. Pode lançar amanhã se quiser."
+
+**BLOCO 4 — OS 3 CRITÉRIOS + CTA FINAL (7:00 - 9:30)**
+
+- [7:00-7:20] "Então qual é o melhor? Depende de 3 critérios."
+- [7:20-7:50] CRITÉRIO 1 — CAPITAL: "Tem dinheiro pra investir? Sem capital nem equipe, uma gravadora ou selo que investe em você pode ser o caminho — você troca receita futura por estrutura presente. Com algum capital (R$ 2-5 mil por lançamento já basta), independente compensa mais."
+- [7:50-8:15] CRITÉRIO 2 — HABILIDADES: "Sabe (ou topa aprender) marketing e estratégia? Se não e quer só focar na arte, gravadora. Se sim, independente com mentoria ou selo de serviço é o melhor caminho."
+- [8:15-8:40] CRITÉRIO 3 — FASE DA CARREIRA: "No zero absoluto, gravadora dificilmente te aceita com bom contrato — e se aceitar, são os piores termos. Melhor construir base independente primeiro e negociar de igual pra igual depois."
+- [8:40-9:00] "Existe um terceiro caminho: selo de serviço. Você mantém seus direitos e paga por estrutura específica — é como a Propulse funciona."
+- [9:00-9:30] CTA: "Se quer montar sua estratégia de lançamento sendo independente, assiste o vídeo onde mostro o passo a passo pra bater 100 mil plays. Se inscreve, ativa o sino, e nos vemos na próxima."
 
 ---
 
@@ -178,44 +180,51 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 
 > Crie uma thumbnail para YouTube 1280x720px. Fundo escuro gradiente. No centro-esquerda, espaço para foto recortada de uma pessoa com fones de ouvido (vou inserir). À direita, texto grande em três linhas: "90 DIAS" em amarelo bold enorme, "PRODUTOR MUSICAL" em branco, "DO ZERO AO PAGO" em verde. Um ícone de calendário estilizado no canto com um checkmark. Estilo moderno, fontes impactantes.
 
-### Roteiro Completo
+### Roteiro Completo — versão ajustada (27/08/2026)
 
-**BLOCO 1 — GANCHO (0:00 - 2:00)**
+> Duração-alvo real: **~10:30** (topo do novo alvo de 8-12 min — justificado pela densidade das 3 fases + tabela de preços). **CTA verbal no meio (~5:10, 49% do vídeo)** além do CTA de fechamento.
 
-- [0:00-0:10] GANCHO: "Em 90 dias, um produtor musical que não tem nenhum cliente pode estar faturando R$ 3.000 a R$ 5.000 por mês. E eu vou te dar o plano exato pra isso acontecer — fase por fase."
-- [0:10-0:40] "Eu conheço produtores incríveis — caras que mixam melhor que gente de gravadora — que não ganham um real com música. Sabe por quê? Porque saber produzir e saber vender produção são habilidades completamente diferentes."
-- [0:40-1:20] "E o mercado tá mais aquecido do que nunca. Artistas independentes estão surgindo aos milhares, e todos eles precisam de produção, mixagem e masterização. O problema não é falta de demanda — é falta de posicionamento."
-- [1:20-2:00] PROMESSA: "Eu montei um plano de 3 fases — 30 dias cada — que qualquer produtor pode seguir. Fase 1 é posicionamento, fase 2 é atração, e fase 3 é conversão. No final do vídeo, eu mostro quanto dá pra cobrar em cada tipo de serviço. Bora."
+**BLOCO 1 — GANCHO + PROMESSA (0:00 - 0:50)**
 
-**BLOCO 2 — FASE 1: POSICIONAMENTO — Dias 1-30 (2:00 - 8:00)**
+- [0:00-0:10] GANCHO: "Em 90 dias, um produtor sem nenhum cliente pode estar faturando R$ 3-5 mil por mês. Vou te dar o plano exato — fase por fase."
+- [0:10-0:30] "Conheço produtor que mixa melhor que gente de gravadora e não ganha um real. Por quê? Saber produzir e saber vender produção são habilidades diferentes."
+- [0:30-0:50] PROMESSA: "3 fases de 30 dias: posicionamento, atração, conversão. No final mostro quanto cobrar em cada serviço. Bora."
 
-- [2:00-2:30] "A primeira coisa que um produtor precisa entender é: você não é 'só um produtor'. Você é um serviço, e todo serviço precisa de posicionamento."
-- [2:30-3:30] "Nos primeiros 30 dias, você vai fazer 4 coisas: definir seu nicho de atuação, montar um portfólio matador, criar presença digital profissional, e definir seus pacotes de serviço."
-- [3:30-4:30] NICHO: "Produtor de quê? MPB? Pop? Sertanejo? Rap? Trilha sonora? Quanto mais específico, mais fácil de se posicionar. O cara que é produtor de pop brasileiro tem mais chance de ser encontrado do que o cara que é produtor de tudo. Não significa que você não pode fazer outros gêneros — significa que sua comunicação é focada."
-- [4:30-5:30] PORTFÓLIO: "Se você não tem clientes, produza 3-5 faixas demonstrativas no seu estilo. Pode ser com artistas amigos, pode ser com vocais de sample packs, pode ser instrumental. O importante é ter material profissional pra mostrar. Coloque no SoundCloud, YouTube e num Google Drive organizado."
-- [5:30-6:30] PRESENÇA: "Crie um Instagram profissional (não misture com pessoal). Bio clara: o que você faz, pra quem faz, e como contratar. Poste 3 vezes por semana: antes e depois de mixagem, trechos de produção, bastidores. Não precisa de milhares de seguidores — precisa dos seguidores certos."
-- [6:30-7:30] PACOTES: "Monte 3 pacotes: básico (só produção do beat), intermediário (produção + mix + master), e premium (tudo + estratégia de lançamento). Coloca preço em todos. Eu sugiro: básico R$ 500-1.000, intermediário R$ 1.500-2.500, premium R$ 3.000-5.000. Ajusta conforme seu mercado."
-- [7:30-8:00] MICRO-GANCHO: "Beleza, você montou a base. Agora como é que atrai cliente? Fase 2."
+**BLOCO 2 — FASE 1: POSICIONAMENTO (0:50 - 3:10)**
 
-**BLOCO 3 — FASE 2: ATRAÇÃO — Dias 31-60 (8:00 - 14:00)**
+- [0:50-1:10] "Você não é 'só um produtor' — é um serviço, e todo serviço precisa de posicionamento. 4 coisas nos primeiros 30 dias."
+- [1:10-1:40] NICHO: "Produtor de quê? Quanto mais específico, mais fácil ser encontrado. Não te impede de fazer outros gêneros — só foca sua comunicação."
+- [1:40-2:10] PORTFÓLIO: "Sem clientes ainda? Produza 3-5 faixas demo no seu estilo — com amigos, sample packs ou instrumental. Sobe no SoundCloud, YouTube e um Drive organizado."
+- [2:10-2:40] PRESENÇA: "Instagram profissional, separado do pessoal. Bio clara: o que faz, pra quem, como contratar. 3 posts por semana — antes/depois, bastidores, trechos."
+- [2:40-3:10] PACOTES: "3 pacotes com preço: básico R$ 500-1.000, intermediário R$ 1.500-2.500, premium R$ 3.000-5.000. Ajusta pro seu mercado."
 
-- [8:00-8:30] "Posicionamento sem visibilidade não serve pra nada. Nessa fase, você vai ativar 3 canais de atração."
-- [8:30-9:30] CANAL 1 — CONTEÚDO: "Comece a postar conteúdo educacional e de bastidores. Vídeos curtos mostrando o processo de produção funcionam absurdamente bem. Um Reels de 30 segundos mostrando um antes e depois de mixagem pode viralizar e trazer 50 contatos de artistas interessados."
-- [9:30-10:30] CANAL 2 — NETWORKING: "Entre em comunidades de artistas independentes — grupos de Facebook, Discord, Telegram. Não entre vendendo. Entre ajudando. Responde dúvidas sobre mixagem, compartilha dicas, dá feedback em músicas. Em 2-3 semanas, as pessoas vão começar a perguntar quanto você cobra."
-- [10:30-11:30] CANAL 3 — PARCERIAS: "Ofereça produzir uma faixa gratuitamente (ou com desconto pesado) para 1-2 artistas que já têm público. A troca é: eles te creditam, divulgam o trabalho, e você ganha um case com números reais. Isso vale mais que qualquer anúncio pago."
-- [11:30-12:30] "E aqui vai uma sacada que poucos produtores fazem: monte um antes e depois em vídeo. Grava o áudio cru que o artista mandou e o resultado final. Pede autorização e posta. Esse tipo de conteúdo é a prova social mais poderosa que existe pro seu trabalho."
-- [12:30-13:30] "Nos dias 45-60, você já deveria ter: pelo menos 2-3 propostas recebidas, conversas ativas com potenciais clientes, e conteúdo rodando. Se não tem, provavelmente o problema tá na frequência de postagem ou no nicho muito genérico. Volta na fase 1 e ajusta."
-- [13:30-14:00] MICRO-GANCHO: "Mas receber proposta não é receber dinheiro. Na fase 3, eu te ensino a fechar."
+**BLOCO 3 — FASE 2: ATRAÇÃO (3:10 - 5:10)**
 
-**BLOCO 4 — FASE 3: CONVERSÃO — Dias 61-90 (14:00 - 19:00)**
+- [3:10-3:30] "Posicionamento sem visibilidade não serve. 3 canais de atração."
+- [3:30-4:00] CANAL 1 — CONTEÚDO: "Reels curtos do processo de produção. Um antes-e-depois de mixagem pode viralizar e trazer dezenas de contatos."
+- [4:00-4:30] CANAL 2 — NETWORKING: "Comunidades de artistas independentes — ajuda, não vende. Em 2-3 semanas, começam a perguntar quanto você cobra."
+- [4:30-5:10] CANAL 3 — PARCERIAS: "Produza de graça (ou com desconto) pra 1-2 artistas com público, em troca de crédito e divulgação. Grava o antes-e-depois em vídeo — é a prova social mais forte que existe."
 
-- [14:00-14:30] "Essa é a fase que separa o hobbysta do profissional. Você vai aprender a vender sem ser vendedor."
-- [14:30-15:30] PROCESSO DE VENDA: "Quando alguém te procurar, não manda preço na lata. Faz 3 perguntas: qual o estilo da música, qual a referência sonora, e qual o prazo. Depois manda uma proposta organizada (pode ser um PDF simples) com: escopo, prazo, preço, e o que está incluso. Isso te posiciona como profissional, não como freelancer desesperado."
-- [15:30-16:30] PRECIFICAÇÃO: "O maior erro é cobrar por hora. Cobre por projeto. Um artista não quer saber quantas horas você gastou — ele quer saber o resultado. E sempre peça 50% adiantado. Sem exceção. Se o artista não topa, ele não te valoriza o suficiente pra ser um bom cliente."
-- [16:30-17:30] FIDELIZAÇÃO: "Seu primeiro cliente é mais importante que os próximos 10. Por quê? Porque se você fizer um trabalho excepcional, ele vai: te recomendar pra outros artistas, voltar pros próximos lançamentos, e virar um case pro seu portfólio. Trate cada projeto como se fosse o mais importante da sua carreira."
-- [17:30-18:30] TABELA DE PREÇOS: Tela com tabela completa de serviços e faixas de preço: "Produção de beat: R$ 500-2.000. Mixagem: R$ 300-1.000 por faixa. Masterização: R$ 150-500 por faixa. Pacote completo (produção + mix + master): R$ 1.500-5.000. Produção de EP (4-5 faixas): R$ 5.000-15.000. Direção artística + produção: R$ 8.000-25.000."
-- [18:30-19:00] "Com 3-4 clientes por mês no pacote intermediário, você já tá faturando R$ 4.500-10.000. E tudo isso em 90 dias. O plano funciona, mas só se você executar."
-- [19:00-20:00] CTA: "Se você é artista e quer saber como escolher um bom produtor (e não cair em furada), assiste esse vídeo. E se esse plano de 90 dias fez sentido pra você, se inscreve no canal porque toda semana tem conteúdo novo pra quem quer viver de música. Nos vemos na próxima."
+**CTA NO MEIO (5:10 - 5:40)**
+
+- [5:10-5:40] "Se esse plano fizer sentido pra sua fase, eu aprofundo isso nas lives semanais daqui do canal — trago gente pra analisar lançamento ao vivo. Se inscreve e ativa o sino agora."
+
+**BLOCO 4 — FASE 3: CONVERSÃO (5:40 - 8:00)**
+
+- [5:40-6:10] "Aqui separa o hobbysta do profissional: vender sem ser vendedor."
+- [6:10-6:40] PROCESSO: "Não manda preço na lata. Pergunta estilo, referência e prazo. Manda proposta organizada — escopo, prazo, preço. Isso te posiciona como profissional."
+- [6:40-7:10] PRECIFICAÇÃO: "Cobre por projeto, não por hora. E sempre peça 50% adiantado — sem exceção. Quem não topa, não te valoriza o suficiente."
+- [7:10-7:35] FIDELIZAÇÃO: "Seu primeiro cliente importa mais que os próximos 10 — ele recomenda, volta, e vira case do seu portfólio."
+- [7:35-8:00] "Nos dias 45-60 você já deveria ter 2-3 propostas rodando. Se não tem, o problema é frequência de postagem ou nicho genérico demais — volta na fase 1."
+
+**BLOCO 5 — TABELA DE PREÇOS (8:00 - 9:00)**
+
+- [8:00-9:00] Tela com tabela: "Beat: R$ 500-2.000. Mixagem: R$ 300-1.000/faixa. Masterização: R$ 150-500/faixa. Pacote completo: R$ 1.500-5.000. EP (4-5 faixas): R$ 5.000-15.000. Direção artística + produção: R$ 8.000-25.000."
+
+**PAYOFF + CTA FINAL (9:00 - 10:30)**
+
+- [9:00-9:30] "Com 3-4 clientes por mês no pacote intermediário, já são R$ 4.500-10.000. Em 90 dias. O plano funciona, mas só se você executar."
+- [9:30-10:30] CTA: "Se você é artista e quer saber como escolher um bom produtor sem cair em furada, assiste esse vídeo aqui. E se esse plano fez sentido, se inscreve — toda semana tem conteúdo novo pra quem quer viver de música. Nos vemos na próxima."
 
 ---
 
@@ -238,42 +247,50 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 
 > Crie uma thumbnail para YouTube 1280x720px. Fundo escuro. Três colunas com ícones no topo: à esquerda um prédio (gravadora), no centro um carimbo/selo (selo musical), à direita uma seta de envio/distribuição (distribuidora). Abaixo de cada ícone, o nome em texto branco. Entre as colunas, sinais de interrogação grandes em amarelo. Na parte inferior central, texto vermelho bold: "QUAL A DIFERENÇA?" Estilo infográfico clean.
 
-### Roteiro Completo
+### Roteiro Completo — versão ajustada (27/08/2026)
 
-**BLOCO 1 — GANCHO (0:00 - 1:30)**
+> Duração-alvo real: **~8:30** (dentro do novo alvo de 8-10 min). **CTA verbal no meio (~3:50, 45% do vídeo)** além do CTA de fechamento.
 
-- [0:00-0:10] GANCHO: "90% dos artistas que eu converso confundem gravadora, selo e distribuidora. E essa confusão faz eles assinarem contratos errados e perderem dinheiro. Vamos resolver isso agora."
-- [0:10-0:50] "Eu recebo toda semana mensagens tipo: 'Rodrigo, assinei com uma distribuidora achando que era gravadora, e agora tô preso num contrato que não faz sentido.' Ou: 'meu selo não faz nada por mim, é só distribuidora disfarçada.'"
-- [0:50-1:30] PROMESSA: "Nesse vídeo eu vou te explicar de forma definitiva o que cada um faz, o que cada um cobra, e quando faz sentido usar cada um. Ao final, eu monto uma tabela comparativa que você pode usar pra nunca mais confundir."
+**BLOCO 1 — GANCHO + PROMESSA (0:00 - 0:50)**
 
-**BLOCO 2 — GRAVADORA (1:30 - 5:00)**
+- [0:00-0:10] GANCHO: "90% dos artistas que eu converso confundem gravadora, selo e distribuidora — e essa confusão faz eles assinarem contrato errado e perderem dinheiro. Vamos resolver agora."
+- [0:10-0:30] "Recebo toda semana: 'assinei com distribuidora achando que era gravadora' ou 'meu selo não faz nada, é distribuidora disfarçada'."
+- [0:30-0:50] PROMESSA: "Vou explicar de forma definitiva o que cada um faz, cobra, e quando usar cada um. No final, uma tabela comparativa pra você nunca mais confundir."
 
-- [1:30-2:00] "Vamos começar pela gravadora, que é o modelo mais antigo e mais conhecido."
-- [2:00-3:00] "A gravadora investe capital no artista. Ela banca produção, marketing, distribuição, e recebe de volta uma fatia grande dos royalties — normalmente 70-85%. Em troca, o artista recebe estrutura completa: estúdio, equipe, conexões, e às vezes um adiantamento (advance)."
-- [3:00-4:00] "O ponto-chave: a gravadora geralmente FICA COM OS FONOGRAMAS. Isso significa que as gravações são propriedade da gravadora, não do artista. Dependendo do contrato, isso pode ser por 5, 10, 20 anos ou perpetuamente."
-- [4:00-5:00] "Quando faz sentido? Quando você não tem capital, não tem equipe, e quer focar 100% na arte. O trade-off é claro: dinheiro e controle por estrutura e velocidade. As grandes: Sony, Universal, Warner. No Brasil, tem também Somlivre, GR6, e várias independentes."
+**BLOCO 2 — GRAVADORA (0:50 - 2:20)**
 
-**BLOCO 3 — SELO MUSICAL (5:00 - 9:00)**
+- [0:50-1:10] "Começando pela mais antiga e conhecida."
+- [1:10-1:40] "A gravadora investe capital — produção, marketing, distribuição — e fica com 70-85% dos royalties. Em troca, estrutura completa e às vezes um adiantamento."
+- [1:40-2:05] "O ponto-chave: ela geralmente FICA COM OS FONOGRAMAS — as gravações são dela, não suas, por 5, 10, 20 anos ou pra sempre."
+- [2:05-2:20] "Faz sentido quando você não tem capital nem equipe e quer focar 100% na arte. Sony, Universal, Warner; no Brasil, Somlivre, GR6 e outras."
 
-- [5:00-5:30] "Agora o selo. E aqui é onde a confusão começa."
-- [5:30-6:30] "Um selo musical pode funcionar de formas muito diferentes. Na prática, um selo é uma marca sob a qual músicas são lançadas. Toda gravadora tem um selo (às vezes vários). Mas nem todo selo é uma gravadora."
-- [6:30-7:30] "Existem selos que funcionam como mini-gravadoras — investem, produzem, e ficam com parte dos direitos. E existem selos de serviço — como a Propulse — que oferecem estrutura (distribuição, estratégia, marketing) mas o artista mantém 100% dos seus direitos. A diferença é enorme."
-- [7:30-8:30] "O selo cuida da estratégia de lançamento, do relacionamento com distribuidoras e plataformas, e da identidade do catálogo. Um bom selo faz curadoria — não assina qualquer artista. E essa curadoria gera valor porque playlists e mídias confiam mais em um lançamento vindo de um selo com reputação do que de um artista solo."
-- [8:30-9:00] "Quando faz sentido? Quando você quer estrutura profissional mas não quer abrir mão dos seus direitos. O selo é o meio-termo."
+**BLOCO 3 — SELO MUSICAL (2:20 - 3:50)**
 
-**BLOCO 4 — DISTRIBUIDORA (9:00 - 12:00)**
+- [2:20-2:35] "Agora o selo — onde a confusão começa."
+- [2:35-3:00] "Um selo é a marca sob a qual músicas são lançadas. Toda gravadora tem um selo, mas nem todo selo é gravadora."
+- [3:00-3:30] "Tem selo que funciona como mini-gravadora, e tem selo de serviço — como a Propulse — que dá estrutura mas o artista mantém 100% dos direitos. A diferença é enorme."
+- [3:30-3:50] "Um bom selo faz curadoria e cuida da estratégia — isso gera confiança de playlists e mídia. Faz sentido quando você quer estrutura sem abrir mão dos direitos."
 
-- [9:00-9:30] "Por último, a distribuidora. E essa é a mais simples de entender."
-- [9:30-10:30] "A distribuidora é a ponte entre sua música e as plataformas (Spotify, Apple Music, Deezer, etc.). Ela não investe em você, não faz marketing, não cuida da sua carreira. Ela coloca sua música nas lojas e te repassa os royalties, cobrando uma taxa (fixa ou percentual)."
-- [10:30-11:00] "Exemplos: DistroKid, TuneCore, CDBaby, ONErpm, Believe. Cada uma tem modelo de preço diferente — algumas cobram taxa anual por lançamento, outras ficam com uma porcentagem dos royalties."
-- [11:00-11:30] "Quando faz sentido? Sempre. Todo artista precisa de uma distribuidora. A questão é se você precisa SÓ de distribuidora ou de algo a mais."
-- [11:30-12:00] Tela com tabela comparativa: Gravadora vs Selo vs Distribuidora em categorias: investimento, direitos, serviços, split, autonomia.
+**CTA NO MEIO (3:50 - 4:20)**
 
-**BLOCO 5 — CONCLUSÃO + CTA (12:00 - 14:00)**
+- [3:50-4:20] "Antes de fechar com distribuidora — se você quer aprofundar esse tipo de decisão com casos reais, eu faço isso toda semana nas lives daqui. Se inscreve e ativa o sino agora."
 
-- [12:00-13:00] "Resumindo: distribuidora é logística, selo é estratégia, gravadora é investimento + controle. Não existe melhor ou pior — existe o que faz sentido pra onde você está na carreira."
-- [13:00-13:30] "Se você tá começando do zero: distribuidora + conhecimento. Se quer estrutura sem perder direitos: selo de serviço. Se precisa de capital pesado e não liga de ceder controle: gravadora."
-- [13:30-14:00] CTA: "E se você quer criar seu próprio selo, assiste esse vídeo aqui que eu mostro o passo a passo completo. Se inscreve, ativa o sino, e bora juntos."
+**BLOCO 4 — DISTRIBUIDORA (4:20 - 5:50)**
+
+- [4:20-4:35] "Por último, a mais simples de entender."
+- [4:35-5:05] "É a ponte entre sua música e as plataformas. Não investe, não faz marketing, não cuida da sua carreira — só coloca nas lojas e repassa royalties, cobrando uma taxa."
+- [5:05-5:25] "Exemplos: DistroKid, TuneCore, CDBaby, ONErpm, Believe — cada uma com modelo de preço diferente."
+- [5:25-5:50] "Faz sentido sempre — todo artista precisa de uma. A questão é se você precisa só disso ou de algo a mais."
+
+**TABELA COMPARATIVA (5:50 - 6:30)**
+
+- [5:50-6:30] Tela com tabela comparativa: Gravadora vs Selo vs Distribuidora em investimento, direitos, serviços, split, autonomia.
+
+**BLOCO 5 — CONCLUSÃO + CTA FINAL (6:30 - 8:30)**
+
+- [6:30-7:10] "Resumindo: distribuidora é logística, selo é estratégia, gravadora é investimento + controle. Não existe melhor — existe o que faz sentido pra sua fase."
+- [7:10-7:40] "Começando do zero: distribuidora + conhecimento. Quer estrutura sem perder direitos: selo de serviço. Precisa de capital pesado e não liga de ceder controle: gravadora."
+- [7:40-8:30] CTA: "Se você quer criar seu próprio selo, assiste o vídeo aqui com o passo a passo completo. Se inscreve, ativa o sino, e bora juntos."
 
 ---
 
@@ -354,32 +371,42 @@ Gravadora ou independente? Em 2026, essa decisão pode significar a diferença e
 
 > Crie uma thumbnail para YouTube 1280x720px. Fundo vermelho de alerta. Espaço à esquerda para foto de pessoa com mão na cabeça em expressão de "erro" (vou inserir). À direita, texto grande: "90% ERRAM" em branco bold, abaixo "DISTRIBUIDORA" em amarelo. Um ícone de X vermelho e um checkmark verde lado a lado. Estilo urgente, chamativo.
 
-### Roteiro Completo
+### Roteiro Completo — versão ajustada (27/08/2026)
 
-**BLOCO 1 — GANCHO (0:00 - 1:30)**
+> Duração-alvo real: **~8:00** (base do novo alvo de 8-10 min). **CTA verbal no meio (~3:45, 47% do vídeo)** além do CTA de fechamento.
 
-- [0:00-0:10] GANCHO: "Sua distribuidora pode estar ficando com dinheiro que é seu — e você nem sabe. Eu vou te mostrar como conferir agora."
-- [0:10-0:40] "Toda semana algum artista me procura desesperado: 'Rodrigo, lancei minha música, tive 50 mil plays e recebi R$ 80. Isso tá certo?' E quando eu vou ver o contrato da distribuidora, o problema fica claro."
-- [0:40-1:30] PROMESSA: "Nesse vídeo eu vou revelar o erro mais comum na escolha de distribuidora, te ensinar a ler o que importa no contrato, e te dar 5 critérios pra escolher a distribuidora certa pra sua carreira."
+**BLOCO 1 — GANCHO + PROMESSA (0:00 - 0:45)**
 
-**BLOCO 2 — O ERRO (1:30 - 5:00)**
+- [0:00-0:10] GANCHO: "Sua distribuidora pode estar ficando com dinheiro que é seu — e você nem sabe. Vou te mostrar como conferir agora."
+- [0:10-0:30] "Toda semana um artista me procura: 'tive 50 mil plays e recebi R$ 80, tá certo?' Quando vejo o contrato, o problema fica claro."
+- [0:30-0:45] PROMESSA: "Vou revelar o erro mais comum na escolha de distribuidora e te dar 5 critérios pra escolher certo."
 
-- [1:30-2:00] "O erro é simples: escolher distribuidora pelo preço. E eu entendo — quando você tá começando, quer gastar o mínimo possível."
-- [2:00-3:00] "Mas distribuidora barata pode sair cara. Algumas pegam 30-50% dos seus royalties por anos. Outras cobram pouco na entrada mas retêm direitos sobre seus lançamentos por 2-5 anos. E tem as que simplesmente não pagam no prazo."
-- [3:00-4:00] "O artista chega na distribuidora gratuita, fica feliz porque não pagou nada, e não lê o contrato. Dois anos depois, quer trocar de distribuidora e descobre que precisa esperar o contrato vencer pra remover as músicas. E nesse meio-tempo, os royalties vão ficando retidos."
-- [4:00-5:00] "E tem outro erro escondido: achar que distribuidora faz marketing. Distribuidora NÃO é gravadora. Ela coloca sua música nas plataformas e pronto. Se você espera que ela promova seu lançamento, você vai se frustrar."
+**BLOCO 2 — O ERRO (0:45 - 2:15)**
 
-**BLOCO 3 — OS 5 CRITÉRIOS (5:00 - 11:00)**
+- [0:45-1:10] "O erro é simples: escolher pelo preço. Entendo — no começo você quer gastar o mínimo."
+- [1:10-1:40] "Mas distribuidora barata pode sair cara. Algumas pegam 30-50% dos royalties por anos. Outras retêm direitos por 2-5 anos, ou simplesmente não pagam no prazo."
+- [1:40-2:00] "O artista entra na gratuita, não lê contrato, e 2 anos depois descobre que precisa esperar vencer pra sair — com royalties retidos nesse meio-tempo."
+- [2:00-2:15] "E tem o erro escondido: achar que distribuidora faz marketing. Ela NÃO é gravadora — só coloca sua música nas plataformas."
 
-- [5:00-5:30] "Então como escolher certo? Eu uso 5 critérios quando avalio uma distribuidora pros meus artistas."
-- [5:30-6:30] CRITÉRIO 1: "Modelo de cobrança. Prefira taxa fixa anual ao invés de porcentagem. Distribuidoras que cobram porcentagem ficam com seu dinheiro pra sempre. As que cobram taxa anual, você paga uma vez e recebe 100%."
-- [6:30-7:30] CRITÉRIO 2: "Prazo de contrato e ownership. Leia QUEM fica com os direitos e POR QUANTO TEMPO. O ideal: você mantém 100% dos direitos e pode sair a qualquer momento (com aviso prévio razoável)."
-- [7:30-8:30] CRITÉRIO 3: "Frequência e transparência de pagamento. Algumas pagam mensalmente, outras trimestralmente. E o dashboard de analytics precisa ser claro — você tem que conseguir ver quanto cada música fez em cada plataforma."
-- [8:30-9:30] CRITÉRIO 4: "Serviços adicionais. Pitching pra playlists editoriais, content ID, YouTube monetization, neighboring rights. Distribuidoras mais completas oferecem isso incluso ou como add-on."
-- [9:30-10:30] CRITÉRIO 5: "Suporte. Quando der problema — e vai dar — você precisa de alguém pra responder. Distribuidora sem suporte humano é uma bomba-relógio. Teste antes de assinar: manda uma pergunta pro suporte e vê em quanto tempo respondem."
-- [10:30-11:00] Tabela comparativa na tela com 4-5 distribuidoras populares avaliadas nos 5 critérios.
+**BLOCO 3 — OS 5 CRITÉRIOS, PARTE 1 (2:15 - 3:45)**
 
-**BLOCO 4 — CTA (11:00 - 13:00)**
+- [2:15-2:30] "Então como escolher certo? 5 critérios que eu uso com meus artistas."
+- [2:30-3:00] CRITÉRIO 1: "Modelo de cobrança — prefira taxa fixa anual a porcentagem. Porcentagem fica com seu dinheiro pra sempre."
+- [3:00-3:25] CRITÉRIO 2: "Prazo de contrato e ownership. Leia quem fica com os direitos e por quanto tempo. Ideal: 100% seus, saída a qualquer momento."
+- [3:25-3:45] CRITÉRIO 3: "Frequência e transparência de pagamento — dashboard claro, mostrando quanto cada música fez em cada plataforma."
 
-- [11:00-12:00] "Recapitulando: não escolha pelo preço, leia o contrato (especialmente prazo e ownership), e priorize transparência. Se precisar de ajuda, eu deixo um checklist na descrição pra você avaliar qualquer distribuidora."
-- [12:00-13:00] CTA: "E se você quer ir além e montar uma estratégia completa de lançamento, assiste a playlist que eu montei aqui no canal sobre como bater 100 mil plays. Se inscreve, ativa o sino, e nos vemos na próxima."
+**CTA NO MEIO (3:45 - 4:15)**
+
+- [3:45-4:15] "Antes dos últimos 2 critérios — se você já foi pego numa distribuidora ruim ou quer evitar isso, eu analiso lançamentos reais de artistas ao vivo, toda semana, nas lives daqui. Se inscreve e ativa o sino agora."
+
+**BLOCO 4 — OS 5 CRITÉRIOS, PARTE 2 + TABELA (4:15 - 5:45)**
+
+- [4:15-4:40] CRITÉRIO 4: "Serviços adicionais — pitching editorial, content ID, YouTube monetization. Distribuidoras completas oferecem isso incluso ou como add-on."
+- [4:40-5:10] CRITÉRIO 5: "Suporte. Quando der problema — e vai dar — você precisa de alguém respondendo. Teste antes de assinar: manda uma pergunta e vê o tempo de resposta."
+- [5:10-5:45] Tabela comparativa na tela com 4-5 distribuidoras populares avaliadas nos 5 critérios.
+
+**PAYOFF + CTA FINAL (5:45 - 8:00)**
+
+- [5:45-6:15] "Recapitulando: não escolha pelo preço, leia prazo e ownership, priorize transparência. Deixo um checklist na descrição pra avaliar qualquer distribuidora."
+- [6:15-6:55] "E se você já está numa distribuidora ruim, não desespera: dá pra migrar quando o contrato vencer — só planeja a virada com antecedência, catálogo organizado, pra não perder tração no meio do caminho."
+- [6:55-8:00] CTA: "Se você quer ir além e montar uma estratégia completa de lançamento, assiste a playlist que eu montei aqui sobre como bater 100 mil plays. Se inscreve, ativa o sino, e nos vemos na próxima."
