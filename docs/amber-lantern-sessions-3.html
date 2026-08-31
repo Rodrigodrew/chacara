@@ -1,0 +1,666 @@
+<title>Amber Lantern Sessions III</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --sea:#0F5F5C; --amber:#8A5710; --hue:#0F5F5C;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#111216; --surface:#191B20; --surface-2:#212329;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2C2E36;
+    --sea:#57C3B8; --amber:#DFA43F; --hue:#57C3B8;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111216; --surface:#191B20; --surface-2:#212329;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2C2E36;
+  --sea:#57C3B8; --amber:#DFA43F; --hue:#57C3B8;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .l{color:var(--amber)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:58ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:58px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:26px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--amber)}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+.sub{font-family:var(--mono);font-size:12px;color:var(--ink-2);letter-spacing:.04em;margin:-14px 0 24px}
+h3{font-family:var(--display);font-size:18px;margin:0}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:22px}
+
+.bloco{border:1px solid var(--rule);border-left:3px solid var(--sea);background:var(--surface);padding:15px 17px;margin:18px 0;font-family:var(--mono);font-size:13px;line-height:1.75;white-space:pre-line;overflow-x:auto}
+.bloco .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:9px;white-space:normal}
+
+/* o que muda e o que fica igual, por set */
+.constantes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:22px 0}
+.const{background:var(--surface);padding:14px 16px}
+.const .k{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.const .v{font-size:15.5px;line-height:1.45}
+.const.muda{background:var(--paper)}
+.const.muda .k{color:var(--amber)}
+
+.faixa{border-top:1px solid var(--rule);padding:22px 0}
+.faixa:first-of-type{border-top:2px solid var(--ink)}
+.cab{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:baseline;margin-bottom:12px}
+.numero{font-family:var(--display);font-size:24px;line-height:1;color:var(--amber);font-variant-numeric:tabular-nums}
+.uso{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);margin:5px 0 0}
+.ficha{border:1px solid var(--rule);background:var(--surface);padding:13px 15px;font-family:var(--mono);font-size:13px;line-height:1.6;overflow-x:auto}
+.ficha .lbl{display:block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:7px}
+.ficha .neg{display:block;margin-top:9px;padding-top:9px;border-top:1px dashed var(--rule);color:var(--ink-2)}
+.ficha .neg b{color:var(--ink)}
+
+.note{border-left:3px solid var(--amber);background:var(--surface);padding:16px 18px;margin:24px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
+.note.sea{border-left-color:var(--sea)} .note.sea .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.55em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--amber)}
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+pre{background:var(--surface);border:1px solid var(--rule);padding:14px 16px;overflow-x:auto;margin:18px 0;font-family:var(--mono);font-size:12.5px;line-height:1.65}
+pre .cmt{color:var(--ink-2)}
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:560px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .cab{grid-template-columns:1fr;gap:4px} }
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div class="kicker">Canal B · The Amber Lantern · vídeos 04, 05 e 06</div>
+  <h1>Amber <span class="l">Lantern</span> Sessions III</h1>
+  <p class="dek">Sets 5, 6 e 7 — as três variações do vídeo que funcionou. Mesma fórmula, mesmo cluster, mesma abertura. Só a cena muda.</p>
+  <div class="meta">
+    <span>Faixas <b>60</b></span>
+    <span>Vídeos <b>04, 05 e 06</b></span>
+    <span>Estratégia <b>Replicação, não variação</b></span>
+    <span>Duração <b>~60 min por set</b></span>
+  </div>
+</header>
+
+<section id="porque">
+  <div class="sec-head"><span class="sec-mark">A REGRA QUE DISPAROU</span><h2>Por que os três são o mesmo vídeo</h2></div>
+  <p class="lede measure">O vídeo 03 fez <strong>66 views por dia contra uma média de canal de 15</strong> — mais de quatro vezes — e ainda dobrou a retenção, de 9,1% para 17,3%. Volume e qualidade juntos é o sinal mais forte que um canal novo consegue dar.</p>
+  <p class="measure">A tabela de gatilhos diz o que fazer nesse caso: <em>um vídeo com o triplo da média do canal, replique a fórmula em três variações na semana seguinte</em>. Estes são os três. O <strong>Set 4</strong>, do scriptorium e do estudo, sai da fila e volta depois — continua bom, mas quando o algoritmo acaba de validar um padrão, alimentar o padrão vale mais do que diversificar.</p>
+
+  <div class="constantes">
+    <div class="const"><span class="k">Fica igual</span><span class="v">O cluster de RPG no título e nas tags</span></div>
+    <div class="const"><span class="k">Fica igual</span><span class="v">A fórmula <code>Fantasy Tavern Ambience for [uso] — [cena] | 1 Hour</code></span></div>
+    <div class="const"><span class="k">Fica igual</span><span class="v">O Bloco C e a faixa de abertura cheia</span></div>
+    <div class="const"><span class="k">Fica igual</span><span class="v">Os três segundos de <code>-p 3</code> antes da música</span></div>
+    <div class="const muda"><span class="k">Muda</span><span class="v">A cena, dentro do mesmo mundo</span></div>
+    <div class="const muda"><span class="k">Muda</span><span class="v">A capa do vídeo 06, que sai sem texto</span></div>
+  </div>
+
+  <div class="bloco"><span class="lbl">Bloco de estrutura C — use nas três séries</span>[Intro - solo instrument, sparse]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]</div>
+
+  <div class="bloco"><span class="lbl">Bloco de abertura — só para a PRIMEIRA faixa de cada set (E01, F01, G01)</span>[Intro - full arrangement from the first bar, warm and immediate]
+[Theme A]
+[Theme A - repeat with second instrument]
+[Variation - quieter]
+[Instrumental Solo]
+[Theme B]
+[Theme A - returns, fuller]
+[Long Outro - fading, last notes ringing]</div>
+
+  <div class="bloco"><span class="lbl">Exclude Styles — o mesmo em todas as 60 faixas</span>orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</div>
+
+  <div class="note sea">
+    <span class="tag">Como operar o Suno</span>
+    <p>Marque <strong>Instrumental</strong> e cole o bloco de estrutura no campo de letra mesmo assim. Vinte faixas a três minutos fecham a hora; se as suas saírem em 2m30, gere mais quatro ou cinco por set. Ao usar <strong>Extend</strong>, rode o <strong>Get Whole Song</strong> depois.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">O que o Exclude está protegendo</span>
+    <p><em>Battle music</em> continua na lista, e agora ela importa mais do que nunca: o Set 6 se passa depois de uma batalha, e é exatamente aí que o modelo vai querer escrever trilha épica. O set é <strong>grave, não dramático</strong> — o peso vem do andamento lento e do registro grave, nunca de um crescendo.</p>
+  </div>
+</section>
+
+<section id="set5">
+  <div class="sec-head"><span class="sec-mark">SET 5</span><h2>A noite antes da estrada</h2></div>
+  <p class="sub">Vídeo 04 · Fantasy Tavern Ambience for D&amp;D Sessions — The Night Before the Road | 1 Hour · 20 faixas · Bloco C</p>
+  <p class="measure">O mesmo grupo do vídeo 03, uma hora antes. A mesa está posta, o mapa aberto, os cavalos partem ao amanhecer e ninguém tem pressa de ir dormir. É a variação mais próxima do original — de propósito: se o vídeo 03 pegou uma fórmula e não uma onda, é este que prova.</p>
+<article class="faixa" id="fE01">
+  <header class="cab"><span class="numero">E01</span>
+    <div><h3>The Last Warm Room</h3><p class="uso">abre o set, a taverna cheia e acolhedora</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and fiddle together from the first bar, bodhran hand drum, dorian mode, 90 bpm, warm and immediate, full arrangement, stone hall reverb
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE02">
+  <header class="cab"><span class="numero">E02</span>
+    <div><h3>Boots by the Fire</h3><p class="uso">descanso antes da partida</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute with wooden flute above, aeolian mode, 74 bpm, tired and content, sparse, long sustained notes, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE03">
+  <header class="cab"><span class="numero">E03</span>
+    <div><h3>Packing the Saddlebags</h3><p class="uso">movimento leve, gente indo e vindo</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, mandolin and hammered dulcimer trading phrases, 96 bpm, busy and practical, circular repeating figures, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE04">
+  <header class="cab"><span class="numero">E04</span>
+    <div><h3>The Road Is Three Days Long</h3><p class="uso">conversa séria sobre o caminho</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and low whistle, dorian mode, 78 bpm, thoughtful and slightly wary, long phrases, extended instrumental break
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE05">
+  <header class="cab"><span class="numero">E05</span>
+    <div><h3>A Toast to Bad Ideas</h3><p class="uso">o brinde, o único momento alegre do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, fiddle leading with lute rhythm, frame drum, mixolydian mode, 104 bpm, cheerful and rowdy but not loud, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE06">
+  <header class="cab"><span class="numero">E06</span>
+    <div><h3>The Innkeeper Counts the Rooms</h3><p class="uso">fundo neutro, quase mobília</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with sparse dulcimer, 68 bpm, plain and unhurried, repetitive, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE07">
+  <header class="cab"><span class="numero">E07</span>
+    <div><h3>Old Coins on Wood</h3><p class="uso">negociação em voz baixa</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, mandolin and lute, light frame drum, 92 bpm, businesslike and steady, walking pulse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE08">
+  <header class="cab"><span class="numero">E08</span>
+    <div><h3>The Map Is Wrong Somewhere</h3><p class="uso">tensão discreta, sem dramatizar</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute with sustained fiddle drone, aeolian mode, 70 bpm, uneasy but quiet, no resolution, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE09">
+  <header class="cab"><span class="numero">E09</span>
+    <div><h3>Someone Is Singing Two Rooms Away</h3><p class="uso">melodia distante, sensação de casa cheia</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, wooden flute melody with distant lute, dorian mode, 80 bpm, soft and far away, muffled reverb, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE10">
+  <header class="cab"><span class="numero">E10</span>
+    <div><h3>The Fire Needs Another Log</h3><p class="uso">meio do set, respiro</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and bodhran, 86 bpm, warm and settled, gentle groove, extended instrumental solos
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE11">
+  <header class="cab"><span class="numero">E11</span>
+    <div><h3>Sharpening in the Corner</h3><p class="uso">ritmo baixo e regular</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute ostinato with hammered dulcimer above, 72 bpm, patient and methodical, repetitive, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE12">
+  <header class="cab"><span class="numero">E12</span>
+    <div><h3>The Cleric Won&#x27;t Drink Tonight</h3><p class="uso">faixa mais contida, quase devocional</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo wooden flute with lute drone, aeolian mode, 64 bpm, still and reverent, very sparse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE13">
+  <header class="cab"><span class="numero">E13</span>
+    <div><h3>Wagers Before Dawn</h3><p class="uso">dados na mesa, energia moderada</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, mandolin and fiddle, frame drum, 100 bpm, playful and quick, short repeating phrases, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE14">
+  <header class="cab"><span class="numero">E14</span>
+    <div><h3>Rain Starts on the Shutters</h3><p class="uso">a chuva chegando, mais interior</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and low whistle, dorian mode, 76 bpm, cozy and enclosed, soft dynamics, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE15">
+  <header class="cab"><span class="numero">E15</span>
+    <div><h3>What We Left Behind</h3><p class="uso">melancolia sem peso</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, fiddle melody over slow lute, aeolian mode, 68 bpm, nostalgic and gentle, long sustained lines, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE16">
+  <header class="cab"><span class="numero">E16</span>
+    <div><h3>The Second-to-Last Round</h3><p class="uso">volta a subir um pouco</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and fiddle together, bodhran, mixolydian mode, 94 bpm, sociable and warm, extended solos
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE17">
+  <header class="cab"><span class="numero">E17</span>
+    <div><h3>Horses in the Yard</h3><p class="uso">movimento fora da taverna</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, mandolin with light frame drum, 88 bpm, steady and outdoors, walking pulse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE18">
+  <header class="cab"><span class="numero">E18</span>
+    <div><h3>Everyone Agrees on the Plan</h3><p class="uso">resolução, sensação de acordo</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, lute and hammered dulcimer in unison, dorian mode, 82 bpm, settled and confident, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE19">
+  <header class="cab"><span class="numero">E19</span>
+    <div><h3>Candles Burning Low</h3><p class="uso">começa o fechamento</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with sparse flute, 62 bpm, quiet and thinning, very slow, extended long outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fE20">
+  <header class="cab"><span class="numero">E20</span>
+    <div><h3>Dawn Is in Four Hours</h3><p class="uso">fecha o set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute and distant fiddle, aeolian mode, 58 bpm, hushed and final, fading, long ringing outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+</section>
+
+<section id="set6">
+  <div class="sec-head"><span class="sec-mark">SET 6</span><h2>A taverna depois da batalha</h2></div>
+  <p class="sub">Vídeo 05 · Fantasy Tavern Ambience for D&amp;D Nights — The Inn After the Battle | 1 Hour · 20 faixas · Bloco C</p>
+  <p class="measure">Voltaram. Estão inteiros, mas mal. A taverna está mais cheia e mais lenta, ninguém fala alto, e a chuva não parou desde de manhã. O set tem uma virada no meio: até a F10 ele desce, e a partir da <strong>F11 · Someone Laughs, Finally</strong> ele volta a subir. Essa curva é o que segura uma hora inteira sem virar monotonia.</p>
+<article class="faixa" id="fF01">
+  <header class="cab"><span class="numero">F01</span>
+    <div><h3>They Came Back</h3><p class="uso">abre o set, cheio mas pesado</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, low lute and fiddle together from the first bar, slow bodhran, aeolian mode, 76 bpm, warm and heavy, full arrangement, stone hall reverb
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF02">
+  <header class="cab"><span class="numero">F02</span>
+    <div><h3>Wet Cloaks by the Door</h3><p class="uso">chegada, respiração voltando</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute with sustained low whistle, 68 bpm, damp and tired, sparse, long notes, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF03">
+  <header class="cab"><span class="numero">F03</span>
+    <div><h3>Counting Who Is Here</h3><p class="uso">silêncio pesado, faixa mais contida</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with distant fiddle drone, aeolian mode, 60 bpm, grave and still, very sparse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF04">
+  <header class="cab"><span class="numero">F04</span>
+    <div><h3>Bandages and Warm Water</h3><p class="uso">cuidado, movimento pequeno</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, wooden flute over slow lute, dorian mode, 66 bpm, tender and careful, gentle, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF05">
+  <header class="cab"><span class="numero">F05</span>
+    <div><h3>The First Drink Is Silent</h3><p class="uso">fundo neutro, longo</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute ostinato with hammered dulcimer, 72 bpm, plain and unhurried, repetitive, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF06">
+  <header class="cab"><span class="numero">F06</span>
+    <div><h3>The Fire Was Kept for Us</h3><p class="uso">primeiro alívio do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and fiddle, soft frame drum, 80 bpm, warm and relieved, gentle groove, extended solos
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF07">
+  <header class="cab"><span class="numero">F07</span>
+    <div><h3>What the Bard Isn&#x27;t Saying</h3><p class="uso">melodia com reticência</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, fiddle melody over lute drone, aeolian mode, 70 bpm, unresolved and quiet, long phrases, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF08">
+  <header class="cab"><span class="numero">F08</span>
+    <div><h3>Steam Off the Stew</h3><p class="uso">conforto simples</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, mandolin and wooden flute, 84 bpm, homely and rounded, circular figures, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF09">
+  <header class="cab"><span class="numero">F09</span>
+    <div><h3>The Sword Stays on the Table</h3><p class="uso">tensão residual</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute with sustained fiddle, aeolian mode, 64 bpm, watchful and still, no resolution, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF10">
+  <header class="cab"><span class="numero">F10</span>
+    <div><h3>Rain Hasn&#x27;t Stopped</h3><p class="uso">meio do set, textura</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and low whistle, dorian mode, 74 bpm, enclosed and steady, soft dynamics, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF11">
+  <header class="cab"><span class="numero">F11</span>
+    <div><h3>Someone Laughs, Finally</h3><p class="uso">o ponto de virada do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, fiddle leading with lute rhythm, bodhran, mixolydian mode, 96 bpm, cautiously cheerful, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF12">
+  <header class="cab"><span class="numero">F12</span>
+    <div><h3>Trading Stories Badly</h3><p class="uso">conversa animando</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, mandolin and fiddle, frame drum, 100 bpm, lively and loose, short repeating phrases, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF13">
+  <header class="cab"><span class="numero">F13</span>
+    <div><h3>The Innkeeper Refuses Payment</h3><p class="uso">gesto de generosidade</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, lute and hammered dulcimer in unison, dorian mode, 82 bpm, generous and settled, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF14">
+  <header class="cab"><span class="numero">F14</span>
+    <div><h3>Old Wounds and Older Songs</h3><p class="uso">nostalgia</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, fiddle over slow lute, aeolian mode, 66 bpm, nostalgic and worn, long sustained lines, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF15">
+  <header class="cab"><span class="numero">F15</span>
+    <div><h3>Boots Drying, Slowly</h3><p class="uso">fundo neutro, quase mobília</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with sparse dulcimer, 62 bpm, plain and patient, repetitive, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF16">
+  <header class="cab"><span class="numero">F16</span>
+    <div><h3>One More for the Ones Who Aren&#x27;t</h3><p class="uso">o brinde grave do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, lute and fiddle together, slow bodhran, aeolian mode, 78 bpm, solemn and warm, full but restrained, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF17">
+  <header class="cab"><span class="numero">F17</span>
+    <div><h3>The Watch Changes Outside</h3><p class="uso">movimento fora, passos</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, mandolin with light frame drum, 86 bpm, steady and outdoors, walking pulse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF18">
+  <header class="cab"><span class="numero">F18</span>
+    <div><h3>Sleep Comes to the Youngest First</h3><p class="uso">começa a descer</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, wooden flute over lute drone, dorian mode, 62 bpm, soft and drowsy, very gentle, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF19">
+  <header class="cab"><span class="numero">F19</span>
+    <div><h3>Coals, Not Flames</h3><p class="uso">o fogo baixando</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute, 58 bpm, quiet and thinning, slow, extended long outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fF20">
+  <header class="cab"><span class="numero">F20</span>
+    <div><h3>Nobody Keeps Watch Tonight</h3><p class="uso">fecha o set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute and distant fiddle, aeolian mode, 54 bpm, hushed and final, fading, long ringing outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+</section>
+
+<section id="set7">
+  <div class="sec-head"><span class="sec-mark">SET 7</span><h2>A estalagem na estrada</h2></div>
+  <p class="sub">Vídeo 06 · Fantasy Tavern Ambience for Tabletop RPG — The Roadside Inn at Night | 1 Hour · 20 faixas · Bloco C</p>
+  <p class="measure">Longe da cidade, uma estalagem pequena de beira de estrada. Poucos hóspedes, lareira baixa, vento do lado de fora. É o set mais silencioso dos três, e serve também ao público de sono e de leitura sem sair do cluster de RPG — a <strong>G12 · Nothing Happens Here</strong> tem esse nome porque é para não acontecer nada mesmo.</p>
+<article class="faixa" id="fG01">
+  <header class="cab"><span class="numero">G01</span>
+    <div><h3>A Light Off the Road</h3><p class="uso">abre o set, a estalagem aparecendo na noite</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and wooden flute together from the first bar, soft frame drum, dorian mode, 82 bpm, warm and immediate, full but small arrangement, wooden room reverb
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG02">
+  <header class="cab"><span class="numero">G02</span>
+    <div><h3>Two Rooms, One Fire</h3><p class="uso">interior pequeno</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with sparse flute, 66 bpm, intimate and plain, sparse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG03">
+  <header class="cab"><span class="numero">G03</span>
+    <div><h3>The Innkeeper Knows the Road</h3><p class="uso">conversa breve, sem drama</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, lute and hammered dulcimer trading phrases, 78 bpm, easy and conversational, circular figures, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG04">
+  <header class="cab"><span class="numero">G04</span>
+    <div><h3>Wind Around the Eaves</h3><p class="uso">textura, quase sem melodia</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, sustained low whistle over lute drone, aeolian mode, 58 bpm, spacious and hollow, very sparse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG05">
+  <header class="cab"><span class="numero">G05</span>
+    <div><h3>Bread, Cheese, Nothing Else</h3><p class="uso">conforto simples</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, mandolin and wooden flute, 84 bpm, homely and rounded, gentle, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG06">
+  <header class="cab"><span class="numero">G06</span>
+    <div><h3>The Horses Are Fed</h3><p class="uso">movimento pequeno no pátio</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, mandolin with light frame drum, 88 bpm, steady and outdoors, walking pulse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG07">
+  <header class="cab"><span class="numero">G07</span>
+    <div><h3>One Other Traveller</h3><p class="uso">presença discreta de estranho</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute with distant fiddle, aeolian mode, 68 bpm, watchful and quiet, unresolved, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG08">
+  <header class="cab"><span class="numero">G08</span>
+    <div><h3>A Song from Somewhere South</h3><p class="uso">melodia mais colorida, único momento exótico</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk with faint eastern colour, oud-like lute and wooden flute, phrygian mode, 76 bpm, curious and warm, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG09">
+  <header class="cab"><span class="numero">G09</span>
+    <div><h3>Mud on the Threshold</h3><p class="uso">fundo neutro</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute ostinato, 64 bpm, plain and repetitive, patient, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG10">
+  <header class="cab"><span class="numero">G10</span>
+    <div><h3>The Fire Is Enough</h3><p class="uso">meio do set, respiro quente</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and fiddle, soft bodhran, dorian mode, 80 bpm, warm and settled, gentle groove, extended solos
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG11">
+  <header class="cab"><span class="numero">G11</span>
+    <div><h3>Writing in the Ledger</h3><p class="uso">ritmo baixo e metódico</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, hammered dulcimer over lute drone, 70 bpm, methodical and calm, repetitive, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG12">
+  <header class="cab"><span class="numero">G12</span>
+    <div><h3>Nothing Happens Here</h3><p class="uso">a faixa mais neutra do set, de propósito</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute with sparse dulcimer, 60 bpm, uneventful and slow, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG13">
+  <header class="cab"><span class="numero">G13</span>
+    <div><h3>Cards with a Stranger</h3><p class="uso">leve movimento social</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval tavern folk, mandolin and fiddle, frame drum, 94 bpm, easygoing and light, short phrases, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG14">
+  <header class="cab"><span class="numero">G14</span>
+    <div><h3>The Bell of a Far Village</h3><p class="uso">distância, espaço</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, wooden flute with long lute sustain, aeolian mode, 62 bpm, distant and open, muffled reverb, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG15">
+  <header class="cab"><span class="numero">G15</span>
+    <div><h3>Straw Mattress, Clean Sheets</h3><p class="uso">conforto, começa a descer</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute and low whistle, dorian mode, 66 bpm, soft and drowsy, gentle, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG16">
+  <header class="cab"><span class="numero">G16</span>
+    <div><h3>The Dog Settles by the Door</h3><p class="uso">quase silêncio</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo lute, 56 bpm, still and small, very sparse, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG17">
+  <header class="cab"><span class="numero">G17</span>
+    <div><h3>Rain Arrives Late</h3><p class="uso">textura nova no fim do set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, lute with sustained fiddle drone, aeolian mode, 60 bpm, enclosed and calm, soft dynamics, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG18">
+  <header class="cab"><span class="numero">G18</span>
+    <div><h3>The Lantern Over the Door</h3><p class="uso">a imagem-assinatura do canal</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval chamber folk, lute and hammered dulcimer in unison, dorian mode, 72 bpm, warm and closing, extended
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG19">
+  <header class="cab"><span class="numero">G19</span>
+    <div><h3>Everyone Is Asleep but One</h3><p class="uso">fechamento</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, solo wooden flute over lute drone, 54 bpm, hushed and thinning, extended long outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+<article class="faixa" id="fG20">
+  <header class="cab"><span class="numero">G20</span>
+    <div><h3>Morning Is a Long Way Off</h3><p class="uso">fecha o set</p></div>
+  </header>
+  <div class="ficha"><span class="lbl">Style of Music</span>medieval folk, low lute and distant flute, aeolian mode, 52 bpm, final and fading, long ringing outro
+    <span class="neg"><b>Exclude Styles:</b> orchestra, epic trailer music, cinematic percussion, choir, synth, modern drums, electric instruments, vocals, battle music, crescendo, dramatic build</span></div>
+</article>
+</section>
+
+<section id="capas">
+  <div class="sec-head"><span class="sec-mark">AS CAPAS</span><h2>Duas com texto, uma sem</h2></div>
+  <p class="measure">O CTR caiu de 1,7% para 1,3% entre o vídeo 01 e o 03, e a capa com texto entrou justamente nesse intervalo. Só que o mix de tráfego também mudou muito — <strong>41,5% das views hoje vêm da página inicial do YouTube</strong>, que converte pior que sugeridos —, então a queda pode não ter nada a ver com a miniatura.</p>
+  <p class="measure">Os vídeos 04 e 05 mantêm o texto. O <strong>vídeo 06 sai sem nenhum texto</strong>, com todo o resto igual. É a única forma de isolar a variável.</p>
+
+  <div class="bloco"><span class="lbl">Bloco-base — cole antes de cada cena</span>Painterly and atmospheric, warm amber light against deep brown shadow, 35mm photographic depth of field, wide landscape orientation, no people, no text, no watermark. Compose with the important elements in the middle band of the frame and leave empty space at the very top and the very bottom.</div>
+
+  <div class="bloco"><span class="lbl">Vídeo 04 — a noite antes da estrada</span>A warm medieval tavern interior at night, seen from the perspective of someone sitting at a long oak table. An open parchment map weighted down with a dagger and a few coins, a half-full pewter tankard, a travelling cloak thrown over the bench, a lute leaning in the corner. A stone fireplace glows on the right. Rain streaks the small leaded window behind.</div>
+
+  <div class="bloco"><span class="lbl">Vídeo 05 — depois da batalha</span>A crowded medieval tavern interior at night, seen from a corner table. Wet cloaks hang steaming near a large stone fireplace, a dented shield rests against the bench, a bowl of stew and a pewter tankard sit on worn oak. Heavy rain runs down the leaded window. Figures sit hunched and quiet in the warm background haze. Cold blue only in the window; firelight as the single light source.</div>
+
+  <div class="bloco"><span class="lbl">Vídeo 06 — a estalagem na estrada (capa limpa)</span>A small medieval roadside inn at night, seen from just outside the door. A single amber lantern hangs over the entrance, warm light spilling onto a wet dirt road. One lit window shows a low fire and the silhouette of a figure inside. Bare trees and darkness on either side, a horse tied under the eaves. Deep amber against cold blue night, lantern and window as the only light sources.</div>
+
+  <p class="measure">O texto vai na <strong>faixa superior</strong> — a mesma área que o bloco-base manda deixar vazia, para nunca brigar com a lareira nem com os objetos da mesa. Três níveis: a linha pequena de série, o nome grande do episódio, a assinatura do canal em corpo miúdo.</p>
+
+<pre><code><span class="cmt"># vídeos 04 e 05 — troque o nome do episódio e o arquivo</span>
+F=/usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf
+FB=/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf
+
+ffmpeg -i capa4-limpa.png -vf "
+scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,
+drawtext=fontfile=$F:text='The Tavern':fontcolor=0xF3E3C3:fontsize=78:x=(w-tw)/2:y=h*0.09:shadowcolor=black@0.75:shadowx=0:shadowy=3,
+drawtext=fontfile=$FB:text='Before the Road':fontcolor=0xE8C46B:fontsize=118:x=(w-tw)/2:y=h*0.17:shadowcolor=black@0.8:shadowx=0:shadowy=4,
+drawtext=fontfile=$F:text='THE AMBER LANTERN':fontcolor=0xD9C9A8@0.8:fontsize=32:x=(w-tw)/2:y=h*0.31:shadowcolor=black@0.7:shadowx=0:shadowy=2
+" -q:v 2 capa4.jpg
+
+<span class="cmt"># vídeo 05: troque 'Before the Road' por 'After the Battle' e use fontsize=112</span>
+<span class="cmt"># vídeo 06: NÃO aplique drawtext — só o corte</span>
+ffmpeg -i capa6-limpa.png -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080" -q:v 2 capa6.jpg
+
+<span class="cmt"># miniatura, a partir de qualquer uma das capas prontas</span>
+ffmpeg -i capa4.jpg -vf "scale=1280:720,eq=contrast=1.10:saturation=1.12" -q:v 2 thumb4.jpg</code></pre>
+  <p class="measure">No Mac o caminho das fontes é outro — troque por <code>/System/Library/Fonts/Supplemental/Times New Roman.ttf</code> ou qualquer serifa que você tenha.</p>
+</section>
+
+<section id="montagem">
+  <div class="sec-head"><span class="sec-mark">MONTAGEM</span><h2>Ambiência e comandos</h2></div>
+  <ul class="plain measure">
+    <li><strong>Vídeo 04:</strong> lareira média, murmúrio baixo de conversa, chuva leve nas vidraças a partir do meio, tilintar ocasional de canecas.</li>
+    <li><strong>Vídeo 05:</strong> lareira forte, chuva pesada e vento lá fora, murmúrio <strong>mais baixo e mais espaçado</strong> que no 04 — a taverna está cheia, não animada. Chuva a −22 dB, conversa a −30 dB.</li>
+    <li><strong>Vídeo 06:</strong> lareira baixa, vento na estrada, grilos, madeira rangendo, quase nenhuma conversa. É o set em que a ambiência aparece mais.</li>
+  </ul>
+  <p class="measure">No Freesound, procure por <code>fireplace crackling loop</code>, <code>medieval tavern crowd ambience</code>, <code>heavy rain on roof</code>, <code>wind through trees night</code>, <code>wooden house creaking</code>.</p>
+
+<pre><code><span class="cmt"># Vídeo 04</span>
+./montar-playlist.sh -d faixas04 -i capa4.png -a ambiencia4.wav -b -26 -x 4 -p 3 \
+  -t "The map is open, the horses leave at dawn, and nobody is in a hurry to sleep." \
+  -s "SEU_LINK_SPOTIFY" -o amber-lantern-04.mp4
+
+<span class="cmt"># Vídeo 05</span>
+./montar-playlist.sh -d faixas05 -i capa5.png -a ambiencia5.wav -b -24 -x 4 -p 3 \
+  -t "They came back. Everyone is inside, the fire is high, and the rain has not stopped." \
+  -s "SEU_LINK_SPOTIFY" -o amber-lantern-05.mp4
+
+<span class="cmt"># Vídeo 06</span>
+./montar-playlist.sh -d faixas06 -i capa6.png -a ambiencia6.wav -b -24 -x 4 -p 3 \
+  -t "A light off the road, two rooms, one fire. Morning is a long way off." \
+  -s "SEU_LINK_SPOTIFY" -o amber-lantern-06.mp4</code></pre>
+  <p class="measure">Os títulos, descrições, tags e comentários fixos completos dos três vídeos estão no arquivo em markdown que acompanha este documento — prontos para colar.</p>
+</section>
+
+<section id="teste">
+  <div class="sec-head"><span class="sec-mark">O TESTE</span><h2>O que decidir na sexta seguinte</h2></div>
+  <p class="measure">Compare os três entre si e com o vídeo 03, sempre com <strong>72 horas de vida</strong>. São duas perguntas separadas — uma sobre o cluster, outra sobre a capa — e este lote responde as duas de uma vez.</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Se acontecer</th><th>O que significa</th><th>O que fazer</th></tr></thead>
+      <tbody>
+        <tr><td>Os três repetem ~60 views por dia</td><td>O cluster de RPG é o motor do canal</td><td>Continuar nele; o Set 4 só volta como variação ocasional</td></tr>
+        <tr><td>Só o 03 foi bem e os três caem</td><td>O vídeo 03 pegou uma onda, não uma fórmula</td><td>Voltar ao rodízio de cenários e trazer o Set 4</td></tr>
+        <tr><td>O CTR do 06 sobe e o dos outros não</td><td>O texto na capa estava custando cliques</td><td>Tirar o texto de todas as capas seguintes</td></tr>
+        <tr><td>O CTR do 06 fica igual ou menor</td><td>O texto não era o problema — era o mix de tráfego</td><td>Manter o texto e parar de mexer em capa</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Anote o que aconteceu no documento de acompanhamento, com o motivo. É o registro que evita repetir este mesmo teste daqui a dois meses.</p>
+</section>
+
+<footer>
+  Propulse · Canal B · sets 5, 6 e 7 · agosto de 2026
+</footer>
+</div>
