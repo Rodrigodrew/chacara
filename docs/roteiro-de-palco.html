@@ -1,0 +1,367 @@
+<title>Roteiro de Palco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101116; --surface:#181A20; --surface-2:#22242B;
+    --ink:#F2F0EC; --ink-2:#9E9CA6; --rule:#2C2E36;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101116; --surface:#181A20; --surface-2:#22242B;
+  --ink:#F2F0EC; --ink-2:#9E9CA6; --rule:#2C2E36;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px 140px}
+p{margin:0 0 .85em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+/* topo fixo com a ordem da call */
+.barra{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:2px solid var(--ink);
+       padding:9px 0;margin-bottom:0}
+.barra .linha{display:flex;gap:6px;overflow-x:auto;font-family:var(--mono);font-size:11px;
+       letter-spacing:.06em;text-transform:uppercase;scrollbar-width:thin}
+.barra a{flex:0 0 auto;text-decoration:none;color:var(--ink-2);border:1px solid var(--rule);
+       padding:5px 9px;white-space:nowrap;background:var(--surface)}
+.barra a b{color:var(--ink);font-weight:600}
+.barra a.nuc{border-color:var(--hue);color:var(--hue)} .barra a.nuc b{color:var(--hue)}
+
+.topo{padding:44px 0 26px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:14px}
+h1{font-family:var(--display);font-size:clamp(34px,6.5vw,60px);line-height:.98;letter-spacing:-.02em;
+   text-transform:uppercase;margin:0 0 16px;text-wrap:balance}
+.sub{font-size:19px;color:var(--ink-2);max-width:56ch}
+
+/* um bloco da call */
+.bloco{border-top:3px solid var(--ink);padding-top:20px;margin-top:44px;scroll-margin-top:62px}
+.cab{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.hora{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--hue);
+      font-variant-numeric:tabular-nums;line-height:1}
+h2{font-family:var(--display);font-size:clamp(20px,3.6vw,27px);line-height:1.05;text-transform:uppercase;
+   letter-spacing:-.01em;margin:0}
+.dur{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+     color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+
+/* o que falar */
+.diga{border-left:4px solid var(--ink);padding:2px 0 2px 18px;margin:18px 0;font-size:22px;line-height:1.5}
+.diga p{margin-bottom:.7em} .diga p:last-child{margin-bottom:0}
+.diga em{font-style:normal;color:var(--ink-2);font-size:17px}
+
+/* o que fazer */
+.faca{display:flex;gap:12px;align-items:flex-start;margin:14px 0;font-size:17.5px;line-height:1.45}
+.faca .chip{flex:0 0 auto;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.11em;
+     text-transform:uppercase;padding:4px 8px;border:1px solid var(--sea);color:var(--sea);margin-top:3px;white-space:nowrap}
+.faca.tela .chip{border-color:var(--ocre);color:var(--ocre)}
+.faca.chat .chip{border-color:var(--hue);color:var(--hue)}
+.faca .txt{color:var(--ink-2)}
+.faca .txt b{color:var(--ink)}
+
+/* pontos a cobrir, rapido */
+ul.bala{list-style:none;padding:0;margin:14px 0 0}
+ul.bala li{padding-left:26px;position:relative;margin-bottom:.5em;font-size:18px;line-height:1.45}
+ul.bala li::before{content:"";position:absolute;left:2px;top:.62em;width:12px;height:2px;background:var(--hue)}
+
+.corte{border:1px dashed var(--ocre);padding:11px 14px;margin:16px 0;font-family:var(--mono);
+       font-size:12.5px;line-height:1.6;letter-spacing:.02em;color:var(--ocre)}
+.corte b{color:var(--ocre);letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;display:block;margin-bottom:4px}
+
+.aviso{background:var(--surface);border-left:4px solid var(--hue);padding:14px 16px;margin:18px 0;font-size:17.5px;line-height:1.5}
+.aviso .lb{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+       color:var(--hue);display:block;margin-bottom:6px}
+.aviso.ok{border-left-color:var(--sea)} .aviso.ok .lb{color:var(--sea)}
+.aviso p:last-child{margin-bottom:0}
+
+.dupla{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+@media(min-width:760px){ .dupla{grid-template-columns:1fr 1fr} }
+.opc{border:1px solid var(--rule);background:var(--surface);padding:15px 16px}
+.opc .lb{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+     color:var(--ink-2);display:block;margin-bottom:9px}
+.opc.a{border-color:var(--sea)} .opc.a .lb{color:var(--sea)}
+.opc p{font-size:18px;line-height:1.45}
+
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:17px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.4}
+th{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.tw{overflow-x:auto;border:1px solid var(--rule);background:var(--paper)}
+tbody tr:last-child td{border-bottom:0}
+
+footer{margin-top:70px;padding-top:22px;border-top:3px solid var(--ink);font-family:var(--mono);
+       font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+</style>
+
+<div class="wrap">
+
+<nav class="barra" aria-label="Ordem da call">
+  <div class="linha">
+    <a href="#t1955"><b>19:55</b> Antes</a>
+    <a href="#t2000"><b>20:00</b> Abertura</a>
+    <a href="#t2004"><b>20:04</b> S4A</a>
+    <a href="#t2012"><b>20:12</b> Lançamentos</a>
+    <a href="#t2020"><b>20:20</b> Playlists</a>
+    <a href="#t2028" class="nuc"><b>20:28</b> A outra metade</a>
+    <a href="#t2040"><b>20:40</b> Oferta</a>
+    <a href="#t2045"><b>20:45</b> Perguntas</a>
+    <a href="#kit">Kit de socorro</a>
+  </div>
+</nav>
+
+<header class="topo">
+  <div class="eyebrow">Quinta, 03/09 · 20h · alunos do Will</div>
+  <h1>Roteiro de Palco</h1>
+  <p class="sub">A sequência da call na ordem do relógio. O que está em corpo grande é para falar; o que está em etiqueta é para fazer. Deixe aberto numa segunda tela.</p>
+</header>
+
+<section class="bloco" id="t1955">
+  <div class="cab"><span class="hora">19:55</span><h2>Antes de abrir a sala</h2><span class="dur">5 min</span></div>
+  <ul class="bala">
+    <li><strong>Confirme com o Will:</strong> pode citar o canal dele na abertura? Sim ou não muda a sua primeira frase.</li>
+    <li><strong>Confirme com o Will:</strong> os números do banner da mentoria são reais e citáveis? Se não forem, ninguém menciona.</li>
+    <li><strong>Tenha o link da mentoria copiado</strong> na área de transferência. Você vai colar às 20:44.</li>
+    <li><strong>Abra numa aba:</strong> o Analytics dos seus dois canais, para o caso de sobrar tempo nas perguntas.</li>
+    <li><strong>Copo de água na mesa.</strong> São 45 minutos falando quase sem parar.</li>
+  </ul>
+</section>
+
+<section class="bloco" id="t2000">
+  <div class="cab"><span class="hora">20:00</span><h2>Abertura</h2><span class="dur">4 min</span></div>
+
+  <div class="dupla">
+    <div class="opc a">
+      <span class="lb">Versão A — se o Will autorizou</span>
+      <p>"O Will me chamou aqui por um motivo bem específico, e eu vou começar por ele. Eu auditei o canal do Dom Amorim. <b>Sessenta e um mil reais</b> de AdSense em oito meses, milhões de views. Aí eu fui olhar o Spotify do mesmo catálogo, no mesmo período: <b>setenta euros por mês</b>."</p>
+    </div>
+    <div class="opc">
+      <span class="lb">Versão B — se não autorizou</span>
+      <p>"Antes de eu me apresentar, um número. Um canal de música de IA que eu auditei fez <b>sessenta e um mil reais</b> de AdSense em oito meses. Milhões de views. O Spotify do mesmo catálogo, no mesmo período, fazia <b>setenta euros por mês</b>."</p>
+    </div>
+  </div>
+
+  <div class="diga">
+    <p>"Setenta euros."</p>
+    <p><em>— segure o silêncio dois segundos —</em></p>
+    <p>"E aí quase todo mundo tira a conclusão errada: 'então o Spotify não vale a pena'. Errado. A conclusão certa é que o Spotify daquele catálogo <strong>estava desligado</strong> — e junto com ele uma segunda receita que ninguém naquela operação sabia que existia."</p>
+    <p>"Na próxima hora eu mostro as duas. E já aviso: <strong>a parte mais valiosa está no fim</strong>, então não sai antes."</p>
+  </div>
+
+  <div class="faca"><span class="chip">Diga</span><span class="txt">Agora sim, a apresentação: quem você é, a Propulse, os anos de mercado, os artistas atendidos. <b>Trinta segundos e sai fora.</b> Currículo antes do problema esvazia o problema.</span></div>
+
+  <div class="diga">
+    <p>"O que você leva daqui: <strong>onde está o dinheiro que você não está recebendo, e o que fazer na segunda-feira para recolher.</strong> É isso, e eu vou cumprir."</p>
+  </div>
+</section>
+
+<section class="bloco" id="t2004">
+  <div class="cab"><span class="hora">20:04</span><h2>Spotify for Artists</h2><span class="dur">8 min</span></div>
+
+  <div class="faca chat"><span class="chip">Chat</span><span class="txt"><b>Peça uma resposta no chat:</b> "escreve aí quem já reivindicou o Spotify for Artists do seu projeto". Espere de verdade — o silêncio é o argumento.</span></div>
+
+  <div class="diga">
+    <p>"Então praticamente todo lançamento de vocês está nascendo <strong>sem pitch, sem Radar de Novidades, sem chance de editorial e sem dado nenhum de volta</strong>. E isso é de graça e leva um dia."</p>
+  </div>
+
+  <ul class="bala">
+    <li><strong>O que é:</strong> o painel do artista dentro do Spotify. Reivindica pela distribuidora ou direto no site.</li>
+    <li><strong>O que ele destrava, e é o item que importa:</strong> o formulário de pitch. Único caminho até as editoriais.</li>
+    <li><strong>O ganho real para catálogo pequeno:</strong> mesmo sem ser escolhido pelo editorial, o pitch praticamente garante a faixa no <strong>Radar de Novidades de quem te segue</strong>.</li>
+    <li><strong>Também tem:</strong> origem dos streams (é o Analytics de vocês), página do artista, Canvas e Artist Pick — os dois últimos de graça e sobem salvamento.</li>
+  </ul>
+
+  <div class="aviso">
+    <span class="lb">A regra que derruba a maioria — não passe rápido</span>
+    <p>"O pitch só existe para faixa <strong>ainda não lançada</strong>. O Spotify pede sete dias no mínimo; o mercado trabalha com três a quatro semanas. <strong>Depois que a faixa saiu, acabou.</strong> Não tem segunda chance para aquele lançamento."</p>
+  </div>
+</section>
+
+<section class="bloco" id="t2012">
+  <div class="cab"><span class="hora">20:12</span><h2>Estratégia de Lançamentos</h2><span class="dur">8 min</span></div>
+
+  <div class="faca tela"><span class="chip">Tela</span><span class="txt">Mostre a tabela. <b>Comente cada linha em trinta segundos e siga</b> — este bloco é o mais fácil de estourar o tempo.</span></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Quase todo mundo faz</th><th>Faça</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>Sobe 24 faixas de uma vez</td><td><strong>Uma por semana</strong></td><td>Cada uma ganha o seu pitch e o seu dia de sinal. 24 semanas de presença valem mais que um dia</td></tr>
+        <tr><td>Lança no dia em que termina</td><td><strong>Entrega 3 a 4 semanas antes</strong></td><td>É a janela de pitch. Sem ela o lançamento nasce sem distribuição nenhuma</td></tr>
+        <tr><td>Espalha no catálogo inteiro</td><td><strong>Concentra em poucas faixas</strong></td><td>Tem piso de execuções para gerar royalty: 20 faixas com 300 streams rendem zero, uma com 6 mil rende</td></tr>
+        <tr><td>YouTube e Spotify separados</td><td><strong>Constrói a ponte</strong></td><td>Descrição, comentário fixo, cards. É tráfego que vocês já têm e está vazando</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="diga">
+    <p>"E uma coisa importante: as regras de monetização do Spotify <strong>mudaram em 2024 e continuam mudando</strong> — inclusive uma exigência de duração mínima para faixa de ruído e som ambiente, que pega em cheio quem faz sono, chuva e lareira. <strong>Confere os termos vigentes antes de um lançamento grande.</strong> Eu não vou te dar número que envelhece em seis meses."</p>
+  </div>
+
+  <div class="corte">
+    <b>Se estiver atrasado</b>
+    Corte a linha "espalha no catálogo" da fala e deixe só na tela. Ela volta no bloco das 20:28.
+  </div>
+</section>
+
+<section class="bloco" id="t2020">
+  <div class="cab"><span class="hora">20:20</span><h2>Pitch &amp; Playlists</h2><span class="dur">8 min</span></div>
+
+  <div class="faca"><span class="chip">Diga</span><span class="txt">Abra dizendo que <b>vai dar mais tempo às de usuário</b> do que às editoriais — é a metade que ninguém trabalha, e foi anunciada na arte.</span></div>
+
+  <ul class="bala">
+    <li><strong>Editorial:</strong> entra por pitch. Chance baixa para catálogo novo — mas o pitch vale pelo Radar mesmo sem seleção.</li>
+    <li><strong>Algorítmica</strong> (Radar, Descobertas, Rádio, Autoplay): não se pede, se conquista por comportamento. É onde mora o volume.</li>
+    <li><strong>De usuário:</strong> curadoria de gente comum, aberta a quem procurar. <strong>A mais acessível e a mais ignorada.</strong></li>
+  </ul>
+
+  <div class="diga">
+    <p>"O algoritmo lê sempre os mesmos quatro sinais: <strong>quem salva, quem coloca em playlist própria, quem repete, e quem não pula nos primeiros segundos.</strong> É retenção, com outro nome. É a mesma coisa que vocês já perseguem no YouTube."</p>
+    <p><em>— pausa, e então o gancho —</em></p>
+    <p>"Repara numa coisa: <strong>'quem coloca em playlist própria' é um dos quatro.</strong> Então playlist de usuário não é só tráfego — ela <strong>alimenta a algorítmica</strong>. Quem trabalha playlist de usuário está treinando o algoritmo, não driblando ele. E em música funcional — sono, foco, ambiente — essas playlists são gigantes, e o dono do catálogo nunca aparece por lá."</p>
+  </div>
+
+  <div class="aviso">
+    <span class="lb">O aviso que precisa vir junto — metade da sala já recebeu essa oferta no direct</span>
+    <p>"Existe uma indústria vendendo posição em playlist. <strong>Não usa.</strong> Colocação paga e streaming artificial violam os termos, disparam o filtro antifraude e podem custar o catálogo inteiro. E numa operação com muitos criadores, <strong>basta um</strong> para contaminar o CNPJ da agregadora e derrubar todo mundo junto."</p>
+  </div>
+</section>
+
+<section class="bloco" id="t2028">
+  <div class="cab"><span class="hora">20:28</span><h2>A outra metade do dinheiro</h2><span class="dur">12 min · o núcleo</span></div>
+
+  <div class="faca"><span class="chip">Respire</span><span class="txt">Marque uma pausa antes de começar. <b>Este é o bloco pelo qual os outros três existem.</b> Baixe o ritmo em vez de acelerar.</span></div>
+
+  <div class="diga">
+    <p>"Tudo o que eu falei até agora é sobre <strong>uma</strong> receita: a que chega pela distribuidora. Agora eu vou te mostrar a segunda — que existe no Brasil, é sua por direito, e que praticamente ninguém que faz música com IA está recolhendo."</p>
+  </div>
+
+  <div class="diga">
+    <p>"Toda música é duas coisas. <strong>A obra</strong> é a composição, melodia e letra — existe no papel. <strong>O fonograma</strong> é a gravação específica, o arquivo."</p>
+    <p>"Direitos diferentes, titulares diferentes, <strong>caminhos de pagamento diferentes</strong>. Guarda essa frase, porque é o resto da aula."</p>
+  </div>
+
+  <div class="diga">
+    <p>"E aí entra a IA. A lei brasileira protege criação intelectual <strong>de pessoa</strong>. Composição inteiramente gerada por máquina está em terreno instável para reivindicar autoria de obra — e a regulação ainda está sendo escrita no Congresso, então resposta definitiva não existe hoje."</p>
+    <p>"<strong>Mas tem um caminho que é defensável, e é justamente onde está mais dinheiro:</strong> direito conexo não depende de autoria criativa. Ser produtor fonográfico depende de iniciativa, responsabilidade e investimento na fixação dos sons — que é exatamente o que você faz quando gera, cura, edita e publica um catálogo."</p>
+  </div>
+
+  <div class="faca"><span class="chip">Diga</span><span class="txt">Como fortalecer o lado da obra, em quatro itens rápidos: <b>escreva a letra</b> · <b>guarde prompts e versões</b> (contribuição que não está documentada não existe) · <b>leia a licença do seu plano</b> na ferramenta · <b>não declare o que você não fez</b>.</span></div>
+
+  <div class="aviso">
+    <span class="lb">Diga inteiro, sem cortar — a ressalva fortalece</span>
+    <p>"Eu não sou advogado e isto não é parecer jurídico. É o mapa de como o mercado opera e de onde estão os riscos. <strong>Antes de cadastrar quatrocentas obras, valida com um advogado de direito autoral.</strong>"</p>
+  </div>
+
+  <div class="faca tela"><span class="chip">Tela</span><span class="txt">Suba o <b>diagrama das duas rotas</b> agora. Ele fica na tela até o fim do bloco.</span></div>
+
+  <div class="diga">
+    <p>"No Brasil, <strong>streaming é execução pública</strong> — decisão do Superior Tribunal de Justiça, 2017. E a consequência quase ninguém aqui sabe:"</p>
+    <p>"<strong>Cada stream gera duas arrecadações.</strong> A do fonograma, que chega pela distribuidora. E a de execução pública da obra, que é recolhida pelo <strong>ECAD</strong> e distribuída pelas associações. Quem nunca se filiou e nunca cadastrou obra e fonograma <strong>recebe só a primeira</strong>. A segunda fica retida — e prescreve."</p>
+  </div>
+
+  <div class="diga">
+    <p>"E não para no streaming. Execução pública é rádio, TV, show e <strong>estabelecimento comercial</strong> — pousada, restaurante, academia, loja. Música ambiente vive exatamente nesses lugares."</p>
+    <p>"Quem aqui já recebeu comentário de alguém que ouviu a sua faixa numa pousada? <strong>Isso é execução pública acontecendo, e ninguém recolhendo.</strong>"</p>
+  </div>
+
+  <div class="aviso">
+    <span class="lb">Feche o bloco com o risco — é o que fica na cabeça</span>
+    <p>"E tem o espelho disso, que é urgente: <strong>catálogo que existe só no YouTube, sem fonograma registrado, pode ser reivindicado por terceiro.</strong> Alguém registra o fonograma antes de você e passa a receber via Content ID <strong>pelo seu próprio vídeo</strong> — ou derruba a sua monetização. Não é hipótese de manual. Acontece, e o prejuízo é retroativo."</p>
+  </div>
+</section>
+
+<section class="bloco" id="t2040">
+  <div class="cab"><span class="hora">20:40</span><h2>A oferta</h2><span class="dur">5 min</span></div>
+
+  <div class="diga">
+    <p>"Tudo o que eu mostrei hoje tem uma coisa em comum: <strong>nada disso é sobre fazer música.</strong> É sobre o que acontece com a música <em>depois</em> que ela existe."</p>
+    <p>"O Will já resolveu a primeira metade com vocês. Ele ensinou a fabricar catálogo e a virar catálogo em tráfego — e vocês têm o AdSense provando que funciona."</p>
+    <p>"O que eu faço é a segunda metade: pegar esse catálogo que <strong>já existe e já está pago</strong>, e ligar as receitas que ele está deixando na mesa. É por isso que a gente juntou as duas coisas numa mentoria só."</p>
+  </div>
+
+  <div class="faca tela"><span class="chip">Tela</span><span class="txt">Suba a tabela do combo. <b>A tabela é a oferta</b> — ela mostra que as duas mentorias não competem em nenhuma linha.</span></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Etapa</th><th>Will</th><th>Propulse</th></tr></thead>
+      <tbody>
+        <tr><td>Produzir o catálogo</td><td><strong>✓</strong></td><td>—</td></tr>
+        <tr><td>Construir e monetizar o canal</td><td><strong>✓</strong></td><td>—</td></tr>
+        <tr><td>Estrutura de lançamento no streaming</td><td>—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Spotify for Artists e pitch</td><td>—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Playlists de usuário e crescimento</td><td>—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Obra, fonograma e associação</td><td>—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Distribuição em cadeia curta</td><td>—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Proteção do catálogo e Content ID</td><td>—</td><td><strong>✓</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="faca chat"><span class="chip">20:44 · Chat</span><span class="txt"><b>Cole o link agora</b>, antes de abrir as perguntas — para quem sair no meio já ter visto. Diga o preço em voz alta e mostre na tela.</span></div>
+
+  <div class="diga">
+    <p>"Volta lá no começo: <strong>sessenta e um mil de AdSense contra setenta euros de Spotify.</strong> A distância entre os dois não é o mercado. É uma lista de coisas que cabe numa página — e eu acabei de mostrar a lista inteira."</p>
+    <p>"Quem quiser fazer sozinho, agora tem o mapa. Quem quiser fazer acompanhado, <strong>o link está no chat</strong>."</p>
+  </div>
+</section>
+
+<section class="bloco" id="t2045">
+  <div class="cab"><span class="hora">20:45</span><h2>Perguntas</h2><span class="dur">15 min</span></div>
+
+  <div class="faca"><span class="chip">Lembre</span><span class="txt">O convite prometeu que você fica para tirar dúvidas. <b>Esse tempo é entrega, não sobra.</b></span></div>
+
+  <div class="aviso ok">
+    <span class="lb">Se ninguém falar nos primeiros trinta segundos</span>
+    <p>Puxe você: <em>"deixa eu responder a pergunta que sempre aparece — 'minha música é de IA, isso vale?'"</em> Uma resposta sua destrava as outras. Silêncio inicial em call é normal e não significa desinteresse.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Vão perguntar</th><th>Responda</th></tr></thead>
+      <tbody>
+        <tr><td><strong>"Mas o Spotify paga pouco"</strong></td><td>Concorde e vire: "paga pouco <strong>por stream</strong>, e é por isso mesmo que você não pode abrir mão da segunda receita nem deixar cadeia longa comendo a primeira. Quem ganha bem em streaming não ganha por stream — ganha por não perder nada no caminho"</td></tr>
+        <tr><td><strong>"É muito trabalho pro que rende"</strong></td><td>Separe o que é uma vez do que é rotina: filiação e reivindicação de perfil são <strong>trabalho único</strong>; cadastro vira minutos por lançamento. E o AdSense, que vocês já operam, também deu trabalho no começo</td></tr>
+        <tr><td><strong>"Minha música é de IA, isso vale?"</strong></td><td>A mais honesta da sala. Dê a resposta inteira do bloco das 20:28, <strong>com a ressalva jurídica junto</strong>. Não prometa segurança que não existe — o que você oferece é o caminho mais defensável e a documentação certa, não garantia</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aviso ok">
+    <span class="lb">Se sobrar tempo — o melhor material que você tem</span>
+    <p>Mostre os seus dois canais no Analytics, <strong>incluindo o erro</strong>: num deles o título estava errado e o YouTube classificou um canal de viola caipira junto com pagode. Levou três semanas e uma troca de título para consertar, e o antes e o depois está na tela. <strong>Plateia de criador confia em quem mostra erro com data e número.</strong></p>
+  </div>
+</section>
+
+<section class="bloco" id="kit">
+  <div class="cab"><span class="hora">SOS</span><h2>Kit de socorro</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Se acontecer</th><th>Faça</th></tr></thead>
+      <tbody>
+        <tr><td>Está <strong>10 minutos atrasado</strong> às 20:28</td><td>Corte o bloco das playlists pela metade — fique só nos quatro sinais e no aviso sobre serviço pago. <strong>Nunca corte o bloco das 20:28</strong></td></tr>
+        <tr><td>Está <strong>adiantado</strong></td><td>Volte ao bloco de lançamentos e detalhe a ponte YouTube→Spotify. É o mais prático e o que eles aplicam mais rápido</td></tr>
+        <tr><td>Alguém pergunta <strong>de quem são os números do banner</strong></td><td>Se forem reais, cite a fonte. Se não combinaram nada, diga que é arte de divulgação e volte ao número da abertura, que é seu e é verificável</td></tr>
+        <tr><td>Alguém quer <strong>consultoria individual no chat</strong></td><td>Não dê consultoria ao vivo. "Isso é caso específico — entra na mentoria que a gente resolve com o seu catálogo na mão"</td></tr>
+        <tr><td>Perguntam <strong>preço antes das 20:40</strong></td><td>"Já já eu chego lá, e vale a pena esperar porque o que vem antes muda o que você vai achar do preço"</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Propulse · roteiro de palco · 03 de setembro de 2026 · 20h
+</footer>
+
+</div>
