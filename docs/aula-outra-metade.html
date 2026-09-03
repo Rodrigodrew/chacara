@@ -1,0 +1,478 @@
+<title>A Outra Metade do Dinheiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+a{color:inherit;text-decoration-color:var(--hue);text-underline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:60ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:24px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+.tempo{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:32px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:22px}
+
+/* roteiro de fala */
+.fala{border-left:3px solid var(--ink);background:var(--surface);padding:15px 18px;margin:20px 0;font-size:17px;line-height:1.55}
+.fala .lbl{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.fala p{font-style:italic;margin-bottom:.6em} .fala p:last-child{margin-bottom:0}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:22px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn{border-left-color:var(--ocre)} .note.warn .tag{color:var(--ocre)}
+.note.good{border-left-color:var(--sea)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+.tw{overflow-x:auto;margin:22px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:600px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.6em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* grade de modulos na abertura */
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0}
+.mod{background:var(--surface);padding:15px 16px}
+.mod .n{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--hue);display:block;margin-bottom:7px}
+.mod .t{font-family:var(--display);font-size:15px;line-height:1.25;display:block;margin-bottom:6px}
+.mod .d{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em}
+
+/* o fluxo do dinheiro */
+.fluxo{border:1px solid var(--rule);background:var(--paper);padding:22px 20px;margin:24px 0;overflow-x:auto}
+.fluxo svg{display:block;width:100%;min-width:600px;height:auto}
+.fluxo .cx{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.fluxo .cx-a{fill:var(--surface);stroke:var(--sea);stroke-width:2}
+.fluxo .cx-b{fill:var(--surface);stroke:var(--ocre);stroke-width:2}
+.fluxo .rot{fill:var(--ink);font-family:var(--serif);font-size:13.5px}
+.fluxo .rot-s{fill:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+.fluxo .via{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.fluxo .via-a{stroke:var(--sea);stroke-width:2;fill:none}
+.fluxo .via-b{stroke:var(--ocre);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.fluxo .pta{fill:var(--sea)} .fluxo .ptb{fill:var(--ocre)} .fluxo .pt{fill:var(--ink-2)}
+
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+.oferta{border:2px solid var(--ink);background:var(--surface);padding:24px 22px;margin:26px 0}
+.oferta h4{font-family:var(--display);font-size:19px;margin:0 0 10px}
+.oferta .preco{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--hue);margin-top:12px;display:block}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .tempo{margin-left:0} }
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Aula para os alunos do Will · Propulse</div>
+  <h1>A Outra <span class="e">Metade</span> do Dinheiro</h1>
+  <p class="dek">Como funciona o Spotify por dentro, o que é o Spotify for Artists, o que dá para proteger numa música feita com IA, e por que metade da receita de um catálogo brasileiro nunca é recolhida por ninguém.</p>
+  <div class="meta">
+    <span>Duração <b>90 minutos</b></span>
+    <span>Público <b>Criadores de canal de música com IA</b></span>
+    <span>Formato <b>Aula + oferta no fim</b></span>
+  </div>
+</header>
+
+<section id="mapa">
+  <div class="sec-head"><span class="sec-mark">O MAPA</span><h2>Como a aula é construída</h2></div>
+  <p class="lede measure">A aula tem uma única tese, e tudo converge para ela: <strong>no Brasil, um stream gera duas receitas que chegam por caminhos diferentes — e quase todo criador de IA só recolhe uma.</strong></p>
+  <p class="measure">Os quatro primeiros módulos existem para tornar essa frase inevitável. Não abra com ela: abra com o número do Dom Amorim, deixe a plateia sentir o buraco, e só então explique de onde ele vem.</p>
+
+  <div class="grade">
+    <div class="mod"><span class="n">MÓDULO 0</span><span class="t">A pergunta que inverte</span><span class="d">5 min · abertura</span></div>
+    <div class="mod"><span class="n">MÓDULO 1</span><span class="t">Como o Spotify realmente paga</span><span class="d">15 min · conceito</span></div>
+    <div class="mod"><span class="n">MÓDULO 2</span><span class="t">Spotify for Artists</span><span class="d">15 min · mão na massa</span></div>
+    <div class="mod"><span class="n">MÓDULO 3</span><span class="t">Direitos autorais e IA</span><span class="d">20 min · o núcleo</span></div>
+    <div class="mod"><span class="n">MÓDULO 4</span><span class="t">A cadeia de distribuição</span><span class="d">15 min · conceito</span></div>
+    <div class="mod"><span class="n">MÓDULO 5</span><span class="t">Como lançar um catálogo de IA</span><span class="d">10 min · tática</span></div>
+    <div class="mod"><span class="n">MÓDULO 6</span><span class="t">O combo</span><span class="d">10 min · oferta</span></div>
+  </div>
+
+  <div class="note">
+    <span class="tag">Uma regra para a aula inteira</span>
+    <p>Essa plateia já ganha dinheiro. Gente que fatura R$30 mil no AdSense não presta atenção em quem chega ensinando o básico de música. <strong>Você não está ensinando a ganhar mais — está mostrando um vazamento.</strong> A postura é de auditoria, não de curso introdutório.</p>
+  </div>
+</section>
+
+<section id="m0">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 0</span><h2>A pergunta que inverte</h2><span class="tempo">5 min</span></div>
+
+  <div class="fala">
+    <span class="lbl">Abertura — fale isto quase palavra por palavra</span>
+    <p>"Antes de eu me apresentar, um número. Um canal de música de IA que eu auditei fez sessenta e um mil reais de AdSense em oito meses. Milhões de views. O Spotify do mesmo catálogo, no mesmo período, fazia setenta euros por mês."</p>
+    <p>"Setenta euros. E aí quase todo mundo tira a conclusão errada: 'então o Spotify não vale a pena'. Errado. A conclusão certa é que o Spotify daquele catálogo estava desligado — e, junto com ele, uma segunda receita que ninguém naquela operação sabia que existia."</p>
+    <p>"Nos próximos noventa minutos eu vou te mostrar as duas."</p>
+  </div>
+
+  <p class="measure">Depois disso, a apresentação: quem você é, a Propulse, os 1.400 artistas, os anos de distribuição. <strong>Trinta segundos, não mais.</strong> A credencial já foi dada pelo número — currículo antes do problema esvazia o problema.</p>
+
+  <div class="note good">
+    <span class="tag">O contrato da aula</span>
+    <p>Diga o que eles levam: até o fim, cada um sai sabendo <strong>onde está o dinheiro que não está recebendo, o que precisa fazer para recolher, e o que numa música de IA dá e não dá para proteger.</strong> Prometa isso e cumpra, nessa ordem.</p>
+  </div>
+</section>
+
+<section id="m1">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 1</span><h2>Como o Spotify realmente paga</h2><span class="tempo">15 min</span></div>
+  <p class="lede measure">O erro fundador de quase todo criador é achar que existe um valor por stream. Não existe.</p>
+
+  <h3>O bolo, não a régua</h3>
+  <p class="measure">O Spotify junta a receita de assinaturas e anúncios de um mercado, separa a parte dele, e <strong>divide o resto entre os detentores de direito na proporção dos streams</strong>. Você não recebe um preço por execução: você recebe uma fatia de um bolo. Isso tem três consequências que a plateia precisa entender.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Consequência</th><th>O que significa na prática</th></tr></thead>
+      <tbody>
+        <tr><td>O valor por stream varia</td><td>Muda por país, por mês e por tipo de assinante. As faixas que se costuma observar ficam entre <strong>US$ 0,003 e US$ 0,005</strong> — mas isso é resultado, não tabela. Ninguém promete esse número, e quem promete está vendendo alguma coisa</td></tr>
+        <tr><td>O país do ouvinte manda</td><td>Um stream nos Estados Unidos e um no Brasil não valem igual, porque o bolo de cada mercado é diferente. Catálogo em inglês rende mais por stream — o mesmo raciocínio que vale no RPM do YouTube</td></tr>
+        <tr><td>Você compete pelo mesmo bolo</td><td>Subir mil faixas fracas não aumenta a sua fatia; dilui o seu esforço. Isso vai voltar no Módulo 5</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Três regras que decidem se a faixa gera receita</h3>
+  <ul class="plain measure">
+    <li><strong>Trinta segundos.</strong> A execução só conta como stream depois de trinta segundos de escuta. Faixa que perde o ouvinte antes disso não existe para o sistema.</li>
+    <li><strong>O piso de mil streams.</strong> Desde 2024 o Spotify passou a exigir que a faixa acumule um mínimo de execuções nos últimos doze meses para começar a gerar royalty. Para quem sobe catálogos enormes de IA isso é decisivo: <strong>vinte faixas com trezentos streams cada rendem zero; uma faixa com seis mil rende.</strong></li>
+    <li><strong>Faixas funcionais têm régua própria.</strong> Conteúdo de ruído e som ambiente passou a ter exigência de duração mínima para monetizar. Quem faz chuva, lareira e sono precisa conferir isso antes de subir o catálogo.</li>
+  </ul>
+
+  <div class="note warn">
+    <span class="tag">Diga isto em voz alta na aula</span>
+    <p>As políticas de monetização do Spotify <strong>mudaram em 2024 e continuam mudando</strong>. Mande cada aluno conferir os termos vigentes antes de planejar um lançamento grande. Uma aula que apresenta política de plataforma como coisa fixa envelhece em seis meses e queima a sua credibilidade junto.</p>
+  </div>
+
+  <h3>O que o algoritmo lê</h3>
+  <p class="measure">Playlist algorítmica — Radar de Novidades, Descobertas da Semana, Rádio, Autoplay — não é sorteio. Ela responde a sinais de comportamento, e são sempre os mesmos quatro: <strong>quem salva, quem coloca em playlist própria, quem repete, e quem não pula nos primeiros segundos.</strong> É a mesma lógica de retenção do YouTube, com outro nome.</p>
+  <div class="fala">
+    <span class="lbl">Ponte para o módulo seguinte</span>
+    <p>"Repara que os quatro sinais são de <em>ouvinte</em>. Não tem nada aí sobre quantas faixas você subiu. E tem uma coisa que liga o seu lançamento a esses sinais — e é justamente a que ninguém aqui está usando."</p>
+  </div>
+</section>
+
+<section id="m2">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 2</span><h2>Spotify for Artists</h2><span class="tempo">15 min</span></div>
+  <p class="lede measure">É de graça, leva um dia para conseguir, e é a diferença entre um lançamento que nasce com distribuição e um que nasce morto.</p>
+
+  <h3>O que ele é</h3>
+  <p class="measure">É o painel do artista dentro do Spotify: dados de audiência, controle da página, e — o item que importa — <strong>o formulário de pitch de lançamento</strong>. Reivindica-se o perfil pela distribuidora ou direto pelo site do Spotify for Artists, e o acesso costuma sair em poucos dias.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>O que dá para fazer</th><th>Por que importa para quem faz IA</th></tr></thead>
+      <tbody>
+        <tr class="total"><td><strong>Pitch de lançamento</strong></td><td>O único caminho oficial até as playlists editoriais. E mesmo quando não é escolhido, <strong>o pitch praticamente garante a faixa no Radar de Novidades de quem te segue</strong> — é aí que está o ganho real para catálogo pequeno</td></tr>
+        <tr><td>Dados de origem dos streams</td><td>Mostra se veio de playlist, de busca ou de perfil. Sem isso você opera no escuro, exatamente como um canal sem Analytics</td></tr>
+        <tr><td>Página do artista</td><td>Foto, bio, links. Numa persona de IA é onde o personagem existe fora do YouTube</td></tr>
+        <tr><td>Canvas e Artist Pick</td><td>Vídeo curto em loop na faixa e destaque no topo do perfil. Custo zero, e sobem salvamento</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">A regra que derruba a maioria dos lançamentos</span>
+    <p>O pitch só existe para faixa <strong>ainda não lançada</strong>, e precisa ser feito com antecedência — o próprio Spotify recomenda pelo menos sete dias, e na prática de mercado se trabalha com três a quatro semanas. <strong>Depois que a faixa saiu, acabou.</strong> Não tem segunda chance para aquele lançamento.</p>
+    <p style="margin-top:.7em">Some a isso o hábito de subir vinte e quatro faixas de uma vez e o resultado é o pior arranjo possível: <strong>um pitch só, um dia só de sinal para o algoritmo, e um padrão que os filtros antifraude do Spotify leem como suspeito.</strong></p>
+  </div>
+
+  <div class="fala">
+    <span class="lbl">Momento de virada da aula</span>
+    <p>"Levanta a mão quem já reivindicou o Spotify for Artists do seu projeto." <em>(pausa — em geral quase ninguém levanta)</em></p>
+    <p>"Então todo mundo aqui está lançando sem pitch. Todo lançamento de vocês nasce sem Radar de Novidades, sem chance de editorial, e sem dado nenhum de volta. E isso é de graça e leva um dia."</p>
+  </div>
+</section>
+
+<section id="m3">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 3</span><h2>Direitos autorais, e o que muda quando é IA</h2><span class="tempo">20 min</span></div>
+  <p class="lede measure">Este é o núcleo da aula. É aqui que aparece a outra metade do dinheiro — e o risco que ninguém dessa plateia está enxergando.</p>
+
+  <h3>Toda música é duas coisas</h3>
+  <p class="measure">A confusão que atravessa o mercado inteiro se resolve em trinta segundos se você separar as duas camadas:</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Camada</th><th>O que é</th><th>Quem é titular</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A obra</strong></td><td>A composição: melodia e letra. Existe no papel, independente de gravação</td><td>Autor, compositor, e a editora quando há</td></tr>
+        <tr><td><strong>O fonograma</strong></td><td>A gravação específica daquela obra. É o arquivo, a fixação dos sons</td><td>Produtor fonográfico (quem investiu e assumiu a responsabilidade) e o intérprete</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">São <strong>direitos diferentes, com titulares diferentes, que pagam por caminhos diferentes.</strong> Guardem essa frase: ela é a aula inteira.</p>
+
+  <h3>Onde a IA complica — e onde ela não complica</h3>
+  <p class="measure">A lei brasileira de direitos autorais protege criação intelectual de pessoa. Uma composição inteiramente gerada por máquina, sem contribuição humana, está em terreno instável para reivindicar <strong>autoria de obra</strong>. Isso não é opinião de mercado, é a leitura corrente do texto legal — e a regulação de IA ainda está em construção no Congresso, o que significa que a resposta definitiva não existe hoje.</p>
+
+  <div class="note good">
+    <span class="tag">Mas o caminho defensável existe, e é outro</span>
+    <p><strong>Os direitos conexos não dependem de autoria criativa.</strong> Ser produtor fonográfico depende de iniciativa, responsabilidade e investimento econômico na fixação dos sons — coisas que quem gera, cura, edita e publica um catálogo de IA faz de fato. É aí que a titularidade se sustenta melhor, e é aí que a maior parte do dinheiro de execução do fonograma está.</p>
+  </div>
+
+  <h3>Como fortalecer o lado da obra mesmo assim</h3>
+  <ul class="plain measure">
+    <li><strong>Escreva a letra.</strong> Letra humana é contribuição autoral inequívoca — e é o item mais barato de garantir. Faixa instrumental não tem esse recurso, o que empurra tudo para o lado conexo.</li>
+    <li><strong>Guarde o processo.</strong> Prompts, versões descartadas, edições, decisões de arranjo e de sequência. Contribuição humana que não está documentada, na prática, não existe.</li>
+    <li><strong>Confira a licença da ferramenta.</strong> Cada plataforma de geração define, nos termos do plano, o que você pode fazer comercialmente com a saída. Isso muda por plano e muda com o tempo — cada aluno precisa ler o seu.</li>
+    <li><strong>Não declare o que você não fez.</strong> Metadado inflado é o tipo de coisa que não dá problema nenhum até o dia em que dá, e nesse dia contamina o catálogo inteiro.</li>
+  </ul>
+
+  <div class="note warn">
+    <span class="tag">Diga isto, e diga inteiro</span>
+    <p>"Eu não sou advogado e isto não é parecer jurídico. É o mapa de como o mercado está operando e de onde estão os riscos. Antes de cadastrar quatrocentas obras em associação, valide com um advogado de direito autoral." <strong>Falar isso não enfraquece a aula — fortalece</strong>, porque essa plateia já ouviu promessa demais de gente que não põe ressalva em nada.</p>
+  </div>
+
+  <h3>E agora a outra metade</h3>
+  <p class="measure">Aqui vem o ponto que justifica o título da aula. No Brasil, <strong>streaming foi reconhecido como execução pública</strong> — o Superior Tribunal de Justiça decidiu isso em 2017. A consequência prática é enorme e quase ninguém dessa plateia sabe:</p>
+
+  <div class="note">
+    <span class="tag">A frase que a aula inteira preparou</span>
+    <p>Cada stream no Brasil gera <strong>duas arrecadações</strong>: a do fonograma, que chega pela distribuidora, e a de execução pública da obra, que é recolhida pelo <strong>ECAD</strong> e distribuída pelas associações. Quem nunca se filiou a uma associação e nunca cadastrou obra e fonograma <strong>recebe só a primeira</strong>. A segunda fica retida, e depois de um tempo prescreve.</p>
+  </div>
+
+  <p class="measure">E não para no streaming. Execução pública é rádio, TV, show, e <strong>estabelecimento comercial</strong> — pousada, restaurante, academia, loja. Um catálogo de música ambiente vive exatamente nesses lugares. O Will recebe comentário de gente que ouviu o Dom Amorim em pousada e em quiosque: <strong>isso é execução pública acontecendo, e ninguém está recolhendo.</strong></p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Para recolher, é preciso</th><th>Prazo típico</th></tr></thead>
+      <tbody>
+        <tr><td>Filiar-se a uma associação (UBC, Abramus, Amar, Assim, Sbacem, Sicam, Socinpro)</td><td class="num">2 a 4 semanas</td></tr>
+        <tr><td>Cadastrar cada <strong>obra</strong>, com as titularidades corretas</td><td class="num">contínuo</td></tr>
+        <tr><td>Cadastrar cada <strong>fonograma</strong>, com ISRC, intérprete e produtor fonográfico</td><td class="num">contínuo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">O risco espelhado, e é urgente</span>
+    <p>Catálogo que existe só no YouTube, sem fonograma registrado, <strong>pode ser reivindicado por terceiro</strong>. Alguém baixa, registra o fonograma antes de você e passa a receber via Content ID pelo seu próprio vídeo — ou derruba a sua monetização. Não é hipótese de manual: acontece, e o prejuízo é retroativo.</p>
+  </div>
+</section>
+
+<section id="m4">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 4</span><h2>A cadeia de distribuição</h2><span class="tempo">15 min</span></div>
+  <p class="lede measure">Mostre o caminho do dinheiro desenhado. É o slide que a plateia fotografa.</p>
+
+  <div class="fluxo">
+    <svg viewBox="0 0 900 300" role="img" aria-labelledby="fTit fDesc">
+      <title id="fTit">Os dois caminhos do dinheiro de um stream no Brasil</title>
+      <desc id="fDesc">Do ouvinte saem duas rotas. A rota do fonograma vai do Spotify para a distribuidora, passa por intermediários e chega ao criador. A rota da obra vai do Spotify para o ECAD, passa pela associação e chega ao criador — mas só se ele estiver filiado e com obra e fonograma cadastrados.</desc>
+
+      <rect x="8" y="126" width="126" height="48" rx="2" class="cx"></rect>
+      <text x="71" y="146" text-anchor="middle" class="rot">Ouvinte</text>
+      <text x="71" y="163" text-anchor="middle" class="rot-s">1 STREAM</text>
+
+      <path d="M134 150 L176 150" class="via"></path>
+      <polygon points="176,150 168,146 168,154" class="pt"></polygon>
+
+      <rect x="178" y="126" width="126" height="48" rx="2" class="cx"></rect>
+      <text x="241" y="146" text-anchor="middle" class="rot">Spotify</text>
+      <text x="241" y="163" text-anchor="middle" class="rot-s">DIVIDE O BOLO</text>
+
+      <path d="M304 140 C336 140, 336 74, 368 74" class="via-a"></path>
+      <polygon points="368,74 360,70 360,78" class="pta"></polygon>
+      <path d="M304 160 C336 160, 336 226, 368 226" class="via-b"></path>
+      <polygon points="368,226 360,222 360,230" class="ptb"></polygon>
+
+      <text x="370" y="38" class="rot-s" style="fill:var(--sea)">ROTA DO FONOGRAMA</text>
+      <text x="370" y="270" class="rot-s" style="fill:var(--ocre)">ROTA DA OBRA</text>
+
+      <rect x="370" y="50" width="150" height="48" rx="2" class="cx-a"></rect>
+      <text x="445" y="70" text-anchor="middle" class="rot">Distribuidora</text>
+      <text x="445" y="87" text-anchor="middle" class="rot-s">E INTERMEDIÁRIOS</text>
+
+      <path d="M520 74 L562 74" class="via-a"></path>
+      <polygon points="562,74 554,70 554,78" class="pta"></polygon>
+
+      <rect x="564" y="50" width="150" height="48" rx="2" class="cx-a"></rect>
+      <text x="639" y="70" text-anchor="middle" class="rot">Cada elo</text>
+      <text x="639" y="87" text-anchor="middle" class="rot-s">TIRA A SUA PARTE</text>
+
+      <rect x="370" y="202" width="150" height="48" rx="2" class="cx-b"></rect>
+      <text x="445" y="222" text-anchor="middle" class="rot">ECAD</text>
+      <text x="445" y="239" text-anchor="middle" class="rot-s">EXECUÇÃO PÚBLICA</text>
+
+      <path d="M520 226 L562 226" class="via-b"></path>
+      <polygon points="562,226 554,222 554,230" class="ptb"></polygon>
+
+      <rect x="564" y="202" width="150" height="48" rx="2" class="cx-b"></rect>
+      <text x="639" y="222" text-anchor="middle" class="rot">Associação</text>
+      <text x="639" y="239" text-anchor="middle" class="rot-s">SÓ PARA FILIADOS</text>
+
+      <path d="M714 74 C766 74, 766 132, 800 132" class="via-a"></path>
+      <polygon points="800,132 792,128 792,136" class="pta"></polygon>
+      <path d="M714 226 C766 226, 766 168, 800 168" class="via-b"></path>
+      <polygon points="800,168 792,164 792,172" class="ptb"></polygon>
+
+      <rect x="802" y="126" width="92" height="48" rx="2" class="cx"></rect>
+      <text x="848" y="146" text-anchor="middle" class="rot">Você</text>
+      <text x="848" y="163" text-anchor="middle" class="rot-s">OU NÃO</text>
+    </svg>
+  </div>
+
+  <h3>O que dizer sobre cada rota</h3>
+  <ul class="plain measure">
+    <li><strong>A rota de cima existe para todo mundo.</strong> Todo aluno que já subiu no Spotify tem essa. O problema dela não é existir, é o número de elos: distribuidora que revende para outra distribuidora, cada camada com o seu percentual. <strong>O royalty chega esmagado.</strong> Quanto mais curta a cadeia, mais chega.</li>
+    <li><strong>A rota de baixo só existe se você fizer existir.</strong> Ela não é automática, não vem pela distribuidora e ninguém avisa que ela está lá. É a metade que o título da aula promete.</li>
+  </ul>
+
+  <h3>O vocabulário mínimo</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Termo</th><th>O que é</th><th>Por que importa</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ISRC</strong></td><td>Código único da gravação</td><td>É por ele que o fonograma é identificado e pago. Cada versão de uma faixa tem o seu</td></tr>
+        <tr><td><strong>UPC</strong></td><td>Código do lançamento (single, EP, álbum)</td><td>Identifica o produto comercial</td></tr>
+        <tr><td><strong>Splits</strong></td><td>Divisão de percentuais entre titulares</td><td>Erra aqui e o dinheiro vai para outra pessoa — corrigir depois é lento e às vezes impossível</td></tr>
+        <tr><td><strong>Janela de pitch</strong></td><td>Antecedência entre entrega e lançamento</td><td>Sem ela não há editorial nem Radar de Novidades</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">O alerta que vale para quem opera em escala</span>
+    <p>Quem pensa em abrir um selo para muitos criadores precisa saber: <strong>uma conta que compra plays contamina o CNPJ inteiro na agregadora.</strong> Basta um. Qualquer operação coletiva nasce com política de aceite, verificação e cláusula de repasse de multa — ou não nasce.</p>
+  </div>
+</section>
+
+<section id="m5">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 5</span><h2>Como lançar um catálogo de IA</h2><span class="tempo">10 min</span></div>
+  <p class="lede measure">Módulo curto e prático. É o que eles vão executar na segunda-feira.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>O que quase todo mundo faz</th><th>O que fazer</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>Sobe 24 faixas de uma vez</td><td><strong>Uma faixa por semana</strong>, em gotejamento</td><td>Cada faixa ganha o seu pitch, o seu dia de sinal e a sua chance de Radar de Novidades. E vinte e quatro semanas de presença valem mais que um dia</td></tr>
+        <tr><td>Lança no mesmo dia em que termina</td><td><strong>Entrega com 3 a 4 semanas</strong> de antecedência</td><td>É a janela de pitch. Sem ela o lançamento nasce sem nenhuma distribuição algorítmica</td></tr>
+        <tr><td>Espalha o esforço no catálogo inteiro</td><td><strong>Concentra em poucas faixas</strong> por vez</td><td>Por causa do piso de streams: faixa que não cruza o mínimo não gera royalty nenhum</td></tr>
+        <tr><td>Deixa o YouTube e o Spotify separados</td><td><strong>Constrói a ponte</strong>: link na descrição, comentário fixo, cards, menção no vídeo</td><td>É tráfego que você já tem. Um funil com milhões de views mandando mil plays por dia é vazamento, não teto</td></tr>
+        <tr><td>Não tem lista própria</td><td><strong>Grupo ou newsletter do projeto</strong></td><td>Seguidor no Spotify e inscrito no YouTube pertencem à plataforma. A lista é sua</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="fala">
+    <span class="lbl">Se for usar os seus próprios canais como exemplo</span>
+    <p>"Eu não vim aqui só com teoria — eu montei dois canais nesse modelo para testar o que estou te falando. E o mais útil não é o que deu certo: num deles o título estava errado e o YouTube classificou o canal de viola caipira junto com pagode. Levou três semanas e uma troca de título para consertar."</p>
+    <p>"Mostro o antes e o depois porque é isso que você vai viver."</p>
+  </div>
+  <p class="measure">Esse momento vale mais do que qualquer slide de conceito. Plateia de criador confia em quem mostra erro com data e número — e você tem os dois canais rodando, com print de Analytics.</p>
+</section>
+
+<section id="m6">
+  <div class="sec-head"><span class="sec-mark">MÓDULO 6</span><h2>O combo</h2><span class="tempo">10 min</span></div>
+  <p class="lede measure">A oferta tem que ser a conclusão lógica da aula, não um anexo colado no fim. Se os cinco módulos anteriores funcionaram, ela já está montada na cabeça de todo mundo.</p>
+
+  <h3>A ponte, em três frases</h3>
+  <div class="fala">
+    <span class="lbl">Transição — não pule para o preço antes disto</span>
+    <p>"Tudo o que eu mostrei hoje tem uma coisa em comum: nada disso é sobre fazer música. É sobre o que acontece com a música <em>depois</em> que ela existe."</p>
+    <p>"O Will já resolveu a primeira metade com vocês. Ele te ensinou a fabricar catálogo e a transformar catálogo em tráfego — e vocês têm o AdSense para provar que funciona."</p>
+    <p>"O que eu faço é a segunda metade: pegar esse mesmo catálogo, que já existe e já está pago, e ligar as receitas que ele está deixando na mesa."</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Etapa</th><th>Mentoria do Will</th><th>Mentoria da Propulse</th></tr></thead>
+      <tbody>
+        <tr><td>Produzir o catálogo</td><td><strong>✓</strong></td><td class="vazio">—</td></tr>
+        <tr><td>Construir e monetizar o canal</td><td><strong>✓</strong></td><td class="vazio">—</td></tr>
+        <tr><td>Estrutura de lançamento no streaming</td><td class="vazio">—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Spotify for Artists e pitch</td><td class="vazio">—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Obra, fonograma e associação</td><td class="vazio">—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Cadeia de distribuição curta</td><td class="vazio">—</td><td><strong>✓</strong></td></tr>
+        <tr><td>Proteção do catálogo e Content ID</td><td class="vazio">—</td><td><strong>✓</strong></td></tr>
+        <tr class="total"><td><strong>Resultado</strong></td><td>Uma máquina de tráfego</td><td>Um catálogo que arrecada</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">A tabela é a oferta. Ela mostra que <strong>as duas mentorias não competem em nenhuma linha</strong> — e é por isso que o combo se sustenta sem nenhum dos dois precisar diminuir o outro.</p>
+
+  <div class="oferta">
+    <h4>O que preencher antes da live</h4>
+    <ul class="plain">
+      <li><strong>Nome do combo</strong> e o que exatamente está incluído de cada lado</li>
+      <li><strong>Formato:</strong> quantos encontros, em quanto tempo, ao vivo ou gravado, com ou sem grupo</li>
+      <li><strong>Preço avulso de cada mentoria e o preço do combo</strong> — a economia precisa estar visível na tela</li>
+      <li><strong>Onde comprar</strong> — link único, mostrado na tela e fixado no chat</li>
+      <li><strong>Prazo real da oferta</strong>, se houver. Se não houver, não invente: essa plateia é de operador, e escassez falsa com operador custa caro</li>
+    </ul>
+    <span class="preco">Deixe estes campos definidos com o Will antes da aula — improvisar oferta no ar é onde a maioria das lives boas morre.</span>
+  </div>
+
+  <h3>As três objeções que vão aparecer</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Objeção</th><th>Resposta</th></tr></thead>
+      <tbody>
+        <tr><td>"Mas o Spotify paga pouco"</td><td>Concorde, e vire: "paga pouco por stream, e é justamente por isso que você não pode abrir mão da segunda receita nem deixar cadeia longa comendo a primeira. Quem ganha bem em streaming não ganha por stream — ganha por não perder nada no caminho"</td></tr>
+        <tr><td>"Isso é muito trabalho para o que rende"</td><td>Separe o que é uma vez do que é recorrente: filiação e reivindicação de perfil são <strong>trabalho único</strong>. Cadastro de obra e fonograma vira rotina de minutos por lançamento. E o AdSense, que eles já aceitam operar, também deu trabalho no começo</td></tr>
+        <tr><td>"Minha música é de IA, isso vale?"</td><td>É a pergunta mais honesta da sala e merece a resposta inteira — a do Módulo 3, com a ressalva jurídica junto. <strong>Não prometa segurança que não existe.</strong> O que você oferece é o caminho mais defensável e a documentação certa, não uma garantia</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note good">
+    <span class="tag">Fechamento</span>
+    <p>Termine devolvendo o número da abertura: <strong>sessenta e um mil de AdSense contra setenta euros de Spotify.</strong> Diga que a distância entre os dois não é o mercado — é uma lista de itens que cabe numa página, e que você acabou de mostrar a lista inteira. Quem quiser fazer sozinho, agora tem o mapa. Quem quiser fazer acompanhado, o link está no chat.</p>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head"><span class="sec-mark">PARA OS ALUNOS</span><h2>A página que eles levam</h2></div>
+  <p class="measure">Prometa isto no começo e entregue no fim — é o que faz a aula circular depois que acaba.</p>
+  <ul class="plain measure">
+    <li><strong>Esta semana, custo zero:</strong> reivindicar o Spotify for Artists do seu projeto.</li>
+    <li><strong>Esta semana, custo zero:</strong> parar qualquer lançamento em bloco que esteja programado.</li>
+    <li><strong>Este mês:</strong> filiar-se a uma associação e começar a cadastrar obra e fonograma.</li>
+    <li><strong>Este mês:</strong> construir a ponte do YouTube para o Spotify em todos os vídeos que já estão no ar.</li>
+    <li><strong>Antes do próximo lançamento:</strong> entregar com três a quatro semanas e fazer o pitch.</li>
+    <li><strong>Contínuo:</strong> guardar prompts, versões e decisões de cada faixa. É a sua documentação de contribuição humana.</li>
+  </ul>
+</section>
+
+<footer>
+  Propulse · aula para os alunos do Will · roteiro de 90 minutos
+</footer>
+
+</div>
