@@ -1,0 +1,238 @@
+<title>Perguntas para o Will</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101116; --surface:#181A20; --surface-2:#22242B;
+    --ink:#F2F0EC; --ink-2:#9E9CA6; --rule:#2C2E36;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101116; --surface:#181A20; --surface-2:#22242B;
+  --ink:#F2F0EC; --ink-2:#9E9CA6; --rule:#2C2E36;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px 140px}
+p{margin:0 0 .85em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+
+/* topo fixo com a ordem da call */
+.barra{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:2px solid var(--ink);
+       padding:9px 0;margin-bottom:0}
+.barra .linha{display:flex;gap:6px;overflow-x:auto;font-family:var(--mono);font-size:11px;
+       letter-spacing:.06em;text-transform:uppercase;scrollbar-width:thin}
+.barra a{flex:0 0 auto;text-decoration:none;color:var(--ink-2);border:1px solid var(--rule);
+       padding:5px 9px;white-space:nowrap;background:var(--surface)}
+.barra a b{color:var(--ink);font-weight:600}
+.barra a.nuc{border-color:var(--hue);color:var(--hue)} .barra a.nuc b{color:var(--hue)}
+
+.topo{padding:44px 0 26px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:14px}
+h1{font-family:var(--display);font-size:clamp(34px,6.5vw,60px);line-height:.98;letter-spacing:-.02em;
+   text-transform:uppercase;margin:0 0 16px;text-wrap:balance}
+.sub{font-size:19px;color:var(--ink-2);max-width:56ch}
+
+/* um bloco da call */
+.bloco{border-top:3px solid var(--ink);padding-top:20px;margin-top:44px;scroll-margin-top:62px}
+.cab{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.hora{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.01em;color:var(--hue);
+      font-variant-numeric:tabular-nums;line-height:1}
+h2{font-family:var(--display);font-size:clamp(20px,3.6vw,27px);line-height:1.05;text-transform:uppercase;
+   letter-spacing:-.01em;margin:0}
+.dur{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+     color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+
+/* o que falar */
+.diga{border-left:4px solid var(--ink);padding:2px 0 2px 18px;margin:18px 0;font-size:22px;line-height:1.5}
+.diga p{margin-bottom:.7em} .diga p:last-child{margin-bottom:0}
+.diga em{font-style:normal;color:var(--ink-2);font-size:17px}
+
+/* o que fazer */
+.faca{display:flex;gap:12px;align-items:flex-start;margin:14px 0;font-size:17.5px;line-height:1.45}
+.faca .chip{flex:0 0 auto;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.11em;
+     text-transform:uppercase;padding:4px 8px;border:1px solid var(--sea);color:var(--sea);margin-top:3px;white-space:nowrap}
+.faca.tela .chip{border-color:var(--ocre);color:var(--ocre)}
+.faca.chat .chip{border-color:var(--hue);color:var(--hue)}
+.faca .txt{color:var(--ink-2)}
+.faca .txt b{color:var(--ink)}
+
+/* pontos a cobrir, rapido */
+ul.bala{list-style:none;padding:0;margin:14px 0 0}
+ul.bala li{padding-left:26px;position:relative;margin-bottom:.5em;font-size:18px;line-height:1.45}
+ul.bala li::before{content:"";position:absolute;left:2px;top:.62em;width:12px;height:2px;background:var(--hue)}
+
+.corte{border:1px dashed var(--ocre);padding:11px 14px;margin:16px 0;font-family:var(--mono);
+       font-size:12.5px;line-height:1.6;letter-spacing:.02em;color:var(--ocre)}
+.corte b{color:var(--ocre);letter-spacing:.1em;text-transform:uppercase;font-size:10.5px;display:block;margin-bottom:4px}
+
+.aviso{background:var(--surface);border-left:4px solid var(--hue);padding:14px 16px;margin:18px 0;font-size:17.5px;line-height:1.5}
+.aviso .lb{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+       color:var(--hue);display:block;margin-bottom:6px}
+.aviso.ok{border-left-color:var(--sea)} .aviso.ok .lb{color:var(--sea)}
+.aviso p:last-child{margin-bottom:0}
+
+.dupla{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0}
+@media(min-width:760px){ .dupla{grid-template-columns:1fr 1fr} }
+.opc{border:1px solid var(--rule);background:var(--surface);padding:15px 16px}
+.opc .lb{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+     color:var(--ink-2);display:block;margin-bottom:9px}
+.opc.a{border-color:var(--sea)} .opc.a .lb{color:var(--sea)}
+.opc p{font-size:18px;line-height:1.45}
+
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:17px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.4}
+th{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.tw{overflow-x:auto;border:1px solid var(--rule);background:var(--paper)}
+tbody tr:last-child td{border-bottom:0}
+
+footer{margin-top:70px;padding-top:22px;border-top:3px solid var(--ink);font-family:var(--mono);
+       font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+</style>
+
+<div class="wrap">
+
+<nav class="barra" aria-label="Blocos de perguntas">
+  <div class="linha">
+    <a href="#antes"><b>0</b> Antes</a>
+    <a href="#numeros"><b>1</b> Os números</a>
+    <a href="#nicho"><b>2</b> Nicho</a>
+    <a href="#producao"><b>3</b> Produção</a>
+    <a href="#errado" class="nuc"><b>4</b> Quando dá errado</a>
+    <a href="#artistas" class="nuc"><b>5</b> Para artistas</a>
+    <a href="#numeradas"><b>6</b> Com número</a>
+    <a href="#fecho"><b>7</b> Fecho</a>
+    <a href="#nao">O que não perguntar</a>
+  </div>
+</nav>
+
+<header class="topo">
+  <div class="eyebrow">Aula do Will para os mentorados da Propulse · 08/09</div>
+  <h1>Perguntas para o Will</h1>
+  <p class="sub">Vinte e duas perguntas em sete blocos. Não use todas — escolha oito ou dez. As do bloco 6 são as mais fortes, porque você agora tem número próprio para colocar na mesa.</p>
+</header>
+
+<section class="bloco" id="antes">
+  <div class="cab"><span class="hora">0</span><h2>Combinar antes de começar</h2></div>
+  <ul class="bala">
+    <li><strong>Ele vai ofertar alguma coisa?</strong> Você foi à base dele e ofertou o combo. Agora ele vem à sua. Se ele vai vender, combine o quê, quando e por quanto tempo — e se não vai, avise a sua base que não haverá pitch, porque isso muda a escuta.</li>
+    <li><strong>Ele pode citar os números dele?</strong> R$ 61 mil, os 15 canais, os alunos de R$ 30 e R$ 80 mil. Prova vale muito com a sua base, mas é ele quem decide o que abre.</li>
+    <li><strong>Avise que você vai perguntar do que deu errado.</strong> Uma pergunta sobre desmonetização pega mal se cai de surpresa e fica excelente se ele sabe que vem. Diga: "vou puxar os erros também, porque é o que os meus alunos precisam ouvir".</li>
+    <li><strong>Seu papel é anfitrião, não co-professor.</strong> A tentação de completar a resposta dele com o que você aprendeu é grande. Segure — você tem a sua aula para isso.</li>
+  </ul>
+</section>
+
+<section class="bloco" id="numeros">
+  <div class="cab"><span class="hora">1</span><h2>Os números reais</h2><span class="dur">abertura · 2 perguntas</span></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">Abrir por número calibra a sala. E a <b>taxa de fracasso</b> é o dado que quase ninguém pede — e o mais útil para quem vai começar.</span></div>
+
+  <div class="diga"><p>"Você tem quinze canais. <strong>Quantos deles pagam as contas, quantos empatam e quantos você já desligou?</strong>"</p></div>
+  <div class="faca"><span class="chip">Se ele desviar</span><span class="txt">Insista com carinho: "não é para diminuir o resultado, é o contrário — se de quinze só três pagam, o pessoal aqui precisa saber que vai errar doze vezes."</span></div>
+
+  <div class="diga"><p>"Do primeiro vídeo até o primeiro real de AdSense: <strong>quanto tempo no seu melhor canal, e quanto no pior que ainda está de pé?</strong>"</p></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">A distância entre esses dois números é a expectativa honesta que a sua base precisa levar para casa.</span></div>
+</section>
+
+<section class="bloco" id="nicho">
+  <div class="cab"><span class="hora">2</span><h2>A escolha do nicho</h2><span class="dur">3 perguntas</span></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">É a decisão que determina todo o resto, e é onde a experiência dele é insubstituível. Teoria de nicho tem no YouTube; <b>o processo dele, não</b>.</span></div>
+
+  <div class="diga"><p>"Quando você vai abrir um canal novo hoje, <strong>o que você olha antes de gerar a primeira faixa?</strong> Me dá a sequência, na ordem."</p></div>
+  <div class="diga"><p>"<strong>Qual nicho você tentou e abandonou</strong> — e o que fez você desistir dele?"</p></div>
+  <div class="diga"><p>"Se tivesse que escolher um só: <strong>RPM alto ou concorrência baixa?</strong>"</p></div>
+  <div class="faca"><span class="chip">Escute isto</span><span class="txt">A resposta a esta última costuma revelar se ele opera por receita ou por volume — e serve de ponte natural para a parte de direitos que você ensina depois.</span></div>
+</section>
+
+<section class="bloco" id="producao">
+  <div class="cab"><span class="hora">3</span><h2>Produção e formato</h2><span class="dur">4 perguntas</span></div>
+
+  <div class="diga"><p>"<strong>Por que uma hora?</strong> Você testou três horas, testou trinta minutos? O que mudou?"</p></div>
+  <div class="diga"><p>"<strong>Você usa a mesma faixa em mais de um canal?</strong> E o que acontece se usar?"</p></div>
+  <div class="diga"><p>"<strong>Quantas faixas você descarta</strong> para cada uma que entra no vídeo?"</p></div>
+  <div class="diga"><p>"<strong>Você testa miniatura?</strong> Como — troca depois de publicado, ou decide antes e não mexe?"</p></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">A taxa de descarte é o número que separa quem cura de quem só publica o que a ferramenta cospe. É a resposta que mais vai surpreender a sua base.</span></div>
+</section>
+
+<section class="bloco" id="errado">
+  <div class="cab"><span class="hora">4</span><h2>Quando dá errado</h2><span class="dur">o bloco mais valioso · 4 perguntas</span></div>
+  <div class="faca"><span class="chip">Tom</span><span class="txt">Enquadre como <b>proteção para os alunos</b>, nunca como "você já se ferrou?". A pergunta certa dita do jeito errado vira interrogatório na frente da plateia.</span></div>
+
+  <div class="diga"><p>"Quando um vídeo cai no <strong>cluster errado</strong> — o algoritmo classifica ele junto com um público que não é o seu —, o que você faz? Conserta ou recomeça?"</p></div>
+  <div class="faca"><span class="chip">Você tem caso</span><span class="txt">Se ele perguntar por que você quer saber: aconteceu com você. O canal de viola caipira caiu no cluster de pagode e levou três semanas e uma troca de título. <b>Conte curto</b> — o palco é dele.</span></div>
+
+  <div class="diga"><p>"A política do YouTube sobre <strong>conteúdo produzido em massa</strong> apertou. Quinze canais com a mesma fórmula é exatamente o perfil que atrai revisão. Já bateu na sua porta? E o que você faz para se proteger?"</p></div>
+  <div class="diga"><p>"Alguém já <strong>reivindicou um fonograma seu</strong> via Content ID? Ou você já precisou reivindicar contra alguém?"</p></div>
+  <div class="diga"><p>"<strong>O que mata o canal dos seus alunos?</strong> Qual é o erro que você mais vê e mais cansa de corrigir?"</p></div>
+  <div class="faca"><span class="chip">Esta é a melhor</span><span class="txt">Ela entrega, de graça, o mapa de erros de 350 pessoas. Se for para escolher <b>uma só</b> pergunta da aula inteira, é esta.</span></div>
+</section>
+
+<section class="bloco" id="artistas">
+  <div class="cab"><span class="hora">5</span><h2>Para os seus mentorados</h2><span class="dur">o bloco que ninguém mais faria · 4 perguntas</span></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">A base dele é de operadores de canal. <b>A sua é de artistas</b> — gente com nome, rosto, catálogo e público. Nenhuma dessas perguntas apareceria na aula dele para os alunos dele, e são as que a sua sala mais precisa.</span></div>
+
+  <div class="diga"><p>"Isso funciona para um <strong>artista com nome e rosto</strong>, ou só como canal sem rosto? Ter identidade atrapalha?"</p></div>
+  <div class="diga"><p>"Um artista que <strong>já tem catálogo gravado</strong>, com músicas de verdade — dá para usar esse formato com o material que ele já tem?"</p></div>
+  <div class="diga"><p>"<strong>Público prévio ajuda ou atrapalha</strong> um canal novo? Trazer os fãs de fora confunde o algoritmo?"</p></div>
+  <div class="diga"><p>"<strong>Quantas horas por semana</strong>, de verdade, para manter três vídeos? Não a resposta de vendas — a real."</p></div>
+</section>
+
+<section class="bloco" id="numeradas">
+  <div class="cab"><span class="hora">6</span><h2>As perguntas com número</h2><span class="dur">as mais fortes · 4 perguntas</span></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">Você operou dois canais e tem dado próprio. <b>Número puxa número</b>: quando você abre o seu, ele responde com o dele em vez de generalidade. E a sala aprende com a troca, não com a aula.</span></div>
+
+  <div class="diga"><p>"Meu canal internacional está com <strong>CTR de 1,3%</strong>, com metade do tráfego vindo de sugeridos. <strong>Qual CTR você considera saudável</strong> nos seus canais?"</p></div>
+  <div class="diga"><p>"Um vídeo meu fez <strong>quatro vezes a média do canal</strong>. Quando isso acontece com você, <strong>quantas variações você faz</strong> antes de parar de insistir na fórmula?"</p></div>
+  <div class="diga"><p>"Horas de exibição eu acumulo bem — <strong>o gargalo são os mil inscritos</strong>, porque ninguém se inscreve em música de fundo. <strong>Quanto tempo levou nos seus canais</strong>, e o que fez a diferença?"</p></div>
+  <div class="diga"><p>"Meu RPM de referência para ambiência internacional é de <strong>US$ 0,81</strong>. <strong>Qual é o seu RPM médio</strong> — e em qual dos quinze canais ele é mais alto?"</p></div>
+  <div class="faca"><span class="chip">Cuidado</span><span class="txt">Não use as quatro. <b>Escolha duas.</b> Quatro perguntas com número seguidas viram esgrima entre vocês dois e a sala fica de fora.</span></div>
+</section>
+
+<section class="bloco" id="fecho">
+  <div class="cab"><span class="hora">7</span><h2>O fecho</h2><span class="dur">1 pergunta</span></div>
+  <div class="diga"><p>"Se você <strong>começasse hoje do zero</strong>, sabendo tudo o que sabe, o que você faria diferente nos primeiros trinta dias?"</p></div>
+  <div class="faca"><span class="chip">Por quê</span><span class="txt">É a pergunta que arruma tudo o que veio antes num plano, e devolve o palco para ele terminar bem. <b>Guarde ela para o final</b>, sempre.</span></div>
+
+  <div class="faca chat"><span class="chip">Depois</span><span class="txt">Feche agradecendo e diga o que vem a seguir para a sua base — sem vender nada na aula dele. <b>Você já vendeu na aula que deu para os alunos dele.</b> Repetir aqui queima a reciprocidade.</span></div>
+</section>
+
+<section class="bloco" id="nao">
+  <div class="cab"><span class="hora">✕</span><h2>O que não perguntar</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Não pergunte</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td>"Quanto você fatura por mês?"</td><td>Ou ele já disse, ou não vai dizer. Pergunte o <strong>RPM</strong> e o <strong>tempo até monetizar</strong>, que são úteis e ele responde</td></tr>
+        <tr><td>"Você tem medo de a IA acabar com isso?"</td><td>Pergunta de painel, não de aula. Rende opinião e nenhuma ação</td></tr>
+        <tr><td>"O que você acha do Spotify?"</td><td>É o <strong>seu</strong> terreno, não o dele. Puxar para lá na aula dele soa como quem quer roubar o microfone</td></tr>
+        <tr><td>Qualquer coisa que ele já respondeu na sua consultoria</td><td>Você já sabe a resposta e a sala percebe. Fica ensaiado</td></tr>
+        <tr><td>Três perguntas seguidas sem deixar ele desenvolver</td><td>Uma boa pergunta com três minutos de resposta vale mais que cinco perguntas atropeladas</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aviso ok">
+    <span class="lb">Se a sala travar e ninguém perguntar nada</span>
+    <p>Puxe a do bloco 4: <em>"o que mata o canal dos seus alunos?"</em> Ela é concreta, dá história, e sempre destrava as perguntas dos outros — porque cada pessoa na sala se reconhece em um dos erros.</p>
+  </div>
+</section>
+
+<footer>
+  Propulse · perguntas para a aula do Will · 08 de setembro de 2026
+</footer>
+
+</div>
