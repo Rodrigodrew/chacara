@@ -1,0 +1,339 @@
+<title>O Método do Título</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+a{color:inherit;text-decoration-color:var(--hue);text-underline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:60ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:24px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+.tempo{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:32px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:22px}
+
+/* roteiro de fala */
+.fala{border-left:3px solid var(--ink);background:var(--surface);padding:15px 18px;margin:20px 0;font-size:17px;line-height:1.55}
+.fala .lbl{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.fala p{font-style:italic;margin-bottom:.6em} .fala p:last-child{margin-bottom:0}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:22px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn{border-left-color:var(--ocre)} .note.warn .tag{color:var(--ocre)}
+.note.good{border-left-color:var(--sea)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+.tw{overflow-x:auto;margin:22px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:600px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+.tbl-cap{caption-side:top;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+         text-transform:uppercase;color:var(--ink-2);padding:11px 13px;background:var(--surface);border-bottom:1px solid var(--rule)}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.6em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* grade de modulos na abertura */
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0}
+.mod{background:var(--surface);padding:15px 16px}
+.mod .n{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--hue);display:block;margin-bottom:7px}
+.mod .t{font-family:var(--display);font-size:15px;line-height:1.25;display:block;margin-bottom:6px}
+.mod .d{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em}
+
+/* o fluxo do dinheiro */
+.fluxo{border:1px solid var(--rule);background:var(--paper);padding:22px 20px;margin:24px 0;overflow-x:auto}
+.fluxo svg{display:block;width:100%;min-width:600px;height:auto}
+.fluxo .cx{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.fluxo .cx-a{fill:var(--surface);stroke:var(--sea);stroke-width:2}
+.fluxo .cx-b{fill:var(--surface);stroke:var(--ocre);stroke-width:2}
+.fluxo .rot{fill:var(--ink);font-family:var(--serif);font-size:13.5px}
+.fluxo .rot-s{fill:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+.fluxo .via{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.fluxo .via-a{stroke:var(--sea);stroke-width:2;fill:none}
+.fluxo .via-b{stroke:var(--ocre);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.fluxo .pta{fill:var(--sea)} .fluxo .ptb{fill:var(--ocre)} .fluxo .pt{fill:var(--ink-2)}
+
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+.oferta{border:2px solid var(--ink);background:var(--surface);padding:24px 22px;margin:26px 0}
+.oferta h4{font-family:var(--display);font-size:19px;margin:0 0 10px}
+.oferta .preco{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--hue);margin-top:12px;display:block}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .tempo{margin-left:0} }
+
+.bloco-est{display:grid;grid-template-columns:1fr;gap:16px;margin:22px 0}
+@media(min-width:820px){ .bloco-est{grid-template-columns:1fr 1fr} }
+.est{border:1px solid var(--rule);background:var(--surface);padding:17px 18px}
+.est.b{border-left:3px solid var(--sea)} .est.a{border-left:3px solid var(--ocre)}
+.est .lb{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+   text-transform:uppercase;margin-bottom:10px}
+.est.b .lb{color:var(--sea)} .est.a .lb{color:var(--ocre)}
+.est code.grande{display:block;font-size:15px;line-height:1.5;background:var(--surface-2);
+   padding:10px 12px;border-radius:2px;margin-bottom:10px;word-break:break-word}
+.est p{font-size:15.5px;color:var(--ink-2);margin:0}
+td.erro{color:var(--ocre);text-decoration:line-through}
+td.ok{color:var(--sea);font-weight:600}
+td.b{color:var(--sea)} td.a{color:var(--ocre)} th.b{color:var(--sea)} th.a{color:var(--ocre)}
+td.win{font-weight:600}
+pre .cmt{color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">A aula do Will aplicada à nossa operação · 09 de setembro de 2026</div>
+  <h1>O Método <span class="e">do</span> Título</h1>
+  <p class="dek">O que adotar da aula sem ressalva, o que adaptar, e os três pontos em que a nossa própria evidência contradiz o que ele falou — inclusive um sobre o nosso nicho.</p>
+  <div class="meta">
+    <span>Adotar <b>6 práticas</b></span>
+    <span>Adaptar <b>2</b></span>
+    <span>Não adotar <b>1</b></span>
+    <span>Corrigir hoje <b>Vídeos 04 e 06</b></span>
+  </div>
+</header>
+
+<section id="tese">
+  <div class="sec-head"><span class="sec-mark">A IDEIA CENTRAL</span><h2>O título é o que classifica</h2></div>
+  <p class="lede measure">A tese do Will é que <strong>80% do YouTube é o título e 20% é a miniatura</strong>. Na maioria das vezes o algoritmo não assiste ao vídeo — ele lê o título e decide para quem entregar.</p>
+  <p class="measure">A nossa própria operação já provou isso duas vezes, antes de a gente ter o vocabulário para explicar. O Zé Sereno caiu no cluster de pagode e voltou para o lugar certo <strong>só com a troca de título</strong>. E o vídeo do Amber Lantern que fez 66 views por dia contra uma média de 15 mudou uma coisa: o título passou a falar de D&amp;D. Não era música nova, não era capa melhor. Era endereço.</p>
+
+  <div class="note good">
+    <span class="tag">O que isso muda na prática</span>
+    <p>A gente vinha tratando o título como embalagem — a última coisa a decidir depois de as faixas ficarem prontas. <strong>Ele é a primeira.</strong> O título define o público, o público define o set, e o set define a ambiência. A ordem de produção estava invertida.</p>
+  </div>
+</section>
+
+<section id="adotar">
+  <div class="sec-head"><span class="sec-mark">ADOTAR</span><h2>Seis coisas que entram sem discussão</h2></div>
+
+  <h3>1 · Travar a estrutura do título</h3>
+  <p class="measure">A regra mais importante da aula: <strong>quando uma estrutura funciona, você repete e muda só duas palavras.</strong> Mudar a estrutura mata a entrega, porque o algoritmo perde a referência do que aquele canal é.</p>
+
+  <h3>2 · Micro nicho é situação, não gênero</h3>
+  <p class="measure">"Jazz" é nicho. "Jazz noir" é subnicho. <strong>"Jazz noir cinematográfico para homens em momento de solidão, foco e vida noturna"</strong> é micro nicho — e é o que dá título. A pergunta não é <em>que música é essa</em>, é <em>quem está ouvindo, fazendo o quê, sentindo o quê</em>.</p>
+
+  <h3>3 · Definir o que o canal vende</h3>
+  <p class="measure">Não é o gênero. É o sentimento: solidão romantizada, ambição silenciosa, alívio mental. Todo título é uma promessa desse sentimento.</p>
+
+  <h3>4 · Pool de faixas com embaralhamento</h3>
+  <p class="measure">O canal dele de R$ 65 mil usa <strong>um álbum para quinze vídeos no mês</strong>, embaralhando a ordem. A lógica é a curva de retenção: quase ninguém ouve até o fim, então a faixa que estava no fim de um vídeo vira a abertura do outro e a maior parte do público nunca percebe repetição.</p>
+
+  <h3>5 · Modelar concorrente com IA</h3>
+  <p class="measure">Copiar a lista de títulos de um canal que funciona, jogar numa IA e pedir a classificação: nicho, subnicho, micro nicho, estrutura de título e o que ele vende. Depois <strong>modelar, não copiar</strong> — mesma estrutura, outro público ou outra cena.</p>
+
+  <h3>6 · Uma promessa por título</h3>
+  <p class="measure">"Louvor para viajar ou acalmar o coração" são dois micro nichos brigando no mesmo título. Cada um vira um vídeo.</p>
+
+  <div class="note">
+    <span class="tag">Também entra, sem cerimônia</span>
+    <p>Não trocar o título de um vídeo já publicado — publicar um novo. E não copiar título alheio ao pé da letra enquanto o canal é pequeno: sem autoridade, o YouTube simplesmente não entrega.</p>
+  </div>
+</section>
+
+<section id="ressalvas">
+  <div class="sec-head"><span class="sec-mark">ONDE DIVERGIMOS</span><h2>Três pontos, com evidência dos dois lados</h2></div>
+  <p class="lede measure">Ele opera quinze canais monetizados e sabe muito mais de YouTube do que a gente. Mas em três coisas a nossa evidência aponta para o outro lado — e vale registrar por quê.</p>
+
+  <h3>Duração no título: ele tira, a gente mantém</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>O que ele disse</th><th>O que os nossos concorrentes fazem</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>"Eu não colocaria 80 minutos no título. Só consome caracteres e não faz diferença." E completou: <em>"tem canal que vai funcionar, tem canal que não."</em></td>
+          <td><strong>No modão brasileiro é unânime:</strong> TOCA VIOLA publica <em>1 HORA DE MODÃO</em>, Rádio Brasil <em>45 MINUTOS DE PURO MODÃO</em>, AMANHECENDO NA ROÇA tem 1:01:07. No nicho internacional de ambiência, a mesma coisa.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Nos nossos dois nichos a duração <strong>é vocabulário de busca</strong>, não enfeite — quem procura "1 hora de modão" está dizendo quanto tempo quer ficar com o vídeo tocando. E existe um argumento mais forte ainda para não mexer agora: <strong>a regra número 1 dele é não mudar a estrutura que está funcionando.</strong> O título do Zé Sereno com duração fez 4,6% de CTR. Tirar a duração seria mexer justamente no que a regra dele manda travar.</p>
+  <div class="note"><span class="tag">Fica para depois</span><p>Vale testar num vídeo isolado lá na frente, quando houver um canal com estrutura madura o suficiente para absorver o teste. Hoje, não.</p></div>
+
+  <h3>Registro de fonograma: ele não registra, nós registramos</h3>
+  <p class="measure">Ele disse, com toda a franqueza: <em>"eu produzo mais de 100 músicas por dia, se eu fosse registrar tudo ia perder muito tempo. Eu registro quando começa a ter sucesso."</em> Para a operação dele, faz sentido — canal dark, artista descartável, volume industrial.</p>
+  <div class="note warn">
+    <span class="tag">Para a nossa base, não serve — e você já corrigiu ao vivo</span>
+    <p>Três motivos: <strong>o fonograma sem registro pode ser reivindicado por terceiro</strong> via Content ID, e aí o prejuízo é retroativo pelo seu próprio vídeo. <strong>Um artista da Propulse não é descartável</strong> — ele tem nome, catálogo e carreira, e o canal é um braço disso, não uma peça de reposição. E <strong>a segunda receita só existe com cadastro</strong>: sem obra e fonograma na associação, o ECAD não tem para quem pagar.</p>
+  </div>
+
+  <h3>Fantasia medieval: ele desaconselha, e a gente está lá dentro</h3>
+  <p class="measure">Este é o ponto que dói. Sobre um canal de música de fantasia, ele foi direto: <em>"esse nicho eu não recomendo alguém começar por ele, porque muita gente já fez música de fantasia e o público não é tão grande — comparado com rock, é um para um milhão."</em> É exatamente onde o Amber Lantern está.</p>
+  <div class="note good">
+    <span class="tag">O que a nossa evidência responde</span>
+    <p>Ele falou do <strong>subnicho</strong> — "música de fantasia" —, e nisso provavelmente está certo: o teto é mais baixo que o de sertanejo ou rock. Mas a gente não está no subnicho, está num <strong>micro nicho</strong>: trilha de sessão de RPG de mesa. E foi exatamente essa distinção que produziu os 66 views por dia contra 15 de média do canal.</p>
+    <p style="margin-top:.7em">Ou seja: <strong>a crítica dele valida a nossa correção em vez de derrubá-la</strong> — foi micronichar que salvou o canal. O alerta que fica de pé é o do teto: um canal de RPG em inglês dificilmente vira o canal de R$ 65 mil. Isso pesa quando chegar a hora de decidir entre escalar o Amber Lantern ou abrir um canal em nicho maior.</p>
+  </div>
+</section>
+
+<section id="canais">
+  <div class="sec-head"><span class="sec-mark">APLICADO</span><h2>Os dois canais no framework dele</h2></div>
+  <p class="lede measure">Isto nunca tinha sido escrito. Escrever muda o que a gente produz.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Camada</th><th class="b">The Amber Lantern</th><th class="a">Zé Sereno</th></tr></thead>
+      <tbody>
+        <tr><td>Nicho</td><td class="b">Música instrumental ambiente</td><td class="a">Música instrumental brasileira</td></tr>
+        <tr><td>Subnicho</td><td class="b">Fantasy tavern ambience</td><td class="a">Modão de viola · sertanejo raiz</td></tr>
+        <tr class="total"><td><strong>Micro nicho</strong></td><td class="b">Trilha de sessão de RPG de mesa, para grupos que jogam à noite</td><td class="a">Café da manhã na roça, para quem acorda cedo e quer o dia começar devagar</td></tr>
+        <tr class="total"><td><strong>O que vende</strong></td><td class="b">A mesa que te espera — pertencimento sem exigência</td><td class="a">Saudade sem tristeza — a memória do sítio e do café coado</td></tr>
+        <tr><td>Prova</td><td class="b">66 views/dia contra 15 de média</td><td class="a">CTR de 4,6% — o melhor número da operação</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="tag">Por que "o que vende" não é firula</span>
+    <p>O Amber Lantern não vende taverna medieval — vende <strong>chegar num lugar quente onde tem lugar para você</strong>. Por isso "The Inn After the Battle" funciona e "Medieval Instrumental Vol. 3" não funcionaria nunca. O mesmo com o Zé Sereno: ele não vende viola caipira, vende a manhã que começa sem pressa.</p>
+  </div>
+
+  <h3>As duas estruturas, travadas a partir de hoje</h3>
+  <div class="bloco-est">
+    <div class="est b">
+      <span class="lb">CANAL B · não muda mais</span>
+      <code class="grande">Fantasy Tavern Ambience for D&amp;D Nights — [Cena] | 1 Hour</code>
+      <p>Só a cena muda. <strong>"for D&amp;D Nights" é o gancho validado</strong> e vira parte fixa.</p>
+    </div>
+    <div class="est a">
+      <span class="lb">CANAL A · não muda mais</span>
+      <code class="grande">Viola Caipira ao [Momento] na [Lugar] — Modas Raiz para [Atividade] | 1 Hora</code>
+      <p>Foi essa estrutura que fez 4,6% de CTR. <strong>Trocar "30 Min" por "1 Hora"</strong> quando a versão longa sair.</p>
+    </div>
+  </div>
+</section>
+
+<section id="erro">
+  <div class="sec-head"><span class="sec-mark">CORRIGIR HOJE</span><h2>A gente estava quebrando a regra dele</h2></div>
+  <p class="lede measure">Os títulos que eu escrevi para os vídeos 04, 05 e 06 <strong>variam o gancho</strong> — exatamente o que ele diz para nunca fazer.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Vídeo</th><th>Gancho que eu escrevi</th><th>Corrigido</th></tr></thead>
+      <tbody>
+        <tr><td>03 <span class="vazio">(o que funcionou)</span></td><td><strong>for D&amp;D Nights</strong></td><td>referência</td></tr>
+        <tr><td>04</td><td class="erro">for D&amp;D Sessions</td><td class="ok">for D&amp;D Nights</td></tr>
+        <tr><td>05</td><td class="ok">for D&amp;D Nights</td><td class="ok">mantém</td></tr>
+        <tr><td>06</td><td class="erro">for Tabletop RPG</td><td class="ok">for D&amp;D Nights</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Parecia variação saudável. É o contrário: cada gancho diferente pede ao algoritmo uma classificação diferente, e o canal fica sem endereço fixo bem no momento em que acabou de conseguir um. <strong>Só a cena depois do travessão muda.</strong></p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Os três títulos finais</th></tr></thead>
+      <tbody>
+        <tr><td><code>Fantasy Tavern Ambience for D&amp;D Nights — The Night Before the Road | 1 Hour</code></td></tr>
+        <tr><td><code>Fantasy Tavern Ambience for D&amp;D Nights — The Inn After the Battle | 1 Hour</code></td></tr>
+        <tr><td><code>Fantasy Tavern Ambience for D&amp;D Nights — The Roadside Inn at Night | 1 Hour</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="pool">
+  <div class="sec-head"><span class="sec-mark">PRODUÇÃO</span><h2>O pool muda tudo no calendário</h2></div>
+  <p class="lede measure">Esta é a parte com maior impacto no seu tempo. Hoje cada vídeo custa vinte faixas novas. No método dele, um pool alimenta doze.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th></th><th>Como estava</th><th>Como fica</th></tr></thead>
+      <tbody>
+        <tr><td>Faixas por vídeo</td><td class="num">20 novas</td><td class="num">0 novas</td></tr>
+        <tr><td>Faixas por mês <span class="vazio">(12 vídeos)</span></td><td class="num">240</td><td class="num win b">60</td></tr>
+        <tr><td>O que diferencia um vídeo do outro</td><td>o set inteiro</td><td>título, capa, ambiência e ordem</td></tr>
+        <tr class="total"><td>Gargalo real</td><td>gerar e curar faixas</td><td class="b">achar a próxima cena</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">As 60 faixas do <strong>Amber Lantern Sessions III</strong> são todas do mesmo cluster, com o mesmo bloco de estrutura e o mesmo Exclude. Elas não precisam ser três sets separados — <strong>são um pool só</strong>, e esse pool rende de dez a quinze vídeos.</p>
+
+  <div class="note good">
+    <span class="tag">O script já faz isso — opção nova <code>-e</code></span>
+    <p>Cada vídeo recebe uma semente e ganha uma ordem própria, sempre abrindo com uma faixa diferente. É determinístico: a mesma semente reproduz exatamente o mesmo set, então dá para reconstruir qualquer vídeo depois.</p>
+  </div>
+
+<pre><code><span class="cmt"># o mesmo pool, três vídeos, três ordens — e três aberturas diferentes</span>
+./montar-playlist.sh -d pool-rpg -i capa4.png -a amb-chuva-leve.wav -b -26 -x 4 -p 3 -e 4 \
+  -t "The map is open and the horses leave at dawn." -o amber-04.mp4
+
+./montar-playlist.sh -d pool-rpg -i capa5.png -a amb-chuva-forte.wav -b -24 -x 4 -p 3 -e 5 \
+  -t "They came back. The fire is high and the rain has not stopped." -o amber-05.mp4
+
+./montar-playlist.sh -d pool-rpg -i capa6.png -a amb-vento-noite.wav -b -24 -x 4 -p 3 -e 6 \
+  -t "A light off the road, two rooms, one fire." -o amber-06.mp4</code></pre>
+
+  <div class="note warn">
+    <span class="tag">Uma coisa que ele não mencionou, e a gente precisa segurar</span>
+    <p>Reutilizar o mesmo áudio trocando só o título é <strong>exatamente o padrão que a política de conteúdo produzido em massa do YouTube mira</strong>. Ele opera assim há um ano e não foi pego — o que não é o mesmo que ser seguro.</p>
+    <p style="margin-top:.7em">A diferença entre o que ele faz e o que a gente vai fazer está na <strong>ambiência</strong>: chuva pesada, lareira baixa e vento na estrada mudam o som de verdade, não só a ordem. Somado a capa própria e título próprio, cada vídeo tem quatro diferenças reais em vez de uma. <strong>É essa margem que a gente não abre mão</strong> — e se algum dia a escolha for entre publicar mais rápido ou manter as quatro, mantém as quatro.</p>
+  </div>
+</section>
+
+<section id="fazer">
+  <div class="sec-head"><span class="sec-mark">A LISTA</span><h2>O que muda na prática</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Quando</th><th>O quê</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Agora</strong></td><td>Trocar o gancho dos vídeos 04 e 06 para <code>for D&amp;D Nights</code>. Já corrigido no documento de upload</td></tr>
+        <tr><td><strong>Agora</strong></td><td>Tirar o "30 Min" do título do Zé Sereno — o vídeo tem 22:31 e a promessa não fecha</td></tr>
+        <tr><td><strong>Este lote</strong></td><td>Juntar os sets E, F e G num pool único e montar com <code>-e 4</code>, <code>-e 5</code>, <code>-e 6</code></td></tr>
+        <tr><td><strong>Antes do vídeo 07</strong></td><td>Escrever a lista de cenas do Amber Lantern — o gargalo agora é achar cena, não gerar faixa</td></tr>
+        <tr><td><strong>Antes do próximo canal</strong></td><td>Definir nicho, subnicho, micro nicho, o que vende e a estrutura <strong>antes</strong> de gerar a primeira faixa</td></tr>
+        <tr><td><strong>Para os mentorados</strong></td><td>A ordem de produção é título → público → set → ambiência. Nunca o contrário</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="tag">O que não muda</span>
+    <p>Registro de obra e fonograma antes de publicar, filiação à associação, e a ponte YouTube→Spotify. Nada disso está no método dele porque a operação dele não precisa — <strong>a nossa é o inverso: o catálogo é o ativo, o canal é o funil.</strong></p>
+  </div>
+</section>
+
+<footer>
+  Propulse · o método do título · setembro de 2026
+</footer>
+
+</div>

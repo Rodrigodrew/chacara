@@ -53,17 +53,20 @@ uso: $0 -d <pasta> (-i capa.png | -v loop.mp4) [opcoes]
   -t  gancho da descricao (1a linha)            (lote: vem do info.txt)
   -s  link do perfil no Spotify
   -r  arquivo com o rodape fixo da descricao
+  -e  semente de embaralhamento (use o numero do video: 1, 2, 3...)
+      A mesma pasta de faixas rende varios videos, cada um com ordem
+      diferente e abrindo com uma faixa diferente.
 TXT
   exit 1
 }
 
-while getopts "d:i:v:a:b:x:l:o:B:t:s:r:D:p:h" opt; do
+while getopts "d:i:v:a:b:x:l:o:B:t:s:r:D:p:e:h" opt; do
   case $opt in
     d) DIR="$OPTARG" ;; i) IMG="$OPTARG" ;; v) LOOP="$OPTARG" ;;
     a) AMB="$OPTARG" ;; b) AMB_DB="$OPTARG" ;; x) XF="$OPTARG" ;;
     l) LUFS="$OPTARG" ;; o) OUT="$OPTARG" ;; B) LOTE="$OPTARG" ;;
     t) TITULO="$OPTARG" ;; s) SPOTIFY="$OPTARG" ;; r) RODAPE="$OPTARG" ;;
-    D) ALVO="$OPTARG" ;; p) PRE="$OPTARG" ;;
+    D) ALVO="$OPTARG" ;; p) PRE="$OPTARG" ;; e) EMB="$OPTARG" ;;
     *) usage ;;
   esac
 done
@@ -98,6 +101,23 @@ montar_um() {
   local n=${#TRACKS[@]}
   [ "$n" -gt 0 ] || { echo "!! nenhuma faixa em '$dir', pulando"; return 1; }
   echo ">> $n faixas em $(basename "$dir")"
+
+  # --- embaralhamento deterministico por semente ---------------------------
+  #   Mesma pasta, videos diferentes. A semente decide qual faixa abre
+  #   (nunca a mesma entre videos consecutivos) e a ordem das demais.
+  #   Deterministico: a mesma semente sempre reproduz o mesmo set.
+  if [ -n "$EMB" ] && [ "$n" -gt 1 ]; then
+    local ini=$(( EMB % n )) i
+    local -a RESTO=() NOVA=()
+    NOVA+=("${TRACKS[$ini]}")
+    for ((i=0; i<n; i++)); do
+      [ "$i" -ne "$ini" ] && RESTO+=("${TRACKS[$i]}")
+    done
+    mapfile -t RESTO < <(printf '%s\n' "${RESTO[@]}" | shuf --random-source=<(yes "$EMB" 2>/dev/null))
+    NOVA+=("${RESTO[@]}")
+    TRACKS=("${NOVA[@]}")
+    echo ">> ordem embaralhada (semente $EMB) - abre com $(basename "${TRACKS[0]}")"
+  fi
 
   # --- alonga o set repetindo as faixas ate a duracao alvo -----------------
   #   Cada passagem usa uma ordem diferente (rotacao, invertida nas impares)

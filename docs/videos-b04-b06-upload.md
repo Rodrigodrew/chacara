@@ -13,6 +13,13 @@ estrutura, a faixa de abertura cheia e o `-p 3` na montagem.
 **O que muda:** só o cenário, dentro do mesmo mundo. A mesa antes da viagem, a
 taverna depois da batalha, a estalagem na estrada.
 
+> **Correção de 09/09.** A primeira versão deste documento variava o gancho do
+> título — "for D&D Sessions" no vídeo 04 e "for Tabletop RPG" no 06. Isso quebra
+> a regra que a aula do Will deixou clara: *quando uma estrutura funciona, você
+> repete e muda só duas palavras*. Cada gancho diferente pede ao algoritmo uma
+> classificação diferente. **`for D&D Nights` é o gancho validado e agora é parte
+> fixa;** só a cena depois do travessão muda.
+
 **O Set 4 (scriptorium e estudo) sai da fila.** Continua bom; volta depois que
 estas três variações forem medidas. Quando o algoritmo acabou de validar um
 padrão, alimentar o padrão vale mais do que diversificar.
@@ -60,6 +67,20 @@ Marque **Instrumental** e cole o bloco de estrutura no campo de letra mesmo assi
 Vinte faixas a 3 minutos fecham a hora; se as suas saírem em 2m30, gere mais
 quatro ou cinco por set. Ao usar **Extend**, rode o **Get Whole Song** depois.
 
+### As 60 faixas são um pool, não três sets
+
+As três séries usam o mesmo Bloco C, o mesmo Exclude e o mesmo cluster. Elas são
+compatíveis entre si — então **junte tudo numa pasta só, `pool-rpg`**, e monte cada
+vídeo com uma semente diferente (`-e 4`, `-e 5`, `-e 6`).
+
+Cada semente produz uma ordem própria e **abre com uma faixa diferente**, que é o
+que importa: quase ninguém ouve a hora inteira, então a faixa que fechava um vídeo
+vira a abertura do outro e o público não percebe repetição. É determinístico — a
+mesma semente reconstrói o mesmo vídeo se você precisar.
+
+**Esse pool rende de dez a quinze vídeos, não três.** O que diferencia um do outro
+é título, capa, ambiência e ordem — quatro variáveis reais, não uma.
+
 ---
 ---
 
@@ -71,7 +92,7 @@ ninguém tem pressa de ir dormir. É o mesmo grupo do vídeo 03, uma hora antes.
 ## Título
 
 ```
-Fantasy Tavern Ambience for D&D Sessions — The Night Before the Road | 1 Hour
+Fantasy Tavern Ambience for D&D Nights — The Night Before the Road | 1 Hour
 ```
 
 ## Faixas — Bloco C em todas; **Bloco de abertura na E01**
@@ -165,7 +186,7 @@ meio, tilintar ocasional de canecas. No Freesound procure por
 ## Montagem
 
 ```
-./montar-playlist.sh -d faixas04 -i capa4.png -a ambiencia4.wav -b -26 -x 4 -p 3 \
+./montar-playlist.sh -d pool-rpg -i capa4.png -a ambiencia4.wav -b -26 -x 4 -p 3 -e 4 \
   -t "The map is open, the horses leave at dawn, and nobody is in a hurry to sleep." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-04.mp4
 ```
@@ -354,7 +375,7 @@ para −22 dB e mantenha a conversa em −30 dB. Busque `heavy rain on roof`,
 ## Montagem
 
 ```
-./montar-playlist.sh -d faixas05 -i capa5.png -a ambiencia5.wav -b -24 -x 4 -p 3 \
+./montar-playlist.sh -d pool-rpg -i capa5.png -a ambiencia5.wav -b -24 -x 4 -p 3 -e 5 \
   -t "They came back. Everyone is inside, the fire is high, and the rain has not stopped." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-05.mp4
 ```
@@ -452,7 +473,7 @@ de 1,7% para 1,3% veio do texto na capa ou da mudança no mix de tráfego.
 ## Título
 
 ```
-Fantasy Tavern Ambience for Tabletop RPG — The Roadside Inn at Night | 1 Hour
+Fantasy Tavern Ambience for D&D Nights — The Roadside Inn at Night | 1 Hour
 ```
 
 ## Faixas — Bloco C em todas; **Bloco de abertura na G01**
@@ -547,7 +568,7 @@ outros: use `-b -24`. Busque `low fire embers`, `wind through trees night`,
 ## Montagem
 
 ```
-./montar-playlist.sh -d faixas06 -i capa6.png -a ambiencia6.wav -b -24 -x 4 -p 3 \
+./montar-playlist.sh -d pool-rpg -i capa6.png -a ambiencia6.wav -b -24 -x 4 -p 3 -e 6 \
   -t "A light off the road, two rooms, one fire. Morning is a long way off." \
   -s "SEU_LINK_SPOTIFY" -o amber-lantern-06.mp4
 ```
