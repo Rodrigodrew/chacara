@@ -6,18 +6,54 @@ continua no ar e não se toca nele. Estes são os doze seguintes.
 
 ---
 
+## O que mudou depois do ebook
+
+A primeira versão deste documento tinha os doze títulos **na mesma estrutura**.
+O ebook do Will proíbe isso na regra 2: *nunca repita a mesma estrutura completa
+em mais de 30% dos vídeos — canibalização mata o canal*. Doze de doze é 100%.
+
+Refiz em **quatro estruturas, três vídeos cada — 25% por estrutura**, dentro do
+limite. As quatro saíram do guia de decisão rápida do próprio ebook, cruzando
+*canal novo (0–1K inscritos)* com *nostalgia / vintage / clássico*, que é
+exatamente onde o Zé Sereno está.
+
+Também entrou o **vocabulário do público** (regra 5). Os concorrentes escrevem
+**MODÃO**, não "modas raiz" — e usam emoji no título. Eu tinha "Modas Raiz" em
+doze de doze e nenhum emoji.
+
+### Isto é um teste, não uma troca
+
+O Grupo A é a estrutura que já está fazendo 3,6% de CTR no ar. Ele fica como
+**controle**. Os outros três grupos testam alternativas. Depois de medir, a
+vencedora vira a estrutura principal — sempre respeitando o teto de 30%.
+
+### Uma nota sobre quando medir
+
+O ebook manda medir **VPH nas primeiras 48 horas** (regra 6). Eu tinha dito
+"nada antes de 7 dias". As duas coisas convivem, e a diferença importa:
+
+- **Comparar títulos entre si aos 2 dias é válido** — todos recebem o mesmo
+  empurrão inicial do algoritmo, então ele vira constante e some da conta.
+- **Decidir que um vídeo é vencedor e replicá-lo aos 2 dias não é** — foi
+  exatamente isso que me fez mandar produzir três vídeos em cima de um pico.
+
+Então: aos 2 dias você compara as quatro estruturas entre si. Aos 7 dias você
+decide qual replicar.
+
+---
+
 ## Antes de subir o primeiro
 
 **Um por semana.** Doze vídeos é um trimestre inteiro de calendário — programe
 tudo de uma vez no Studio e não olhe mais. Publicar em lote é o caminho mais
 curto para repetir o que matou os vídeos 04, 05 e 06 do Amber Lantern.
 
-**A ordem importa.** Eles estão listados do mais próximo do título que funcionou
-para o mais distante. Os três primeiros são quase o mesmo vídeo com outra roupa —
-é assim que se alimenta um padrão que o algoritmo acabou de aprender.
+**Alterne os grupos.** Não suba os três do Grupo A seguidos. A ordem sugerida
+abaixo já intercala: A, B, C, D, A, B, C, D, A, B, C, D.
 
-**Sem duração no título.** Nem "1 Hora", nem "60 Min". O título que está fazendo
-3,6% de CTR não tem, e essa é a evidência que vale.
+**Duração no título só no Grupo D.** A regra 8 do ebook diz que duração funciona
+como promessa de valor, mas nem todo nicho precisa. Os títulos que estão no ar
+não têm, e os concorrentes têm — então o Grupo D é justamente esse teste, isolado.
 
 ---
 
@@ -50,25 +86,27 @@ viola caipira instrumental, música da roça, toada sertaneja, sertanejo antigo,
 viola de dez cordas, música do interior, [PALAVRA DO VÍDEO], Zé Sereno
 ```
 
-Palavra de cada vídeo: *café da manhã · café da manhã · fim de tarde · anoitecer ·
-almoço em família · dia de chuva · fim da lida · trabalho na roça · domingo ·
-fogão a lenha · música para dormir · festa junina*
+Palavra de cada vídeo: *café da manhã · fogão a lenha · rádio de pilha · café coado ·
+fim de tarde · varanda · domingo na roça · dia de chuva · música para dormir ·
+festa junina · fim da lida · trabalho na roça*
+
+**Acrescente sempre `modão`** — é a palavra que os concorrentes usam e que estava
+faltando em tudo que eu tinha entregue.
 
 ---
 ---
 
-# 02 · Viola e Sanfona ao Amanhecer na Roça
+# 02 · Grupo A · Estrutura 40
 
 ```
-Viola e Sanfona ao Amanhecer na Roça — Modas Raiz para Tomar Café
+Viola Caipira ao Amanhecer na Roça — Modão de Viola para Tomar Café
 ```
 
-**É este que leva a versão de uma hora.** É o mais próximo do vídeo que está
-funcionando: muda o instrumento e o lugar, mantém o resto.
+**É este que leva a versão de uma hora.** É o mais próximo do título que está no ar — muda só o lugar e troca "Modas Raiz" por **Modão**, que é a palavra que o público usa.
 
 ```
 O galo cantou faz tempo e a neblina ainda não levantou do pasto. Uma hora de
-viola e sanfona para o café da manhã na roça, sem pressa nenhuma.
+viola caipira e modão para o café da manhã na roça, sem pressa nenhuma.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
@@ -77,219 +115,178 @@ TRACKLIST
 ```
 *(+ rodapé fixo)*
 
-**Capa:** Curral ao amanhecer visto de dentro da porteira, neblina baixa cobrindo
-o pasto, o primeiro sol laranja atrás do eucalipto. Uma viola encostada no
-mourão de madeira, em primeiro plano desfocado.
+**Capa:** Curral ao amanhecer visto de dentro da porteira, neblina baixa cobrindo o pasto, o primeiro sol laranja atrás do eucalipto. Uma viola encostada no mourão de madeira, em primeiro plano desfocado.
 
 ---
 
-# 03 · Viola Caipira ao Amanhecer no Sítio
+# 03 · Grupo B · Estrutura 02
 
 ```
-Viola Caipira ao Amanhecer no Sítio — Modas Raiz para o Café da Manhã
+Modão de Viola pra se sentir numa Cozinha de Fogão a Lenha | Manhã de Inverno 🔥
 ```
 
-*"Café da manhã" aparece nas buscas que o Studio mostrou na aba Tendências. Este
-título vai atrás dela de propósito.*
+Nostalgia geográfica com ambiente. O "pra se sentir em" é o que faz o ouvinte clicar para viajar no tempo.
 
 ```
 A leiteira começou a chiar no fogão e o cheiro de café tomou a cozinha inteira.
-Uma hora de viola caipira e modas raiz para o café da manhã.
+Uma hora de modão de viola para a manhã fria.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Cozinha de sítio ao amanhecer, leiteira de ágata no fogão de lenha
-soltando vapor, pão caseiro cortado na tábua, luz dourada entrando pela janela
-pequena à esquerda.
+**Capa:** Cozinha de sítio ao amanhecer, leiteira de ágata no fogão de lenha soltando vapor, pão caseiro cortado na tábua, luz dourada entrando pela janela pequena à esquerda.
 
 ---
 
-# 04 · Viola Caipira ao Entardecer na Fazenda
+# 04 · Grupo C · Estrutura 39
 
 ```
-Viola Caipira ao Entardecer na Fazenda — Modas Raiz para Descansar
+Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Viola Caipira Raiz
 ```
+
+Gatilho geracional. Conecta a música a uma memória de família — o mais forte do lote para este nicho.
+
+```
+Aquele rádio de pilha em cima da geladeira, tocando baixinho a manhã inteira.
+Uma hora de modão de viola raiz, como se tocava antigamente.
+
+Ouça o álbum completo no Spotify: [SEU LINK]
+
+TRACKLIST
+[COLE O CONTEÚDO DE tracklist.txt]
+```
+*(+ rodapé fixo)*
+
+**Capa:** Rádio de pilha antigo, de plástico amarelado, em cima de uma prateleira de madeira numa cozinha de sítio. Antena puxada, luz de manhã entrando de lado, parede caiada descascando ao fundo.
+
+---
+
+# 05 · Grupo D · Estrutura 28
+
+```
+Café Coado, Viola e Nenhuma Pressa | 1 Hora de Modão de Viola | Modas Inéditas
+```
+
+Hook na linguagem do público + duração + tempero. **Este grupo é o teste da duração no título** — os títulos no ar não têm, os concorrentes têm.
+
+```
+Café coado no pano, a viola em cima da mesa e a manhã inteira pela frente.
+Uma hora de modas inéditas, gravadas para este canal.
+
+Ouça o álbum completo no Spotify: [SEU LINK]
+
+TRACKLIST
+[COLE O CONTEÚDO DE tracklist.txt]
+```
+*(+ rodapé fixo)*
+
+**Capa:** Mesa de madeira muito gasta vista de cima, xícara de ágata com café preto fumegando, coador de pano pendurado ao lado, uma viola caipira encostada na cadeira. Luz dourada de manhã, cantos escuros.
+
+---
+
+# 06 · Grupo A · Estrutura 40
+
+```
+Viola Caipira ao Entardecer na Fazenda — Modão de Viola para Descansar
+```
+
+Segunda do grupo controle. Mesma forma, outro momento do dia.
 
 ```
 O gado já voltou pro curral e o sol está baixando atrás do eucalipto. Uma hora
-de viola caipira e modas raiz para o fim da tarde.
+de viola caipira e modão para o fim da tarde.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Pasto ao entardecer com o gado voltando em fila, silhuetas contra o céu
-alaranjado, uma porteira de madeira aberta em primeiro plano, poeira dourada no ar.
+**Capa:** Pasto ao entardecer com o gado voltando em fila, silhuetas contra o céu alaranjado, uma porteira de madeira aberta em primeiro plano, poeira dourada no ar.
 
 ---
 
-# 05 · Viola e Violão ao Anoitecer na Varanda
+# 07 · Grupo B · Estrutura 02
 
 ```
-Viola e Violão ao Anoitecer na Varanda — Modas Raiz para o Fim do Dia
+Moda de Viola pra se sentir numa Varanda de Fazenda | Fim de Tarde no Interior 🌅
 ```
+
+Mesmo molde do vídeo 03, outro ambiente e outro momento do dia.
 
 ```
 A cadeira de balanço na varanda, o chinelo no chão e o dia inteiro nas costas.
-Uma hora de viola e violão para terminar o dia devagar.
+Uma hora de moda de viola para terminar o dia devagar.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Varanda de casa de fazenda ao anoitecer, cadeira de balanço de madeira
-vazia, um violão encostado na parede caiada, lampião aceso, o céu azul-escuro
-com as últimas luzes no horizonte.
+**Capa:** Varanda de casa de fazenda ao anoitecer, cadeira de balanço de madeira vazia, um violão encostado na parede caiada, lampião aceso, o céu azul-escuro com as últimas luzes no horizonte.
 
 ---
 
-# 06 · Viola Caipira ao Meio-Dia no Terreiro
+# 08 · Grupo C · Estrutura 39
 
 ```
-Viola Caipira ao Meio-Dia no Terreiro — Modas Raiz para o Almoço em Família
+Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã | Sertanejo Raiz
 ```
 
+Segunda do gatilho geracional, com o domingo como âncora temporal.
+
 ```
-Meio-dia no terreiro, a mesa posta debaixo da mangueira e todo mundo chegando da
-roça. Uma hora de viola caipira e modas raiz para o almoço em família.
+Domingo de manhã na casa da vó, a mesa posta e ninguém com hora para sair.
+Uma hora de moda de viola raiz, do jeito que tocava naquela casa.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Mesa comprida de madeira posta debaixo de uma mangueira, toalha de
-chita, panelas de ágata, luz forte de meio-dia filtrada pelas folhas, sombra
-rendada sobre a mesa.
+**Capa:** Mesa de domingo numa casa de interior, toalha de chita, bule de café, bolo de fubá cortado, cadeiras de palha vazias em volta. Luz clara de manhã, janela aberta ao fundo.
 
 ---
 
-# 07 · Viola Caipira na Tarde de Chuva no Sítio
+# 09 · Grupo D · Estrutura 28
 
 ```
-Viola Caipira na Tarde de Chuva no Sítio — Modas Raiz para Ficar em Casa
+Cheiro de Chuva na Telha de Barro | 1 Hora de Moda de Viola Raiz | Só Instrumental
 ```
+
+Hook sensorial. "Cheiro de chuva na telha" é vocabulário do público, não do criador.
 
 ```
 Choveu a tarde inteira e ninguém saiu de casa. A água batendo na telha de barro
-é o melhor barulho que existe. Uma hora de viola caipira para o dia de chuva.
+é o melhor barulho que existe. Uma hora de moda de viola para o dia de chuva.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Janela de sítio vista de dentro, chuva escorrendo no vidro, telhado de
-barro molhado e o pasto verde borrado ao fundo, uma xícara de café fumegando no
-parapeito.
-
----
-
-# 08 · Viola e Sanfona ao Entardecer no Curral
-
-```
-Viola e Sanfona ao Entardecer no Curral — Modas Raiz para o Fim da Lida
-```
-
-```
-A lida acabou, a botina está na porta e ainda dá tempo de uma viola antes da
-janta. Uma hora de viola e sanfona para descansar do dia.
-
-Ouça o álbum completo no Spotify: [SEU LINK]
-
-TRACKLIST
-[COLE O CONTEÚDO DE tracklist.txt]
-```
-
-**Capa:** Um par de botinas gastas e um chapéu de couro pendurado num prego, ao
-lado da porta de uma casa de fazenda, luz baixa de fim de tarde entrando de lado,
-o curral desfocado ao fundo.
+**Capa:** Janela de sítio vista de dentro, chuva escorrendo no vidro, telhado de barro molhado e o pasto verde borrado ao fundo, uma xícara de café fumegando no parapeito.
 
 ---
 
-# 09 · Viola Caipira ao Amanhecer no Cafezal
+# 10 · Grupo A · Estrutura 40
 
 ```
-Viola Caipira ao Amanhecer no Cafezal — Modas Raiz para Trabalhar
+Viola Caipira na Noite Fria do Sítio — Modas Raiz para Dormir
 ```
 
-```
-Cerração no cafezal, o balaio nas costas e o dia inteiro pela frente. Uma hora
-de viola caipira e modas raiz para acompanhar o trabalho.
-
-Ouça o álbum completo no Spotify: [SEU LINK]
-
-TRACKLIST
-[COLE O CONTEÚDO DE tracklist.txt]
-```
-
-**Capa:** Fileiras de pés de café cobertas de cerração no começo da manhã, um
-balaio de vime apoiado no chão entre as fileiras, o sol ainda branco atravessando
-a neblina.
-
----
-
-# 10 · Viola e Violão no Domingo de Manhã na Roça
-
-```
-Viola e Violão no Domingo de Manhã na Roça — Modas Raiz para Descansar
-```
-
-```
-Domingo de manhã é o único dia em que a roça acorda devagar. Uma hora de viola e
-violão para não fazer nada e não dever satisfação a ninguém.
-
-Ouça o álbum completo no Spotify: [SEU LINK]
-
-TRACKLIST
-[COLE O CONTEÚDO DE tracklist.txt]
-```
-
-**Capa:** Rede armada entre duas árvores no quintal de uma casa de sítio, manhã
-clara de sol, um chapéu de palha caído na grama, roupa branca no varal ao fundo.
-
----
-
-# 11 · Viola Caipira na Beira do Fogão a Lenha
-
-```
-Viola Caipira na Beira do Fogão a Lenha — Modas Raiz para Aquecer a Casa
-```
-
-```
-A lenha estalando, o bule esquentando e a noite fria do lado de fora. Uma hora
-de viola caipira e modas raiz para aquecer a casa.
-
-Ouça o álbum completo no Spotify: [SEU LINK]
-
-TRACKLIST
-[COLE O CONTEÚDO DE tracklist.txt]
-```
-
-**Capa:** Fogão de lenha aceso visto de perto, chama viva na boca, bule de ágata
-preto em cima, lenha empilhada ao lado, toda a luz da imagem vindo do fogo, resto
-da cozinha em sombra quente.
-
----
-
-# 12 · Viola Caipira na Noite Fria da Fazenda
-
-```
-Viola Caipira na Noite Fria da Fazenda — Modas Raiz para Dormir
-```
-
-*Este é o mais distante do padrão — é teste de outro público, o de sono. Deixe-o
-por último entre os de rotina e observe a retenção com atenção.*
+Terceira e última do grupo controle. Testa também outro público — o de sono — dentro da estrutura que já funciona.
 
 ```
 A casa dormiu, o fogo virou brasa e ficou só o grilo e a viola. Uma hora de
@@ -300,37 +297,81 @@ Ouça o álbum completo no Spotify: [SEU LINK]
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Interior escuro de casa de fazenda à noite, apenas a brasa do fogão
-iluminando fraco, uma viola encostada na parede, janela aberta com a noite
-azul-escura e uma lua pequena ao fundo.
+**Capa:** Interior escuro de casa de fazenda à noite, apenas a brasa do fogão iluminando fraco, uma viola encostada na parede, janela aberta com a noite azul-escura e uma lua pequena ao fundo.
 
 ---
 
-# 13 · Viola e Sanfona na Festa do Interior
+# 11 · Grupo B · Estrutura 02
 
 ```
-Viola e Sanfona na Festa do Interior — Modas Raiz para Animar a Casa
+Sertanejo Raiz pra se sentir num Terreiro de Catira | Noite de Festa na Roça 🪕
 ```
 
-*O único animado do lote. Serve de contraponto: se ele render, existe um segundo
-público no canal e vale abrir uma série.*
+O único animado do lote. Se render, existe um segundo público no canal e vale abrir uma série.
 
 ```
 Festa no arraial, a sanfona puxando e a poeira do terreiro subindo. Uma hora de
-viola e sanfona para animar a casa.
+sertanejo raiz para animar a casa.
 
 Ouça o álbum completo no Spotify: [SEU LINK]
 
 TRACKLIST
 [COLE O CONTEÚDO DE tracklist.txt]
 ```
+*(+ rodapé fixo)*
 
-**Capa:** Terreiro de festa junina à noite, bandeirinhas de papel cruzando o
-enquadramento, fogueira acesa ao fundo desfocada, uma sanfona apoiada num banco
-de madeira em primeiro plano.
+**Capa:** Terreiro de festa junina à noite, bandeirinhas de papel cruzando o enquadramento, fogueira acesa ao fundo desfocada, uma sanfona apoiada num banco de madeira em primeiro plano.
 
 ---
+
+# 12 · Grupo C · Estrutura 39
+
+```
+Viola Caipira Que Seu Pai Escutava Voltando da Roça | Modão Antigo
+```
+
+Terceira do gatilho geracional. Fecha o trio pai / avô / vó.
+
+```
+A lida acabou, a botina está na porta e ainda dá tempo de uma viola antes da
+janta. Uma hora de viola caipira e modão antigo.
+
+Ouça o álbum completo no Spotify: [SEU LINK]
+
+TRACKLIST
+[COLE O CONTEÚDO DE tracklist.txt]
+```
+*(+ rodapé fixo)*
+
+**Capa:** Um par de botinas gastas e um chapéu de couro pendurado num prego, ao lado da porta de uma casa de fazenda, luz baixa de fim de tarde entrando de lado, o curral desfocado ao fundo.
+
+---
+
+# 13 · Grupo D · Estrutura 28
+
+```
+A Roça Acorda Antes do Sol | 1 Hora de Modão Raiz | Viola e Sanfona
+```
+
+Fecha o teste de duração. Tempero diferente dos outros dois do grupo, como a regra 7 pede.
+
+```
+Cerração no cafezal, o balaio nas costas e o dia inteiro pela frente. Uma hora
+de modão raiz com viola e sanfona.
+
+Ouça o álbum completo no Spotify: [SEU LINK]
+
+TRACKLIST
+[COLE O CONTEÚDO DE tracklist.txt]
+```
+*(+ rodapé fixo)*
+
+**Capa:** Fileiras de pés de café cobertas de cerração no começo da manhã, um balaio de vime apoiado no chão entre as fileiras, o sol ainda branco atravessando a neblina.
+
+---
+
 ---
 
 ## Bloco-base das capas
@@ -369,12 +410,22 @@ ROÇA**, **FOGÃO A LENHA**, **FESTA DO INTERIOR**.
 
 ## O que medir, e quando
 
-**Nada antes de 7 dias.** Foi ler um vídeo com 2 dias de vida que me fez mandar
-produzir três vídeos em cima de um pico de lançamento.
-
-| Depois de 7 dias | O que olhar |
+| Aos 2 dias | Compare as quatro estruturas entre si |
 |---|---|
-| Views/dia do vídeo novo | Contra os ~72/dia do vídeo 01, não contra a média |
-| Views/dia do vídeo 01 | Se cair quando o novo subir, os dois estão competindo |
-| Horas de exibição do canal | A métrica que não se move com a mudança de contagem |
+| VPH (views por hora) | Todos receberam o mesmo empurrão inicial, então ele vira constante e some da conta. É a regra 6 do ebook |
+| CTR por grupo | Qual estrutura faz a pessoa clicar |
+
+| Aos 7 dias | Decida o que replicar |
+|---|---|
+| Views/dia do vídeo novo | Contra os ~72/dia do vídeo 01, não contra a média do canal |
+| Views/dia do vídeo 01 | Se cair quando o novo subir, os dois estão competindo pela mesma entrega |
+| Horas de exibição do canal | A métrica que não se move com a mudança de contagem de views |
 | Conversão em inscrito | 0,24% hoje. É o gargalo real, não as horas |
+
+**A diferença entre as duas tabelas importa.** Comparar títulos entre si aos 2
+dias é válido. Declarar um vencedor e replicá-lo aos 2 dias não é — foi isso que
+me fez mandar produzir três vídeos em cima de um pico de lançamento.
+
+**Quando uma estrutura vencer:** ela vira a principal, mas **nunca passa de 30%
+dos vídeos do canal**. A regra 2 do ebook é o teto, e ela vale também para a
+vencedora.
