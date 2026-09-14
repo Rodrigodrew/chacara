@@ -40,7 +40,7 @@ No Mac, troque por `/System/Library/Fonts/Supplemental/Times New Roman.ttf` e
 
 # 02 · Grupo A
 
-`Viola Caipira ao Amanhecer na Roça — Modão de Viola para Tomar Café`
+`Modão de Viola Pra Quem Acordava Antes do Sol e Sentia Cheiro de Café 🌿`
 
 ### Prompt da imagem
 
@@ -72,7 +72,7 @@ ffmpeg -i capa02.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 03 · Grupo B
 
-`Modão de Viola pra se sentir numa Cozinha de Fogão a Lenha | Manhã de Inverno 🔥`
+`Modão Raiz Que Traz de Volta o Cheiro do Fogão de Lenha na Manhã Fria 🔥`
 
 ### Prompt da imagem
 
@@ -104,7 +104,7 @@ ffmpeg -i capa03.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 04 · Grupo C
 
-`Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Viola Caipira Raiz`
+`Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Sertanejo das Antigas`
 
 ### Prompt da imagem
 
@@ -136,7 +136,7 @@ ffmpeg -i capa04.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 05 · Grupo D
 
-`Café Coado, Viola e Nenhuma Pressa | 1 Hora de Modão de Viola | Modas Inéditas`
+`Modão Raiz Pra Quem Ainda Toma Café Coado no Pano e Não Tem Pressa ☕`
 
 ### Prompt da imagem
 
@@ -168,7 +168,7 @@ ffmpeg -i capa05.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 06 · Grupo A
 
-`Viola Caipira ao Entardecer na Fazenda — Modão de Viola para Descansar`
+`Modão de Viola Que Faz Lembrar do Gado Voltando no Fim da Tarde 🌾`
 
 ### Prompt da imagem
 
@@ -200,7 +200,7 @@ ffmpeg -i capa06.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 07 · Grupo B
 
-`Moda de Viola pra se sentir numa Varanda de Fazenda | Fim de Tarde no Interior 🌅`
+`Moda de Viola Pra Quem Sente Falta da Cadeira de Balanço na Varanda 🌅`
 
 ### Prompt da imagem
 
@@ -232,7 +232,7 @@ ffmpeg -i capa07.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 08 · Grupo C
 
-`Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã | Sertanejo Raiz`
+`Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã 🌿 Sertanejo Raiz`
 
 ### Prompt da imagem
 
@@ -264,7 +264,7 @@ ffmpeg -i capa08.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 09 · Grupo D
 
-`Cheiro de Chuva na Telha de Barro | 1 Hora de Moda de Viola Raiz | Só Instrumental`
+`Modão Raiz Pra Quem Lembra do Barulho da Chuva na Telha de Barro 🌧️`
 
 ### Prompt da imagem
 
@@ -296,7 +296,7 @@ ffmpeg -i capa09.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 10 · Grupo A
 
-`Viola Caipira na Noite Fria do Sítio — Modas Raiz para Dormir`
+`Modão de Viola Pra Dormir Como Se Dormia na Casa dos Avós 🌙`
 
 ### Prompt da imagem
 
@@ -328,7 +328,7 @@ ffmpeg -i capa10.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 11 · Grupo B
 
-`Sertanejo Raiz pra se sentir num Terreiro de Catira | Noite de Festa na Roça 🪕`
+`Sertanejo Raiz Que Faz Lembrar da Festa no Terreiro Quando a Poeira Subia 🪕`
 
 ### Prompt da imagem
 
@@ -360,7 +360,7 @@ ffmpeg -i capa11.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 12 · Grupo C
 
-`Viola Caipira Que Seu Pai Escutava Voltando da Roça | Modão Antigo`
+`Modão de Viola Que Seu Pai Escutava Voltando da Roça 🌾 Sertanejo das Antigas`
 
 ### Prompt da imagem
 
@@ -392,7 +392,7 @@ ffmpeg -i capa12.jpg -vf "scale=1280:720,eq=contrast=1.12:saturation=1.15" -q:v 
 
 # 13 · Grupo D
 
-`A Roça Acorda Antes do Sol | 1 Hora de Modão Raiz | Viola e Sanfona`
+`Modão Raiz Pra Quem Sabe o Que É Acordar Antes do Sol 🌄`
 
 ### Prompt da imagem
 

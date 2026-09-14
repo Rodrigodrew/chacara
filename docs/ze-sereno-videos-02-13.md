@@ -42,6 +42,24 @@ decide qual replicar.
 
 ---
 
+## Revisão de 14/09 — depois dos três concorrentes
+
+**Os títulos foram reescritos.** Os doze anteriores nomeavam cena e atividade
+(*ao amanhecer na roça para tomar café*). Os três canais que funcionam nomeiam
+**memória e sentimento** (*pra quem acordava antes do sol*). Cena é o que eu vejo
+produzindo; memória é o que ele sente procurando.
+
+**A duração alvo subiu de 1 hora para 1h45.** A correlação mais forte dos três
+canais é duração com faturamento: 77 min → US$ 59/mês, 26 min → US$ 7, 24 min →
+US$ 2. Monte com `-D 105` em vez de `-D 60` — com o pool e o embaralhamento,
+custa o mesmo.
+
+**A cadência sobe para 2 ou 3 por semana.** O que matou os vídeos do Amber
+Lantern foi título, não ritmo. Os dois canais que crescem publicam 5,4 e 8,4 por
+semana.
+
+---
+
 ## Antes de subir o primeiro
 
 **Um por semana.** Doze vídeos é um trimestre inteiro de calendário — programe
@@ -99,7 +117,7 @@ faltando em tudo que eu tinha entregue.
 # 02 · Grupo A · Estrutura 40
 
 ```
-Viola Caipira ao Amanhecer na Roça — Modão de Viola para Tomar Café
+Modão de Viola Pra Quem Acordava Antes do Sol e Sentia Cheiro de Café 🌿
 ```
 
 **É este que leva a versão de uma hora.** É o mais próximo do título que está no ar — muda só o lugar e troca "Modas Raiz" por **Modão**, que é a palavra que o público usa.
@@ -122,7 +140,7 @@ TRACKLIST
 # 03 · Grupo B · Estrutura 02
 
 ```
-Modão de Viola pra se sentir numa Cozinha de Fogão a Lenha | Manhã de Inverno 🔥
+Modão Raiz Que Traz de Volta o Cheiro do Fogão de Lenha na Manhã Fria 🔥
 ```
 
 Nostalgia geográfica com ambiente. O "pra se sentir em" é o que faz o ouvinte clicar para viajar no tempo.
@@ -145,7 +163,7 @@ TRACKLIST
 # 04 · Grupo C · Estrutura 39
 
 ```
-Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Viola Caipira Raiz
+Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Sertanejo das Antigas
 ```
 
 Gatilho geracional. Conecta a música a uma memória de família — o mais forte do lote para este nicho.
@@ -168,7 +186,7 @@ TRACKLIST
 # 05 · Grupo D · Estrutura 28
 
 ```
-Café Coado, Viola e Nenhuma Pressa | 1 Hora de Modão de Viola | Modas Inéditas
+Modão Raiz Pra Quem Ainda Toma Café Coado no Pano e Não Tem Pressa ☕
 ```
 
 Hook na linguagem do público + duração + tempero. **Este grupo é o teste da duração no título** — os títulos no ar não têm, os concorrentes têm.
@@ -191,7 +209,7 @@ TRACKLIST
 # 06 · Grupo A · Estrutura 40
 
 ```
-Viola Caipira ao Entardecer na Fazenda — Modão de Viola para Descansar
+Modão de Viola Que Faz Lembrar do Gado Voltando no Fim da Tarde 🌾
 ```
 
 Segunda do grupo controle. Mesma forma, outro momento do dia.
@@ -214,7 +232,7 @@ TRACKLIST
 # 07 · Grupo B · Estrutura 02
 
 ```
-Moda de Viola pra se sentir numa Varanda de Fazenda | Fim de Tarde no Interior 🌅
+Moda de Viola Pra Quem Sente Falta da Cadeira de Balanço na Varanda 🌅
 ```
 
 Mesmo molde do vídeo 03, outro ambiente e outro momento do dia.
@@ -237,7 +255,7 @@ TRACKLIST
 # 08 · Grupo C · Estrutura 39
 
 ```
-Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã | Sertanejo Raiz
+Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã 🌿 Sertanejo Raiz
 ```
 
 Segunda do gatilho geracional, com o domingo como âncora temporal.
@@ -260,7 +278,7 @@ TRACKLIST
 # 09 · Grupo D · Estrutura 28
 
 ```
-Cheiro de Chuva na Telha de Barro | 1 Hora de Moda de Viola Raiz | Só Instrumental
+Modão Raiz Pra Quem Lembra do Barulho da Chuva na Telha de Barro 🌧️
 ```
 
 Hook sensorial. "Cheiro de chuva na telha" é vocabulário do público, não do criador.
@@ -283,7 +301,7 @@ TRACKLIST
 # 10 · Grupo A · Estrutura 40
 
 ```
-Viola Caipira na Noite Fria do Sítio — Modas Raiz para Dormir
+Modão de Viola Pra Dormir Como Se Dormia na Casa dos Avós 🌙
 ```
 
 Terceira e última do grupo controle. Testa também outro público — o de sono — dentro da estrutura que já funciona.
@@ -306,7 +324,7 @@ TRACKLIST
 # 11 · Grupo B · Estrutura 02
 
 ```
-Sertanejo Raiz pra se sentir num Terreiro de Catira | Noite de Festa na Roça 🪕
+Sertanejo Raiz Que Faz Lembrar da Festa no Terreiro Quando a Poeira Subia 🪕
 ```
 
 O único animado do lote. Se render, existe um segundo público no canal e vale abrir uma série.
@@ -329,7 +347,7 @@ TRACKLIST
 # 12 · Grupo C · Estrutura 39
 
 ```
-Viola Caipira Que Seu Pai Escutava Voltando da Roça | Modão Antigo
+Modão de Viola Que Seu Pai Escutava Voltando da Roça 🌾 Sertanejo das Antigas
 ```
 
 Terceira do gatilho geracional. Fecha o trio pai / avô / vó.
@@ -352,7 +370,7 @@ TRACKLIST
 # 13 · Grupo D · Estrutura 28
 
 ```
-A Roça Acorda Antes do Sol | 1 Hora de Modão Raiz | Viola e Sanfona
+Modão Raiz Pra Quem Sabe o Que É Acordar Antes do Sol 🌄
 ```
 
 Fecha o teste de duração. Tempero diferente dos outros dois do grupo, como a regra 7 pede.

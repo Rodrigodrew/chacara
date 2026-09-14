@@ -1,0 +1,287 @@
+<title>Os Três e Nós</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+a{color:inherit;text-decoration-color:var(--hue);text-underline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:60ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:24px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+.tempo{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:32px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:22px}
+
+/* roteiro de fala */
+.fala{border-left:3px solid var(--ink);background:var(--surface);padding:15px 18px;margin:20px 0;font-size:17px;line-height:1.55}
+.fala .lbl{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.fala p{font-style:italic;margin-bottom:.6em} .fala p:last-child{margin-bottom:0}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:22px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn{border-left-color:var(--ocre)} .note.warn .tag{color:var(--ocre)}
+.note.good{border-left-color:var(--sea)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+.tw{overflow-x:auto;margin:22px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:600px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+.tbl-cap{caption-side:top;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+         text-transform:uppercase;color:var(--ink-2);padding:11px 13px;background:var(--surface);border-bottom:1px solid var(--rule)}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.6em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* grade de modulos na abertura */
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0}
+.mod{background:var(--surface);padding:15px 16px}
+.mod .n{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--hue);display:block;margin-bottom:7px}
+.mod .t{font-family:var(--display);font-size:15px;line-height:1.25;display:block;margin-bottom:6px}
+.mod .d{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em}
+
+/* o fluxo do dinheiro */
+.fluxo{border:1px solid var(--rule);background:var(--paper);padding:22px 20px;margin:24px 0;overflow-x:auto}
+.fluxo svg{display:block;width:100%;min-width:600px;height:auto}
+.fluxo .cx{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.fluxo .cx-a{fill:var(--surface);stroke:var(--sea);stroke-width:2}
+.fluxo .cx-b{fill:var(--surface);stroke:var(--ocre);stroke-width:2}
+.fluxo .rot{fill:var(--ink);font-family:var(--serif);font-size:13.5px}
+.fluxo .rot-s{fill:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+.fluxo .via{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.fluxo .via-a{stroke:var(--sea);stroke-width:2;fill:none}
+.fluxo .via-b{stroke:var(--ocre);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.fluxo .pta{fill:var(--sea)} .fluxo .ptb{fill:var(--ocre)} .fluxo .pt{fill:var(--ink-2)}
+
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+.oferta{border:2px solid var(--ink);background:var(--surface);padding:24px 22px;margin:26px 0}
+.oferta h4{font-family:var(--display);font-size:19px;margin:0 0 10px}
+.oferta .preco{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--hue);margin-top:12px;display:block}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .tempo{margin-left:0} }
+
+.bloco-est{display:grid;grid-template-columns:1fr;gap:16px;margin:22px 0}
+@media(min-width:820px){ .bloco-est{grid-template-columns:1fr 1fr} }
+.est{border:1px solid var(--rule);background:var(--surface);padding:17px 18px}
+.est.b{border-left:3px solid var(--sea)} .est.a{border-left:3px solid var(--ocre)}
+.est .lb{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+   text-transform:uppercase;margin-bottom:10px}
+.est.b .lb{color:var(--sea)} .est.a .lb{color:var(--ocre)}
+.est code.grande{display:block;font-size:15px;line-height:1.5;background:var(--surface-2);
+   padding:10px 12px;border-radius:2px;margin-bottom:10px;word-break:break-word}
+.est p{font-size:15.5px;color:var(--ink-2);margin:0}
+td.erro{color:var(--ocre);text-decoration:line-through}
+td.ok{color:var(--sea);font-weight:600}
+td.b{color:var(--sea)} td.a{color:var(--ocre)} th.b{color:var(--sea)} th.a{color:var(--ocre)}
+td.win{font-weight:600}
+pre .cmt{color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Análise consolidada · três concorrentes e o Zé Sereno · 14 de setembro de 2026</div>
+  <h1>Os Três <span class="e">e</span> Nós</h1>
+  <p class="dek">Um canal de um ano com 129 vídeos fatura US$ 2 por mês. Outro de quatro meses com 67 fatura US$ 59. A variável que explica isso não é catálogo — e a gente está do lado errado dela.</p>
+  <div class="meta">
+    <span>Canais <b>3 + o nosso</b></span>
+    <span>Ajustes <b>6, em ordem de impacto</b></span>
+    <span>Títulos <b>12 reescritos</b></span>
+  </div>
+</header>
+
+<section id="quadro">
+  <div class="sec-head"><span class="sec-mark">O QUADRO</span><h2>Os quatro lado a lado</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Idade</th><th>Vídeos</th><th>Inscritos</th><th>Duração</th><th>Views/dia</th><th>US$/mês</th><th>Vídeos/sem</th></tr></thead>
+      <tbody>
+        <tr class="total"><td class="b"><strong>Rancho do Modão</strong></td><td class="num">4 meses</td><td class="num">67</td><td class="num">1.330</td><td class="num win b">77 min</td><td class="num win b">5.736</td><td class="num win b">59</td><td class="num">8,4</td></tr>
+        <tr><td>Chora Viola</td><td class="num">5 semanas</td><td class="num">27</td><td class="num win">2.950</td><td class="num">26 min</td><td class="num">3.213</td><td class="num">7</td><td class="num">5,4</td></tr>
+        <tr><td>SertanejoiaRaiz</td><td class="num">1 ano</td><td class="num win">129</td><td class="num">2.240</td><td class="num">24 min</td><td class="num erro">303</td><td class="num erro">2</td><td class="num">1,0</td></tr>
+        <tr class="total"><td class="a"><strong>Zé Sereno</strong></td><td class="num a">3,5 sem</td><td class="num a">1</td><td class="num a">4</td><td class="num a">22 min</td><td class="num a">55</td><td class="num a">—</td><td class="num a">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure"><em>Faturamento é estimativa do vidIQ, que é imprecisa. O que vale é a ordem de grandeza e a direção — e nisso os três são inequívocos.</em></p>
+</section>
+
+<section id="correlacao">
+  <div class="sec-head"><span class="sec-mark">O ACHADO</span><h2>Duração explica o dinheiro melhor que qualquer outra coisa</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Duração média</th><th>US$ por mês</th></tr></thead>
+      <tbody>
+        <tr class="total"><td class="num win b">77 min</td><td class="num win b">59</td></tr>
+        <tr><td class="num">26 min</td><td class="num">7</td></tr>
+        <tr><td class="num">24 min</td><td class="num">2</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Não é coincidência e tem mecânica: <strong>vídeo mais longo comporta mais intervalos de anúncio por espectador</strong>. O de 77 minutos fatura <strong>8,4 vezes</strong> o de 26 e <strong>29,5 vezes</strong> o de 24.</p>
+  <p class="measure">O Zé Sereno está em <strong>22 minutos</strong> — abaixo dos três, inclusive do que menos fatura.</p>
+</section>
+
+<section id="alerta">
+  <div class="sec-head"><span class="sec-mark">O ALERTA</span><h2>Mais vídeo não é mais audiência</h2></div>
+  <p class="lede measure">O SertanejoiaRaiz tem quase o dobro do catálogo dos outros dois somados e é o que menos alcança. Este é o canal mais instrutivo dos três.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Canal</th><th>Vídeos</th><th>Views por vídeo, por dia</th></tr></thead>
+      <tbody>
+        <tr><td>Chora Viola</td><td class="num">27</td><td class="num win b">119,0</td></tr>
+        <tr><td>Rancho do Modão</td><td class="num">67</td><td class="num win b">85,6</td></tr>
+        <tr class="total"><td>SertanejoiaRaiz</td><td class="num">129</td><td class="num erro">2,3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">Um ano de trabalho, 129 vídeos publicados, <strong>2,3 views por vídeo por dia</strong> e o crescimento de inscritos em <strong>+1,36%</strong> — contra +51% e +196% dos outros dois. O catálogo grande não salvou nada.</p>
+
+  <div class="note warn">
+    <span class="tag">O que ele fez de diferente, e é tudo visível nas capas</span>
+    <p><strong>Não tem identidade visual.</strong> Em 129 vídeos as capas variam entre ilustração de instrumentos sem gente, casais, violeiros idosos, tipografia branca sem serifa, dourada com serifa, com e sem sombra. Parecem 129 canais diferentes.</p>
+    <p style="margin-top:.7em"><strong>Os Shorts são automáticos e fora do assunto.</strong> Vários trazem a marca d'água do OpusClip, e alguns mostram fogos de artifício, plateia de show e uma escadaria de outono — nada a ver com viola. Isso não só não traz ninguém como <strong>suja a classificação do canal</strong>.</p>
+    <p style="margin-top:.7em"><strong>Desacelerou.</strong> Está em ~1 vídeo por semana enquanto os outros dois fazem 5,4 e 8,4.</p>
+    <p style="margin-top:.7em"><em>Ressalva justa:</em> ele tem "Seja membro" ativo, então pode haver receita de assinatura que o vidIQ não enxerga. Mesmo assim, 2,3 views por vídeo por dia é o número que conta.</p>
+  </div>
+</section>
+
+<section id="concordam">
+  <div class="sec-head"><span class="sec-mark">CONSENSO</span><h2>Em que os três concordam</h2></div>
+  <ul class="plain measure">
+    <li><strong>O título nomeia memória ou sentimento, nunca uma cena.</strong> <em>Que aperta o peito · pra quem ainda lembra · que trazem de volta nomes e lugares · relembrar a infância · matar saudades.</em> Nenhum título vencedor dos três descreve o que a câmera veria.</li>
+    <li><strong>Emoji em praticamente todos os títulos</strong>, e temáticos — 🌿 🙏 🎸 ❤️ 🔥.</li>
+    <li><strong>A duração sai do título e vai para a capa.</strong> <em>1 HORA SÓ COM AS MELHORES · 30 MINUTOS DE MODÃO RAIZ · 1 HORA DE MÚSICAS INÉDITAS.</em></li>
+    <li><strong>Rosto humano na capa.</strong> Violeiros idosos, casais, famílias. Os dois que crescem têm gente; o que parou mistura instrumentos sem ninguém.</li>
+    <li><strong>Texto ocupando 40% a 50% do quadro</strong>, sempre.</li>
+    <li><strong>"Das antigas", "modão", "relíquias", "raiz"</strong> — o vocabulário se repete nos três. É o que o público escreve.</li>
+  </ul>
+</section>
+
+<section id="discordam">
+  <div class="sec-head"><span class="sec-mark">DIVERGÊNCIA</span><h2>Onde eles discordam, e o que isso ensina</h2></div>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Questão</th><th>O que os dados mostram</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Shorts</strong></td><td>O Chora Viola faz 389 mil views em 6 Shorts e ganha 84 inscritos/dia. O Rancho tem Shorts fracos e ganha 11/dia — mas fatura 8,4× mais. <strong>Shorts trazem gente, vídeo longo traz dinheiro.</strong> São motores independentes</td></tr>
+        <tr><td><strong>Cadência</strong></td><td>8,4 e 5,4 por semana crescendo; 1,0 por semana parado. <strong>Cadência alta funciona</strong> — desde que o título esteja certo</td></tr>
+        <tr><td><strong>Teto de 30% por estrutura</strong></td><td>O Chora Viola respeita (5 moldes, 25% cada). O Rancho passa de 80% numa só — e fatura mais. <strong>A forma pode repetir; o tempero é que nunca pode</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="ajustes">
+  <div class="sec-head"><span class="sec-mark">OS AJUSTES</span><h2>O que mudar no Zé Sereno, em ordem de impacto</h2></div>
+
+  <div class="note good">
+    <span class="tag">1 · Duração: 22 minutos → 1h45</span>
+    <p>É a variável com a correlação mais forte de todas. Eu vinha dizendo "remonte em uma hora" — <strong>uma hora é o piso, e o concorrente que fatura está em 1h45</strong>. Com as 20 faixas e o embaralhamento, montar 1h45 custa o mesmo que montar uma hora: é só usar <code>-D 105</code>.</p>
+  </div>
+
+  <div class="note good">
+    <span class="tag">2 · Título: trocar cena por memória</span>
+    <p>Meus doze títulos dizem <em>ao amanhecer na roça para tomar café</em>. Os três vencedores dizem <em>pra quem acordava antes do sol</em>. <strong>Cena é o que eu vejo produzindo; memória é o que ele sente procurando.</strong> Os doze reescritos estão na seção seguinte.</p>
+  </div>
+
+  <div class="note good">
+    <span class="tag">3 · Capa: um violeiro recorrente e texto maior</span>
+    <p>Os prompts que te mandei têm objetos e paisagem, <strong>sem gente</strong> — e o canal que não tem gente é o que parou. Acrescentar um violeiro de 60 e poucos anos, chapéu e viola, em todas as doze. O texto sobe de 132px para <strong>160 a 180px com contorno preto</strong>.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">4 · Cadência: 2 a 3 por semana, não 1</span>
+    <p>Minha recomendação de um por semana veio do colapso do Amber Lantern, que eu atribuí à cadência. Os dados dizem que a culpa era do título. <strong>Doze vídeos em 4 a 6 semanas</strong>, não em doze.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">5 · Shorts: sim, mas feitos à mão</span>
+    <p>O Chora Viola prova que funcionam. O SertanejoiaRaiz prova como estragar: <strong>OpusClip automático e imagem genérica de fogos e plateia</strong> não traz ninguém e ainda confunde o algoritmo sobre o que o canal é. Um rosto, uma frase grande, trecho do vídeo longo — nada além disso.</p>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">6 · Não inflar o catálogo</span>
+    <p>129 vídeos levaram a 2,3 views por vídeo por dia. <strong>Os doze que você já produziu são suficientes por seis semanas.</strong> A próxima leva só depois de medir — e com título corrigido, não em cima de volume.</p>
+  </div>
+</section>
+
+<section id="titulos">
+  <div class="sec-head"><span class="sec-mark">REESCRITOS</span><h2>Os doze títulos, agora nomeando memória</h2></div>
+  <p class="measure">Todos abaixo de 100 caracteres, todos com emoji, todos no molde que os três vencedores usam: <strong>[gênero] + que / pra quem + [memória concreta]</strong>.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>#</th><th>Antes <span class="vazio">(cena)</span></th><th>Agora <span class="vazio">(memória)</span></th></tr></thead>
+      <tbody>
+        <tr><td class="num">02</td><td class="erro">ao Amanhecer na Roça — para Tomar Café</td><td class="ok">Modão de Viola Pra Quem Acordava Antes do Sol e Sentia Cheiro de Café 🌿</td></tr>
+        <tr><td class="num">03</td><td class="erro">pra se sentir numa Cozinha de Fogão a Lenha</td><td class="ok">Modão Raiz Que Traz de Volta o Cheiro do Fogão de Lenha na Manhã Fria 🔥</td></tr>
+        <tr><td class="num">04</td><td>Que Seu Avô Ouvia no Rádio de Pilha</td><td class="ok">Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Sertanejo das Antigas</td></tr>
+        <tr><td class="num">05</td><td class="erro">Café Coado, Viola e Nenhuma Pressa</td><td class="ok">Modão Raiz Pra Quem Ainda Toma Café Coado no Pano e Não Tem Pressa ☕</td></tr>
+        <tr><td class="num">06</td><td class="erro">ao Entardecer na Fazenda — para Descansar</td><td class="ok">Modão de Viola Que Faz Lembrar do Gado Voltando no Fim da Tarde 🌾</td></tr>
+        <tr><td class="num">07</td><td class="erro">pra se sentir numa Varanda de Fazenda</td><td class="ok">Moda de Viola Pra Quem Sente Falta da Cadeira de Balanço na Varanda 🌅</td></tr>
+        <tr><td class="num">08</td><td>Que Tocava na Casa da Vó no Domingo</td><td class="ok">Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã 🌿 Sertanejo Raiz</td></tr>
+        <tr><td class="num">09</td><td class="erro">Cheiro de Chuva na Telha de Barro</td><td class="ok">Modão Raiz Pra Quem Lembra do Barulho da Chuva na Telha de Barro 🌧️</td></tr>
+        <tr><td class="num">10</td><td class="erro">na Noite Fria do Sítio — para Dormir</td><td class="ok">Modão de Viola Pra Dormir Como Se Dormia na Casa dos Avós 🌙</td></tr>
+        <tr><td class="num">11</td><td class="erro">pra se sentir num Terreiro de Catira</td><td class="ok">Sertanejo Raiz Que Faz Lembrar da Festa no Terreiro Quando a Poeira Subia 🪕</td></tr>
+        <tr><td class="num">12</td><td>Que Seu Pai Escutava Voltando da Roça</td><td class="ok">Modão de Viola Que Seu Pai Escutava Voltando da Roça 🌾 Sertanejo das Antigas</td></tr>
+        <tr><td class="num">13</td><td class="erro">A Roça Acorda Antes do Sol</td><td class="ok">Modão Raiz Pra Quem Sabe o Que É Acordar Antes do Sol 🌄</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <span class="tag">Três dos doze já estavam certos</span>
+    <p>Os de número <strong>04, 08 e 12</strong> — os do Grupo C, de herança geracional. Não por acaso: aquele grupo foi o único copiado direto do molde que estes canais usam. Os outros nove eu escrevi olhando para a produção, não para quem ouve.</p>
+  </div>
+
+  <p class="measure">A descrição, as tags e o prompt de capa de cada vídeo <strong>continuam valendo</strong> — o que muda é só o título e a linha grande da capa, que passa a repetir o gancho do título.</p>
+</section>
+
+<footer>
+  Propulse · análise consolidada dos três concorrentes · setembro de 2026
+</footer>
+
+</div>

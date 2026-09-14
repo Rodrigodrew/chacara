@@ -27,7 +27,7 @@ viola caipira instrumental · modas de viola · música do interior · Zé Seren
 
 # 02 · Grupo A
 
-`Viola Caipira ao Amanhecer na Roça — Modão de Viola para Tomar Café`
+`Modão de Viola Pra Quem Acordava Antes do Sol e Sentia Cheiro de Café 🌿`
 
 ### Descrição
 
@@ -65,7 +65,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 03 · Grupo B
 
-`Modão de Viola pra se sentir numa Cozinha de Fogão a Lenha | Manhã de Inverno 🔥`
+`Modão Raiz Que Traz de Volta o Cheiro do Fogão de Lenha na Manhã Fria 🔥`
 
 ### Descrição
 
@@ -103,7 +103,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 04 · Grupo C
 
-`Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Viola Caipira Raiz`
+`Modão de Viola Que Seu Avô Ouvia no Rádio de Pilha 🪕 Sertanejo das Antigas`
 
 ### Descrição
 
@@ -141,7 +141,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 05 · Grupo D
 
-`Café Coado, Viola e Nenhuma Pressa | 1 Hora de Modão de Viola | Modas Inéditas`
+`Modão Raiz Pra Quem Ainda Toma Café Coado no Pano e Não Tem Pressa ☕`
 
 ### Descrição
 
@@ -179,7 +179,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 06 · Grupo A
 
-`Viola Caipira ao Entardecer na Fazenda — Modão de Viola para Descansar`
+`Modão de Viola Que Faz Lembrar do Gado Voltando no Fim da Tarde 🌾`
 
 ### Descrição
 
@@ -217,7 +217,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 07 · Grupo B
 
-`Moda de Viola pra se sentir numa Varanda de Fazenda | Fim de Tarde no Interior 🌅`
+`Moda de Viola Pra Quem Sente Falta da Cadeira de Balanço na Varanda 🌅`
 
 ### Descrição
 
@@ -255,7 +255,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 08 · Grupo C
 
-`Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã | Sertanejo Raiz`
+`Moda de Viola Que Tocava na Casa da Vó no Domingo de Manhã 🌿 Sertanejo Raiz`
 
 ### Descrição
 
@@ -293,7 +293,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 09 · Grupo D
 
-`Cheiro de Chuva na Telha de Barro | 1 Hora de Moda de Viola Raiz | Só Instrumental`
+`Modão Raiz Pra Quem Lembra do Barulho da Chuva na Telha de Barro 🌧️`
 
 ### Descrição
 
@@ -331,7 +331,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 10 · Grupo A
 
-`Viola Caipira na Noite Fria do Sítio — Modas Raiz para Dormir`
+`Modão de Viola Pra Dormir Como Se Dormia na Casa dos Avós 🌙`
 
 ### Descrição
 
@@ -369,7 +369,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 11 · Grupo B
 
-`Sertanejo Raiz pra se sentir num Terreiro de Catira | Noite de Festa na Roça 🪕`
+`Sertanejo Raiz Que Faz Lembrar da Festa no Terreiro Quando a Poeira Subia 🪕`
 
 ### Descrição
 
@@ -407,7 +407,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 12 · Grupo C
 
-`Viola Caipira Que Seu Pai Escutava Voltando da Roça | Modão Antigo`
+`Modão de Viola Que Seu Pai Escutava Voltando da Roça 🌾 Sertanejo das Antigas`
 
 ### Descrição
 
@@ -445,7 +445,7 @@ viola caipira, moda de viola, modão, sertanejo raiz, música caipira, viola cai
 
 # 13 · Grupo D
 
-`A Roça Acorda Antes do Sol | 1 Hora de Modão Raiz | Viola e Sanfona`
+`Modão Raiz Pra Quem Sabe o Que É Acordar Antes do Sol 🌄`
 
 ### Descrição
 
