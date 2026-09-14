@@ -1,0 +1,303 @@
+<title>Raio-X do Chora Viola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF8; --surface:#F1EFEA; --surface-2:#E7E3DB;
+  --ink:#14151A; --ink-2:#54525E; --rule:#DAD5CD;
+  --hue:#D31A56; --sea:#0F5F5C; --ocre:#8A5710;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+    --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+    --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121317; --surface:#1A1C22; --surface-2:#22242B;
+  --ink:#EDEBE7; --ink-2:#9B99A4; --rule:#2E3038;
+  --hue:#FF4D7D; --sea:#57C3B8; --ocre:#DFA43F;
+}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px 110px}
+.measure{max-width:66ch}
+p{margin:0 0 1em} strong,b{font-weight:600}
+:focus-visible{outline:2px solid var(--hue);outline-offset:3px}
+a{color:inherit;text-decoration-color:var(--hue);text-underline-offset:3px}
+
+.hero{padding:76px 0 42px;border-bottom:3px solid var(--ink)}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--hue);margin-bottom:20px}
+h1{font-family:var(--display);font-size:clamp(36px,7vw,80px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;margin:0 0 20px}
+h1 .e{color:var(--hue)}
+.dek{font-size:clamp(18px,2.1vw,22px);color:var(--ink-2);max-width:60ch;margin-bottom:26px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 26px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.meta b{color:var(--ink);font-weight:500}
+
+section{padding-top:56px}
+.sec-head{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:24px;flex-wrap:wrap}
+.sec-mark{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--hue);white-space:nowrap}
+.tempo{margin-left:auto;font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:3px 9px;white-space:nowrap}
+h2{font-family:var(--display);font-size:clamp(23px,3.4vw,34px);line-height:1.04;letter-spacing:-.015em;text-transform:uppercase;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-size:18px;margin:32px 0 10px}
+.lede{font-size:20.5px;line-height:1.5;max-width:62ch;margin-bottom:22px}
+
+/* roteiro de fala */
+.fala{border-left:3px solid var(--ink);background:var(--surface);padding:15px 18px;margin:20px 0;font-size:17px;line-height:1.55}
+.fala .lbl{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px}
+.fala p{font-style:italic;margin-bottom:.6em} .fala p:last-child{margin-bottom:0}
+
+.note{border-left:3px solid var(--hue);background:var(--surface);padding:16px 18px;margin:22px 0;font-size:16.5px;line-height:1.55}
+.note .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hue);display:block;margin-bottom:6px}
+.note.warn{border-left-color:var(--ocre)} .note.warn .tag{color:var(--ocre)}
+.note.good{border-left-color:var(--sea)} .note.good .tag{color:var(--sea)}
+.note p:last-child{margin-bottom:0}
+
+.tw{overflow-x:auto;margin:22px 0;border:1px solid var(--rule)}
+table{border-collapse:collapse;width:100%;min-width:600px;background:var(--paper)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:15px;line-height:1.45}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);background:var(--surface);white-space:nowrap}
+td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tr.total td{background:var(--surface);font-weight:600}
+.vazio{color:var(--ink-2)}
+.tbl-cap{caption-side:top;text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.09em;
+         text-transform:uppercase;color:var(--ink-2);padding:11px 13px;background:var(--surface);border-bottom:1px solid var(--rule)}
+
+ul.plain{list-style:none;padding-left:0;margin:0 0 1.1em}
+ul.plain li{padding-left:22px;position:relative;margin-bottom:.6em}
+ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--hue)}
+
+/* grade de modulos na abertura */
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:24px 0}
+.mod{background:var(--surface);padding:15px 16px}
+.mod .n{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;color:var(--hue);display:block;margin-bottom:7px}
+.mod .t{font-family:var(--display);font-size:15px;line-height:1.25;display:block;margin-bottom:6px}
+.mod .d{font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:.04em}
+
+/* o fluxo do dinheiro */
+.fluxo{border:1px solid var(--rule);background:var(--paper);padding:22px 20px;margin:24px 0;overflow-x:auto}
+.fluxo svg{display:block;width:100%;min-width:600px;height:auto}
+.fluxo .cx{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+.fluxo .cx-a{fill:var(--surface);stroke:var(--sea);stroke-width:2}
+.fluxo .cx-b{fill:var(--surface);stroke:var(--ocre);stroke-width:2}
+.fluxo .rot{fill:var(--ink);font-family:var(--serif);font-size:13.5px}
+.fluxo .rot-s{fill:var(--ink-2);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em}
+.fluxo .via{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.fluxo .via-a{stroke:var(--sea);stroke-width:2;fill:none}
+.fluxo .via-b{stroke:var(--ocre);stroke-width:2;stroke-dasharray:5 4;fill:none}
+.fluxo .pta{fill:var(--sea)} .fluxo .ptb{fill:var(--ocre)} .fluxo .pt{fill:var(--ink-2)}
+
+code{font-family:var(--mono);font-size:.87em;background:var(--surface-2);padding:1px 5px;border-radius:2px}
+.oferta{border:2px solid var(--ink);background:var(--surface);padding:24px 22px;margin:26px 0}
+.oferta h4{font-family:var(--display);font-size:19px;margin:0 0 10px}
+.oferta .preco{font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:var(--hue);margin-top:12px;display:block}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-2);text-transform:uppercase}
+@media(max-width:640px){ body{font-size:17px} .hero{padding:50px 0 34px} .tempo{margin-left:0} }
+
+.bloco-est{display:grid;grid-template-columns:1fr;gap:16px;margin:22px 0}
+@media(min-width:820px){ .bloco-est{grid-template-columns:1fr 1fr} }
+.est{border:1px solid var(--rule);background:var(--surface);padding:17px 18px}
+.est.b{border-left:3px solid var(--sea)} .est.a{border-left:3px solid var(--ocre)}
+.est .lb{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+   text-transform:uppercase;margin-bottom:10px}
+.est.b .lb{color:var(--sea)} .est.a .lb{color:var(--ocre)}
+.est code.grande{display:block;font-size:15px;line-height:1.5;background:var(--surface-2);
+   padding:10px 12px;border-radius:2px;margin-bottom:10px;word-break:break-word}
+.est p{font-size:15.5px;color:var(--ink-2);margin:0}
+td.erro{color:var(--ocre);text-decoration:line-through}
+td.ok{color:var(--sea);font-weight:600}
+td.b{color:var(--sea)} td.a{color:var(--ocre)} th.b{color:var(--sea)} th.a{color:var(--ocre)}
+td.win{font-weight:600}
+pre .cmt{color:var(--ink-2)}
+</style>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Concorrente · Sertanejo Raiz Chora Viola Caipira · 14 de setembro de 2026</div>
+  <h1>Raio-X <span class="e">do</span> Chora Viola</h1>
+  <p class="dek">Um mês de canal, 2.950 inscritos e 27 vídeos. Ele resolveu o gargalo que trava o Zé Sereno — e a resposta não está nos vídeos longos.</p>
+  <div class="meta">
+    <span>Idade <b>~5 semanas</b></span>
+    <span>Inscritos <b>2.950</b></span>
+    <span>Vídeos <b>27</b></span>
+    <span>Ritmo <b>5,4 por semana</b></span>
+  </div>
+</header>
+
+<section id="oquee">
+  <div class="sec-head"><span class="sec-mark">O QUE É</span><h2>Viola caipira cruzada com gospel</h2></div>
+  <p class="lede measure">Não é um canal de sertanejo raiz. É um canal de <strong>viola caipira gospel</strong> — e essa diferença é o canal inteiro.</p>
+  <p class="measure">Todos os 27 vídeos falam de fé: <em>Moda de Viola Gospel</em>, <em>Histórias Bíblicas no estilo sertanejo raiz</em>, <em>5 Hinos Sertanejos</em>, <em>Modão Raiz Gospel</em>. As duas playlists se chamam <strong>SOM DE DEUS</strong>. Não há um único vídeo fora disso.</p>
+
+  <div class="note good">
+    <span class="tag">É exatamente a jogada que o Will descreveu na aula</span>
+    <p>Ele contou o caso do canal que juntou <em>violino</em> com <em>eletrônica</em> — duas coisas que já funcionavam separadas — e explodiu. Aqui é a mesma mecânica: <strong>sertanejo raiz</strong> e <strong>gospel</strong>, dois dos maiores públicos do Brasil, cruzados num micro nicho que quase ninguém ocupa.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Camada</th><th>Chora Viola</th><th class="a">Zé Sereno</th></tr></thead>
+      <tbody>
+        <tr><td>Nicho</td><td>Música instrumental brasileira</td><td class="a">Igual</td></tr>
+        <tr><td>Subnicho</td><td>Moda de viola · sertanejo raiz</td><td class="a">Igual</td></tr>
+        <tr class="total"><td><strong>Micro nicho</strong></td><td><strong>Fé — louvor em viola caipira</strong></td><td class="a">Café da manhã na roça</td></tr>
+        <tr><td>O que vende</td><td>Pertencer a Deus e à roça ao mesmo tempo</td><td class="a">Saudade sem tristeza</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="measure">Os canais que o vidIQ aponta como similares confirmam o tamanho da vizinhança: <strong>Rancho do Modão</strong> (1.300), <strong>Modão da Saudade Oficial</strong> (2.550) e <strong>Som da Viola</strong> (2.220) — todos menores que ele, e ele tem cinco semanas.</p>
+</section>
+
+<section id="achado">
+  <div class="sec-head"><span class="sec-mark">O ACHADO</span><h2>Os Shorts fazem 17× o que os longos fazem</h2></div>
+  <p class="lede measure">Esta é a razão de existir deste documento. Tudo o mais é detalhe.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Formato</th><th>Views somadas (visíveis)</th><th>Comparação</th></tr></thead>
+      <tbody>
+        <tr><td>9 vídeos longos</td><td class="num">22.575</td><td class="vazio">—</td></tr>
+        <tr class="total"><td><strong>6 Shorts</strong></td><td class="num win b">389.000</td><td class="b"><strong>17,2×</strong> os longos</td></tr>
+        <tr><td>O maior Short sozinho</td><td class="num">158.000</td><td>7× todos os 9 longos juntos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">Os outros Shorts fazem 84 mil, 50 mil, 38 mil, 31 mil e 28 mil. Os vídeos longos, com uma hora de produção cada, fazem entre 581 e 8.500. <strong>Não é um Short que estourou por sorte — é o formato inteiro operando noutra escala.</strong></p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Inscritos por dia</th><th></th></tr></thead>
+      <tbody>
+        <tr class="total"><td>Chora Viola</td><td class="num win b">84</td></tr>
+        <tr><td class="a">Zé Sereno</td><td class="num a">0,2</td></tr>
+        <tr><td colspan="2"><strong>Cerca de 500 vezes mais.</strong> Não é qualidade de produção — é formato.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">Mas os Shorts não pagam — e a conta prova</span>
+    <p>O vidIQ estima <strong>US$ 7 por mês</strong> para um canal que faz ~96 mil views mensais. Isso dá um RPM implícito de <strong>US$ 0,073</strong> — sete vezes abaixo dos US$ 0,48 que a gente usa como referência para vídeo longo brasileiro.</p>
+    <p style="margin-top:.7em">A explicação é simples: a esmagadora maioria dessas views é Short, e Short paga uma fração do que paga vídeo longo. <strong>Os Shorts trazem gente; os vídeos longos trazem dinheiro.</strong> São dois motores diferentes no mesmo carro.</p>
+    <p style="margin-top:.7em"><em>Ressalva:</em> estimativa de faturamento do vidIQ é notoriamente imprecisa. O que vale aqui é a ordem de grandeza e a direção, não o número exato.</p>
+  </div>
+</section>
+
+<section id="titulos">
+  <div class="sec-head"><span class="sec-mark">TÍTULOS</span><h2>Ele rotaciona estruturas — e respeita os 30%</h2></div>
+  <p class="measure">Nos nove títulos visíveis dá para separar cinco moldes distintos. Nenhum passa de dois ou três vídeos, o que fica em torno de 22% a 25% — <strong>exatamente o teto que o ebook do Will manda respeitar.</strong> É a primeira confirmação independente dessa regra que a gente encontra num canal que está funcionando.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Molde</th><th>Exemplo</th><th>Nº</th></tr></thead>
+      <tbody>
+        <tr><td>Superlativo + benefício</td><td><em>As Mais Lindas Canções de Fé… Pra Matar Saudades 😭</em></td><td class="num">2</td></tr>
+        <tr><td>Transformação prometida</td><td><em>que Vão Renovar as Suas Forças 🙏</em></td><td class="num">3</td></tr>
+        <tr><td>Numerado</td><td><em>5 Hinos Sertanejos que Vão Transformar o Seu Dia</em></td><td class="num">1</td></tr>
+        <tr class="total"><td><strong>Condicional criativo</strong></td><td><em>E se Tião Carreiro Tocasse Sertanejo Raiz Gospel Talvez Seria Assim</em></td><td class="num">1</td></tr>
+        <tr><td>Tema / conceito</td><td><em>Histórias Bíblicas no estilo sertanejo Raiz</em></td><td class="num">2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="plain measure">
+    <li><strong>Emoji em todos os títulos</strong>, e temáticos: 🌿 para a roça, 🙏 para a fé, 😭 para a saudade. Nos meus doze só quatro têm.</li>
+    <li><strong>"2026" em dois títulos</strong> — sinal de frescor, e é a Estrutura 33 do ebook.</li>
+    <li><strong>Duração não aparece em nenhum título.</strong> Mas aparece em várias capas: <em>1 HORA DE MÚSICAS INÉDITAS</em>, <em>1 HORA MODA DE VIOLA RAIZ</em>.</li>
+  </ul>
+
+  <div class="note good">
+    <span class="tag">Isso resolve a discussão da duração de um jeito melhor que o meu</span>
+    <p>Eu fiquei entre manter no título (evidência dos concorrentes) e tirar (evidência dos nossos próprios vencedores). <strong>Ele faz as duas coisas: tira do título e põe na capa.</strong> O título fica livre para vender a emoção, e a promessa de duração continua sendo entregue — só que em imagem, que é onde o olho bate primeiro.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">O título mais inteligente do canal</span>
+    <p><em>"E se Tião Carreiro Tocasse Sertanejo Raiz Gospel Talvez Seria Assim"</em> — 3,4 mil views. Ele usa o nome do maior violeiro do Brasil sem afirmar que é ele, sem prometer gravação dele, e ainda avisa que é hipótese (<em>"talvez seria assim"</em>). <strong>Pega a busca pelo artista e entrega outra coisa, com honestidade.</strong> É um molde caro de imitar bem — e perigoso de imitar mal.</p>
+  </div>
+</section>
+
+<section id="capas">
+  <div class="sec-head"><span class="sec-mark">CAPAS</span><h2>Um personagem fixo e texto o dobro do meu</h2></div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>O que ele faz</th><th class="a">O que eu te entreguei</th></tr></thead>
+      <tbody>
+        <tr class="total"><td><strong>O mesmo homem em todas as capas</strong> — bigode, chapéu, viola no colo</td><td class="a">Só objetos e cenários, sem gente</td></tr>
+        <tr><td>Texto ocupa <strong>40% a 50%</strong> do quadro</td><td class="a">Texto num terço superior discreto</td></tr>
+        <tr><td>Amarelo e branco com <strong>contorno preto grosso</strong></td><td class="a">Âmbar e creme com sombra suave</td></tr>
+        <tr><td>Duas a três linhas gigantes, moldura decorativa</td><td class="a">Três linhas, a do meio grande</td></tr>
+        <tr><td>Fundo sempre dourado de fim de tarde, rural</td><td class="a">Paleta de ocre e verde-seco ✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="measure">O personagem recorrente é a peça que eu recomendei para o Amber Lantern em 24 de agosto, nunca foi testada, e aqui aparece funcionando. <strong>Um lugar não gera reconhecimento; um rosto gera.</strong> Nos Shorts ele vai além e usa rostos variados — mulheres, jovens, famílias —, que é o que faz o dedo parar no feed vertical.</p>
+
+  <div class="note">
+    <span class="tag">A marca d'água dos Shorts</span>
+    <p>Todos os Shorts trazem <strong>"CHORA VIOLA Caipira"</strong> no canto superior esquerdo, sempre igual. Com 158 mil views num único Short, é assim que o nome do canal entra na cabeça de quem nunca clicou.</p>
+  </div>
+</section>
+
+<section id="fazer">
+  <div class="sec-head"><span class="sec-mark">O QUE FAZER</span><h2>O que muda no Zé Sereno</h2></div>
+
+  <div class="note good">
+    <span class="tag">1 · Shorts sobem de "depois" para agora</span>
+    <p>Eu tinha colocado Shorts como o passo 4, depois dos vídeos 02 e 03. <strong>Ele sobe para junto do vídeo 02.</strong> O gargalo do Zé Sereno é inscrito — 0,24% de conversão —, e este canal mostra o remédio funcionando no mesmo nicho e no mesmo idioma.</p>
+    <p style="margin-top:.7em">Custo quase zero: um trecho de 40 segundos do vídeo longo, vertical, com um rosto e uma frase grande. Os doze vídeos já rendem material para dezenas.</p>
+  </div>
+
+  <div class="note good">
+    <span class="tag">2 · As capas ganham gente e texto maior</span>
+    <p>Um violeiro recorrente — bigode, chapéu, viola — em todas as doze capas, e o texto crescendo dos atuais 132px para algo em torno de <strong>160 a 180px com contorno preto</strong>. Os prompts de imagem que eu te mandei ficam, só ganham a figura.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">3 · Emoji em todos os títulos, não em quatro</span>
+    <p>🌿 para a roça, ☕ para o café, 🌄 para o amanhecer, 🔥 para o fogão. Ele usa em 100% dos títulos; eu usei em 33%.</p>
+  </div>
+
+  <div class="note">
+    <span class="tag">4 · A duração vai para a capa</span>
+    <p>Some do título, aparece na imagem: <strong>1 HORA DE MODÃO</strong>. Resolve a dúvida que ficou aberta sem gastar caractere de título.</p>
+  </div>
+
+  <div class="note warn">
+    <span class="tag">5 · A cadência: uma contradição honesta</span>
+    <p>Ele publica <strong>5,4 vídeos longos por semana</strong> e cresce. Eu te recomendei <strong>um por semana</strong>, com base no colapso dos vídeos 04, 05 e 06 do Amber Lantern.</p>
+    <p style="margin-top:.7em">A diferença entre os dois casos é o motor de descoberta: <strong>ele tem Shorts alimentando o canal</strong>, então os longos não dependem de o algoritmo achá-los do zero. O Amber Lantern não tinha nada disso — e afogou.</p>
+    <p style="margin-top:.7em"><strong>Conduta:</strong> mantenha um a dois por semana enquanto não houver Shorts rodando. <strong>Depois que os Shorts estiverem trazendo gente, suba a cadência</strong> — a evidência dele é forte demais para ignorar.</p>
+  </div>
+</section>
+
+<section id="naocopiar">
+  <div class="sec-head"><span class="sec-mark">CUIDADO</span><h2>O que não copiar</h2></div>
+  <ul class="plain measure">
+    <li><strong>Não vire o Zé Sereno para gospel.</strong> O micro nicho dele acabou de começar a funcionar — café da manhã na roça — e trocar agora é jogar fora o único ativo validado. O gospel é evidência para <strong>o próximo canal</strong>, não para este.</li>
+    <li><strong>Não copie o molde do "E se Tião Carreiro tocasse".</strong> Ele acerta porque é hipotético e assume isso no próprio título. Usado com menos cuidado, vira promessa de gravação de um artista real que você não tem — e aí é outro problema, do tipo que não se resolve depois.</li>
+    <li><strong>Não persiga os números de faturamento dele.</strong> US$ 7 por mês com 96 mil views é o retrato de um canal que acumulou audiência e ainda não acumulou receita. O Zé Sereno tem o problema oposto, e isso é uma vantagem, não um atraso.</li>
+    <li><strong>Não leia a queda de 52,5% como fracasso dele.</strong> Um Short de 158 mil views passou e a onda está baixando. É o comportamento normal do formato — e é por isso que Short é motor de inscrito, não de receita estável.</li>
+  </ul>
+
+  <div class="note">
+    <span class="tag">Onde a comparação de views deixa a gente</span>
+    <p>O melhor vídeo longo dele faz <strong>283 views por dia</strong>. O único vídeo do Zé Sereno faz <strong>69</strong>. São 4 vezes, não 500 — a distância monstruosa está só nos inscritos, e ela tem uma causa só.</p>
+  </div>
+</section>
+
+<footer>
+  Propulse · raio-x do Sertanejo Raiz Chora Viola Caipira · setembro de 2026
+</footer>
+
+</div>
