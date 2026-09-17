@@ -264,6 +264,52 @@ mundo.
 
 ---
 
+---
+
+# As tags dos dez
+
+Base igual, trocando só a penúltima palavra:
+
+| Vídeo | Palavra do vídeo |
+|---|---|
+| 26 Paiol | `paiol` |
+| 27 Engenho | `engenho` |
+| 28 Quintal | `quintal` |
+| 29 Pomar | `pomar` |
+| 30 Roça de Milho | `roça de milho` |
+| 31 Casa de Farinha | `casa de farinha` |
+| 32 Estrada de Terra | `estrada de terra` |
+| 33 Pasto | `pasto` |
+| 34 Cachoeira | `cachoeira` |
+| 35 Galpão | `galpão` |
+
+```
+viola caipira, moda de viola, modão, sertanejo raiz, música caipira, modas de viola antigas, viola caipira instrumental, música da roça, toada sertaneja, sertanejo antigo, viola de dez cordas, música do interior, [PALAVRA DO VÍDEO], Zé Sereno
+```
+
+# O rodapé fixo da descrição
+
+Cola no fim das dez, depois da tracklist:
+
+```
+SOBRE
+Zé Sereno é violeiro, filho de tropeiro, criado no interior, onde o dia
+começa antes do sol. Neste canal ele grava modas de viola, toadas e
+catiras novas — música nova, com alma antiga — para quem sente falta da
+roça mesmo morando longe dela.
+
+Música original, composta e produzida para este canal com apoio de
+ferramentas de inteligência artificial. Todos os direitos reservados.
+
+Inscreva-se e ative o sininho para acompanhar as próximas modas.
+
+#violacaipira #modadeviola #sertanejoraiz
+```
+
+**Confira antes de agendar.** Seis dos sete vídeos agendados em setembro subiram
+com a descrição errada colada — a mesma "Aquele rádio de pilha…" em quatro vídeos
+diferentes. É o erro mais barato de evitar e o mais caro de descobrir depois.
+
 # Antes de gerar
 
 **Gere as dez na mesma conversa do GPT**, e de preferência na mesma conversa dos
