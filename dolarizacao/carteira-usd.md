@@ -12,17 +12,18 @@
 
 | # | Data | Plataforma | R$ debitado | US$ creditado | Comercial no momento | Cotação efetiva | Custo % | Observação |
 |---|------|-----------|-------------|---------------|----------------------|-----------------|---------|------------|
-| 1 | 21/11/2026 | ARQ   | 50,00 | **pendente** | pendente | — | — | compra teste |
-| 2 | 21/11/2026 | Nomad | 50,00 | **pendente** | pendente | — | — | compra teste (confirmar se foi conta corrente ou conta de investimento) |
+| 1 | 21/11/2026 (sáb) | ARQ   | 50,00 | 8,22 USDs | 5,9323 (fech. 19/11) | 6,0827 | 2,54% | compra teste em fim de semana; 1 USDs movido para Conta Remunerada |
+| 2 | 21/11/2026 (sáb) | Nomad | 50,00 | 7,99 | 5,9323 (fech. 19/11) | 6,2578 | 5,49% | compra teste na conta internacional (conta corrente, IOF 3,5%) |
 
 ## Resumo da posição
 
 | Item | Valor |
 |------|-------|
 | Total investido (R$) | 100,00 |
-| Total acumulado (US$) | pendente |
-| Preço médio ponderado | pendente |
-| US$ na ARQ / Nomad | pendente / pendente |
+| Total acumulado (US$) | 16,21 |
+| Preço médio ponderado | R$ 6,1690 |
+| US$ na ARQ / Nomad | 8,22 (7,22 livre + 1,00 remunerado) / 7,99 |
+| Marcação a 5,9323 (antes do custo de venda) | R$ 96,16 (−3,8%) |
 | Valor de mercado (R$) | US$ total × comercial × (1 − custo de venda) |
 
 ## Plano de entradas (revisado em 22/11/2026)
@@ -30,11 +31,17 @@
 | Lote | Valor | Gatilho |
 |------|-------|---------|
 | A1 | R$ 500  | agora (5,85–5,95) |
-| A2 | R$ 500  | ≤ 5,80 **ou** se, até 31/01/2027, nenhum gatilho tiver sido atingido |
+| A2 | R$ 500  | ≤ 5,80 |
 | B1 | R$ 1.000 | 5,75–5,80 |
 | B2 | R$ 1.000 | 5,55–5,60 |
 | B3 | R$ 1.000 | ≤ 5,40 |
 | B4 | R$ 1.000 | reserva: ≤ 5,25 ou evento de pânico pontual com fundamentos inalterados |
 
 Plano alternativo se o dólar subir: fechamento acima de 6,10 por 2 dias → no máximo R$ 500 do lote B1; acima de 6,30 → manter o resto em CDI e revisar a tese (não perseguir).
-Sem gatilhos até 31/01/2027 → aportes de R$ 500/mês do saldo restante.
+Aportes mensais: R$ 500 no 1º dia útil de cada mês a partir de 01/12/2026, retirados do capital restante. Lotes acionados por preço têm prioridade e reduzem esse capital.
+Revisão do plano em 31/01/2027 (aviso em 28/01/2027).
+
+## Lições das compras-teste
+- Comprar em dia útil (10h–16h). No domingo, a ARQ cotava compra a 6,1289 (3,3% acima do comercial).
+- Antes de cada compra, comparar a cotação de compra dos dois apps com o comercial do momento.
+- Nomad: usar a conta de investimento (IOF 1,1%), não a conta internacional (IOF 3,5%).
