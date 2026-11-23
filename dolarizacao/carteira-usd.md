@@ -14,23 +14,25 @@
 |---|------|-----------|-------------|---------------|----------------------|-----------------|---------|------------|
 | 1 | 21/11/2026 (sáb) | ARQ   | 50,00 | 8,22 USDs | 5,9323 (fech. 19/11) | 6,0827 | 2,54% | compra teste em fim de semana; 1 USDs movido para Conta Remunerada |
 | 2 | 21/11/2026 (sáb) | Nomad | 50,00 | 7,99 | 5,9323 (fech. 19/11) | 6,2578 | 5,49% | compra teste na conta internacional (conta corrente, IOF 3,5%) |
+| 3 | 23/11/2026 09h19 | ARQ | 500,00 | 83,31 USDs | 5,9711 (base ARQ; abertura à vista 5,9815) | 6,0011 | 0,50% | **lote A1**; custo de R$ 2,50. Na Nomad, no mesmo minuto, sairia US$ 79,30 (6,3055) |
 
 ## Resumo da posição
 
 | Item | Valor |
 |------|-------|
-| Total investido (R$) | 100,00 |
-| Total acumulado (US$) | 16,21 |
-| Preço médio ponderado | R$ 6,1690 |
-| US$ na ARQ / Nomad | 8,22 (7,22 livre + 1,00 remunerado) / 7,99 |
-| Marcação a 5,9323 (antes do custo de venda) | R$ 96,16 (−3,8%) |
+| Total investido (R$) | 600,00 |
+| Total acumulado (US$) | 99,52 |
+| Preço médio ponderado | **R$ 6,0289** |
+| US$ na ARQ / Nomad | 91,53 (90,53 livre + 1,00 remunerado) / 7,99 |
+| Marcação a 5,9713 (23/11 09h11, antes do custo de venda) | R$ 594,27 (−1,0%) |
+| Capital do plano restante | R$ 4.500 (A1 feito em 23/11) |
 | Valor de mercado (R$) | US$ total × comercial × (1 − custo de venda) |
 
 ## Plano de entradas (revisado em 22/11/2026)
 
 | Lote | Valor | Gatilho |
 |------|-------|---------|
-| A1 | R$ 500  | agora (5,85–5,95) |
+| A1 | R$ 500  | ✅ feito em 23/11/2026 a 6,0011 (ARQ) |
 | A2 | R$ 500  | ≤ 5,80 |
 | B1 | R$ 1.000 | 5,75–5,80 |
 | B2 | R$ 1.000 | 5,55–5,60 |
