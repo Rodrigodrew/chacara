@@ -54,6 +54,8 @@ Referência: recorde de ~US$ 5.590 em 28/01/2026; ~US$ 3.700–3.850 em 22/11/20
 | Lote | Valor | Gatilho | Veículo |
 |------|-------|---------|---------|
 | O1 | R$ 250 | depois da decisão do Fed de 09/12/2026 | ETF de ouro de taxa baixa (GLDM/IAU), conta de investimento da Nomad |
-| O2 | R$ 250 | ouro ≤ US$ 3.600 ou janeiro/2027 | idem |
+| O2 | R$ 250 | **liberado**: ouro abaixo de US$ 3.600 (fechou a 3.515,40 em 20/11) | idem |
+| F1 | a definir | ouro físico (reserva de crise): barra certificada, comprada em DTVM autorizada pelo BC | barra com nota fiscal e certificado |
 
-Alertas: ≤ US$ 3.600, ≥ US$ 4.200, variação ≥ 2% no dia. Posição atual: nenhuma.
+Alertas (revisados em 22/11): ≤ US$ 3.400, ≥ US$ 4.200, variação ≥ 2% no dia. Posição atual: nenhuma.
+Ouro físico: comparar cotação de compra e de recompra em 2–3 DTVMs no mesmo dia (a diferença é o custo de ida e volta). Preferir barras de 5 g ou 10 g, em vez de 1 g. Guardar a barra junto com o certificado.
