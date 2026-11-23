@@ -45,3 +45,15 @@ Revisão do plano em 31/01/2027 (aviso em 28/01/2027).
 - Comprar em dia útil (10h–16h). No domingo, a ARQ cotava compra a 6,1289 (3,3% acima do comercial).
 - Antes de cada compra, comparar a cotação de compra dos dois apps com o comercial do momento.
 - Nomad: usar a conta de investimento (IOF 1,1%), não a conta internacional (IOF 3,5%).
+
+## Ouro (definido em 23/11/2026)
+
+Papel: seguro contra crise e inflação, 5–10% do patrimônio no exterior. Usar só dinheiro novo, sem tirar dos R$ 5.000 do dólar.
+Referência: recorde de ~US$ 5.590 em 28/01/2026; ~US$ 3.700–3.850 em 22/11/2026 (−32% a −35%).
+
+| Lote | Valor | Gatilho | Veículo |
+|------|-------|---------|---------|
+| O1 | R$ 250 | depois da decisão do Fed de 09/12/2026 | ETF de ouro de taxa baixa (GLDM/IAU), conta de investimento da Nomad |
+| O2 | R$ 250 | ouro ≤ US$ 3.600 ou janeiro/2027 | idem |
+
+Alertas: ≤ US$ 3.600, ≥ US$ 4.200, variação ≥ 2% no dia. Posição atual: nenhuma.
