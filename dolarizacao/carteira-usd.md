@@ -15,17 +15,18 @@
 | 1 | 21/11/2026 (sáb) | ARQ   | 50,00 | 8,22 USDs | 5,9323 (fech. 19/11) | 6,0827 | 2,54% | compra teste em fim de semana; 1 USDs movido para Conta Remunerada |
 | 2 | 21/11/2026 (sáb) | Nomad | 50,00 | 7,99 | 5,9323 (fech. 19/11) | 6,2578 | 5,49% | compra teste na conta internacional (conta corrente, IOF 3,5%) |
 | 3 | 23/11/2026 09h19 | ARQ | 500,00 | 83,31 USDs | 5,9711 (base ARQ; abertura à vista 5,9815) | 6,0011 | 0,50% | **lote A1**; custo de R$ 2,50. Na Nomad, no mesmo minuto, sairia US$ 79,30 (6,3055) |
+| 4 | 25/11/2026 16h53 | ARQ | 400,00 | 68,44 USDs | 5,8152 (base ARQ; comercial ~5,81) | 5,8444 | 0,50% | **lote A2 (parcial)**: dólar a 5,81 depois da PEC de despesas e do PCE; custo de R$ 2,00 |
 
 ## Resumo da posição
 
 | Item | Valor |
 |------|-------|
-| Total investido (R$) | 600,00 |
-| Total acumulado (US$) | 99,52 |
-| Preço médio ponderado | **R$ 6,0289** |
-| US$ na ARQ / Nomad | 91,53 (90,53 livre + 1,00 remunerado) / 7,99 |
-| Marcação a 5,9713 (23/11 09h11, antes do custo de venda) | R$ 594,27 (−1,0%) |
-| Capital do plano restante | R$ 4.500 (A1 feito em 23/11) |
+| Total investido (R$) | 1.000,00 |
+| Total acumulado (US$) | 167,96 |
+| Preço médio ponderado | **R$ 5,9538** |
+| US$ na ARQ / Nomad | 159,97 (158,97 livre + 1,00 remunerado) / 7,99 |
+| Marcação a 5,81 (25/11 ~17h, antes do custo de venda) | R$ 975,85 (−2,4%) |
+| Capital do plano restante | R$ 4.100 (A1 em 23/11; A2 parcial de R$ 400 em 25/11) |
 | Valor de mercado (R$) | US$ total × comercial × (1 − custo de venda) |
 
 ## Plano de entradas (revisado em 22/11/2026)
@@ -33,8 +34,8 @@
 | Lote | Valor | Gatilho |
 |------|-------|---------|
 | A1 | R$ 500  | ✅ feito em 23/11/2026 a 6,0011 (ARQ) |
-| A2 | R$ 500  | ≤ 5,80 |
-| B1 | R$ 1.000 | 5,75–5,80 |
+| A2 | R$ 500  | ✅ R$ 400 em 25/11/2026 a 5,8444 (ARQ); os R$ 100 restantes passam para o B1 |
+| B1 | R$ 1.100 | R$ 550 com o dólar ≤ 5,78 e R$ 550 com o dólar ≤ 5,75 |
 | B2 | R$ 1.000 | 5,55–5,60 |
 | B3 | R$ 1.000 | ≤ 5,40 |
 | B4 | R$ 1.000 | reserva: ≤ 5,25 ou evento de pânico pontual com fundamentos inalterados |
@@ -59,5 +60,5 @@ Referência: recorde de ~US$ 5.590 em 28/01/2026; ~US$ 3.700–3.850 em 22/11/20
 | O2 | R$ 250 | **liberado**: ouro abaixo de US$ 3.600 (fechou a 3.515,40 em 20/11) | idem |
 | F1 | a definir | ouro físico (reserva de crise): barra certificada, comprada em DTVM autorizada pelo BC | barra com nota fiscal e certificado |
 
-Alertas (revisados em 22/11): ≤ US$ 3.400, ≥ US$ 4.200, variação ≥ 2% no dia. Posição atual: nenhuma.
+Alertas (revisados em 22/11): ≤ US$ 3.400, ≥ US$ 4.200, variação ≥ 2% no dia. Posição atual: nenhuma. O2 pendente: o perfil de investimento na ARQ está em análise (25/11). Comprar com R$ 250 novos, sem usar os USDs do plano do dólar.
 Ouro físico: comparar cotação de compra e de recompra em 2–3 DTVMs no mesmo dia (a diferença é o custo de ida e volta). Preferir barras de 5 g ou 10 g, em vez de 1 g. Guardar a barra junto com o certificado.
